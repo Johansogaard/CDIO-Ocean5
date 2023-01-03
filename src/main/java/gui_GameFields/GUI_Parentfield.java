@@ -18,6 +18,8 @@ public abstract class GUI_Parentfield extends GUI_Field {
     private Player owner=null;
     private SwingComponentFactory factory;
 
+
+
     public GUI_Parentfield(Color bgColor, Color fgColor, String title, String subText, String description) {
         super(bgColor, fgColor, title, subText, description);
         this.factory = new SwingComponentFactory();
@@ -25,7 +27,9 @@ public abstract class GUI_Parentfield extends GUI_Field {
         this.subTextLabel = this.makeSubTextLabel(this.subText);
         this.layered.add(this.titleLabel, this.factory.createGridBagConstraints(0, 0));
         this.layered.add(this.subTextLabel, this.factory.createGridBagConstraints(0, 1));
+
     }
+
 
     public abstract int cost();
 
