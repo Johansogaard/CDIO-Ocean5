@@ -75,10 +75,7 @@ public class GUI_Jail extends GUI_Parentfield {
         super.displayCarOnCenter(playerList);
     }
 
-    @Override
-    public int cost() {
-        return 0;
-    }
+
     @Override
     public void hit(Player player) {
 

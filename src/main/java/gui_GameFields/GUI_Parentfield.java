@@ -13,6 +13,7 @@ public abstract class GUI_Parentfield extends GUI_Field {
     public static FieldText mt = FieldText.getInstance();
     private static final int TITLEHEIGHT = 47;
     private static final int SUBTEXTHEIGHT = 14;
+   private int price = 0;
 
 
     private Player owner=null;
@@ -31,11 +32,11 @@ public abstract class GUI_Parentfield extends GUI_Field {
     }
 
 
-    public abstract int cost();
+
 
     public void hit(Player player) {
 
-        int cost =cost();
+        int cost =price;
 
         if (getOwner() ==null)
         {

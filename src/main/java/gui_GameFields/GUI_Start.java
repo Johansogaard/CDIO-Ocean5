@@ -10,10 +10,8 @@ public class GUI_Start extends GUI_Parentfield {
 
     }
 
-    @Override
-    public int cost() {
-        return 0;
-    }
+
+
     @Override
     public void hit(Player player)
     {

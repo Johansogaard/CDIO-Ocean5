@@ -23,6 +23,7 @@ public class BoardCreator {
         Map<String,String> map= new TreeMap<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
+
             while(true) {
                 input = reader.readLine();
                 if (input == null || input == "") {
@@ -34,16 +35,16 @@ public class BoardCreator {
                 } else {
                     StringTokenizer st = new StringTokenizer(input, ",");
                     String[] currToken = new String[st.countTokens()];
-                    for (int i =0;i<st.countTokens();i++)
+                    for (int i =0;st.hasMoreTokens();i++)
                     {
-                        currToken[i]= st.nextToken();
+                        currToken[i]= st.nextToken().trim();
                     }
                     fieldlist =addfield(currToken, fieldlist);
 
                 }
 
             }
-        return
+
     } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -57,11 +58,26 @@ public class BoardCreator {
 
             case "street":
             {
-
-
-                list.add(new GUI_Street(fieldColor(data[10]),Color.black,);
+                list.add(new GUI_Street(fieldColor(data[11]),Color.black,data[0],"Kr. "+ data[3],
+                        "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[4]),
+                        Integer.parseInt(data[5]),rentArr(data),data[11]));
             }
             break;
+            case "start": {
+                list.add(new GUI_Start());
+            }
+            break;
+            case "chance":
+            {
+                list.add(new GUI_Chance());
+            }
+            break;
+            default:
+            {
+
+            }
+            break;
+
         }
 
 return list;
@@ -118,9 +134,24 @@ private Color fieldColor(String color)
         break;
         case "purple":
         {
-           c= Color.getHSBColor(300,100,50);
+           c= new Color(102,0,100);
+        }
+        break;
+        default:
+        {
+
         }
         break;
     }
     return c;
-}}
+}
+private int[] rentArr(String[] data)
+{
+    int[] rent = new int[6];
+    for (int i = 5;i<11;i++)
+    {
+        rent[i-5]= Integer.parseInt(data[i]);
+    }
+    return rent;
+}
+}
