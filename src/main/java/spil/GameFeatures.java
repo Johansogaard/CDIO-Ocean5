@@ -5,6 +5,7 @@ import card.RykFelterFrem_Card;
 import card.RykTilStart_Card;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -47,25 +48,36 @@ public class GameFeatures {
 
     public static Player[] playerstoadd(){
         int pl = playercountadd();
-
-            if (pl == 2) {
-                Player[] plA2 = new Player[2];
-                plA2[0] = new Player("Spiller1", 20, 0);
-                plA2[1] = new Player("Spiller2", 20, 0);
-                return plA2;
-            } else if (pl == 3) {
+            if (pl == 3) {
                 Player[] plA3 = new Player[3];
-                plA3[0] = new Player("Spiller1", 18, 0);
-                plA3[1] = new Player("Spiller2", 18, 0);
-                plA3[2] = new Player("Spiller3", 18, 0);
+                plA3[0] = new Player("Spiller 1", 30000, 0);
+                plA3[1] = new Player("Spiller 2", 30000, 0);
+                plA3[2] = new Player("Spiller 3", 30000, 0);
                 return plA3;
-            } else {
+            } else if (pl == 4) {
                 Player[] plA4 = new Player[4];
-                plA4[0] = new Player("Spiller1", 16, 0);
-                plA4[1] = new Player("Spiller2", 16, 0);
-                plA4[2] = new Player("Spiller3", 16, 0);
-                plA4[3] = new Player("Spiller4", 16, 0);
+                plA4[0] = new Player("Spiller 1", 30000, 0);
+                plA4[1] = new Player("Spiller 2", 30000, 0);
+                plA4[2] = new Player("Spiller 3", 30000, 0);
+                plA4[3] = new Player("Spiller 4", 30000, 0);
                 return plA4;
+            } else if (pl == 5) {
+                Player[] plA5 = new Player[5];
+                plA5[0] = new Player("Spiller 1", 30000, 0);
+                plA5[1] = new Player("Spiller 2", 30000, 0);
+                plA5[2] = new Player("Spiller 3", 30000, 0);
+                plA5[3] = new Player("Spiller 4", 30000, 0);
+                plA5[4] = new Player("Spiller 5", 30000, 0);
+                return plA5;
+            } else {
+                Player[] plA6 = new Player[6];
+                plA6[0] = new Player("Spiller 1", 30000, 0);
+                plA6[1] = new Player("Spiller 2", 30000, 0);
+                plA6[2] = new Player("Spiller 3", 30000, 0);
+                plA6[3] = new Player("Spiller 4", 30000, 0);
+                plA6[4] = new Player("Spiller 5", 30000, 0);
+                plA6[5] = new Player("Spiller 6", 30000, 0);
+                return plA6;
             }
     }
 
@@ -74,24 +86,30 @@ public class GameFeatures {
 
         JFrame f = new JFrame();
         f.setLayout(null);
-        JRadioButton p2 = new JRadioButton("2 Players");
-        JRadioButton p3 = new JRadioButton("3 Players");
-        JRadioButton p4 = new JRadioButton("4 Players");
-        JButton jb = new JButton("Click to start");
-        JLabel L1 = new JLabel("Selec player amount");
-        p2.setBounds(75,25,100,30);
-        p3.setBounds(75,50,100,30);
-        p4.setBounds(75,75,100,30);
-        L1.setBounds(75, 5, 200, 30);
-        jb.setBounds(75, 120, 200, 30);
-        f.add(p2);f.add(p3);f.add(p4);f.add(L1);f.add(jb);
+        JRadioButton p3 = new JRadioButton("3 Spillere");
+        JRadioButton p4 = new JRadioButton("4 Spillere");
+        JRadioButton p5 = new JRadioButton("5 Spillere");
+        JRadioButton p6 = new JRadioButton("6 Spillere");
+        JButton jb = new JButton("Klik for at starte");
+        JLabel L1 = new JLabel("vælg spiller mængde");
+        JLabel L2 = new JLabel("MATADOR");
+        p3.setBounds(75,60,100,30);
+        p4.setBounds(75,85,100,30);
+        p5.setBounds(75,110,100,30);
+        p6.setBounds(75,135,100,30);
+        L1.setBounds(75, 35, 200, 30);
+        jb.setBounds(75, 170, 200, 30);
+        L2.setBounds(75,5,200,30);
+        L1.setFont(new Font("default-normal", Font.PLAIN,12));
+        L2.setFont(new Font("defaut-bold-normal", Font.PLAIN,25));
+        f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);
         f.setBounds(100, 150, 400, 300);
-        f.setTitle("Monopoly Junior");
+        f.setTitle("Matador");
 
         f.setVisible(true);
 
         ButtonGroup bg=new ButtonGroup();
-        bg.add(p2);bg.add(p3);bg.add(p4);
+        bg.add(p3);bg.add(p4);bg.add(p5);bg.add(p6);
 
             jb.addActionListener(new ActionListener() {
                 @Override
@@ -101,19 +119,24 @@ public class GameFeatures {
 
 
                     // If condition to check if jRadioButton2 is selected.
-                    if (p2.isSelected()) {
-                        qual = "Gamemode: 2 players";
-                        players = 2;
-                    } else if (p3.isSelected()) {
-
+                    if (p3.isSelected()) {
                         qual = "Gamemode: 3 players";
                         players = 3;
-
-
                     } else if (p4.isSelected()) {
 
                         qual = "Gamemode: 4 players";
                         players = 4;
+
+
+                    } else if (p5.isSelected()) {
+
+                        qual = "Gamemode: 5 players";
+                        players = 5;
+
+                    }else if (p6.isSelected()) {
+
+                        qual = "Gamemode: 6 players";
+                        players = 6;
 
                     } else {
 
