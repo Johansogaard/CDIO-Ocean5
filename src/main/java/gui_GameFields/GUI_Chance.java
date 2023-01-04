@@ -57,7 +57,7 @@ public class GUI_Chance extends GUI_Parentfield {
         super.displayCarOnCenter(playerList);
     }
 
-
+    //From here
     @Override
     public void hit(Player player)
     {
