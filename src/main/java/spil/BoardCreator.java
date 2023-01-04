@@ -3,6 +3,7 @@ package spil;
 import java.awt.Color;
 import gui_GameFields.*;
 
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -72,6 +73,30 @@ public class BoardCreator {
                 list.add(new GUI_Chance());
             }
             break;
+            case "jail":
+            {
+                list.add(new GUI_Jail());
+            }
+            break;
+            case "tax":
+            {
+                list.add(new GUI_Tax(data[0],"Kr "+ data[3],"Du skal betale " + data[3] + " Kr i skat"));
+            }
+            break;
+            case "ferry":
+            {
+
+            }
+            break;
+            case "brewery":
+            {
+
+            }
+            break;
+            case "refugee":
+            {
+                list.add(new GUI_Parkering());
+            }
             default:
             {
 
