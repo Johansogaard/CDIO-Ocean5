@@ -85,18 +85,23 @@ public class BoardCreator {
             break;
             case "ferry":
             {
+                int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5]),Integer.parseInt(data[6]),Integer.parseInt(data[7])};
+                list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
+                        "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
 
             }
             break;
             case "brewery":
-            {
-
+            {   int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5])};
+               list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
+                       "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
             }
             break;
             case "refugee":
             {
                 list.add(new GUI_Parkering());
             }
+            break;
             default:
             {
 
