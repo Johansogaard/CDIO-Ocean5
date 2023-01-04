@@ -149,6 +149,27 @@ public class Player {
 
     public void buyField(int cost, String title)
     {
+        if(owner == null) {
+            if(gui.getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")){
+                if(getBalance >= cost){
+                    setOwner(Player);
+                    gui.showMessage(pl.getName() + "har købt grunden");
+
+                    else{
+                        gui.showMessage("De har ikke moneter nok til at købe grunden chef");
+
+                    }
+                }
+
+            }
+
+
+        }
+
+        gui.getUserLeftButtonPressed()
+
+
+
         gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
         updatePlayerBalance(-cost);
         konto.updateFieldValue(cost);
@@ -186,6 +207,9 @@ public class Player {
         else return 1;
 
     }
+public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
+        return gui.getUserLeftButtonPressed(msg, trueButton, falseButton);
+}
 
 
 }
