@@ -147,12 +147,10 @@ public class Player {
     }
 
 
-    public void buyField(int cost, String title)
+    public void buyField(int price , String title)
     {
-        gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
-        updatePlayerBalance(-cost);
-        konto.updateFieldValue(cost);
-
+        updatePlayerBalance(-price);
+        konto.updateFieldValue(price);
     }
     public void injail()
     {
@@ -186,6 +184,9 @@ public class Player {
         else return 1;
 
     }
+public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
+        return gui.getUserLeftButtonPressed(msg, trueButton, falseButton);
+}
 
 
 }
