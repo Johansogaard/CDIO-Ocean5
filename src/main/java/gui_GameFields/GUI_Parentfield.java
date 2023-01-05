@@ -19,6 +19,13 @@ public abstract class GUI_Parentfield extends GUI_Field {
     private static final int TITLEHEIGHT = 47;
     private static final int SUBTEXTHEIGHT = 14;
 
+    public void setRent(int[] rent) {
+        this.rent = rent;
+    }
+
+
+
+    int[] rent;
 
 
     private int price = 0;
@@ -58,11 +65,8 @@ public abstract class GUI_Parentfield extends GUI_Field {
     }
         else if(player != getOwner())
         {
-            getOwner().getKonto().update(price* player.checkDoubleCost());
-            player.getKonto().update(-price*player.checkDoubleCost());
-            player.payRent(player.getKonto().getBalance(),owner,getTitle());
-            getOwner().getRent(getOwner().getKonto().getBalance());
-
+            getOwner().getKonto().update(+rent[0]);
+            player.getKonto().update(-rent[0]);
 
         }
 
