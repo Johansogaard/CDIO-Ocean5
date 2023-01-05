@@ -3,6 +3,7 @@ package spil;
 import java.awt.Color;
 import gui_GameFields.*;
 
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -59,8 +60,8 @@ public class BoardCreator {
             case "street":
             {
                 list.add(new GUI_Street(fieldColor(data[11]),Color.black,data[0],"Kr. "+ data[3],
-                        "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[4]),
-                        Integer.parseInt(data[5]),rentArr(data),data[11]));
+                        "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[3]),
+                        Integer.parseInt(data[4]),rentArr(data),data[11]));
             }
             break;
             case "start": {
@@ -70,6 +71,35 @@ public class BoardCreator {
             case "chance":
             {
                 list.add(new GUI_Chance());
+            }
+            break;
+            case "jail":
+            {
+                list.add(new GUI_Jail());
+            }
+            break;
+            case "tax":
+            {
+                list.add(new GUI_Tax(data[0],"Kr "+ data[3],"Du skal betale " + data[3] + " Kr i skat"));
+            }
+            break;
+            case "ferry":
+            {
+                int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5]),Integer.parseInt(data[6]),Integer.parseInt(data[7])};
+                list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
+                        "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
+
+            }
+            break;
+            case "brewery":
+            {   int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5])};
+               list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
+                       "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
+            }
+            break;
+            case "refugee":
+            {
+                list.add(new GUI_Parkering());
             }
             break;
             default:

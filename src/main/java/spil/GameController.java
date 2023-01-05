@@ -8,17 +8,15 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 
 public class GameController {
-    final static String file = "src/main/resources/GameText.txt";
-    public static FieldText mt = FieldText.getInstance();
     public static int max=-100;
     public static Player vinder;
-    public static Boolean hasWon = false;
+    private static GUI gui;
     public static void main(String[] args) throws FileNotFoundException {
         Player[] players = GameFeatures.playerstoadd();
         BoardCreator b = new BoardCreator();
            // System.out.println(readTextFromFile(file,"jailMessage"));
             GUI_Parentfield[] fields = b.istantiererFelter();
-           GUI gui = new GUI(fields, Color.cyan);
+           gui = new GUI(fields, Color.cyan);
            for (int i = 0; i < players.length; i++) {
                players[i].tilføjspillerGui(gui);
            }
@@ -59,7 +57,9 @@ public static void playGame (Player[] players,GUI_Parentfield[] fields,GUI gui)
     System.exit(1);
 
 }
-
+    public static GUI getGui() {
+        return gui;
+    }
 
 
 }

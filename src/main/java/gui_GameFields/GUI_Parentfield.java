@@ -4,7 +4,9 @@ import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import spil.GameFeatures;
 import spil.Player;
+import spil.inGameFunktions.LandOnStreet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,9 +15,12 @@ public abstract class GUI_Parentfield extends GUI_Field {
     public static FieldText mt = FieldText.getInstance();
     private static final int TITLEHEIGHT = 47;
     private static final int SUBTEXTHEIGHT = 14;
-   private int price = 0;
 
 
+
+    private int price = 0;
+
+    GameFeatures gameFeatures = new GameFeatures();
     private Player owner=null;
     private SwingComponentFactory factory;
 
@@ -36,17 +41,20 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public void hit(Player player) {
 
-        int cost =price;
 
-        if (getOwner() ==null)
+
+        if (getOwner() ==null && player.getKonto().getBalance() >= price)
         {
-            player.buyField(cost,getTitle());
-            setDescription(getDescription()+"\nOwner:"+getOwner().getName());
+            if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
+                setOwner(player);
+                player.buyField(price, getTitle());
+                setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+            }
         }
         else if(player != getOwner())
         {
-            getOwner().getKonto().update(cost* player.checkDoubleCost());
-            player.getKonto().update(-cost*player.checkDoubleCost());
+            getOwner().getKonto().update(price* player.checkDoubleCost());
+            player.getKonto().update(-price*player.checkDoubleCost());
             player.payRent(player.getKonto().getBalance(),owner,getTitle());
             getOwner().getRent(getOwner().getKonto().getBalance());
 
@@ -85,6 +93,9 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public void setOwner(Player owner) {
         this.owner = owner;
+    }
+    public void setPrice(int price) {
+        this.price = price;
     }
 
 }

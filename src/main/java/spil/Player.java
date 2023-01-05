@@ -79,7 +79,7 @@ public class Player {
                 turn();
                 checkIfPassedStart(pos+t1+t2);
 
-                pos=(pos+t1 +t2)%24;
+                pos=(pos+t1 +t2)%40;
                 gui.setDice(t1, t2);
                 setCar(pos, gui);
                 hitField();
@@ -169,7 +169,7 @@ public class Player {
     }
     public void injail()
     {
-       movePlayer(18);
+       movePlayer(11);
         setJail(true);
         gui.getUserButtonPressed(name + " du er i fængsel og bliver sprunget over i næste runde", "Okay");
     }
@@ -192,7 +192,7 @@ public class Player {
     public int checkDoubleCost()
     {
 
-        if (gamefields[pos].getOwner() == gamefields[pos-1].getOwner() ||  gamefields[pos].getOwner() == gamefields[(pos+1)%24].getOwner())
+        if (gamefields[pos].getOwner() == gamefields[pos-1].getOwner() ||  gamefields[pos].getOwner() == gamefields[(pos+1)%40].getOwner())
         {
             return 2;
         }
