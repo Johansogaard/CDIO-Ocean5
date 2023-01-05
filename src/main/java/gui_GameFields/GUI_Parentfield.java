@@ -65,6 +65,7 @@ public abstract class GUI_Parentfield extends GUI_Field {
     }
         else if(player != getOwner())
         {
+            getGui().showMessage(player.getName()+"er landet på"+getTitle()+"hvilket ejes af"+getOwner().getName());
             getOwner().getKonto().update(+rent[0]);
             player.getKonto().update(-rent[0]);
 
