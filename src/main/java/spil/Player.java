@@ -149,30 +149,22 @@ public class Player {
 
     public void buyField(int cost, String title)
     {
-        if(owner == null) {
+        if(gamefields[pos].getOwner()==gamefields[pos-1].getOwner()) {
             if(gui.getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")){
-                if(getBalance >= cost){
-                    setOwner(Player);
+                if(konto.getBalance() >= cost){
+                    
                     gui.showMessage(pl.getName() + "har købt grunden");
 
-                    else{
-                        gui.showMessage("De har ikke moneter nok til at købe grunden chef");
-
-                    }
                 }
 
             }
 
 
         }
+        else{
+            gui.showMessage("De har ikke moneter nok til at købe grunden chef");
 
-        gui.getUserLeftButtonPressed()
-
-
-
-        gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
-        updatePlayerBalance(-cost);
-        konto.updateFieldValue(cost);
+        }
 
     }
     public void injail()
