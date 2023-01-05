@@ -1,7 +1,7 @@
 package spil;
 
 import card.Parent_Card;
-import card.RykFelterFrem_Card;
+import card.RykFelter_Card;
 import card.RykTilStart_Card;
 
 import javax.swing.*;
@@ -24,9 +24,13 @@ public class GameFeatures {
 
         ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
         ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
-        cardArray.add(new RykTilStart_Card());
-        cardArray.add(new RykFelterFrem_Card());
-        Random rand = new Random();
+        cardArray.add(new RykTilStart_Card(0));
+        cardArray.add(new RykTilStart_Card(0));
+
+        int[] spacesToMove = {3, -3,-3};
+        for (int space : spacesToMove) {
+            cardArray.add(new RykFelter_Card(space));
+        }        Random rand = new Random();
         while (true) {
             int random;
             if (cardArray.size()==1)
