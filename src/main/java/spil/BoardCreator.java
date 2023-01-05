@@ -60,8 +60,8 @@ public class BoardCreator {
             case "street":
             {
                 list.add(new GUI_Street(fieldColor(data[11]),Color.black,data[0],"Kr. "+ data[3],
-                        "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[4]),
-                        Integer.parseInt(data[5]),rentArr(data),data[11]));
+                        "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[3]),
+                        Integer.parseInt(data[4]),rentArr(data),data[11]));
             }
             break;
             case "start": {

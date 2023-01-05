@@ -4,7 +4,9 @@ import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import spil.GameFeatures;
 import spil.Player;
+import spil.inGameFunktions.LandOnStreet;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,8 +20,7 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     private int price = 0;
 
-
-
+    GameFeatures gameFeatures = new GameFeatures();
     private Player owner=null;
     private SwingComponentFactory factory;
 
@@ -42,11 +43,13 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
 
 
-        if (getOwner() ==null)
+        if (getOwner() ==null || player.getKonto().getBalance() >= price)
         {
-            setOwner(player);
-            player.buyField(price,getTitle());
-            setDescription(getDescription()+"\nOwner:"+getOwner().getName());
+            if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
+                setOwner(player);
+                player.buyField(price, getTitle());
+                setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+            }
         }
         else if(player != getOwner())
         {

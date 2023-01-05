@@ -162,30 +162,13 @@ try {
 } catch (InterruptedException i){};
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return players;
 
+    }
+public boolean makeYesNoButton(String msg)
+    {
+        boolean selection = GameController.getGui().getUserLeftButtonPressed(msg,"Yes","No");
+        return selection;
     }
 
 }
