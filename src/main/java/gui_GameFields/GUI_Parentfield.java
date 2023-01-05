@@ -11,6 +11,9 @@ import spil.inGameFunktions.LandOnStreet;
 import javax.swing.*;
 import java.awt.*;
 
+import static spil.GameController.getGui;
+
+
 public abstract class GUI_Parentfield extends GUI_Field {
     public static FieldText mt = FieldText.getInstance();
     private static final int TITLEHEIGHT = 47;
@@ -41,16 +44,18 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public void hit(Player player) {
 
-
-
-        if (getOwner() ==null && player.getKonto().getBalance() >= price)
+        if (getOwner() == null)
         {
-            if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
-                setOwner(player);
-                player.buyField(price, getTitle());
-                setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+            if(getGui().getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")) {
+
+            if(player.getKonto().getBalance() >= price){
+                    setOwner(player);
+                    player.buyField(price, getTitle());
+                    getGui().showMessage(player.getName()+"har købt"+getTitle());
+                    setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+                }
             }
-        }
+    }
         else if(player != getOwner())
         {
             getOwner().getKonto().update(price* player.checkDoubleCost());
@@ -98,4 +103,6 @@ public abstract class GUI_Parentfield extends GUI_Field {
         this.price = price;
     }
 
-}
+    public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
+        return getGui().getUserLeftButtonPressed(msg, trueButton, falseButton);
+}}

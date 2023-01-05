@@ -9,8 +9,5 @@
         <module name="CDIO-Ocean5" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CDIO-Ocean5" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
