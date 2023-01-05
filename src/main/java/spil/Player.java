@@ -152,7 +152,8 @@ public class Player {
         if(gamefields[pos].getOwner()==gamefields[pos-1].getOwner()) {
             if(gui.getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")){
                 if(konto.getBalance() >= cost){
-                    
+
+
                     gui.showMessage(pl.getName() + "har købt grunden");
 
                 }
