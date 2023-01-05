@@ -8,6 +8,7 @@ package gui_GameFields;
 import gui_GameFields.GUI_Parentfield;
 import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
+import gui_fields.GUI_Player;
 import gui_resources.Attrs;
 import java.awt.Color;
 import javax.swing.BorderFactory;

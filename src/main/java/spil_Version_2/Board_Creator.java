@@ -1,4 +1,4 @@
-package Spil_version_2;
+package spil_Version_2;
 
 import gui_GameFields.*;
 import gui_fields.GUI_Field;
@@ -9,20 +9,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.TreeMap;
 
 public class Board_Creator {
-
-    public class BoardCreator {
-
         public GUI_Field[] istantiererFelter() throws FileNotFoundException {
-            ArrayList<GUI_Field[]> fieldlist = new ArrayList<>();
+            ArrayList<GUI_Field> fieldlist = new ArrayList<>();
 
             String input;
             String file = "src/main/resources/fieldsdata.csv";
-            Map<String,String> map= new TreeMap<>();
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(file));
 
@@ -60,18 +54,23 @@ public class Board_Creator {
 
                 case "street":
                 {
-                    list.add(new GUI_Street(fieldColor(data[11]), Color.black,data[0],"Kr. "+ data[3],
-                            "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[3]),
-                            Integer.parseInt(data[4]),rentArr(data),data[11]));
+                    gui_fields.GUI_Street newStreet = new gui_fields.GUI_Street();
+                    newStreet.setTitle(data[0]);
+                    newStreet.setSubText("Kr. "+data[3]);
+                    newStreet.setDescription("Denne grund koster "+data[3]);
+                    newStreet.setRent(data[5]);
+                    newStreet.setBackGroundColor(fieldColor(data[11]));
+                    list.add(newStreet);
+
                 }
                 break;
                 case "start": {
-                    list.add(new GUI_Start());
+                    list.add(new gui_fields.GUI_Start());
                 }
                 break;
                 case "chance":
                 {
-                    list.add(new GUI_Chance());
+                    list.add(new gui_fields.GUI_Chance());
                 }
                 break;
                 case "jail":
@@ -113,7 +112,7 @@ public class Board_Creator {
 
             return list;
         }
-        private GUI_Field[] listToArray(ArrayList<GUI_Parentfield> list)
+        private GUI_Field[] listToArray(ArrayList<GUI_Field> list)
         {
 
             GUI_Field[] fields = new GUI_Field[list.size()];
@@ -187,4 +186,4 @@ public class Board_Creator {
         }
     }
 
-}
+
