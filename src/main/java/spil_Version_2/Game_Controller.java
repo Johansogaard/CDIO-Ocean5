@@ -3,8 +3,8 @@ package spil_Version_2;
 import gui_GameFields.GUI_Parentfield;
 import gui_fields.GUI_Field;
 import gui_main.GUI;
-import spil.GameFeatures;
-import spil.Player;
+
+
 
 import java.awt.*;
 import java.io.FileNotFoundException;
@@ -14,19 +14,19 @@ public class Game_Controller {
     public static Player vinder;
     private static GUI gui;
     public static void main(String[] args) throws FileNotFoundException {
-        //Player[] players = GameFeatures.playerstoadd();
-        Player[] players = new Player[1];
+        Player[] players = Game_Features.playerstoadd();
+
         Board_Creator b = new Board_Creator();
         // System.out.println(readTextFromFile(file,"jailMessage"));
         GUI_Field[] fields = b.istantiererFelter();
         gui = new GUI(fields, Color.cyan);
 
-      /*  for (int i = 0; i < players.length; i++) {
+       for (int i = 0; i < players.length; i++) {
             players[i].tilføjspillerGui(gui);
         }
-        playGame(players,fields,gui);*/
+        playGame(players,fields,gui);
     }
-    public static void playGame (Player[] players,GUI_Parentfield[] fields,GUI gui)
+    public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
 
         for (int i = 0; i < players.length; i=(i+1)%players.length) {

@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="laver en ny version af spillet denne version virker ikke">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Er igang med at lave brættet med den nye version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Konto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Terninger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Spil_version_2/Board_Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Spil_version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ownable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ownable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +78,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\resources" />
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="spil_Version_2" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Game_Controller">
@@ -222,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672920708860</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Er igang med at lave brættet med den nye version">
+      <created>1672957848329</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1672957848329</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +262,8 @@
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
-    <option name="LAST_COMMIT_MESSAGE" value="laver en ny version af spillet denne version virker ikke" />
+    <MESSAGE value="Er igang med at lave brættet med den nye version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Er igang med at lave brættet med den nye version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
