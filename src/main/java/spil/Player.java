@@ -149,11 +149,10 @@ public class Player {
 
     public void buyField(int cost, String title)
     {
-        if(gamefields[pos].getOwner()==gamefields[pos-1].getOwner()) {
+        if(gamefields[pos].getOwner() == null) {
             if(gui.getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")){
                 if(konto.getBalance() >= cost){
-
-
+                    gamefields[pos].setOwner(Player.this);
                     gui.showMessage(pl.getName() + "har købt grunden");
 
                 }
