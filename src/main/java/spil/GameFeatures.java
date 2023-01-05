@@ -170,5 +170,12 @@ public boolean makeYesNoButton(String msg)
         boolean selection = GameController.getGui().getUserLeftButtonPressed(msg,"Yes","No");
         return selection;
     }
+public void addRemoveButton()
 
+    {
+
+        JButton b = new JButton("Click Here");
+        String knapString = GameController.getGui().getUserSelection("Vælg en knap","knap1","knap2");
+
+    }
 }
