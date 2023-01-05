@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu kan man vælge om man vil købe en grund eller ej">
+      <change afterPath="$PROJECT_DIR$/src/main/java/card/Matador_Legat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/card/Straf_Eller_Gevinst.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDIO-Ocean5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CDIO-Ocean5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykFelter_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/card/RykFelter_Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykTilStart_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/card/RykTilStart_Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/GameFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/GameFeatures.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -109,6 +117,7 @@
       <updated>1672743172897</updated>
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
+      <workItem from="1672923061033" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
