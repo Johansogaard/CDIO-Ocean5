@@ -40,9 +40,6 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
 
     public void hit(Player player) {
-
-
-
         if (getOwner() ==null && player.getKonto().getBalance() >= price)
         {
             if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {

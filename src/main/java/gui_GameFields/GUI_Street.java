@@ -2,7 +2,7 @@ package gui_GameFields;
 
 import java.awt.*;
 
-public class GUI_Street extends GUI_Parentfield {
+public class GUI_Street extends GUI_Ownable {
     private int[] rent;
     String group;
     private int housePrice;

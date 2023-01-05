@@ -101,6 +101,7 @@ public class Player {
     {
         displayCard(pos,gui);
         gamefields[pos].hit(this);
+
     }
     public void checkIfPassedStart(int sumPos)
     {
