@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu kan man vælge om man vil købe en grund eller ej" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu kan man vælge om man vil købe en grund eller ej">
+      <change beforePath="$PROJECT_DIR$/CDIO-Ocean5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CDIO-Ocean5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
