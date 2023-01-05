@@ -5,12 +5,12 @@ import java.awt.*;
 public class GUI_Street extends GUI_Parentfield {
     private int[] rent;
     String group;
-    private int price, housePrice;
+    private int housePrice;
 
     public GUI_Street(Color bgColor, Color fgColor, String title, String subText, String description,int price, int housePrice, int[] rent,String group) {
         super(bgColor, fgColor, title, subText, description);
         this.rent = rent;
-        this.price = price;
+        setPrice(price);
         this.housePrice = housePrice;
         this.group = group;
 

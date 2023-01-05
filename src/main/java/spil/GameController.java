@@ -8,11 +8,9 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 
 public class GameController {
-    final static String file = "src/main/resources/GameText.txt";
-    public static FieldText mt = FieldText.getInstance();
     public static int max=-100;
     public static Player vinder;
-    public static Boolean hasWon = false;
+
     public static void main(String[] args) throws FileNotFoundException {
         Player[] players = GameFeatures.playerstoadd();
         BoardCreator b = new BoardCreator();

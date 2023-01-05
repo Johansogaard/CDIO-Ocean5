@@ -13,7 +13,11 @@ public abstract class GUI_Parentfield extends GUI_Field {
     public static FieldText mt = FieldText.getInstance();
     private static final int TITLEHEIGHT = 47;
     private static final int SUBTEXTHEIGHT = 14;
-   private int price = 0;
+
+
+
+    private int price = 0;
+
 
 
     private Player owner=null;
@@ -36,18 +40,18 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public void hit(Player player) {
 
-        int cost =price;
+
 
         if (getOwner() ==null)
         {
             setOwner(player);
-            player.buyField(cost,getTitle());
+            player.buyField(price,getTitle());
             setDescription(getDescription()+"\nOwner:"+getOwner().getName());
         }
         else if(player != getOwner())
         {
-            getOwner().getKonto().update(cost* player.checkDoubleCost());
-            player.getKonto().update(-cost*player.checkDoubleCost());
+            getOwner().getKonto().update(price* player.checkDoubleCost());
+            player.getKonto().update(-price*player.checkDoubleCost());
             player.payRent(player.getKonto().getBalance(),owner,getTitle());
             getOwner().getRent(getOwner().getKonto().getBalance());
 
@@ -86,6 +90,9 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public void setOwner(Player owner) {
         this.owner = owner;
+    }
+    public void setPrice(int price) {
+        this.price = price;
     }
 
 }
