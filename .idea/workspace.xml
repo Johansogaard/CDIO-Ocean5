@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6ddea1a-5128-4401-9a7a-baf77444a831" name="Changes" comment="tror det virker">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="d6ddea1a-5128-4401-9a7a-baf77444a831" name="Changes" comment="tror det virker" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,7 +224,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="color" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -270,7 +267,8 @@
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="tror det virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="tror det virker" />
+    <MESSAGE value="checkOwnerOwnsAll" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkOwnerOwnsAll" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,24 +277,6 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="8" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/spil/Player.java</url>
-          <line>191</line>
-          <properties class="spil.Player" method="checkOwnerOwnAll">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/spil/Player.java</url>
-          <line>202</line>
-          <properties class="spil.Player" method="checkDoubleCost">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
