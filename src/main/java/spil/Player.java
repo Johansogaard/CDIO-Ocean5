@@ -116,6 +116,12 @@ public class Player {
         t2 = terninger.slaEnTerning();
 
     }
+
+    public int turm(){
+        int i = t1 + t2;
+        return i;
+
+    }
     public void setCar(int tsum,GUI gui)
     {
         fpos.setCar(pl,false);

@@ -45,8 +45,18 @@ public class GUI_Brewery extends GUI_Parentfield{
         else if(player != getOwner())
         {
             if(this instanceof GUI_Brewery){
-                if(gamefields[12].getOwner() = )
+                if(gamefields[12].getOwner() == player){
+                    player.payRant((100*spil.Player.),getOwner(),getTitle());
+                    getOwner().getRent(100*spil.Player.(t1+t2),getOwner(),getTitle());
 
+                }
+                if(gamefields[22].getOwner() == player){
+                    player.payRant((100*spil.Player.turn(t1+t2));
+                    getOwner().getRent(100*spil.Player.turn(t1+t2));
+                }
+            else ()
+                player.payRant();
+            }
 
             getGui().showMessage(player.getName()+"er landet på"+getTitle()+"hvilket ejes af"+getOwner().getName());
             getGui().getUserButtonPressed(player.getName()+"skal derfor betale" + rent[0], "okay");
@@ -58,4 +68,6 @@ public class GUI_Brewery extends GUI_Parentfield{
     }
 
     }
+
+
 }

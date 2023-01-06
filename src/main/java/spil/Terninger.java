@@ -3,6 +3,7 @@ package spil;
 import java.util.Random;
 
 public class Terninger {
+
     public Terninger()
     {
 
@@ -20,4 +21,6 @@ public class Terninger {
       t=slaEnTerning()+slaEnTerning();
         return t;
     }
+
+
 }
