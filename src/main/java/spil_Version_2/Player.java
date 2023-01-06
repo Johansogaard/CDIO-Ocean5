@@ -36,6 +36,7 @@ public class Player {
     private int t2=0;
     private String name;
     GUI_Field gamefields[];
+    LandOnField landOnField;
     public Player(String name, int bal, int postiotion)
     {
         konto.update(bal);
@@ -83,7 +84,7 @@ public class Player {
                 pos=(pos+t1 +t2)%40;
                 gui.setDice(t1, t2);
                 setCar(pos, gui);
-                hitField();
+                landOnField.hitField();
 
             }
 
@@ -100,10 +101,11 @@ public class Player {
     }
     public void hitField()
     {
-        displayCard(pos,gui);
-        gamefields[pos].hit(this);
+        displayCard();
+       // gamefields[pos].hit(this);
 
     }
+
     public void checkIfPassedStart(int sumPos)
     {
         if (sumPos>=24)
@@ -125,20 +127,20 @@ public class Player {
         felt.setCar(pl,true);
         fpos = gui.getFields()[tsum];
     }
-    public void displayCard(int pos, GUI gui)
+    public void displayCard()
     {
         GUI_Field f = gui.getFields()[pos];
         gui.displayChanceCard(f.getTitle()+"\n"+ f.getDescription());
     }
 
     public void payRent(int cost, Player owner, String title) {
-        if (checkDoubleCost() == 1) {
+      /*  if (checkDoubleCost() == 1) {
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
         } else {
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay double rent to " + owner.getName()+" because he owns 2 field with this color", "Okay");
         }
 
-        pl.setBalance(cost);
+        pl.setBalance(cost);*/
     }
 
 
@@ -178,6 +180,7 @@ public class Player {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
+    /*
     public int checkDoubleCost()
     {
 
@@ -189,6 +192,8 @@ public class Player {
         else return 1;
 
     }
+
+     */
 
 
 }
