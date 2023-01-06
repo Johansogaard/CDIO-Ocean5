@@ -117,11 +117,6 @@ public class Player {
 
     }
 
-    public int turm(){
-        int i = t1 + t2;
-        return i;
-
-    }
     public void setCar(int tsum,GUI gui)
     {
         fpos.setCar(pl,false);
@@ -199,6 +194,13 @@ public class Player {
 public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
         return gui.getUserLeftButtonPressed(msg, trueButton, falseButton);
 }
+    public int sum(){
+        t1 = spil.Terninger.slaEnTerning();
+        t2 = spil.Terninger.slaEnTerning();
+        int i = t1 + t2;
+        return i;
+
+    }
 
 
 }
