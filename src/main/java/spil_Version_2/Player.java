@@ -84,7 +84,7 @@ public class Player {
                 pos=(pos+t1 +t2)%40;
                 gui.setDice(t1, t2);
                 setCar(pos, gui);
-                landOnField.hitField();
+                landOnField.hitField(this,gamefields);
 
             }
 

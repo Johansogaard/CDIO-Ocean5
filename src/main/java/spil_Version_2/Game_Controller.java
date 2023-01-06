@@ -13,12 +13,15 @@ public class Game_Controller {
     public static int max=-100;
     public static Player vinder;
     private static GUI gui;
+
+
+    private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
         Player[] players = Game_Features.playerstoadd();
 
         Board_Creator b = new Board_Creator();
         // System.out.println(readTextFromFile(file,"jailMessage"));
-        GUI_Field[] fields = b.istantiererFelter();
+        fields = b.istantiererFelter();
         gui = new GUI(fields, Color.cyan);
 
        for (int i = 0; i < players.length; i++) {
@@ -64,5 +67,7 @@ public class Game_Controller {
     public static GUI getGui() {
         return gui;
     }
-
+    public static GUI_Field[] getFields() {
+        return fields;
+    }
 }
