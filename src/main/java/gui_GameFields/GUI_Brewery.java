@@ -1,6 +1,7 @@
 package gui_GameFields;
 
 import gui_fields.GUI_Field;
+import spil.GameController;
 import spil.Konto;
 import spil.Player;
 
@@ -16,7 +17,7 @@ public class GUI_Brewery extends GUI_Parentfield{
     private int t2 = 0;
 
     GUI_Parentfield[] gamefields;
-
+    GameController gameController;
     Player player;
     int[] rent;
 
@@ -24,7 +25,7 @@ public class GUI_Brewery extends GUI_Parentfield{
         super(Color.red, Color.black, title, subText, description);
         this.price = price;
         this.rent = rent;
-
+        gamefields = gameController.getFields();
 
 
 
