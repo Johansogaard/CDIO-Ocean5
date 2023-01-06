@@ -24,4 +24,7 @@ public class Konto {
     public int getBalance(){
         return b;
     }
+
+
+
 }

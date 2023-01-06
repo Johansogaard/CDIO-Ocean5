@@ -139,11 +139,15 @@ public class Player {
         pl.setBalance(cost);
     }
 
+    public void payRant(int rent, Player owner, String title) {
+        pl.setBalance(konto.getBalance()-rent);
+    }
 
 
-    public void getRent(int cost)
+
+    public void getRent(int rent)
     {
-        pl.setBalance(cost);
+        pl.setBalance(konto.getBalance()+rent);
     }
 
 

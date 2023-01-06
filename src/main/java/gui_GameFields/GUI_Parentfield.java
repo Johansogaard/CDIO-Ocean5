@@ -66,9 +66,9 @@ public abstract class GUI_Parentfield extends GUI_Field {
         else if(player != getOwner())
         {
             getGui().showMessage(player.getName()+"er landet på"+getTitle()+"hvilket ejes af"+getOwner().getName());
-            getGui().getUserButtonPressed(player.getName()+"skal derfor betale" + rent[1], "okay");
-            getOwner().getKonto().update(+rent[0]);
-            player.getKonto().update(-rent[0]);
+            getGui().getUserButtonPressed(player.getName()+"skal derfor betale" + rent[0], "okay");
+            player.payRant(rent[0], getOwner(), getTitle());
+            getOwner().getRent(rent[0]);
 
         }
 
@@ -111,4 +111,9 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
         return getGui().getUserLeftButtonPressed(msg, trueButton, falseButton);
-}}
+}
+
+
+
+
+}
