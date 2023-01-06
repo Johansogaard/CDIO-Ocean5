@@ -164,6 +164,7 @@ public class Player {
     {
         updatePlayerBalance(-price);
         konto.updateFieldValue(price);
+        addGrunde(title);
     }
     public void injail()
     {
@@ -193,6 +194,7 @@ public class Player {
     public int checkDoubleCost()
     {
  GUI_Parentfield field = gamefields[getPos()];
+
  GUI_Street street = (GUI_Street) field;
 
         if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
