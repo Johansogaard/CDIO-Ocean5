@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu fungerer det at betale for grunde, hvis man lander på dem" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu fungerer det at betale for grunde, hvis man lander på dem">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Buyfelt_branch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,6 +93,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />

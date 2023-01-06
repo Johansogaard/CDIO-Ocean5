@@ -22,11 +22,7 @@ public abstract class GUI_Parentfield extends GUI_Field {
     public void setRent(int[] rent) {
         this.rent = rent;
     }
-
-
-
     int[] rent;
-
 
     private int price = 0;
 
@@ -45,9 +41,6 @@ public abstract class GUI_Parentfield extends GUI_Field {
         this.layered.add(this.subTextLabel, this.factory.createGridBagConstraints(0, 1));
 
     }
-
-
-
 
     public void hit(Player player) {
 

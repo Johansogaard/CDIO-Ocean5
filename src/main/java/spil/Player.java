@@ -156,6 +156,8 @@ public class Player {
         updatePlayerBalance(-price);
         konto.updateFieldValue(price);
     }
+
+
     public void injail()
     {
        movePlayer(11);
