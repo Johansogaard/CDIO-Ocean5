@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Har ændret lidt på display når man betaler for leje">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Konto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Konto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu fungerer det at betale for grunde, hvis man lander på dem" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672930137672</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
+      <created>1673001111258</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673001111259</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +239,8 @@
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="Har ændret lidt på display når man betaler for leje" />
-    <option name="LAST_COMMIT_MESSAGE" value="Har ændret lidt på display når man betaler for leje" />
+    <MESSAGE value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
