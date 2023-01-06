@@ -1,10 +1,12 @@
 package spil;
 
 import gui_GameFields.GUI_Parentfield;
+import gui_GameFields.GUI_Street;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Player {
     public int getPos() {
         return pos;
@@ -20,6 +22,17 @@ public class Player {
     GUI_Player pl;
     GUI_Field fpos;
     GUI gui;
+
+    ArrayList<String> grunde = new ArrayList<String>();
+    public void addGrunde(String grund) {
+        this.grunde.add(grund);
+    }
+
+    public ArrayList<String> getGrunde() {
+        return grunde;
+
+    }
+
 
 
 
@@ -174,10 +187,15 @@ public class Player {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
+
+    // Chekker om udlejeren har alle grunde fra samme sæt og kan derfor kræve dobbelt leje
+    // man skal lave den om så det kun er ubebyggede grunde
     public int checkDoubleCost()
     {
+ GUI_Parentfield field = gamefields[getPos()];
+ GUI_Street street = (GUI_Street) field;
 
-        if (gamefields[pos].getOwner() == gamefields[pos-1].getOwner() ||  gamefields[pos].getOwner() == gamefields[(pos+1)%40].getOwner())
+        if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
         {
             return 2;
         }

@@ -59,7 +59,7 @@ public class BoardCreator {
 
             case "street":
             {
-                list.add(new GUI_Street(fieldColor(data[11]),Color.black,data[0],"Kr. "+ data[3],
+                list.add(new GUI_Street(fieldColor(data[11], data[0]),Color.black,data[0],"Kr. "+ data[3],
                         "Denne grund koster " + data[3] + " Kr",Integer.parseInt(data[3]),
                         Integer.parseInt(data[4]),rentArr(data),data[11]));
             }
@@ -122,7 +122,18 @@ return list;
      }
      return fields;
  }
-private Color fieldColor(String color)
+
+    static ArrayList<String> blue= new ArrayList<String>();
+    static ArrayList<String> red = new ArrayList<String>();
+    static ArrayList<String> green = new ArrayList<String>();
+    static ArrayList<String> orange = new ArrayList<String>();
+    static ArrayList<String> grey = new ArrayList<String>();
+    static ArrayList<String> white = new ArrayList<String>();
+    ArrayList<String> yellow = new ArrayList<String>();
+    static ArrayList<String> purple = new ArrayList<String>();
+
+
+private Color fieldColor(String color,String title)
 {
     Color c = Color.black;
     switch (color)
@@ -130,41 +141,52 @@ private Color fieldColor(String color)
         case "blue":
         {
           c= Color.blue;
+            blue.add(title);
+
         }
         break;
         case "orange":
         {
          c= Color.orange;
+            orange.add(title);
+
         }
         break;
         case "green":
         {
         c= Color.green;
+            green.add(title);
         }
         break;
         case "grey":
         {
          c= Color.gray;
+            grey.add(title);
         }
         break;
         case "red":
         {
            c= Color.red;
+            red.add(title);
         }
         break;
         case "white":
         {
           c= Color.white;
+            white.add(title);
         }
         break;
         case "yellow":
         {
           c= Color.yellow;
+            yellow.add(title);
         }
         break;
         case "purple":
         {
            c= new Color(102,0,100);
+            purple.add(title);
+
         }
         break;
         default:
@@ -175,7 +197,53 @@ private Color fieldColor(String color)
     }
     return c;
 }
-private int[] rentArr(String[] data)
+
+public static ArrayList<String> getColorArray(String color) {
+
+
+    ArrayList<String> colorarray = null;
+    switch (color) {
+        case "blue": {
+            colorarray = blue;
+        }
+        break;
+
+        case "red": {
+            colorarray = red;
+        }
+        break;
+        case "orange": {
+            colorarray = orange;
+        }
+        break;
+        case "grey": {
+            colorarray = grey;
+        }
+        break;
+        case "white": {
+            colorarray = white;
+        }
+        break;
+        case "green": {
+            colorarray = green;
+        }
+        break;
+        case "purple": {
+            colorarray = purple;
+        }
+
+
+        break;
+
+    }
+
+    return colorarray;
+}
+
+
+
+
+    private int[] rentArr(String[] data)
 {
     int[] rent = new int[6];
     for (int i = 5;i<11;i++)
