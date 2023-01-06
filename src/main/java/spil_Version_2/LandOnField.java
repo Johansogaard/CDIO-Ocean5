@@ -2,24 +2,20 @@ package spil_Version_2;
 
 import gui_GameFields.GUI_Ferry;
 import gui_fields.*;
-import spil.GameController;
+
 
 public class LandOnField {
+
 
     public void hitField(Player player, GUI_Field[] fields)
     {
         player.displayCard();
-        if (GUI_Street.class.equals(fields[player.getPos()].getClass())) {
-            hitStreet(player, fields);
+        if (GUI_Street.class.equals(fields[player.getPos()].getClass()) ||
+                GUI_Brewery.class.equals(fields[player.getPos()].getClass()) ||
+                GUI_Shipping.class.equals(fields[player.getPos()].getClass())) {
+            hitOwnable(player, fields);
         }
-        else if (GUI_Brewery.class.equals(fields[player.getPos()].getClass()))
-        {
-            hitBrewery(player, fields);
-        }
-        else if (GUI_Shipping.class.equals(fields[player.getPos()].getClass()))
-        {
-            hitFerry(player, fields);
-        } else if (GUI_Jail.class.equals(fields[player.getPos()].getClass())) {
+         else if (GUI_Jail.class.equals(fields[player.getPos()].getClass())) {
             hitJail(player, fields);
         }
         else if (GUI_Chance.class.equals(fields[player.getPos()].getClass()))
@@ -32,26 +28,53 @@ public class LandOnField {
         }
 
     }
-    private void hitStreet(Player player, GUI_Field[] fields){
-        GUI_Field field = GameController.getGui().getFields()[player.getPos()];
-        GUI_Street street = (GUI_Street) field;
-        if (fields[player.getPos()].get)
+    private  void hitOwnable(Player player, GUI_Field[] fields)
+    {
+        GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
+        GUI_Ownable ownable = (GUI_Ownable) field;
+        if (ownable.getOwnerName() == null && player.getKonto().getBalance() >=0)
         {
-            if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
-                setOwner(player);
-                player.buyField(price, getTitle());
-                setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+            if(Game_Features.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
+                ownable.setOwnerName(player.getName());
+                ownable.setOwnableLabel("Ejet af "+player.getName());
+                player.buyField(Integer.parseInt(ownable.getDescription().replaceAll("[^0-9]", "")), ownable.getTitle());
             }
         }
-        else if(player != getOwner())
-        {
-            getOwner().getKonto().update(price* player.checkDoubleCost());
-            player.getKonto().update(-price*player.checkDoubleCost());
-            player.payRent(player.getKonto().getBalance(),owner,getTitle());
-            getOwner().getRent(getOwner().getKonto().getBalance());
+        else if (player.getName() != ownable.getOwnerName())
+    {
+        Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
+        int rent = Integer.parseInt(ownable.getRent());
+        owner.getKonto().update(rent); //Her skal der tilføjes når vi får omkostninger hvis man ejer flere grunde
+        player.getKonto().update(-rent);
+        player.payRent(player.getKonto().getBalance(),owner,ownable.getTitle());
+        owner.getRent(owner.getKonto().getBalance());
 
+    }
+    }
+    private void hitStreet(Player player, GUI_Field[] fields){
+        GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
+        GUI_Street street = (GUI_Street) field;
+        if (street.getOwnerName() == null && player.getKonto().getBalance() >=0)
+        {
+
+            if(Game_Features.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
+                street.setOwnerName(player.getName());
+                street.setOwnableLabel("Ejet af "+ player.getName());
+                player.buyField(Integer.parseInt(street.getDescription()), street.getTitle());
+                //setDescription(getDescription() + "\nOwner:" + getOwner().getName());
+            }
+        }
+        else if (player.getName() != street.getOwnerName())
+        {
+            Player owner = Game_Controller.getPlayer(street.getOwnerName());
+            int rent = Integer.parseInt(street.getRent());
+            owner.getKonto().update(rent); //Her skal der tilføjes når vi får omkostninger hvis man ejer flere grunde
+            player.getKonto().update(-rent);
+            player.payRent(player.getKonto().getBalance(),owner,street.getTitle());
+            owner.getRent(owner.getKonto().getBalance());
 
         }
+
 
 
     }

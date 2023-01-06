@@ -13,11 +13,11 @@ public class Game_Controller {
     public static int max=-100;
     public static Player vinder;
     private static GUI gui;
-
+    private static Player[] players;
 
     private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
-        Player[] players = Game_Features.playerstoadd();
+        players = Game_Features.playerstoadd();
 
         Board_Creator b = new Board_Creator();
         // System.out.println(readTextFromFile(file,"jailMessage"));
@@ -69,5 +69,16 @@ public class Game_Controller {
     }
     public static GUI_Field[] getFields() {
         return fields;
+    }
+    public static Player getPlayer(String playerName)
+    {
+        Player thePlayer = new Player("GetPlayerDosentWork",0,0);
+        for(int i = 0;i<players.length;i++) {
+            if (playerName == players[i].getName())
+            {
+                thePlayer = players[i];
+            }
+        }
+        return thePlayer;
     }
 }

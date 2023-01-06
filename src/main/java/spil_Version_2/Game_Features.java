@@ -168,7 +168,7 @@ public class Game_Features {
             return players;
 
         }
-        public boolean makeYesNoButton(String msg)
+        public static boolean makeYesNoButton(String msg)
         {
             boolean selection = GameController.getGui().getUserLeftButtonPressed(msg,"Yes","No");
             return selection;

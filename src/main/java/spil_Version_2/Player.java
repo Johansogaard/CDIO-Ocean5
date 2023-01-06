@@ -134,13 +134,13 @@ public class Player {
     }
 
     public void payRent(int cost, Player owner, String title) {
-      /*  if (checkDoubleCost() == 1) {
+      /* if (checkDoubleCost() == 1) {
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
-        } else {
+        } else {*/
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay double rent to " + owner.getName()+" because he owns 2 field with this color", "Okay");
-        }
 
-        pl.setBalance(cost);*/
+
+        pl.setBalance(cost);
     }
 
 
