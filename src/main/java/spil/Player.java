@@ -188,15 +188,31 @@ public class Player {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
+
+    //chekker om nuværende spiller ejer alle grunde i et sæt med en bestemt farve
+    public boolean checkIOwnAll(String color){
+
+       if(getGrunde().contains(BoardCreator.getColorArray(color)))
+       {
+           return true;
+       }
+
+       else return false;
+
+    }
+
+
 //chekker om owneren har alle grunde i et sæt
    public boolean checkOwnerOwnAll(){
-        GUI_Parentfield field = gamefields[getPos()];
+    GUI_Parentfield field = gamefields[getPos()];
        GUI_Street street = (GUI_Street) field;
        if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
        {
            return true;
        }
+
        else return false;
+
     }
     public int checkDoubleCost()
     {
