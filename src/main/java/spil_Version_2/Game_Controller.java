@@ -10,6 +10,9 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 
 public class Game_Controller {
+
+
+    public static Color[] carColors = {Color.blue,Color.green,Color.red,Color.yellow,Color.MAGENTA,Color.BLACK};
     public static int max=-100;
     public static Player vinder;
     private static GUI gui;
@@ -25,9 +28,11 @@ public class Game_Controller {
         gui = new GUI(fields, Color.cyan);
 
        for (int i = 0; i < players.length; i++) {
-            players[i].tilføjspillerGui(gui);
+
+            players[i].tilføjspillerGui(gui,getCarColors()[i]);
         }
         playGame(players,fields,gui);
+
     }
     public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
@@ -80,5 +85,8 @@ public class Game_Controller {
             }
         }
         return thePlayer;
+    }
+    public static Color[] getCarColors() {
+        return carColors;
     }
 }

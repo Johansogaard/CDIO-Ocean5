@@ -1,10 +1,13 @@
 package spil_Version_2;
 
 
+import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 import spil_Version_2.LandOnField;
+
+import java.awt.*;
 
 
 public class Player {
@@ -25,16 +28,17 @@ public class Player {
     LandOnField landOnField =new LandOnField();
 
 
-    private boolean jail= false;
-    public boolean isJail() {
-        return jail;
-    }
 
-    public void setJail(boolean jail) {
-        this.jail = jail;
-    }
+    GUI_Car car;
+
+
+    private boolean jail= false;
+
+
+
     private int t1=0;
     private int t2=0;
+    private int jailCounter=0;
     private String name;
     GUI_Field gamefields[];
 
@@ -47,9 +51,13 @@ public class Player {
 
     }
     //Getter
-    public void tilføjspillerGui(GUI gui)
+    public void tilføjspillerGui(GUI gui,Color carCorlor)
     {
-        GUI_Player player = new GUI_Player(name,konto.getBalance());
+        car = new GUI_Car();
+        car.setPrimaryColor(carCorlor);
+
+        GUI_Player player = new GUI_Player(name,konto.getBalance(),car);
+
         gui.addPlayer(player);
         GUI_Field field = gui.getFields()[pos];
         field.setCar(player,true);
@@ -71,9 +79,10 @@ public class Player {
     {
         gamefields = fields;
 
-            if (isJail())
+            if (jail)
             {
-                setJail(false);
+                inJail();
+               jail=false;
                 gui.getUserButtonPressed(name + " du er i fængsel og betaler 1M for at komme ud i næste runde", "Okay");
                 updatePlayerBalance(-1);
 
@@ -98,6 +107,20 @@ public class Player {
 
 
 
+
+    }
+    private void inJail()
+    {
+        if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
+        {
+            updatePlayerBalance(-1000);
+            jail = false;
+            spil(this.gui,this.gamefields);
+        }
+        else
+        {
+
+        }
 
     }
     public void hitField()
@@ -159,11 +182,11 @@ public class Player {
         konto.updateFieldValue(cost);
 
     }
-    public void injail()
+    public void goToJail()
     {
-       movePlayer(11);
-        setJail(true);
-        gui.getUserButtonPressed(name + " du er i fængsel og bliver sprunget over i næste runde", "Okay");
+       movePlayer(10);
+        jail=true;
+        gui.getUserButtonPressed(name + " du er røget i fængsel får dårlig opførelse", "Okay");
     }
     public void movePlayer(int number)
     {
@@ -196,6 +219,8 @@ public class Player {
 
      */
 
-
+    public GUI_Car getCar() {
+        return car;
+    }
 }
 

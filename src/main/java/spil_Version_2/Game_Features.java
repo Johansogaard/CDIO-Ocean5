@@ -54,6 +54,7 @@ public class Game_Features {
                 plA3[0] = new Player("Spiller 1", 30000, 0);
                 plA3[1] = new Player("Spiller 2", 30000, 0);
                 plA3[2] = new Player("Spiller 3", 30000, 0);
+
                 return plA3;
             } else if (pl == 4) {
                 Player[] plA4 = new Player[4];

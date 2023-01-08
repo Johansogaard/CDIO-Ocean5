@@ -27,7 +27,7 @@ public class LandOnField {
         {
             hitChance(player, fields);
         } else if (GUI_Tax.class.equals(fields[player.getPos()].getClass())) {
-
+            hitTax(player);
         } else  {
 
         }
@@ -41,6 +41,7 @@ public class LandOnField {
         {
             if(Game_Features.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
                 ownable.setOwnerName(player.getName());
+                ownable.setBorder(player.getCar().getPrimaryColor());
                 ownable.setOwnableLabel("Ejet af "+player.getName());
                 player.buyField(Integer.parseInt(ownable.getDescription().replaceAll("[^0-9]", "")), ownable.getTitle());
             }
@@ -57,30 +58,6 @@ public class LandOnField {
     }
     }
     private void hitStreet(Player player, GUI_Field[] fields){
-        GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
-        GUI_Street street = (GUI_Street) field;
-        if (street.getOwnerName() == null && player.getKonto().getBalance() >=0)
-        {
-
-            if(Game_Features.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
-                street.setOwnerName(player.getName());
-                street.setOwnableLabel("Ejet af "+ player.getName());
-                player.buyField(Integer.parseInt(street.getDescription()), street.getTitle());
-                //setDescription(getDescription() + "\nOwner:" + getOwner().getName());
-            }
-        }
-        else if (player.getName() != street.getOwnerName())
-        {
-            Player owner = Game_Controller.getPlayer(street.getOwnerName());
-            int rent = Integer.parseInt(street.getRent());
-            owner.getKonto().update(rent); //Her skal der tilføjes når vi får omkostninger hvis man ejer flere grunde
-            player.getKonto().update(-rent);
-            player.payRent(player.getKonto().getBalance(),owner,street.getTitle());
-            owner.getRent(owner.getKonto().getBalance());
-
-        }
-
-
 
     }
     private void hitFerry(Player player, GUI_Field[] fields){
@@ -90,7 +67,14 @@ public class LandOnField {
 
     }
     private void hitJail(Player player, GUI_Field[] fields){
-
+        if(player.getPos() == 30)
+        {
+            player.goToJail();
+        }
+        else
+        {
+            Game_Controller.getGui().getUserButtonPressed(player.getName() + " du er på besøg i fængsel", "Okay");
+        }
     }
     private void hitChance(Player player, GUI_Field[] fields){
         int card =0;
@@ -102,8 +86,24 @@ public class LandOnField {
             card=0;
         }
     }
-    private void hitTax(){
+    private void hitTax(Player player){
+        if(player.getPos() == 4)
+        {
+            if(Game_Controller.getGui().getUserLeftButtonPressed(player.getName()+" Du skal betale indkomstskat på 4000 Kr. eller 10 % af alt hvad du ejer", "4000 kr","10 procent"))
+            {
+                player.updatePlayerBalance(-4000);
+            }
+            else
+            {
+                //her skal vi tage 10% af en spillers værdi i felter og penge og han skal betale det
+            }
 
+        }
+        else
+        {
+            Game_Controller.getGui().getUserSelection(player.getName() + " Du skal betale ekstraordinær statsskat på 2000 kr.");
+            player.updatePlayerBalance(-2000);
+        }
     }
 }
 
