@@ -193,6 +193,7 @@ public class Player {
    public boolean checkOwnerOwnAll(){
         GUI_Parentfield field = gamefields[getPos()];
        GUI_Street street = (GUI_Street) field;
+
        if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
        {
            return true;
