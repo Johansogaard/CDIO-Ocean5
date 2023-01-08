@@ -16,5 +16,9 @@ public class GUI_Street extends GUI_Ownable {
 
     }
 
+    public String getColor(){
+        return group;
+    }
 
 }
+
