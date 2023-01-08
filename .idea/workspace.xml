@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6ddea1a-5128-4401-9a7a-baf77444a831" name="Changes" comment="tror det virker">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="arbejder på brewery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil/BoardCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/BoardCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Buyfelt_branch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +96,8 @@
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.GameController" />
       </list>
     </recent_temporary>
   </component>
@@ -108,6 +112,7 @@
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1672928531202" duration="319000" />
+      <workItem from="1673010441417" duration="3271000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -200,14 +205,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672928835305</updated>
     </task>
-    <task id="LOCAL-00014" summary="tror det virker">
-      <created>1673035012230</created>
+    <task id="LOCAL-00014" summary="Har ændret lidt på display når man betaler for leje">
+      <created>1672930137672</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1673035012230</updated>
+      <updated>1672930137672</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
+      <created>1673001111258</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673001111259</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
+      <created>1673005832471</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673005832471</updated>
+    </task>
+    <task id="LOCAL-00017" summary="arbejder på brewery">
+      <created>1673010386685</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673010386685</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,8 +260,10 @@
     <MESSAGE value="alle felter er indført" />
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
-    <MESSAGE value="tror det virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="tror det virker" />
+    <MESSAGE value="Har ændret lidt på display når man betaler for leje" />
+    <MESSAGE value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
+    <MESSAGE value="arbejder på brewery" />
+    <option name="LAST_COMMIT_MESSAGE" value="arbejder på brewery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -246,19 +274,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="gui_GameFields.GUI_Street" memberName="owner" />
-        <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
-      </pinned-members>
-    </pin-to-top-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
-    </SUITE>
   </component>
 </project>

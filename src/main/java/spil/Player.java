@@ -129,6 +129,7 @@ public class Player {
         t2 = terninger.slaEnTerning();
 
     }
+
     public void setCar(int tsum,GUI gui)
     {
         fpos.setCar(pl,false);
@@ -152,11 +153,15 @@ public class Player {
         pl.setBalance(cost);
     }
 
+    public void payRant(int rent, Player owner, String title) {
+        pl.setBalance(konto.getBalance()-rent);
+    }
 
 
-    public void getRent(int cost)
+
+    public void getRent(int rent)
     {
-        pl.setBalance(cost);
+        pl.setBalance(konto.getBalance()+rent);
     }
 
 
@@ -166,6 +171,8 @@ public class Player {
         konto.updateFieldValue(price);
         addGrunde(title);
     }
+
+
     public void injail()
     {
        movePlayer(11);
@@ -207,6 +214,13 @@ public class Player {
 public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
         return gui.getUserLeftButtonPressed(msg, trueButton, falseButton);
 }
+    public int sum(){
+        t1 = spil.Terninger.slaEnTerning();
+        t2 = spil.Terninger.slaEnTerning();
+        int i = t1 + t2;
+        return i;
+
+    }
 
 
 }

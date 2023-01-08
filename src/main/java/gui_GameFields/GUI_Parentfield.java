@@ -58,17 +58,17 @@ public abstract class GUI_Parentfield extends GUI_Field {
             if(player.getKonto().getBalance() >= price){
                     setOwner(player);
                     player.buyField(price, getTitle());
-                    getGui().showMessage(player.getName()+" har købt "+getTitle());
+                    getGui().showMessage(player.getName()+"har købt"+getTitle());
                     setDescription(getDescription() + "\nOwner:" + getOwner().getName());
                 }
             }
     }
         else if(player != getOwner())
         {
-            getGui().showMessage(player.getName()+" er landet på "+getTitle()+" hvilket ejes af "+getOwner().getName());
-            getGui().getUserButtonPressed("Du skal derfor betale " + rent[0]*player.checkDoubleCost(), " okay");
-            getOwner().getKonto().update(+rent[0]);
-            player.getKonto().update(-rent[0]);
+            getGui().showMessage(player.getName()+"er landet på"+getTitle()+"hvilket ejes af"+getOwner().getName());
+            getGui().getUserButtonPressed(player.getName()+"skal derfor betale" + rent[0], "okay");
+            player.payRant(rent[0], getOwner(), getTitle());
+            getOwner().getRent(rent[0]);
 
         }
 

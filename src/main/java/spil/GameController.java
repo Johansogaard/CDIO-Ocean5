@@ -11,11 +11,12 @@ public class GameController {
     public static int max=-100;
     public static Player vinder;
     private static GUI gui;
+    private static GUI_Parentfield[] fields;
     public static void main(String[] args) throws FileNotFoundException {
         Player[] players = GameFeatures.playerstoadd();
         BoardCreator b = new BoardCreator();
            // System.out.println(readTextFromFile(file,"jailMessage"));
-            GUI_Parentfield[] fields = b.istantiererFelter();
+            fields = b.istantiererFelter();
            gui = new GUI(fields, Color.cyan);
            for (int i = 0; i < players.length; i++) {
                players[i].tilføjspillerGui(gui);
@@ -59,6 +60,11 @@ public static void playGame (Player[] players,GUI_Parentfield[] fields,GUI gui)
 }
     public static GUI getGui() {
         return gui;
+    }
+
+    public GUI_Parentfield[] getFields(){
+
+            return fields;
     }
 
 
