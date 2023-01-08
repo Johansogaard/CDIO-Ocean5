@@ -1,7 +1,12 @@
 package spil_Version_2;
 
+import card.*;
 import gui_GameFields.GUI_Ferry;
 import gui_fields.*;
+import spil.GameFeatures;
+import spil_Version_2.cards.Parent_Card;
+
+import java.util.ArrayList;
 
 
 public class LandOnField {
@@ -88,7 +93,14 @@ public class LandOnField {
 
     }
     private void hitChance(Player player, GUI_Field[] fields){
-
+        int card =0;
+        ArrayList<Parent_Card> cards = Game_Features.cards();
+        cards.get(card).hit(player);
+        card++;
+        if (cards.size()<=card)
+        {
+            card=0;
+        }
     }
     private void hitTax(){
 

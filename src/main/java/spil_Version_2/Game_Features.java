@@ -1,9 +1,7 @@
 package spil_Version_2;
 
-import card.Parent_Card;
-import card.RykFelterFrem_Card;
-import card.RykTilStart_Card;
-import spil.GameController;
+import spil_Version_2.*;
+import spil_Version_2.cards.*;
 
 
 import javax.swing.*;
@@ -170,7 +168,7 @@ public class Game_Features {
         }
         public static boolean makeYesNoButton(String msg)
         {
-            boolean selection = GameController.getGui().getUserLeftButtonPressed(msg,"Yes","No");
+            boolean selection = Game_Controller.getGui().getUserLeftButtonPressed(msg,"Yes","No");
             return selection;
         }
         public void addRemoveButton()
@@ -178,7 +176,7 @@ public class Game_Features {
         {
 
             JButton b = new JButton("Click Here");
-            String knapString = GameController.getGui().getUserSelection("Vælg en knap","knap1","knap2");
+            String knapString = Game_Controller.getGui().getUserSelection("Vælg en knap","knap1","knap2");
 
         }
     }
