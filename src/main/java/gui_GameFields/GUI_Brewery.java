@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 import java.awt.*;
+import java.util.List;
 
 import static spil.GameController.getGui;
 
@@ -55,7 +56,7 @@ public class GUI_Brewery extends GUI_Parentfield {
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (200 * player.sum()), "okay");
                 player.payRant((200 * player.sum()), getOwner(), getTitle());
                 getOwner().getRent((200 * player.sum()));
-                System.out.println((getOwner().getGrunde()).contains(BoardCreator.getTypeArray("brewery")));
+
             }
             //ellers bare det normalt
             else
@@ -64,7 +65,7 @@ public class GUI_Brewery extends GUI_Parentfield {
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (100 * player.sum()), "okay");
                 player.payRant((100 * player.sum()), getOwner(), getTitle());
                 getOwner().getRent((100 * player.sum()));
-                System.out.println((getOwner().getGrunde()).contains(BoardCreator.getTypeArray("brewery")));
+
             }
         }
 
