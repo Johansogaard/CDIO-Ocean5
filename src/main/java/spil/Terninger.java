@@ -15,12 +15,6 @@ public class Terninger {
 
 
     }
-    public int slaMedBagret()
-    {
-      int t = 0;
-      t=slaEnTerning()+slaEnTerning();
-        return t;
-    }
 
 
 }
