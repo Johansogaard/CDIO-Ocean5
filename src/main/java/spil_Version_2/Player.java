@@ -1,9 +1,10 @@
 package spil_Version_2;
 
-import gui_GameFields.GUI_Parentfield;
+
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
+import spil_Version_2.LandOnField;
 
 
 public class Player {
@@ -21,7 +22,7 @@ public class Player {
     GUI_Player pl;
     GUI_Field fpos;
     GUI gui;
-
+    LandOnField landOnField =new LandOnField();
 
 
     private boolean jail= false;
@@ -36,7 +37,7 @@ public class Player {
     private int t2=0;
     private String name;
     GUI_Field gamefields[];
-    LandOnField landOnField;
+
     public Player(String name, int bal, int postiotion)
     {
         konto.update(bal);
