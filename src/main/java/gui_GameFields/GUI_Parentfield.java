@@ -11,21 +11,11 @@ import spil.inGameFunktions.LandOnStreet;
 import javax.swing.*;
 import java.awt.*;
 
-import static spil.GameController.getGui;
-
-
 public abstract class GUI_Parentfield extends GUI_Field {
     public static FieldText mt = FieldText.getInstance();
     private static final int TITLEHEIGHT = 47;
     private static final int SUBTEXTHEIGHT = 14;
 
-    public void setRent(int[] rent) {
-        this.rent = rent;
-    }
-
-
-
-    int[] rent;
 
 
     private int price = 0;
@@ -50,25 +40,21 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
 
     public void hit(Player player) {
-
-        if (getOwner() == null)
+        if (getOwner() ==null && player.getKonto().getBalance() >= price)
         {
-            if(getGui().getUserLeftButtonPressed("Vil du købe grunden", "ja","nej")) {
-
-            if(player.getKonto().getBalance() >= price){
-                    setOwner(player);
-                    player.buyField(price, getTitle());
-                    getGui().showMessage(player.getName()+" har købt "+getTitle());
-                    setDescription(getDescription() + "\nOwner:" + getOwner().getName());
-                }
+            if(gameFeatures.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
+                setOwner(player);
+                player.buyField(price, getTitle());
+                setDescription(getDescription() + "\nOwner:" + getOwner().getName());
             }
-    }
+        }
         else if(player != getOwner())
         {
-            getGui().showMessage(player.getName()+" er landet på "+getTitle()+" hvilket ejes af "+getOwner().getName());
-            getGui().getUserButtonPressed("Du skal derfor betale " + rent[0]*player.checkDoubleCost(), " okay");
-            getOwner().getKonto().update(+rent[0]);
-            player.getKonto().update(-rent[0]);
+            getOwner().getKonto().update(price* player.checkDoubleCost());
+            player.getKonto().update(-price*player.checkDoubleCost());
+            player.payRent(player.getKonto().getBalance(),owner,getTitle());
+            getOwner().getRent(getOwner().getKonto().getBalance());
+
 
         }
 
@@ -109,6 +95,4 @@ public abstract class GUI_Parentfield extends GUI_Field {
         this.price = price;
     }
 
-    public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
-        return getGui().getUserLeftButtonPressed(msg, trueButton, falseButton);
-}}
+}
