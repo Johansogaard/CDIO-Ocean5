@@ -51,7 +51,7 @@ public class Game_Features {
             int pl = playercountadd();
             if (pl == 3) {
                 Player[] plA3 = new Player[3];
-                plA3[0] = new Player("Spiller 1", 30000, 0);
+                plA3[0] = new Player("Spiller 1", 1000, 0);
                 plA3[1] = new Player("Spiller 2", 30000, 0);
                 plA3[2] = new Player("Spiller 3", 30000, 0);
 

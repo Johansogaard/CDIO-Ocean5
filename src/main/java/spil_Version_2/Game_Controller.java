@@ -8,6 +8,7 @@ import gui_main.GUI;
 
 import java.awt.*;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Game_Controller {
 
@@ -15,6 +16,9 @@ public class Game_Controller {
     public static Color[] carColors = {Color.blue,Color.green,Color.red,Color.yellow,Color.MAGENTA,Color.BLACK};
     public static int max=-100;
     public static Player vinder;
+
+    public static Player loser;
+
     private static GUI gui;
     private static Player[] players;
 
@@ -36,10 +40,19 @@ public class Game_Controller {
     }
     public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
-
+        ArrayList<Player> playerList = new ArrayList<>();
+        for(int i = 0;i<players.length;i++)
+        {
+            playerList.add(players[i]);
+        }
         for (int i = 0; i < players.length; i=(i+1)%players.length) {
-            if(players[i].spil(gui,fields))
+            if(playerList.get(i).spil(gui,fields))
             {
+                if(players[i].getKonto().getBalance()<0){
+                    gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet","okay");
+                    loser = playerList.get(i);
+                    playerList.remove(i);
+                }
                 break;
             }
 
@@ -50,7 +63,6 @@ public class Game_Controller {
 
         for (int i = 0; i < players.length; i++)
         {
-
             if (players[i].getKonto().getBalance() == max)
             {
                 if(players[i].getKonto().getFieldvalue() > vinder.getKonto().getFieldvalue())

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="arbejder på brewery, mangler at færdiggøre fieldsne. Det giver null lige nu" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu fungerer det at betale for grunde, hvis man lander på dem">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Buyfelt_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,18 +57,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\resources" />
@@ -92,7 +96,6 @@
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
-        <item itemvalue="Application.GameController" />
       </list>
     </recent_temporary>
   </component>
@@ -107,7 +110,6 @@
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1672928531202" duration="319000" />
-      <workItem from="1673010441417" duration="4014000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -214,35 +216,7 @@
       <option name="project" value="LOCAL" />
       <updated>1673001111259</updated>
     </task>
-    <task id="LOCAL-00016" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
-      <created>1673005832471</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1673005832471</updated>
-    </task>
-    <task id="LOCAL-00017" summary="arbejder på brewery">
-      <created>1673010386685</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1673010386685</updated>
-    </task>
-    <task id="LOCAL-00018" summary="arbejder på brewery">
-      <created>1673013979833</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1673013979833</updated>
-    </task>
-    <task id="LOCAL-00019" summary="arbejder på brewery, mangler at færdiggøre fieldsne. Det giver null lige nu">
-      <created>1673014132107</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1673014132107</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,9 +245,7 @@
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="Har ændret lidt på display når man betaler for leje" />
     <MESSAGE value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
-    <MESSAGE value="arbejder på brewery" />
-    <MESSAGE value="arbejder på brewery, mangler at færdiggøre fieldsne. Det giver null lige nu" />
-    <option name="LAST_COMMIT_MESSAGE" value="arbejder på brewery, mangler at færdiggøre fieldsne. Det giver null lige nu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
