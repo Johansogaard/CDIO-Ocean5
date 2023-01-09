@@ -1,9 +1,8 @@
-package spil;
+package spil_Version_2;
 
 import java.util.Random;
 
 public class Terninger {
-
     public Terninger()
     {
 
@@ -15,6 +14,10 @@ public class Terninger {
 
 
     }
-
-
+    public int slaMedBagret()
+    {
+      int t = 0;
+      t=slaEnTerning()+slaEnTerning();
+        return t;
+    }
 }

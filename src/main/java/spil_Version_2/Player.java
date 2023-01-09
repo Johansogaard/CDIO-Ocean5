@@ -1,12 +1,15 @@
-package spil;
+package spil_Version_2;
 
-import gui_GameFields.GUI_Parentfield;
-import gui_GameFields.GUI_Street;
+
+import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-import java.util.ArrayList;
-import java.util.Arrays;
+import spil_Version_2.LandOnField;
+
+import java.awt.*;
+
+
 public class Player {
     public int getPos() {
         return pos;
@@ -22,32 +25,23 @@ public class Player {
     GUI_Player pl;
     GUI_Field fpos;
     GUI gui;
-
-    ArrayList<String> grunde = new ArrayList<String>();
-    public void addGrunde(String grund) {
-        this.grunde.add(grund);
-    }
-
-    public ArrayList<String> getGrunde() {
-        return grunde;
-
-    }
+    LandOnField landOnField =new LandOnField();
 
 
+
+    GUI_Car car;
 
 
     private boolean jail= false;
-    public boolean isJail() {
-        return jail;
-    }
 
-    public void setJail(boolean jail) {
-        this.jail = jail;
-    }
+
+
     private int t1=0;
     private int t2=0;
+    private int jailCounter=0;
     private String name;
-    GUI_Parentfield gamefields[];
+    GUI_Field gamefields[];
+
     public Player(String name, int bal, int postiotion)
     {
         konto.update(bal);
@@ -57,9 +51,13 @@ public class Player {
 
     }
     //Getter
-    public void tilføjspillerGui(GUI gui)
+    public void tilføjspillerGui(GUI gui,Color carCorlor)
     {
-        GUI_Player player = new GUI_Player(name,konto.getBalance());
+        car = new GUI_Car();
+        car.setPrimaryColor(carCorlor);
+
+        GUI_Player player = new GUI_Player(name,konto.getBalance(),car);
+
         gui.addPlayer(player);
         GUI_Field field = gui.getFields()[pos];
         field.setCar(player,true);
@@ -77,13 +75,14 @@ public class Player {
         return name;
     }
     //spiller en runde for den spiller der er kaldt
-    public boolean spil(GUI gui, GUI_Parentfield[] fields)
+    public boolean spil(GUI gui, GUI_Field[] fields)
     {
         gamefields = fields;
 
-            if (isJail())
+            if (jail)
             {
-                setJail(false);
+                inJail();
+               jail=false;
                 gui.getUserButtonPressed(name + " du er i fængsel og betaler 1M for at komme ud i næste runde", "Okay");
                 updatePlayerBalance(-1);
 
@@ -95,7 +94,7 @@ public class Player {
                 pos=(pos+t1 +t2)%40;
                 gui.setDice(t1, t2);
                 setCar(pos, gui);
-                hitField();
+                landOnField.hitField(this,gamefields);
 
             }
 
@@ -110,12 +109,27 @@ public class Player {
 
 
     }
-    public void hitField()
+    private void inJail()
     {
-        displayCard(pos,gui);
-        gamefields[pos].hit(this);
+        if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
+        {
+            updatePlayerBalance(-1000);
+            jail = false;
+            spil(this.gui,this.gamefields);
+        }
+        else
+        {
+
+        }
 
     }
+    public void hitField()
+    {
+        displayCard();
+       // gamefields[pos].hit(this);
+
+    }
+
     public void checkIfPassedStart(int sumPos)
     {
         if (sumPos>=24)
@@ -130,7 +144,6 @@ public class Player {
         t2 = terninger.slaEnTerning();
 
     }
-
     public void setCar(int tsum,GUI gui)
     {
         fpos.setCar(pl,false);
@@ -138,47 +151,42 @@ public class Player {
         felt.setCar(pl,true);
         fpos = gui.getFields()[tsum];
     }
-    public void displayCard(int pos, GUI gui)
+    public void displayCard()
     {
         GUI_Field f = gui.getFields()[pos];
         gui.displayChanceCard(f.getTitle()+"\n"+ f.getDescription());
     }
 
     public void payRent(int cost, Player owner, String title) {
-        if (checkDoubleCost() == 1) {
+      /* if (checkDoubleCost() == 1) {
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
-        } else {
+        } else {*/
             gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay double rent to " + owner.getName()+" because he owns 2 field with this color", "Okay");
-        }
+
 
         pl.setBalance(cost);
     }
 
-    public void payRant(int rent, Player owner, String title) {
-        pl.setBalance(konto.getBalance()-rent);
+
+
+    public void getRent(int cost)
+    {
+        pl.setBalance(cost);
     }
 
 
-
-    public void getRent(int rent)
+    public void buyField(int cost, String title)
     {
-        pl.setBalance(konto.getBalance()+rent);
+        gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
+        updatePlayerBalance(-cost);
+        konto.updateFieldValue(cost);
+
     }
-
-
-    public void buyField(int price , String title)
+    public void goToJail()
     {
-        updatePlayerBalance(-price);
-        konto.updateFieldValue(price);
-        addGrunde(title);
-    }
-
-
-    public void injail()
-    {
-       movePlayer(11);
-        setJail(true);
-        gui.getUserButtonPressed(name + " du er i fængsel og bliver sprunget over i næste runde", "Okay");
+       movePlayer(10);
+        jail=true;
+        gui.getUserButtonPressed(name + " du er røget i fængsel får dårlig opførelse", "Okay");
     }
     public void movePlayer(int number)
     {
@@ -196,53 +204,23 @@ public class Player {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
-
-    //chekker om nuværende spiller ejer alle grunde i et sæt med en bestemt farve
-    public boolean checkIOwnAll(String color){
-
-       if(getGrunde().contains(BoardCreator.getColorArray(color)))
-       {
-           return true;
-       }
-
-       else return false;
-
-    }
-
-
-//chekker om owneren har alle grunde i et sæt
-   public boolean checkOwnerOwnAll(){
-    GUI_Parentfield field = gamefields[getPos()];
-       GUI_Street street = (GUI_Street) field;
-
-       if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
-       {
-           return true;
-       }
-
-       else return false;
-
-    }
+    /*
     public int checkDoubleCost()
     {
-        if (checkOwnerOwnAll())
+
+        if (gamefields[pos].getOwner() == gamefields[pos-1].getOwner() ||  gamefields[pos].getOwner() == gamefields[(pos+1)%40].getOwner())
         {
+
             return 2;
         }
         else return 1;
 
     }
-public boolean getUserLeftButtonPressed(String msg, String trueButton, String falseButton){
-        return gui.getUserLeftButtonPressed(msg, trueButton, falseButton);
-}
-    public int sum(){
-        t1 = spil.Terninger.slaEnTerning();
-        t2 = spil.Terninger.slaEnTerning();
-        int i = t1 + t2;
-        return i;
 
+     */
+
+    public GUI_Car getCar() {
+        return car;
     }
-
-
 }
 

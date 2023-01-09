@@ -50,6 +50,9 @@ public class BoardCreator {
             throw new RuntimeException(e);
         }
     }
+
+    static ArrayList<String> ferry= new ArrayList<String>();
+    static ArrayList<String> brewery= new ArrayList<String>();
     private  ArrayList<GUI_Parentfield> addfield(String[] data,ArrayList<GUI_Parentfield> list)
     {
 
@@ -86,8 +89,9 @@ public class BoardCreator {
             case "ferry":
             {
                 int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5]),Integer.parseInt(data[6]),Integer.parseInt(data[7])};
-                list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
-                        "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
+                list.add(new GUI_Ferry(data[0],"Kr. " + data[3],
+                        "Denne færge koster " + data[3],Integer.parseInt(data[3]),rent));
+                ferry.add(data[0]);
 
             }
             break;
@@ -95,6 +99,7 @@ public class BoardCreator {
             {   int[] rent ={Integer.parseInt(data[4]),Integer.parseInt(data[5])};
                list.add(new GUI_Brewery(data[0],"Kr. " + data[3],
                        "Dette bryggerig koster " + data[3],Integer.parseInt(data[3]),rent));
+                brewery.add(data[0]);
             }
             break;
             case "refugee":
@@ -112,6 +117,24 @@ public class BoardCreator {
 
 return list;
     }
+
+    public static ArrayList<String> getTypeArray(String type) {
+        ArrayList<String> TypeArray = null;
+        switch (type) {
+            case "ferry": {
+                TypeArray = ferry;
+            }
+            break;
+            case "brewery": {
+                TypeArray = brewery;
+            }
+            break;
+
+        }
+        return TypeArray;
+    }
+
+
  private GUI_Parentfield[] listToArray(ArrayList<GUI_Parentfield> list)
  {
 
