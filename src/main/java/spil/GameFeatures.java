@@ -1,11 +1,6 @@
 package spil;
 
-import card.Matador_Legat;
-import card.Parent_Card;
-
-import card.RykFelter_Card;
-import card.RykTilStart_Card;
-import card.Straf_Eller_Gevinst;
+import card.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,6 +58,13 @@ public class GameFeatures {
         cardArray.add(new Straf_Eller_Gevinst(200,true , "Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken"));
         cardArray.add(new Straf_Eller_Gevinst(300,false , "Betal for vognvask og smøring kr 300"));
         cardArray.add(new Straf_Eller_Gevinst(1000,false , "De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde"));
+
+        cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
+        cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n"));
+        cardArray.add(new MovePlayerCard( 25,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
+        cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
+        cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
+
 
 
 

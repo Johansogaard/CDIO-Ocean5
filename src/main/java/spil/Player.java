@@ -118,10 +118,14 @@ public class Player {
     }
     public void checkIfPassedStart(int sumPos)
     {
-        if (sumPos>=24)
+        if (sumPos >= 40)
         {
-            updatePlayerBalance(2);
+            updatePlayerBalance(4000);
         }
+        else if (sumPos >= 40 && sumPos < 80) {
+            updatePlayerBalance(4000);
+        }
+
     }
 
     public void turn()
@@ -180,13 +184,14 @@ public class Player {
         setJail(true);
         gui.getUserButtonPressed(name + " du er i fængsel og bliver sprunget over i næste runde", "Okay");
     }
-    public void movePlayer(int number)
-    {
-        pos = number;
-        setCar(pos,gui);
+    public void movePlayer(int number) {
+        this.pos = number;
+        checkIfPassedStart(pos);
+        setCar(pos, gui);
+    }
 
-   }
-   public void showchancecard(String txt){
+
+    public void showchancecard(String txt){
        gui.displayChanceCard(txt);
        gui.getUserButtonPressed(name +" "+ txt, "Okay");
 
