@@ -54,7 +54,7 @@ public class GameFeatures {
         cardArray.add(new Straf_Eller_Gevinst(1000,true , "De modtager Deres aktieudbytte. Modtag kr 1000 af banken"));
         cardArray.add(new Straf_Eller_Gevinst(1000,true , "De modtager Deres aktieudbytte. Modtag kr 1000 af banken"));
         cardArray.add(new Straf_Eller_Gevinst(3000,true , "Kommunen har eftergivet et kvartals skat. Hæv i banken 3000 kr."));
-        cardArray.add(new Straf_Eller_Gevinst(1000,true , "De have en række med elleve rigtige i tipning, modtag kl 1000"));
+        cardArray.add(new Straf_Eller_Gevinst(1000,true , "De have en række med elleve rigtige i tipning, modtag kr 1000"));
         cardArray.add(new Straf_Eller_Gevinst(1000,true , "Grundet dyrtiden har De fået gageforhøjelse, modtag kr 1000."));
         cardArray.add(new Straf_Eller_Gevinst(1000,true , "Deres præmieobligation er udtrykket. De modtager 1000 kr af banken."));
 
