@@ -23,7 +23,7 @@ public class MovePlayerCard extends Parent_Card {
 
     public void checkIfPassedStart(int oldPos, Player player) {
         int newPos = player.getPos();
-        if (newPos < oldPos) {
+        if (newPos < oldPos && newPos != 30) {
             player.updatePlayerBalance(4000);
         }
     }
