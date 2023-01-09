@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="tilføjet en ny version">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDIO-Ocean5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CDIO-Ocean5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings">
-    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Buyfelt_branch" />
+        <entry key="$PROJECT_DIR$" value="Bigchance" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,14 +33,20 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/game_Txt/FieldText.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_GoToJail.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Jail.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/spil/BoardCreator.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil/GameController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil/GameFeatures.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/spil/Konto.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/spil/Player.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/GameText.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/fieldsdata.csv" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -61,9 +69,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -72,11 +79,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java\spil_Version_2" />
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\resources" />
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="spil_Version_2" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Game_Controller">
     <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil.GameController" />
       <module name="CDIO-Ocean5" />
@@ -90,11 +101,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="REMOVETHISCLASS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.REMOVETHISCLASS" />
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameController" />
-        <item itemvalue="Application.GameController" />
-        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="Application.REMOVETHISCLASS" />
         <item itemvalue="Application.GameController" />
         <item itemvalue="Application.GameController" />
       </list>
@@ -110,8 +146,6 @@
       <updated>1672743172897</updated>
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
-      <workItem from="1672928531202" duration="319000" />
-      <workItem from="1673010441417" duration="3271000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -198,48 +232,69 @@
       <updated>1672913044229</updated>
     </task>
     <task id="LOCAL-00013" summary="Nu kan man vælge om man vil købe en grund eller ej">
-      <created>1672928835305</created>
+      <created>1672914581758</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1672928835305</updated>
+      <updated>1672914581758</updated>
     </task>
-    <task id="LOCAL-00014" summary="Har ændret lidt på display når man betaler for leje">
-      <created>1672930137672</created>
+    <task id="LOCAL-00014" summary="laver en ny version af spillet denne version virker ikke">
+      <created>1672920708860</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1672930137672</updated>
+      <updated>1672920708860</updated>
     </task>
-    <task id="LOCAL-00015" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
-      <created>1673001111258</created>
+    <task id="LOCAL-00015" summary="Er igang med at lave brættet med den nye version">
+      <created>1672957848329</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1673001111259</updated>
+      <updated>1672957848329</updated>
     </task>
-    <task id="LOCAL-00016" summary="Nu fungerer det at betale for grunde, hvis man lander på dem">
-      <created>1673005832471</created>
+    <task id="LOCAL-00016" summary="Er igang med at lave brættet med den nye version">
+      <created>1672960144626</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1673005832471</updated>
+      <updated>1672960144626</updated>
     </task>
-    <task id="LOCAL-00017" summary="arbejder på brewery">
-      <created>1673010386685</created>
+    <task id="LOCAL-00017" summary="Er igang med at lave brættet med den nye version">
+      <created>1673003193272</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1673010386685</updated>
+      <updated>1673003193272</updated>
     </task>
-    <task id="LOCAL-00018" summary="moveplayercard">
-      <created>1673291357352</created>
+    <task id="LOCAL-00018" summary="Er igang med at lave brættet med den nye version">
+      <created>1673005942605</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1673291357352</updated>
+      <updated>1673005942605</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Er igang med at lave brættet med den nye version">
+      <created>1673013990487</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673013990487</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Er igang med at lave brættet med den nye version">
+      <created>1673179500550</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673179500550</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Er igang med at lave brættet med den nye version">
+      <created>1673180082557</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673180082557</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,19 +305,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Buyfelt_branch" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -278,11 +321,9 @@
     <MESSAGE value="alle felter er indført" />
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
-    <MESSAGE value="Har ændret lidt på display når man betaler for leje" />
-    <MESSAGE value="Nu fungerer det at betale for grunde, hvis man lander på dem" />
-    <MESSAGE value="arbejder på brewery" />
-    <MESSAGE value="moveplayercard" />
-    <option name="LAST_COMMIT_MESSAGE" value="moveplayercard" />
+    <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
+    <MESSAGE value="Er igang med at lave brættet med den nye version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Er igang med at lave brættet med den nye version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -293,21 +334,21 @@
         </breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="14" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java</url>
-          <line>19</line>
-          <properties class="gui_GameFields.GUI_Ferry">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java</url>
+          <line>14</line>
+          <properties class="spil_Version_2.LandOnField">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -317,13 +358,5 @@
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
       </pinned-members>
     </pin-to-top-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
-    </SUITE>
   </component>
 </project>

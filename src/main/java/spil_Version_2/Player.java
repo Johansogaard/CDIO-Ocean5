@@ -82,9 +82,7 @@ public class Player {
             if (jail)
             {
                 inJail();
-               jail=false;
-                gui.getUserButtonPressed(name + " du er i fængsel og betaler 1M for at komme ud i næste runde", "Okay");
-                updatePlayerBalance(-1);
+
 
             }
             else if (gui.getUserButtonPressed(name + " Press button to roll dice", "Roll Dice") == "Roll Dice") {
@@ -113,15 +111,19 @@ public class Player {
     {
         if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
         {
-            updatePlayerBalance(-1000);
-            jail = false;
-            spil(this.gui,this.gamefields);
+            payJail();
         }
         else
         {
-
+            jailCounter++;
+            turn();
         }
 
+    }
+    private void payJail(){
+        updatePlayerBalance(-1000);
+        jail = false;
+        spil(this.gui,this.gamefields);
     }
     public void hitField()
     {
