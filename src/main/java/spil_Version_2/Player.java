@@ -1,13 +1,19 @@
 package spil_Version_2;
 
 
+import gui_GameFields.GUI_Parentfield;
+
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import gui_fields.GUI_Street;
 import gui_main.GUI;
+import spil.BoardCreator;
 import spil_Version_2.LandOnField;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Player {
@@ -42,6 +48,15 @@ public class Player {
     private String name;
     GUI_Field gamefields[];
 
+    ArrayList<String> grunde = new ArrayList<String>();
+    public void addGrunde(String grund) {
+        this.grunde.add(grund);
+    }
+
+    public ArrayList<String> getGrunde() {
+        return grunde;
+
+    }
     public Player(String name, int bal, int postiotion)
     {
         konto.update(bal);
@@ -180,6 +195,7 @@ public class Player {
         gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
         updatePlayerBalance(-cost);
         konto.updateFieldValue(cost);
+        addGrunde(title);
 
     }
     public void goToJail()
@@ -204,20 +220,28 @@ public class Player {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
-    /*
+    //chekker om owneren har alle grunde i et sæt
+    public boolean checkOwnerOwnAll(){
+        GUI_Field field = gamefields[getPos()];
+        GUI_Street street = (GUI_Street) field;
+
+        if (Arrays.asList(Game_Controller.getPlayer(street.getOwnerName()).getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
+        {
+            return true;
+        }
+
+        else return false;
+
+    }
     public int checkDoubleCost()
     {
-
-        if (gamefields[pos].getOwner() == gamefields[pos-1].getOwner() ||  gamefields[pos].getOwner() == gamefields[(pos+1)%40].getOwner())
+        if (checkOwnerOwnAll())
         {
-
             return 2;
         }
         else return 1;
 
     }
-
-     */
 
     public GUI_Car getCar() {
         return car;
