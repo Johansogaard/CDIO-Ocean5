@@ -16,7 +16,9 @@ public class GameController {
         BoardCreator b = new BoardCreator();
            // System.out.println(readTextFromFile(file,"jailMessage"));
             GUI_Parentfield[] fields = b.istantiererFelter();
+
            gui = new GUI(fields, Color.cyan);
+
            for (int i = 0; i < players.length; i++) {
                players[i].tilføjspillerGui(gui);
            }
