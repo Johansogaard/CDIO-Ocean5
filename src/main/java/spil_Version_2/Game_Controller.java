@@ -48,14 +48,14 @@ public class Game_Controller {
         for (int i = 0; i < players.length; i=(i+1)%players.length) {
             if(playerList.get(i).spil(gui,fields))
             {
-                if(players[i].getKonto().getBalance()<0){
                     gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet","okay");
-                    loser = playerList.get(i);
                     playerList.remove(i);
-                }
+
+            }
+            if(playerList.size()==1){
+                gui.getUserButtonPressed(playerList.get(i).getName()+"Har vundet, som den sidste spiller stående","tak for spillet");
                 break;
             }
-
 
         }
 
