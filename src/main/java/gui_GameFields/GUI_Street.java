@@ -5,7 +5,7 @@ import java.awt.*;
 public class GUI_Street extends GUI_Parentfield {
 
     private int[] rent;
-    String group;
+    private String group;
     private int housePrice;
 
 
@@ -22,5 +22,9 @@ public class GUI_Street extends GUI_Parentfield {
 
     }
 
+
+    public String getColor(){
+        return group;
+    }
 
 }
