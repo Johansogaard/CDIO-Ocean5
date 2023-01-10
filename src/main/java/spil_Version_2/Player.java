@@ -175,15 +175,15 @@ public class Player {
         gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
         owner.getKonto().update(cost);
         getKonto().update(-cost);
-        owner.getRent(owner.getKonto().getBalance());
-        pl.setBalance(cost);
+        owner.setGUIBalance(owner.getKonto().getBalance());
+        pl.setBalance(this.konto.getBalance());
     }
 
 
 
-    public void getRent(int cost)
+    public void setGUIBalance(int balance)
     {
-        pl.setBalance(cost);
+        pl.setBalance(balance);
     }
 
 
