@@ -39,26 +39,25 @@ public class Game_Controller {
     public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
         ArrayList<Player> playerList = new ArrayList<>();
-        for(int i = 0; i<players.length;i++){
+        for(int i = 0; i< players.length;i++){
             playerList.add(players[i]);
         }
 
-        for (int i = 0; i < playerList.size(); i=(i+1)%players.length) {
-            if(playerList.get(i).spil(gui,fields))
+        for (int i = 0; i < playerList.size(); i=(i+1)%playerList.size()) {
+
+            if(playerList.get(i).spil(gui,fields) == true)
             {
                 gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet", "fair nok");
                 playerList.remove(i);
+
             }
-            if(playerList.size() == 1){
+            else if(playerList.size() == 1){
                 gui.getUserButtonPressed(playerList.get(i).getName()+"har vundet som den sidste spiller stående", "Tak for spillet");
                 break;
             }
 
 
         }
-
-
-
 
 
 
