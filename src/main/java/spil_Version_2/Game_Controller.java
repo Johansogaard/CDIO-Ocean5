@@ -43,7 +43,7 @@ public class Game_Controller {
             playerList.add(players[i]);
         }
 
-        for (int i = 0; i < players.length; i=(i+1)%players.length) {
+        for (int i = 0; i < playerList.size(); i=(i+1)%players.length) {
             if(playerList.get(i).spil(gui,fields))
             {
                 gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet", "fair nok");
@@ -59,25 +59,8 @@ public class Game_Controller {
 
 
 
-        for (int i = 0; i < players.length; i++)
-        {
 
-            if (players[i].getKonto().getBalance() == max)
-            {
-                if(players[i].getKonto().getFieldvalue() > vinder.getKonto().getFieldvalue())
-                {
-                    vinder = players[i];
-                }
-            }
-            else if (players[i].getKonto().getBalance()>max)
-            {
-                max = players[i].getKonto().getBalance();
-                vinder = players[i];
-            }
 
-        }
-        gui.getUserButtonPressed(vinder.getName() + " har vundet med flest penge", "Okay");
-        System.exit(1);
 
     }
     public static GUI getGui() {
