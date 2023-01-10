@@ -116,7 +116,7 @@ public class LandOnField {
         }
         else
         {
-            Game_Controller.getGui().getUserSelection(player.getName() + " Du skal betale ekstraordinær statsskat på 2000 kr.");
+            Game_Controller.getGui().getUserSelection(player.getName() + " Du skal betale ekstraordinær statsskat på 2000 kr.", "Okay");
             player.updatePlayerBalance(-2000);
         }
     }

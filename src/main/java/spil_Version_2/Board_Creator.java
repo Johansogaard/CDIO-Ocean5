@@ -34,20 +34,21 @@ public class Board_Creator {
                         return listToArray(fieldlist);
 
                     } else {
-                     //   StringTokenizer st = new StringTokenizer(input, ",");
-                        String[] s = input.split(",");
+                        String[] dataArray =  input.split(",",-1);
+                                //   StringTokenizer st = new StringTokenizer(input, ",");
+
                         /*String[] currToken = new String[st.countTokens()];
                         for (int i =0;st.hasMoreTokens();i++)
                         {
 
                             currToken[i]= st.nextToken().trim();
                         }*/
-                        for(int i = 0;i<s.length;i++)
-                        {
-                           s[i]= s[i].trim();
-                        }
-                        fieldData.add(f,s);
-                        fieldlist =addfield(s, fieldlist);
+
+                        dataArray[2] = dataArray[2].trim();
+
+
+                        fieldData.add(f,dataArray);
+                        fieldlist =addfield(dataArray, fieldlist);
                         f++;
 
                     }
