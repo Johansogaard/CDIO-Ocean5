@@ -1,10 +1,9 @@
 package spil_Version_2;
 
-import card.*;
 import gui_GameFields.GUI_Ferry;
 import gui_fields.*;
-import spil.GameFeatures;
-import spil_Version_2.cards.Parent_Card;
+import spil_Version_2.cards.*;
+;
 
 import java.util.ArrayList;
 

@@ -2,11 +2,23 @@ package spil_Version_2.cards;
 import spil_Version_2.*;
 
 public class RykTilStart_Card extends Parent_Card {
+    private int reward;
+
+    //nyt objekt som giver en reward
+    public RykTilStart_Card(int reward) {
+        this.reward = reward;
+    }
+
     @Override
     public void hit(Player player) {
-        player.showchancecard("Ryk til start og modtag 2 M");
+        // hvis ikke kortet giver en belønning, skrives der kun ryk til start
+        if (reward == 0) {
+            player.showchancecard("Ryk til start");
+        } else {
+            player.showchancecard("Ryk til start og modtag " + reward + "kr");
+        }
         player.movePlayer(0);
-        player.updatePlayerBalance(2);
-
+        player.updatePlayerBalance(reward);
     }
 }
+
