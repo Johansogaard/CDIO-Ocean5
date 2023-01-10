@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="tax 2000 fixet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Matador_Legat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/MovePlayerCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykFelter_Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Straf_Eller_Gevinst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Parent_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Parent_Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykFelterFrem_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykTilStart_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykTilStart_Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDIO-Ocean5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CDIO-Ocean5.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,6 +148,7 @@
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1673360173427" duration="564000" />
+      <workItem from="1673362965443" duration="396000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -451,10 +448,10 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
     </SUITE>
   </component>
