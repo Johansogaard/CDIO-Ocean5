@@ -169,22 +169,22 @@ public class Game_Features {
 
                     // If condition to check if jRadioButton2 is selected.
                     if (p3.isSelected()) {
-                        qual = "Gamemode: 3 players";
+                        qual = "Gamemode: 3 spillere";
                         players = 3;
                     } else if (p4.isSelected()) {
 
-                        qual = "Gamemode: 4 players";
+                        qual = "Gamemode: 4 spillere";
                         players = 4;
 
 
                     } else if (p5.isSelected()) {
 
-                        qual = "Gamemode: 5 players";
+                        qual = "Gamemode: 5 spillere";
                         players = 5;
 
                     }else if (p6.isSelected()) {
 
-                        qual = "Gamemode: 6 players";
+                        qual = "Gamemode: 6 spillere";
                         players = 6;
 
                     } else {
@@ -216,7 +216,7 @@ public class Game_Features {
         }
         public static boolean makeYesNoButton(String msg)
         {
-            boolean selection = Game_Controller.getGui().getUserLeftButtonPressed(msg,"Yes","No");
+            boolean selection = Game_Controller.getGui().getUserLeftButtonPressed(msg,"Ja","Nej");
             return selection;
         }
         public void addRemoveButton()

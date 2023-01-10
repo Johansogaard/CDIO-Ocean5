@@ -97,7 +97,7 @@ public class Player {
 
 
             }
-            else if (gui.getUserButtonPressed(name + " Press button to roll dice", "Roll Dice") == "Roll Dice") {
+            else if (gui.getUserButtonPressed(name + " Klik her for at sende turen videre", "Rul terninger") == "Rul terninger") {
                 turn();
                 checkIfPassedStart(pos+t1+t2);
 
@@ -176,7 +176,7 @@ public class Player {
     }
 
     public void payRent(int cost, Player owner, String title) {
-        gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
+        gui.getUserButtonPressed(pl.getName() + " landede på " + title + " og skal betale leje til " + owner.getName(), "Okay");
         owner.getKonto().update(cost);
         getKonto().update(-cost);
         owner.setGUIBalance(owner.getKonto().getBalance());
@@ -193,7 +193,7 @@ public class Player {
 
     public void buyField(int cost, String title)
     {
-        gui.getUserButtonPressed(pl.getName() + " bought " + title+"", "Okay");
+        gui.getUserButtonPressed(pl.getName() + " købte " + title+"", "Okay");
         updatePlayerBalance(-cost);
         konto.updateFieldValue(cost);
         addGrunde(title);
