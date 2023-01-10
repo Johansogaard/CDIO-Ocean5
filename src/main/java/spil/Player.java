@@ -205,7 +205,7 @@ public class Player {
     //chekker om nuværende spiller ejer alle grunde i et sæt med en bestemt farve
     public boolean checkIOwnAll(String color){
 
-       if(getGrunde().contains(BoardCreator.getColorArray(color)))
+       if(getGrunde().contains(BoardCreator.getGroupArray(color)))
        {
            return true;
        }
@@ -220,7 +220,7 @@ public class Player {
     GUI_Parentfield field = gamefields[getPos()];
        GUI_Street street = (GUI_Street) field;
 
-       if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
+       if (Arrays.asList(gamefields[getPos()].getOwner().getGrunde()).contains(BoardCreator.getGroupArray(street.getColor())))
        {
            return true;
        }

@@ -221,7 +221,7 @@ private Color fieldColor(String color,String title)
     return c;
 }
 
-public static ArrayList<String> getColorArray(String color) {
+public static ArrayList<String> getGroupArray(String color) {
 
 
     ArrayList<String> colorarray = null;
@@ -254,10 +254,20 @@ public static ArrayList<String> getColorArray(String color) {
         case "purple": {
             colorarray = purple;
         }
-
-
         break;
+        case "ferry": {
+            colorarray = ferry;
+        }
+        break;
+        case "brewery": {
+            colorarray = brewery;
+        }
+        break;
+        default:
+        {
 
+        }
+        break;
     }
 
     return colorarray;

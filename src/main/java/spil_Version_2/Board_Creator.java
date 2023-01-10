@@ -34,15 +34,20 @@ public class Board_Creator {
                         return listToArray(fieldlist);
 
                     } else {
-                        StringTokenizer st = new StringTokenizer(input, ",");
-                        String[] currToken = new String[st.countTokens()];
+                     //   StringTokenizer st = new StringTokenizer(input, ",");
+                        String[] s = input.split(",");
+                        /*String[] currToken = new String[st.countTokens()];
                         for (int i =0;st.hasMoreTokens();i++)
                         {
 
                             currToken[i]= st.nextToken().trim();
+                        }*/
+                        for(int i = 0;i<s.length;i++)
+                        {
+                           s[i]= s[i].trim();
                         }
-                        fieldData.add(f,currToken);
-                        fieldlist =addfield(currToken, fieldlist);
+                        fieldData.add(f,s);
+                        fieldlist =addfield(s, fieldlist);
                         f++;
 
                     }
@@ -105,7 +110,7 @@ public class Board_Creator {
                     s.setTitle(data[0]);
                     s.setSubText("Kr. "+data[3]);
                     s.setDescription("Denne grund koster "+data[3]);
-                    s.setRent(data[4]);
+                    s.setRent(data[5]);
                     list.add(s);
                     ferry.add(data[0]);
 
@@ -117,7 +122,7 @@ public class Board_Creator {
                     b.setTitle(data[0]);
                     b.setSubText("Kr. "+data[3]);
                     b.setDescription("Denne grund koster "+data[3]);
-                    b.setRent(data[4]);
+                    b.setRent(data[5]);
                     list.add(b);
                     brewery.add(data[0]);
                 }

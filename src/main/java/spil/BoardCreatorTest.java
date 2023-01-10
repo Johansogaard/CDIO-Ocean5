@@ -18,6 +18,6 @@ class BoardCreatorTest  {
         testorange.add("Valby Langgade");
         testorange.add("Allégade");
 
-    assertIterableEquals(testorange, BoardCreator.getColorArray("orange"));
+    assertIterableEquals(testorange, BoardCreator.getGroupArray("orange"));
     }
 }

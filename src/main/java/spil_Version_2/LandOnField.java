@@ -48,15 +48,30 @@ public class LandOnField {
         }
         else if (player.getName() != ownable.getOwnerName())
     {
-        Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
-        int rent = Integer.parseInt(ownable.getRent());
-        owner.getKonto().update(rent); //Her skal der tilføjes når vi får omkostninger hvis man ejer flere grunde
-        player.getKonto().update(-rent);
-        player.payRent(player.getKonto().getBalance(),owner,ownable.getTitle());
-        owner.getRent(owner.getKonto().getBalance());
+        if (player.checkOwnerOwnAll())
+        {
+            if (ownable.getClass().equals(GUI_Street.class))
+            {
+                hitStreet(player,fields);
+            } else if (ownable.getClass().equals(GUI_Ferry.class)) {
+                hitFerry(player,fields);
+
+            }
+            else {
+                hitBrewery(player,fields);
+            }
+
+        }
+        else {
+            Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
+            int rent = Integer.parseInt(ownable.getRent());
+            player.payRent(rent,owner,ownable.getTitle());
+
+        }
 
     }
     }
+    //DE her metoder skal indeholde hvad en spiller skal betale hvis de lander på et felt hvor spilleren ejer alle felter
     private void hitStreet(Player player, GUI_Field[] fields){
 
     }

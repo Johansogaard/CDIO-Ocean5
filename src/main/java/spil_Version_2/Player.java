@@ -1,12 +1,9 @@
 package spil_Version_2;
 
 
-import gui_GameFields.GUI_Parentfield;
 
-import gui_fields.GUI_Car;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
-import gui_fields.GUI_Street;
+
+import gui_fields.*;
 import gui_main.GUI;
 import spil.BoardCreator;
 import spil_Version_2.LandOnField;
@@ -175,12 +172,10 @@ public class Player {
     }
 
     public void payRent(int cost, Player owner, String title) {
-      /* if (checkDoubleCost() == 1) {
-            gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
-        } else {*/
-            gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay double rent to " + owner.getName()+" because he owns 2 field with this color", "Okay");
-
-
+        gui.getUserButtonPressed(pl.getName() + " landed on " + title + " and needs to pay rent to " + owner.getName(), "Okay");
+        owner.getKonto().update(cost);
+        getKonto().update(-cost);
+        owner.getRent(owner.getKonto().getBalance());
         pl.setBalance(cost);
     }
 
@@ -225,9 +220,9 @@ public class Player {
     //chekker om owneren har alle grunde i et sæt
     public boolean checkOwnerOwnAll(){
         GUI_Field field = gamefields[getPos()];
-        GUI_Street street = (GUI_Street) field;
+        GUI_Ownable ownable = (GUI_Ownable) field;
 
-        if (Arrays.asList(Game_Controller.getPlayer(street.getOwnerName()).getGrunde()).contains(BoardCreator.getColorArray((Board_Creator.getFieldData().get(pos)[11]))))
+        if (Arrays.asList(Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde()).contains(BoardCreator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]))))
         {
             return true;
         }
@@ -235,15 +230,7 @@ public class Player {
         else return false;
 
     }
-    public int checkDoubleCost()
-    {
-        if (checkOwnerOwnAll())
-        {
-            return 2;
-        }
-        else return 1;
 
-    }
 
     public GUI_Car getCar() {
         return car;
