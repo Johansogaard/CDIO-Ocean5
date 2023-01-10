@@ -3,6 +3,7 @@ package spil_Version_2;
 import gui_GameFields.GUI_Parentfield;
 import gui_fields.GUI_Field;
 import gui_main.GUI;
+import java.util.ArrayList;
 
 
 
@@ -34,12 +35,22 @@ public class Game_Controller {
         playGame(players,fields,gui);
 
     }
+
     public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
+        ArrayList<Player> playerList = new ArrayList<>();
+        for(int i = 0; i<players.length;i++){
+            playerList.add(players[i]);
+        }
 
         for (int i = 0; i < players.length; i=(i+1)%players.length) {
-            if(players[i].spil(gui,fields))
+            if(playerList.get(i).spil(gui,fields))
             {
+                gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet", "fair nok");
+                playerList.remove(i);
+            }
+            if(playerList.size() == 1){
+                gui.getUserButtonPressed(playerList.get(i).getName()+"har vundet som den sidste spiller stående", "Tak for spillet");
                 break;
             }
 
