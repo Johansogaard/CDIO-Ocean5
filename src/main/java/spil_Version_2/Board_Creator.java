@@ -13,9 +13,13 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Board_Creator {
+
+
+    static ArrayList<String[]> fieldData = new ArrayList<>();
         public GUI_Field[] istantiererFelter() throws FileNotFoundException {
             ArrayList<GUI_Field> fieldlist = new ArrayList<>();
 
+            int f = 0;
             String input;
             String file = "src/main/resources/fieldsdata.csv";
             try {
@@ -34,9 +38,12 @@ public class Board_Creator {
                         String[] currToken = new String[st.countTokens()];
                         for (int i =0;st.hasMoreTokens();i++)
                         {
+
                             currToken[i]= st.nextToken().trim();
                         }
+                        fieldData.add(f,currToken);
                         fieldlist =addfield(currToken, fieldlist);
+                        f++;
 
                     }
 
@@ -66,6 +73,7 @@ public class Board_Creator {
                     newStreet.setRent(data[5]);
                     newStreet.setBackGroundColor(fieldColor(data[11],data[0]));
                     list.add(newStreet);
+
 
                 }
                 break;
@@ -282,6 +290,10 @@ public class Board_Creator {
             }
             return rent;
         }
+    public static ArrayList<String[]> getFieldData() {
+        fieldData.remove(0);
+        return fieldData;
+    }
     }
 
 

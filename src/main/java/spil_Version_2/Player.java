@@ -225,7 +225,7 @@ public class Player {
         GUI_Field field = gamefields[getPos()];
         GUI_Street street = (GUI_Street) field;
 
-        if (Arrays.asList(Game_Controller.getPlayer(street.getOwnerName()).getGrunde()).contains(BoardCreator.getColorArray(street.getColor())))
+        if (Arrays.asList(Game_Controller.getPlayer(street.getOwnerName()).getGrunde()).contains(BoardCreator.getColorArray((Board_Creator.getFieldData().get(pos)[11]))))
         {
             return true;
         }
