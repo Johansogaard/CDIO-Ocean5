@@ -136,11 +136,12 @@ public class Player {
     //tror virker
     public void inJail()
     {
+
         if(jailCounter==3){
             gui.getUserButtonPressed(name + " fik ikke tre ens 3 ture i træk og skal derfor betale", "gå videre");
             payJail();
         }
-        if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
+        else if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
         {
             payJail();
         }
@@ -153,7 +154,7 @@ public class Player {
 
                 jail = false;
                 spil(this.gui,this.gamefields);
-
+                jailCounter=0;
             }
             else {gui.getUserButtonPressed(name + " fik ikke to ens", "gå videre");}
         }
@@ -164,6 +165,7 @@ public class Player {
         updatePlayerBalance(-1000);
         jail = false;
         spil(this.gui,this.gamefields);
+        jailCounter=0;
     }
     public void hitField()
     {
@@ -201,6 +203,11 @@ public class Player {
     {
         GUI_Field f = gui.getFields()[pos];
         gui.displayChanceCard(f.getTitle()+"\n"+ f.getDescription());
+    }
+
+    public void getRent(int rent)
+    {
+        pl.setBalance(konto.getBalance()+rent);
     }
 
     public void payRent(int cost, Player owner, String title) {
@@ -281,6 +288,15 @@ public class Player {
         {
             return false;
         }
+    }
+    public int checkDoubleCost()
+    {
+        if (checkOwnerOwnAll())
+        {
+            return 2;
+        }
+        else return 1;
+
     }
 
 
