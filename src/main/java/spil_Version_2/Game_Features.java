@@ -1,6 +1,6 @@
 package spil_Version_2;
 
-import spil.cards.*;
+
 import spil_Version_2.cards.*;
 
 
