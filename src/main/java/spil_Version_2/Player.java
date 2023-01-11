@@ -23,12 +23,15 @@ public class Player {
     }
 
     private int pos=0;
+    private int fartbølle=0;
+
     Konto konto = new Konto(0);
     Terninger terninger = new Terninger();
     GUI_Player pl;
     GUI_Field fpos;
     GUI gui;
     LandOnField landOnField =new LandOnField();
+
 
 
 
@@ -107,10 +110,18 @@ public class Player {
                 landOnField.hitField(this,gamefields);
 
                 if (t1==t2){
+                    fartbølle++;
+                    if (fartbølle==3){
+                        goToJail();
+                    }
+                    else{
                     gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
                     spil(gui,fields);
 
                 }
+
+            }
+                else{fartbølle=0;}
             }
 
             if (konto.getBalance() <=0) {
