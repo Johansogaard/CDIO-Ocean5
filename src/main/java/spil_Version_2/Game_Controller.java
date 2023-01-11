@@ -51,8 +51,9 @@ public class Game_Controller {
                 playerList.remove(i);
 
             }
-            else if(playerList.size() == 1){
+            if(playerList.size() == 1){
                 gui.getUserButtonPressed(playerList.get(i).getName()+"har vundet som den sidste spiller stående", "Tak for spillet");
+
                 break;
             }
 
