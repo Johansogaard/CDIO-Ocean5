@@ -35,7 +35,7 @@ public class Game_Features {
 
 
            //ryk frem eller tilbage
-            int[] spacesToMove = {-3};
+            int[] spacesToMove = {3,-3,-3};
             for (int space : spacesToMove) {
                 cardArray.add(new RykFelter_Card(space));
             }
