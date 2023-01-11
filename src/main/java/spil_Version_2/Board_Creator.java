@@ -30,7 +30,7 @@ public class Board_Creator {
                     if (input == null || input == "") {
                         reader.close();
 
-
+                        fieldData.remove(0);
                         return listToArray(fieldlist);
 
                     } else {
@@ -73,6 +73,7 @@ public class Board_Creator {
                 case "street":
                 {
                     gui_fields.GUI_Street newStreet = new gui_fields.GUI_Street();
+
                     newStreet.setTitle(data[0]);
                     newStreet.setSubText("Kr. "+data[3]);
                     newStreet.setDescription("Denne grund koster "+data[3]);
@@ -176,7 +177,7 @@ public class Board_Creator {
     static ArrayList<String> orange = new ArrayList<String>();
     static ArrayList<String> grey = new ArrayList<String>();
     static ArrayList<String> white = new ArrayList<String>();
-    ArrayList<String> yellow = new ArrayList<String>();
+    static ArrayList<String> yellow = new ArrayList<String>();
     static ArrayList<String> purple = new ArrayList<String>();
 
 
@@ -244,7 +245,7 @@ public class Board_Creator {
         }
         return c;
         }
-    public static ArrayList<String> getColorArray(String color) {
+    public static ArrayList<String> getGroupArray(String color) {
 
 
         ArrayList<String> colorarray = null;
@@ -277,14 +278,29 @@ public class Board_Creator {
             case "purple": {
                 colorarray = purple;
             }
-
-
             break;
+            case "yellow": {
+                colorarray = yellow;
+            }
+            break;
+            case "ferry": {
+                colorarray = ferry;
+            }
+            break;
+            case "brewery": {
+                colorarray = brewery;
+            }
+            break;
+            default:
+            {
 
+            }
+            break;
         }
 
         return colorarray;
     }
+
 
 
     private int[] rentArr(String[] data)
@@ -297,8 +313,7 @@ public class Board_Creator {
             return rent;
         }
     public static ArrayList<String[]> getFieldData() {
-        fieldData.remove(0);
-        return fieldData;
+       return fieldData;
     }
     }
 

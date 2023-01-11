@@ -5,7 +5,7 @@ package spil_Version_2;
 
 import gui_fields.*;
 import gui_main.GUI;
-import spil.BoardCreator;
+import spil_Version_2.Board_Creator;
 import spil_Version_2.LandOnField;
 
 import java.awt.*;
@@ -97,7 +97,7 @@ public class Player {
 
 
             }
-            else if (gui.getUserButtonPressed(name + " Klik her for at sende turen videre", "Rul terninger") == "Rul terninger") {
+            else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger") {
                 turn();
                 checkIfPassedStart(pos+t1+t2);
 
@@ -225,14 +225,31 @@ public class Player {
     public boolean checkOwnerOwnAll(){
         GUI_Field field = gamefields[getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
+        ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
+        ArrayList<String> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
+        boolean sandt = false;
+        int f=0;
+        for (int i = 0;i<typeFields.size();i++)
+        {
+            String l =typeFields.get(i);
+            if(ownerFields.contains(l))
+            {
+                f++;
+            }
+            if (f ==typeFields.size())
+            {
+                sandt = true;
+            }
+        }
 
-        if (Arrays.asList(Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde()).contains(BoardCreator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]))))
+        if (sandt)
         {
             return true;
         }
-
-        else return false;
-
+        else
+        {
+            return false;
+        }
     }
 
 
