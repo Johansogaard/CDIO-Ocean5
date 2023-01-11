@@ -31,6 +31,7 @@ public class Game_Controller {
        for (int i = 0; i < players.length; i++) {
 
             players[i].tilføjspillerGui(gui,getCarColors()[i]);
+
         }
         playGame(players,fields,gui);
 
