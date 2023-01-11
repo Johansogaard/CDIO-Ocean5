@@ -7,6 +7,7 @@ import spil_Version_2.cards.Parent_Card;
 ;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static spil_Version_2.Game_Controller.getGui;
 
@@ -50,22 +51,25 @@ public class LandOnField {
         }
         else if (player.getName() != ownable.getOwnerName())
     {
+        Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
+        if(ownable.getClass().equals(GUI_Brewery.class))
+        {
+            hitBrewery(player,owner, fields);
+        }
         if (player.checkOwnerOwnAll())
         {
             if (ownable.getClass().equals(GUI_Street.class))
             {
                 hitStreet(player,fields);
             } else if (ownable.getClass().equals(GUI_Shipping.class)) {
-                hitFerry(player,fields);
+                hitFerry(player,owner,fields);
 
             }
-            else {
-                hitBrewery(player,fields);
-            }
+
 
         }
         else {
-            Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
+
             int rent = Integer.parseInt(ownable.getRent());
             player.payRent(rent,owner,ownable.getTitle());
 
@@ -79,27 +83,55 @@ public class LandOnField {
         GUI_Street street = (GUI_Street) field;
 
     }
-    private void hitFerry(Player player, GUI_Field[] fields){
-
+    private void hitFerry(Player player,Player owner, GUI_Field[] fields){
+        String titel=fields[player.getPos()].getTitle();
+        // sammenligneren ferry array og owneren hvor man får et array med fælles som man så tager længden af og putter ind i switch med priser
+        player.payRent(howManyFerry(owner), owner, titel);
     }
-    private void hitBrewery(Player player, GUI_Field[] fields){
-     /*   if ((getOwner().getGrunde()).contains(Board_Creator.getTypeArray("brewery"))) {
-            getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
-            getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (200 * sum()), "okay");
-            player.payRent((200 * sum()), getOwner(), getTitle());
-            getOwner().getRent((200 * sum()));
+    private void hitBrewery(Player player,Player owner, GUI_Field[] fields){
 
+    if (player.checkOwnerOwnAll()) {
+            player.payRent((200 * player.getTerningeSum()), owner,fields[player.getPos()].getTitle());
         }
         //ellers bare det normalt
         else
         {
-            getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
-            getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (100 * sum()), "okay");
-            player.payRent((100 * sum()), getOwner(), getTitle());
-            getOwner().getRent((100 * sum()));
+           /* getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
+            getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (100 * sum()), "okay");*/
+            player.payRent((100 * player.getTerningeSum()), owner, fields[player.getPos()].getTitle());
 
-        }*/
+
+        }
     }
+    private int howManyFerry(Player owner){
+
+        List<String> common = new ArrayList<>(owner.getGrunde());
+        common.retainAll(Board_Creator.getTypeArray("ferry"));
+        int multi=0;
+        switch (common.size()){
+            case 1: {
+                multi=500;
+            }
+            break;
+            case 2: {
+                multi=1000;
+            }
+            break;
+            case 3: {
+                multi=2000;
+            }
+            break;
+            case 4: {
+                multi=4000;
+            }
+            break;
+        }
+
+
+
+        return multi;
+    }
+
     private void hitJail(Player player, GUI_Field[] fields){
         if(player.getPos() == 30)
         {

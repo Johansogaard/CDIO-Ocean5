@@ -122,6 +122,7 @@ public class Player {
     private void buyHouse()
     {
 
+
     }
     private void sellHouse()
     {
@@ -230,6 +231,10 @@ public class Player {
         t2 = terninger.slaEnTerning();
 
 
+    }
+    public int getTerningeSum()
+    {
+        return t1+t2;
     }
     public void setCar(int tsum, GUI gui) {
         tsum = tsum%40;
