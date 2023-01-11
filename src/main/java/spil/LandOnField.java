@@ -113,7 +113,7 @@ public class LandOnField {
             {
                 int num = player.getKonto().getBalance()+player.getKonto().getFieldvalue();
                 int rounded =((num+99)/100)*100;
-                Game_Controller.getGui().getUserButtonPressed(player.getName()+" du betaler "+rounded+" i skat");
+                GameController.getGui().getUserButtonPressed(player.getName()+" du betaler "+rounded+" i skat");
                 player.updatePlayerBalance(-rounded);//her skal vi tage 10% af en spillers værdi i felter og penge og han skal betale det
             }
 
