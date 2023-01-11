@@ -1,5 +1,5 @@
-package spil_Version_2.cards;
-import spil_Version_2.*;
+package spil.cards;
+import spil.*;
 
 public class RykFelter_Card extends Parent_Card {
 

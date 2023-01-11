@@ -1,5 +1,5 @@
-package spil_Version_2.cards;
-import spil_Version_2.Player;
+package spil.cards;
+import spil.Player;
 public abstract class Parent_Card {
 
     public abstract void hit(Player player);

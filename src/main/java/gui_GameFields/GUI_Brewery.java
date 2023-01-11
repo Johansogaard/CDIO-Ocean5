@@ -54,7 +54,7 @@ public class GUI_Brewery extends GUI_Parentfield {
             if ((getOwner().getGrunde()).contains(BoardCreator.getTypeArray("brewery"))) {
                 getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (200 * player.sum()), "okay");
-                player.payRant((200 * player.sum()), getOwner(), getTitle());
+                player.payRent((200 * player.sum()), getOwner(), getTitle());
                 getOwner().getRent((200 * player.sum()));
 
             }
@@ -63,7 +63,7 @@ public class GUI_Brewery extends GUI_Parentfield {
             {
                 getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (100 * player.sum()), "okay");
-                player.payRant((100 * player.sum()), getOwner(), getTitle());
+                player.payRent((100 * player.sum()), getOwner(), getTitle());
                 getOwner().getRent((100 * player.sum()));
 
             }

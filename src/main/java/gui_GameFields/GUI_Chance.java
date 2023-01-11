@@ -5,13 +5,13 @@
 
 package gui_GameFields;
 
-import card.Parent_Card;
 import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Player;
 import gui_resources.Attrs;
 import spil.GameFeatures;
 import spil.Player;
+import spil.cards.Parent_Card;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,5 +1,5 @@
-package spil_Version_2.cards;
-import spil_Version_2.*;
+package spil.cards;
+import spil.*;
 
 public class Straf_Eller_Gevinst extends Parent_Card {
     private int amount;

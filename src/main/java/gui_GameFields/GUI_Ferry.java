@@ -75,7 +75,7 @@ public class GUI_Ferry extends GUI_Parentfield{
 
                 getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + howManyFerry(), "okay");
-                player.payRant(howManyFerry(), getOwner(), getTitle());
+                player.payRent(howManyFerry(), getOwner(), getTitle());
                 getOwner().getRent(howManyFerry());
 
 
