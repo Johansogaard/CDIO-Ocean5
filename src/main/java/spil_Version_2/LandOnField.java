@@ -1,12 +1,14 @@
 package spil_Version_2;
 
-import gui_GameFields.GUI_Ferry;
+
 import gui_fields.*;
-import spil.cards.*;
+
 import spil_Version_2.cards.Parent_Card;
 ;
 
 import java.util.ArrayList;
+
+import static spil_Version_2.Game_Controller.getGui;
 
 
 public class LandOnField {
@@ -53,7 +55,7 @@ public class LandOnField {
             if (ownable.getClass().equals(GUI_Street.class))
             {
                 hitStreet(player,fields);
-            } else if (ownable.getClass().equals(GUI_Ferry.class)) {
+            } else if (ownable.getClass().equals(GUI_Shipping.class)) {
                 hitFerry(player,fields);
 
             }
@@ -81,7 +83,22 @@ public class LandOnField {
 
     }
     private void hitBrewery(Player player, GUI_Field[] fields){
+     /*   if ((getOwner().getGrunde()).contains(Board_Creator.getTypeArray("brewery"))) {
+            getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
+            getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (200 * sum()), "okay");
+            player.payRent((200 * sum()), getOwner(), getTitle());
+            getOwner().getRent((200 * sum()));
 
+        }
+        //ellers bare det normalt
+        else
+        {
+            getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
+            getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (100 * sum()), "okay");
+            player.payRent((100 * sum()), getOwner(), getTitle());
+            getOwner().getRent((100 * sum()));
+
+        }*/
     }
     private void hitJail(Player player, GUI_Field[] fields){
         if(player.getPos() == 30)

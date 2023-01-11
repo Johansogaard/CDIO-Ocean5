@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="prøver at fixe project" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="tax virker">
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/Matador_Legat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/MovePlayerCard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/Parent_Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykFelter_Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykTilStart_Card.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/card/Straf_Eller_Gevinst.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/FieldText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/ReadFieldData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_GoToJail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Jail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ownable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parkering.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/inGameFunktions/LandOnStreet.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,17 +49,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/game_Txt/FieldText.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_GoToJail.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Jail.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/spil/GameController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/GameText.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/fieldsdata.csv" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -448,7 +459,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil/Helper.java</url>
           <line>5</line>
-          <properties class="spil.Helper" method="getElement2dArray">
+          <properties class="spil.Helper">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
