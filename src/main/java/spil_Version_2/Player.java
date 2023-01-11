@@ -162,13 +162,17 @@ public class Player {
         t2 = terninger.slaEnTerning();
 
     }
-    public void setCar(int tsum,GUI gui)
-    {
-        fpos.setCar(pl,false);
+    public void setCar(int tsum, GUI gui) {
+        if (tsum < 0 || tsum >= gui.getFields().length) {
+            throw new IllegalArgumentException("Invalid field index: " + tsum);
+        }
+        fpos.setCar(pl, false);
         GUI_Field felt = gui.getFields()[tsum];
-        felt.setCar(pl,true);
+        felt.setCar(pl, true);
         fpos = gui.getFields()[tsum];
     }
+
+
     public void displayCard()
     {
         GUI_Field f = gui.getFields()[pos];

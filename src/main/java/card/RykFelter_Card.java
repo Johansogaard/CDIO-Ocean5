@@ -10,21 +10,18 @@ public class RykFelter_Card extends Parent_Card {
         this.spacesToMove = spacesToMove;
     }
 
+
     @Override
     public void hit(Player player) {
         if (spacesToMove < 0) {
-            // hvis negativ; anden tekst
-            player.showchancecard("Ryk " + Math.abs(spacesToMove) + " felter tilbage");
-        } else {
-            player.showchancecard("Ryk " + spacesToMove + " felter frem");
+            spacesToMove = Math.abs(spacesToMove);
         }
-        //er spilleren passeret start?
+        player.showchancecard("Ryk " + spacesToMove + " felter");
         player.checkIfPassedStart(player.getPos() + spacesToMove);
-
-        //evt action til spiller
         player.movePlayer((player.getPos() + spacesToMove) % 40);
         player.hitField();
     }
+
 
 }
 
