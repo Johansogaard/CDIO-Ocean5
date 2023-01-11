@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Fikset vind og tab funktion">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Terninger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Terninger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,8 +150,7 @@
       <workItem from="1672743175225" duration="23122000" />
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1673357922103" duration="798000" />
-      <workItem from="1673389747330" duration="610000" />
-      <workItem from="1673429525091" duration="1425000" />
+      <workItem from="1673375842619" duration="656000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -295,12 +299,12 @@
       <option name="project" value="LOCAL" />
       <updated>1673180082557</updated>
     </task>
-    <task id="LOCAL-00022" summary="Fikset vind og tab funktion">
-      <created>1673429549144</created>
+    <task id="LOCAL-00022" summary="&#10;k">
+      <created>1673430717606</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1673429549144</updated>
+      <updated>1673430717606</updated>
     </task>
     <option name="localTasksCounter" value="23" />
     <servers />
@@ -331,8 +335,8 @@
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
-    <MESSAGE value="Fikset vind og tab funktion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fikset vind og tab funktion" />
+    <MESSAGE value="&#10;k" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;k" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -350,15 +354,6 @@
           <line>34</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java</url>
-          <line>14</line>
-          <properties class="spil_Version_2.LandOnField">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -367,5 +362,13 @@
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil.*</FILTER>
+    </SUITE>
   </component>
 </project>

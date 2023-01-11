@@ -163,9 +163,7 @@ public class Player {
 
     }
     public void setCar(int tsum, GUI gui) {
-        if (tsum < 0 || tsum >= gui.getFields().length) {
-            throw new IllegalArgumentException("Invalid field index: " + tsum);
-        }
+        tsum = tsum%40;
         fpos.setCar(pl, false);
         GUI_Field felt = gui.getFields()[tsum];
         felt.setCar(pl, true);
@@ -209,13 +207,16 @@ public class Player {
         jail=true;
         gui.getUserButtonPressed(name + " du er røget i fængsel får dårlig opførelse", "Okay");
     }
-    public void movePlayer(int number)
-    {
-        this.pos = number;
+    public void movePlayer(int number) {
+        if(number <0){
+            number = number + 40;
+        }
+        this.pos = number%40;
         checkIfPassedStart(pos);
         setCar(pos, gui);
     }
-   public void showchancecard(String txt){
+
+    public void showchancecard(String txt){
        gui.displayChanceCard(txt);
        gui.getUserButtonPressed(name +" "+ txt, "Okay");
 
