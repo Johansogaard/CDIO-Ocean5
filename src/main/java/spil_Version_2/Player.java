@@ -150,11 +150,8 @@ public class Player {
         {
             updatePlayerBalance(4000);
         }
-        else if (sumPos >= 40 && sumPos < 80) {
-            updatePlayerBalance(4000);
-        }
-
     }
+
 
     public void turn()
     {
