@@ -97,7 +97,7 @@ public class Player {
 
 
             }
-            else if (gui.getUserButtonPressed(name + " Klik her for at sende turen videre", "Rul terninger") == "Rul terninger") {
+            else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger") {
                 turn();
                 checkIfPassedStart(pos+t1+t2);
 
