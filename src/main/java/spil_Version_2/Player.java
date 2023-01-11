@@ -90,47 +90,88 @@ public class Player {
     public boolean spil(GUI gui, GUI_Field[] fields)
     {
         gamefields = fields;
-
-            if (jail)
+        boolean playerLost = false;
+        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Byg hus/hotel", "3. Sælg hus/hotel", "4. Pansæt grund");
+        switch (getChoice(choice)){
+            case 1:
             {
-                inJail();
+                playerLost = runATurn();
+            }
+            break;
+            case 2:
+            {
+                buyHouse();
+                spil(gui,fields);
+            }
+            break;
+            case 3:
+            {
+                sellHouse();
+                spil(gui,fields);
+            }
+            break;
+            case 4:
+            {
+                pawnField();
+                spil(gui,fields);
+            }
+            break;
+        }
+        return playerLost;
+    }
+    private void buyHouse()
+    {
 
+    }
+    private void sellHouse()
+    {
+
+    }
+    private void pawnField()
+    {}
+    private boolean runATurn()
+    {
+        if (jail)
+        {
+            inJail();
+
+
+        }
+        else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger")
+            turn();
+        checkIfPassedStart(pos+t1+t2);
+
+        pos=(pos+t1 +t2)%40;
+        gui.setDice(t1, t2);
+        setCar(pos, gui);
+        landOnField.hitField(this,gamefields);
+
+        if (t1==t2){
+            fartbølle++;
+            if (fartbølle==3){
+                goToJail();
+            }
+            else{
+                gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
+                spil(gui,gamefields);
 
             }
-            else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger") {
-                turn();
-                checkIfPassedStart(pos+t1+t2);
 
-                pos=(pos+t1 +t2)%40;
-                gui.setDice(t1, t2);
-                setCar(pos, gui);
-                landOnField.hitField(this,gamefields);
-
-                if (t1==t2){
-                    fartbølle++;
-                    if (fartbølle==3){
-                        goToJail();
-                    }
-                    else{
-                    gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
-                    spil(gui,fields);
-
-                }
-
-            }
-                else{fartbølle=0;}
-            }
-
-            if (konto.getBalance() <=0) {
-                    return true;
-            }
-            else {
-                return false;
-            }
+        }
+        else{fartbølle=0;}
 
 
+        if (konto.getBalance() <=0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
-
+    private int getChoice(String choice)
+    {
+        return Integer.parseInt(choice.split("\\.")[0]);
     }
 
     //tror virker
