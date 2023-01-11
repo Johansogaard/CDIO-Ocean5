@@ -17,7 +17,7 @@ class BoardCreatorTest  {
         testorange.add("Roskildevej");
         testorange.add("Valby Langgade");
         testorange.add("Allégade");
-
+        System.out.println(BoardCreator.getGroupArray("orange"));
     assertIterableEquals(testorange, BoardCreator.getGroupArray("orange"));
     }
 }
