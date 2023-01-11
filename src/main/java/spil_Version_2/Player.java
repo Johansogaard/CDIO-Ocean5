@@ -106,6 +106,11 @@ public class Player {
                 setCar(pos, gui);
                 landOnField.hitField(this,gamefields);
 
+                if (t1==t2){
+                    gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
+                    spil(gui,fields);
+
+                }
             }
 
             if (konto.getBalance() <=0) {
@@ -119,17 +124,32 @@ public class Player {
 
 
     }
+
+    //tror virker
     private void inJail()
     {
+        if(jailCounter==3){
+            gui.getUserButtonPressed(name + " fik ikke tre ens 3 ture i træk og skal derfor betale", "gå videre");
+            payJail();
+        }
         if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
         {
             payJail();
         }
+
         else
         {
             jailCounter++;
             turn();
+            if (t1==t2){
+
+                jail = false;
+                spil(this.gui,this.gamefields);
+
+            }
+            else {gui.getUserButtonPressed(name + " fik ikke to ens", "gå videre");}
         }
+
 
     }
     private void payJail(){
@@ -160,6 +180,7 @@ public class Player {
     {
         t1 = terninger.slaEnTerning();
         t2 = terninger.slaEnTerning();
+
 
     }
     public void setCar(int tsum,GUI gui)
