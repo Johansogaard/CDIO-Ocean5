@@ -25,7 +25,7 @@ public class Game_Features {
 //tilføjer kort til array, og gør rækkefølgen ranom
             ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
             ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
-            /*cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
+            cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
             //chancekort
             // ryk til start, uden gevinst
@@ -33,7 +33,7 @@ public class Game_Features {
             cardArray.add(new RykTilStart_Card(0));
 
 
-             */
+
            //ryk frem eller tilbage
             int[] spacesToMove = {-3};
             for (int space : spacesToMove) {
@@ -42,7 +42,7 @@ public class Game_Features {
 
 
 
-/*
+
             //modtag eller betal: false=betal, true=modtag
             cardArray.add(new Straf_Eller_Gevinst(200, false, "Betal kr 200 for levering af 2 kasser øl"));
             cardArray.add(new Straf_Eller_Gevinst(3000,false , "Betal 3000 for reparation af deres vogn"));
@@ -76,7 +76,7 @@ public class Game_Features {
             cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
 
 
- */
+
 
 
 

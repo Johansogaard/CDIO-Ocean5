@@ -10,8 +10,8 @@ public class Terninger {
     public static int slaEnTerning()
     {
         Random rand = new Random();
-      return 1;
-      //  return rand.nextInt(1,7);
+
+        return rand.nextInt(1,7);
 
 
     }
