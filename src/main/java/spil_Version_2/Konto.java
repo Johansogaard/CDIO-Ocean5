@@ -1,4 +1,4 @@
-package spil;
+package spil_Version_2;
 
 public class Konto {
     private int b =0;

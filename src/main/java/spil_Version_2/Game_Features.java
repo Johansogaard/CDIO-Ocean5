@@ -1,6 +1,7 @@
-package spil;
+package spil_Version_2;
 
 import spil.cards.*;
+import spil_Version_2.cards.*;
 
 
 import javax.swing.*;
@@ -10,12 +11,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameFeatures {
+public class Game_Features {
 
         private static Integer players=-1;
         private static final Object monitor = new Object();
         private static boolean b =false;
-        public GameFeatures()
+        public Game_Features()
         {
 
         }
@@ -226,7 +227,7 @@ public class GameFeatures {
         }
         public static boolean makeYesNoButton(String msg)
         {
-            boolean selection = GameController.getGui().getUserLeftButtonPressed(msg,"Ja","Nej");
+            boolean selection = Game_Controller.getGui().getUserLeftButtonPressed(msg,"Ja","Nej");
             return selection;
         }
         public void addRemoveButton()
@@ -234,7 +235,7 @@ public class GameFeatures {
         {
 
             JButton b = new JButton("Click Here");
-            String knapString = GameController.getGui().getUserSelection("Vælg en knap","knap1","knap2");
+            String knapString = Game_Controller.getGui().getUserSelection("Vælg en knap","knap1","knap2");
 
         }
     }

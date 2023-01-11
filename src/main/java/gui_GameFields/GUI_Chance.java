@@ -9,9 +9,9 @@ import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Player;
 import gui_resources.Attrs;
-import spil.GameFeatures;
-import spil.Player;
-import spil.cards.Parent_Card;
+import spil_Version_2.Game_Features;
+import spil_Version_2.Player;
+import spil_Version_2.cards.Parent_Card;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,7 +62,7 @@ public class GUI_Chance extends GUI_Parentfield {
     public void hit(Player player)
     {
 
-       ArrayList<Parent_Card> cards = GameFeatures.cards();
+       ArrayList<Parent_Card> cards = Game_Features.cards();
        cards.get(card).hit(player);
        card++;
        if (cards.size()<=card)

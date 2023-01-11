@@ -1,12 +1,12 @@
 package gui_GameFields;
 import java.util.ArrayList;
 import java.util.List;
-import spil.BoardCreator;
-import spil.Player;
+import spil_Version_2.Board_Creator;
+import spil_Version_2.Player;
 
 import java.awt.*;
 
-import static spil.GameController.getGui;
+import static spil_Version_2.Game_Controller.getGui;
 
 public class GUI_Ferry extends GUI_Parentfield{
     int price;
@@ -22,7 +22,7 @@ public class GUI_Ferry extends GUI_Parentfield{
     private int howManyFerry(){
 
         List<String> common = new ArrayList<>(getOwner().getGrunde());
-        common.retainAll(BoardCreator.getTypeArray("ferry"));
+        common.retainAll(Board_Creator.getTypeArray("ferry"));
         int multi=0;
         switch (common.size()){
             case 1: {

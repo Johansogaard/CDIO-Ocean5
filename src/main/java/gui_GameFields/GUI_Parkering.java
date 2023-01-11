@@ -1,6 +1,6 @@
 package gui_GameFields;
 
-import spil.Player;
+import spil_Version_2.Player;
 
 import java.awt.*;
 

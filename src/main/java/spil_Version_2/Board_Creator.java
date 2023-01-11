@@ -1,4 +1,4 @@
-package spil;
+package spil_Version_2;
 
 
 import gui_fields.*;
@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class BoardCreator {
+public class Board_Creator {
 
 
     static ArrayList<String[]> fieldData = new ArrayList<>();

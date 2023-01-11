@@ -1,7 +1,7 @@
 package gui_GameFields;
 
 import game_Txt.FieldText;
-import spil.Player;
+import spil_Version_2.Player;
 
 import java.awt.*;
 

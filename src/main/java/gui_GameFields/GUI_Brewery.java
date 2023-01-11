@@ -1,17 +1,14 @@
 package gui_GameFields;
 
-import gui_fields.GUI_Field;
-import spil.BoardCreator;
-import spil.GameController;
-import spil.Konto;
-import spil.Player;
-import java.util.ArrayList;
+import spil_Version_2.Board_Creator;
+import spil_Version_2.Game_Controller;
+import spil_Version_2.Player;
+import spil_Version_2.Terninger;
 
 
 import java.awt.*;
-import java.util.List;
 
-import static spil.GameController.getGui;
+import static spil_Version_2.Game_Controller.getGui;
 
 public class GUI_Brewery extends GUI_Parentfield {
 
@@ -21,7 +18,7 @@ public class GUI_Brewery extends GUI_Parentfield {
     private int t2 = 0;
 
     GUI_Parentfield[] gamefields;
-    GameController gameController;
+    Game_Controller gameController;
     Player player;
     int[] rent;
 
@@ -36,8 +33,8 @@ public class GUI_Brewery extends GUI_Parentfield {
     }
 
     public int sum(){
-        t1 = spil.Terninger.slaEnTerning();
-        t2 = spil.Terninger.slaEnTerning();
+        t1 = Terninger.slaEnTerning();
+        t2 = Terninger.slaEnTerning();
         int i = t1 + t2;
         return i;}
 //Køb grunden hvis ingen ejer den og man har penge nok
@@ -61,7 +58,7 @@ public class GUI_Brewery extends GUI_Parentfield {
         } else if (player != getOwner()) {
 
 //tjek om du har begge bryggerier i deres inventory så kommer der dobbelt pris
-            if ((getOwner().getGrunde()).contains(BoardCreator.getTypeArray("brewery"))) {
+            if ((getOwner().getGrunde()).contains(Board_Creator.getTypeArray("brewery"))) {
                 getGui().showMessage(player.getName() + "er landet på" + getTitle() + "hvilket ejes af" + getOwner().getName());
                 getGui().getUserButtonPressed(player.getName() + "skal derfor betale" + (200 * sum()), "okay");
                 player.payRent((200 * sum()), getOwner(), getTitle());

@@ -4,9 +4,8 @@ import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
-import spil.GameFeatures;
-import spil.Player;
-import spil.inGameFunktions.LandOnStreet;
+import spil_Version_2.Game_Features;
+import spil_Version_2.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +19,7 @@ public abstract class GUI_Parentfield extends GUI_Field {
 
     private int price = 0;
 
-    GameFeatures gameFeatures = new GameFeatures();
+    Game_Features gameFeatures = new Game_Features();
     private Player owner=null;
     private SwingComponentFactory factory;
 

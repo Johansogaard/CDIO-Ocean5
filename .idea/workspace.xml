@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Refactor complete" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="hotfix">
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/BoardCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Board_Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/GameFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Game_Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/LandOnField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil/inGameFunktions/LandOnStreet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil/inGameFunktions/LandOnStreet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil/BoardCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil/BoardCreatorTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,9 +49,9 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/spil/BoardCreator.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/spil/GameController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/spil/GameFeatures.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil/Board_Creator.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil/Game_Controller.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil/Game_Features.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/spil/Konto.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/spil/Player.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/GameText.txt" root0="FORCE_HIGHLIGHTING" />
@@ -93,7 +105,7 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameController">
+  <component name="RunManager" selected="Application.Game_Controller">
     <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil.GameController" />
       <module name="CDIO-Ocean5" />
@@ -120,8 +132,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil.GameController" />
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil.Game_Controller" />
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -180,7 +192,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.Game_Controller" />
         <item itemvalue="JUnit.HelperTest.getElement2dArray" />
         <item itemvalue="JUnit.BoardCreatorTest.getColorArray" />
         <item itemvalue="Application.REMOVETHISCLASS" />

@@ -1,11 +1,11 @@
-package spil;
+package spil_Version_2;
 
-import gui_GameFields.GUI_Start;
+import spil_Version_2.Terninger;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
+
 class TerningerTest {
 
     @org.junit.jupiter.api.Test

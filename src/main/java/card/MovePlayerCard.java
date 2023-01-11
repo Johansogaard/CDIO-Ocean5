@@ -1,6 +1,6 @@
 package card;
 
-import spil.Player;
+import spil_Version_2.Player;
 
 public class MovePlayerCard extends Parent_Card {
     private int steps;

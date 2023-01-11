@@ -10,7 +10,7 @@ import gui_codebehind.GUI_Center;
 import gui_codebehind.SwingComponentFactory;
 import gui_fields.GUI_Player;
 import gui_resources.Attrs;
-import spil.Player;
+import spil_Version_2.Player;
 
 import javax.swing.*;
 import java.awt.*;

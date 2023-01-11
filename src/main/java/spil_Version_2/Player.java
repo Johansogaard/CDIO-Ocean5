@@ -1,4 +1,4 @@
-package spil;
+package spil_Version_2;
 
 
 
@@ -263,8 +263,8 @@ public class Player {
     public boolean checkOwnerOwnAll(){
         GUI_Field field = gamefields[getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
-        ArrayList<String> ownerFields = GameController.getPlayer(ownable.getOwnerName()).getGrunde();
-        ArrayList<String> typeFields = BoardCreator.getGroupArray((BoardCreator.getFieldData().get(pos)[11]));
+        ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
+        ArrayList<String> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
         boolean sandt = false;
         int f=0;
         for (int i = 0;i<typeFields.size();i++)

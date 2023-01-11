@@ -1,4 +1,4 @@
-package spil;
+package spil_Version_2;
 
 import gui_fields.GUI_Field;
 import gui_main.GUI;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.io.FileNotFoundException;
 
-public class GameController {
+public class Game_Controller {
 
 
     public static Color[] carColors = {Color.blue,Color.green,Color.red,Color.yellow,Color.MAGENTA,Color.BLACK};
@@ -20,9 +20,9 @@ public class GameController {
 
     private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
-        players = GameFeatures.playerstoadd();
+        players = Game_Features.playerstoadd();
 
-        BoardCreator b = new BoardCreator();
+        Board_Creator b = new Board_Creator();
         // System.out.println(readTextFromFile(file,"jailMessage"));
         fields = b.istantiererFelter();
         gui = new GUI(fields, Color.cyan);

@@ -1,6 +1,5 @@
 package card;
-import spil.Konto;
-import spil.Player;
+import spil_Version_2.Player;
 
 public class Matador_Legat extends Parent_Card {
     private int amount;
