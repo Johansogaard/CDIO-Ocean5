@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="refactor progress" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Refactor complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -368,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673436997787</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refactor complete">
+      <created>1673467525861</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673467525861</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +392,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Refactor" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -403,12 +410,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="Refactor" />
+                  <option value="origin/main" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/main" />
+                  <option value="Refactor" />
                 </option>
               </RecentGroup>
             </list>
@@ -431,7 +438,8 @@
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
     <MESSAGE value="version 0.1" />
     <MESSAGE value="tror fængsel virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="tror fængsel virker" />
+    <MESSAGE value="Refactor complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
