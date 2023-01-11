@@ -170,11 +170,8 @@ public class Player {
         {
             updatePlayerBalance(4000);
         }
-        else if (sumPos >= 40 && sumPos < 80) {
-            updatePlayerBalance(4000);
-        }
-
     }
+
 
     public void turn()
     {
@@ -183,13 +180,15 @@ public class Player {
 
 
     }
-    public void setCar(int tsum,GUI gui)
-    {
-        fpos.setCar(pl,false);
+    public void setCar(int tsum, GUI gui) {
+        tsum = tsum%40;
+        fpos.setCar(pl, false);
         GUI_Field felt = gui.getFields()[tsum];
-        felt.setCar(pl,true);
+        felt.setCar(pl, true);
         fpos = gui.getFields()[tsum];
     }
+
+
     public void displayCard()
     {
         GUI_Field f = gui.getFields()[pos];
@@ -226,13 +225,16 @@ public class Player {
         jail=true;
         gui.getUserButtonPressed(name + " du er røget i fængsel får dårlig opførelse", "Okay");
     }
-    public void movePlayer(int number)
-    {
-        this.pos = number;
+    public void movePlayer(int number) {
+        if(number <0){
+            number = number + 40;
+        }
+        this.pos = number%40;
         checkIfPassedStart(pos);
         setCar(pos, gui);
     }
-   public void showchancecard(String txt){
+
+    public void showchancecard(String txt){
        gui.displayChanceCard(txt);
        gui.getUserButtonPressed(name +" "+ txt, "Okay");
 
