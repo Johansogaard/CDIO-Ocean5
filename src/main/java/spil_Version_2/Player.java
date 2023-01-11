@@ -7,6 +7,7 @@ import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -121,9 +122,35 @@ public class Player {
     }
     private void buyHouse()
     {
+        String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
+        ArrayList<String> colorsYouOwn = new ArrayList<>();
+       for(int i=0;i<fieldcolors.length;i++)
+       {
+           if(checkPlayerOwnsTheColorFields(this,fieldcolors[i]))
+           {
+               colorsYouOwn.add(fieldcolors[i]);
+           }
+       }
+       if (colorsYouOwn.size()==0)
+       {
+           gui.getUserButtonPressed("Du har ikke alle felter i en farve og kan derfor ikke købe hus","Okay");
+       }
+       else {
+           ArrayList<String> sameColorFields = new ArrayList<>();
 
+           for(int i = 0;i<colorsYouOwn.size();i++)
+           {
+               //er igang med at lacve
+               ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
+
+
+
+           }
+            gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",fieldcolors);
+       }
 
     }
+
     private void sellHouse()
     {
 
@@ -310,12 +337,18 @@ public class Player {
         GUI_Field field = gamefields[getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
         ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
-        ArrayList<String> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
+        ArrayList<String[]> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
+        return checkPlayerOwnsTheColorFields(Game_Controller.getPlayer(ownable.getOwnerName()), Board_Creator.getFieldData().get(pos)[11]);
+    }
+    public boolean checkPlayerOwnsTheColorFields (Player player, String color)
+    {
+        ArrayList<String> ownerFields = player.getGrunde();
+        ArrayList<String[]> typeFields = Board_Creator.getGroupArray(color);
         boolean sandt = false;
         int f=0;
         for (int i = 0;i<typeFields.size();i++)
         {
-            String l =typeFields.get(i);
+            String l =typeFields.get(i)[0];
             if(ownerFields.contains(l))
             {
                 f++;
@@ -335,6 +368,7 @@ public class Player {
             return false;
         }
     }
+
     public int checkDoubleCost()
     {
         if (checkOwnerOwnAll())

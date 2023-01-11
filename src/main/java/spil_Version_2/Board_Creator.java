@@ -33,14 +33,6 @@ public class Board_Creator {
 
                     } else {
                         String[] dataArray =  input.split(",",-1);
-                                //   StringTokenizer st = new StringTokenizer(input, ",");
-
-                        /*String[] currToken = new String[st.countTokens()];
-                        for (int i =0;st.hasMoreTokens();i++)
-                        {
-
-                            currToken[i]= st.nextToken().trim();
-                        }*/
 
                         dataArray[2] = dataArray[2].trim();
 
@@ -58,8 +50,7 @@ public class Board_Creator {
             }
         }
 
-    static ArrayList<String> ferry= new ArrayList<String>();
-    static ArrayList<String> brewery= new ArrayList<String>();
+
 
         private  ArrayList<GUI_Field> addfield(String[] data,ArrayList<GUI_Field> list)
         {
@@ -76,7 +67,7 @@ public class Board_Creator {
                     newStreet.setSubText("Kr. "+data[3]);
                     newStreet.setDescription("Denne grund koster "+data[3]);
                     newStreet.setRent(data[5]);
-                    newStreet.setBackGroundColor(fieldColor(data[11],data[0]));
+                    newStreet.setBackGroundColor(fieldColor(data[11],data));
                     list.add(newStreet);
 
 
@@ -112,7 +103,7 @@ public class Board_Creator {
                     s.setDescription("Denne grund koster "+data[3]);
                     s.setRent(data[5]);
                     list.add(s);
-                    ferry.add(data[0]);
+                    ferry.add(data);
 
                 }
                 break;
@@ -124,7 +115,7 @@ public class Board_Creator {
                     b.setDescription("Denne grund koster "+data[3]);
                     b.setRent(data[5]);
                     list.add(b);
-                    brewery.add(data[0]);
+                    brewery.add(data);
                 }
                 break;
                 case "refugee":
@@ -144,6 +135,7 @@ public class Board_Creator {
 
             return list;
         }
+        /*
     public static ArrayList<String> getTypeArray(String type) {
         ArrayList<String> TypeArray = null;
         switch (type) {
@@ -159,6 +151,8 @@ public class Board_Creator {
         }
         return TypeArray;
     }
+    */
+
         private GUI_Field[] listToArray(ArrayList<GUI_Field> list)
         {
 
@@ -169,17 +163,18 @@ public class Board_Creator {
             }
             return fields;
         }
-    static ArrayList<String> blue= new ArrayList<String>();
-    static ArrayList<String> red = new ArrayList<String>();
-    static ArrayList<String> green = new ArrayList<String>();
-    static ArrayList<String> orange = new ArrayList<String>();
-    static ArrayList<String> grey = new ArrayList<String>();
-    static ArrayList<String> white = new ArrayList<String>();
-    static ArrayList<String> yellow = new ArrayList<String>();
-    static ArrayList<String> purple = new ArrayList<String>();
+    static ArrayList<String[]> blue= new ArrayList<>();
+    static ArrayList<String[]> red = new ArrayList<>();
+    static ArrayList<String[]> green = new ArrayList<>();
+    static ArrayList<String[]> orange = new ArrayList<>();
+    static ArrayList<String[]> grey = new ArrayList<>();
+    static ArrayList<String[]> white = new ArrayList<>();
+    static ArrayList<String[]> yellow = new ArrayList<>();
+    static ArrayList<String[]> purple = new ArrayList<>();
+    static ArrayList<String[]> ferry= new ArrayList<>();
+    static ArrayList<String[]> brewery= new ArrayList<>();
 
-
-    private Color fieldColor(String color,String title)
+    private Color fieldColor(String color,String[] data)
     {
         Color c = Color.black;
         switch (color)
@@ -187,51 +182,51 @@ public class Board_Creator {
             case "blue":
             {
                 c= Color.blue;
-                blue.add(title);
+                blue.add(data);
 
             }
             break;
             case "orange":
             {
                 c= Color.orange;
-                orange.add(title);
+                orange.add(data);
 
             }
             break;
             case "green":
             {
                 c= Color.green;
-                green.add(title);
+                green.add(data);
             }
             break;
             case "grey":
             {
                 c= Color.gray;
-                grey.add(title);
+                grey.add(data);
             }
             break;
             case "red":
             {
                 c= Color.red;
-                red.add(title);
+                red.add(data);
             }
             break;
             case "white":
             {
                 c= Color.white;
-                white.add(title);
+                white.add(data);
             }
             break;
             case "yellow":
             {
                 c= Color.yellow;
-                yellow.add(title);
+                yellow.add(data);
             }
             break;
             case "purple":
             {
                 c= new Color(102,0,100);
-                purple.add(title);
+                purple.add(data);
 
             }
             break;
@@ -243,10 +238,10 @@ public class Board_Creator {
         }
         return c;
         }
-    public static ArrayList<String> getGroupArray(String color) {
+    public static ArrayList<String[]> getGroupArray(String color) {
 
 
-        ArrayList<String> colorarray = null;
+        ArrayList<String[]> colorarray = null;
         switch (color) {
             case "blue": {
                 colorarray = blue;

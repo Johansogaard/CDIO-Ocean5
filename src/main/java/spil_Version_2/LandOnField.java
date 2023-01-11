@@ -106,7 +106,7 @@ public class LandOnField {
     private int howManyFerry(Player owner){
 
         List<String> common = new ArrayList<>(owner.getGrunde());
-        common.retainAll(Board_Creator.getTypeArray("ferry"));
+        common.retainAll(Board_Creator.getGroupArray("ferry"));
         int multi=0;
         switch (common.size()){
             case 1: {
