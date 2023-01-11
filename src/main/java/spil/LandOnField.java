@@ -42,7 +42,7 @@ public class LandOnField {
                 ownable.setOwnerName(player.getName());
                 ownable.setBorder(player.getCar().getPrimaryColor());
                 ownable.setOwnableLabel("Ejet af "+player.getName());
-                player.buyField(Integer.parseInt(ownable.getDescription().replaceAll("[^0-9]", "")), ownable.getTitle());
+
             }
         }
         else if (player.getName() != ownable.getOwnerName())
@@ -72,6 +72,8 @@ public class LandOnField {
     }
     //DE her metoder skal indeholde hvad en spiller skal betale hvis de lander på et felt hvor spilleren ejer alle felter
     private void hitStreet(Player player, GUI_Field[] fields){
+        GUI_Field field = fields[player.getPos()];
+        GUI_Street street = (GUI_Street) field;
 
     }
     private void hitFerry(Player player, GUI_Field[] fields){
@@ -109,7 +111,10 @@ public class LandOnField {
             }
             else
             {
-                //her skal vi tage 10% af en spillers værdi i felter og penge og han skal betale det
+                int num = player.getKonto().getBalance()+player.getKonto().getFieldvalue();
+                int rounded =((num+99)/100)*100;
+                Game_Controller.getGui().getUserButtonPressed(player.getName()+" du betaler "+rounded+" i skat");
+                player.updatePlayerBalance(-rounded);//her skal vi tage 10% af en spillers værdi i felter og penge og han skal betale det
             }
 
         }
