@@ -38,7 +38,7 @@ public class Devmode {
             break;
             case 2:
             {
-
+                setPlayersBalance();
             }
             break;
             case 4:
@@ -54,6 +54,13 @@ public class Devmode {
             break;
         }
 
+    }
+    private void setPlayersBalance()
+    {
+        int balance = gui.getUserInteger("Skriv "+player.getName()+" balance");
+        player.getKonto().setB(balance);
+        player.pl.setBalance(player.getKonto().getBalance());
+        playerOptions();
     }
     private void setHouseOrHotel()
     {
