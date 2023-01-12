@@ -40,7 +40,7 @@ class PlayerTest {
         Game_Controller.getPlayer("Spiller 1").addGrunde("Valby Langgade");
         Game_Controller.getPlayer("Spiller 1").addGrunde("Allégade");
 
-       // sætter ham som owneren af en grund
+       // sætter spiller 1 som owneren af en grund
         GUI_Field field = Game_Controller.getFields()[1];
         GUI_Ownable ownable = (GUI_Ownable) field;
 
@@ -50,7 +50,7 @@ class PlayerTest {
 
         System.out.println(Game_Controller.getPlayer("Spiller 1").getGrunde());
 
-
+        //spiller 2 lander på spiller 1 grund
 
 
 
