@@ -138,15 +138,17 @@ public class Player {
        else {
            ArrayList<String> sameColorFields = new ArrayList<>();
 
+
            for(int i = 0;i<colorsYouOwn.size();i++)
            {
-               //er igang med at lacve
                ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
-
-
-
+               for(int k = 0; i<f.size();i++)
+               {
+                   sameColorFields.add(f.get(k)[0]);
+               }
            }
-            gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",fieldcolors);
+           String[] choice = sameColorFields.toArray(new String[0]);
+            gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",choice);
        }
 
     }
@@ -197,7 +199,7 @@ public class Player {
         }
     }
 
-    private int getChoice(String choice)
+    public int getChoice(String choice)
     {
         return Integer.parseInt(choice.split("\\.")[0]);
     }
@@ -334,7 +336,7 @@ public class Player {
     }
     //chekker om owneren har alle grunde i et sæt
     public boolean checkOwnerOwnAll(){
-        GUI_Field field = gamefields[getPos()];
+        GUI_Field field = Game_Controller.getFields()[getPos()];;
         GUI_Ownable ownable = (GUI_Ownable) field;
         ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
         ArrayList<String[]> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
