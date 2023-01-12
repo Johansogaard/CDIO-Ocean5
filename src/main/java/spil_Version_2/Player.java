@@ -254,11 +254,9 @@ public class Player {
 
     public void turn()
     {
-       // t1 = terninger.slaEnTerning();
-       // t2 = terninger.slaEnTerning();
+     t1 = terninger.slaEnTerning();
+     t2 = terninger.slaEnTerning();
 
-        t1 = 3;
-        t2 = 4;
 
     }
     public int getTerningeSum()

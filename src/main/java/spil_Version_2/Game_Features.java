@@ -25,7 +25,7 @@ public class Game_Features {
 //tilføjer kort til array, og gør rækkefølgen ranom
             ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
             ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
-         /*
+
             cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
             //chancekort
@@ -36,16 +36,16 @@ public class Game_Features {
 
 
            //ryk frem eller tilbage
-            int[] spacesToMove = {-3,-3};
+            int[] spacesToMove = {3,-3,-3};
             for (int space : spacesToMove) {
                 cardArray.add(new RykFelter_Card(space));
             }
 
 
-          */
 
 
-/*
+
+
             //modtag eller betal: false=betal, true=modtag
             cardArray.add(new Straf_Eller_Gevinst(200, false, "Betal kr 200 for levering af 2 kasser øl"));
             cardArray.add(new Straf_Eller_Gevinst(3000,false , "Betal 3000 for reparation af deres vogn"));
@@ -70,27 +70,12 @@ public class Game_Features {
             cardArray.add(new Straf_Eller_Gevinst(200,true , "Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken"));
             cardArray.add(new Straf_Eller_Gevinst(300,false , "Betal for vognvask og smøring kr 300"));
             cardArray.add(new Straf_Eller_Gevinst(1000,false , "De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde"));
- */
-           /* cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
+
+            cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
             cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n"));
             cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
-
-
-            */
-            cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
-
-
-
-
-
-
-
-
-
-
-
 
 
 
