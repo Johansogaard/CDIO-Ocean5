@@ -156,9 +156,14 @@ public class Game_Features {
             L1.setBounds(75, 35, 200, 30);
             jb.setBounds(75, 170, 200, 30);
             L2.setBounds(75,5,200,30);
+
+            //dev mode button
+            JButton devJb= new JButton("Dev Mode");
+            devJb.setBounds(400, 0, 100, 30);
+
             L1.setFont(new Font("default-normal", Font.PLAIN,12));
             L2.setFont(new Font("defaut-bold-normal", Font.PLAIN,25));
-            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);
+            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);f.add(devJb);
             f.setBounds(100, 150, 400, 300);
             f.setTitle("Matador");
 
@@ -167,6 +172,12 @@ public class Game_Features {
             ButtonGroup bg=new ButtonGroup();
             bg.add(p3);bg.add(p4);bg.add(p5);bg.add(p6);
 
+            devJb.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Game_Controller.setDevMode(true);
+                }
+            });
             jb.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {

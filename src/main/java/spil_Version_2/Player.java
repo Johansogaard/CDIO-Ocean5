@@ -120,7 +120,7 @@ public class Player {
         }
         return playerLost;
     }
-    private void buyHouse()
+    public void buyHouse()
     {
         String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();
@@ -140,17 +140,83 @@ public class Player {
 
            for(int i = 0;i<colorsYouOwn.size();i++)
            {
-               //er igang med at lacve
                ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
+               ArrayList<Integer> index = new ArrayList<>();
+               for(int k = 0; k<f.size();k++)
+               {
+                   String titel = f.get(k)[0];
+                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                  index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
+               }
 
 
+               int min = index.get(0);
+               // loop to find minimum from ArrayList
+               for (int p = 1; p < index.size(); p++) {
+                   if (index.get(p) < min) {
+                       min = index.get(p);
+                   }
+               }
+                //loop that makes an array of the streets with lowest number of houses and checks if the streets has max number of houses
+               for(int r = 0;r<f.size();r++)
+               {
+                   String titel = f.get(r)[0];
+                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                   if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==min &&
+                           Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12])<5)
+                   {
+                       sameColorFields.add(f.get(r)[0]);
+                   }
+               }
 
            }
-            gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",fieldcolors);
+           if (sameColorFields.size()==0)
+           {
+               gui.getUserButtonPressed("Du har ikke mulighed for at bygge mere på dine grunde lige nu","Okay");
+           }
+           else {
+               String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
+               String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?", choice);
+
+               GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
+               GUI_Street street = (GUI_Street) field;
+
+               int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
+               int housePrice =  Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
+
+               if (numberOfHouses < 4) {
+                   if(payHouseHotel(housePrice))
+                   {
+                       street.setHouses(1 + numberOfHouses);
+                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                   }
+
+               } else if (numberOfHouses == 4) {
+                   if(payHouseHotel(housePrice)) {
+                       street.setHouses(0);
+                       street.setHotel(true);
+                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                   }
+               }
+           }
+
        }
 
     }
-
+    private boolean payHouseHotel(int housePrice)
+    {
+        boolean paidForHouse = false;
+        if (this.getKonto().getBalance()>housePrice) {
+            getKonto().update(-housePrice);
+            pl.setBalance(this.konto.getBalance());
+            paidForHouse = true;
+        }
+        else
+        {
+            gui.getUserButtonPressed("Du har ikke råd til at købe hus/hotel lige nu","okay");
+        }
+        return paidForHouse;
+    }
     private void sellHouse()
     {
 
@@ -197,7 +263,7 @@ public class Player {
         }
     }
 
-    private int getChoice(String choice)
+    public int getChoice(String choice)
     {
         return Integer.parseInt(choice.split("\\.")[0]);
     }
@@ -334,7 +400,7 @@ public class Player {
     }
     //chekker om owneren har alle grunde i et sæt
     public boolean checkOwnerOwnAll(){
-        GUI_Field field = gamefields[getPos()];
+        GUI_Field field = Game_Controller.getFields()[getPos()];;
         GUI_Ownable ownable = (GUI_Ownable) field;
         ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
         ArrayList<String[]> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));

@@ -46,7 +46,8 @@ public class LandOnField {
                 ownable.setOwnerName(player.getName());
                 ownable.setBorder(player.getCar().getPrimaryColor());
                 ownable.setOwnableLabel("Ejet af "+player.getName());
-
+                int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
+                player.buyField(cost,ownable.getTitle());
             }
         }
         else if (player.getName() != ownable.getOwnerName())
@@ -56,16 +57,17 @@ public class LandOnField {
         {
             hitBrewery(player,owner, fields);
         }
-        if (player.checkOwnerOwnAll())
+        else if (player.checkOwnerOwnAll())
         {
             if (ownable.getClass().equals(GUI_Street.class))
             {
-                hitStreet(player,fields);
-            } else if (ownable.getClass().equals(GUI_Shipping.class)) {
-                hitFerry(player,owner,fields);
-
+                hitStreet(player,owner,fields);
             }
 
+        }
+        else if (ownable.getClass().equals(GUI_Shipping.class))
+        {
+            hitFerry(player,owner,fields);
 
         }
         else {
@@ -78,9 +80,17 @@ public class LandOnField {
     }
     }
     //DE her metoder skal indeholde hvad en spiller skal betale hvis de lander på et felt hvor spilleren ejer alle felter
-    private void hitStreet(Player player, GUI_Field[] fields){
+    private void hitStreet(Player player,Player Owner, GUI_Field[] fields){
         GUI_Field field = fields[player.getPos()];
         GUI_Street street = (GUI_Street) field;
+        int index = Board_Creator.fieldIndexFromName(street.getTitle());
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+        int numberOfHouses =Integer.parseInt(data.get(index)[12]);
+        String titel=fields[player.getPos()].getTitle();
+        player.payRent(Integer.parseInt(data.get(index)[5+numberOfHouses]),Owner,titel);
+
+
+
 
     }
     private void hitFerry(Player player,Player owner, GUI_Field[] fields){
