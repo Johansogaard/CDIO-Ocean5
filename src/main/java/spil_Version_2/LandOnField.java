@@ -46,7 +46,8 @@ public class LandOnField {
                 ownable.setOwnerName(player.getName());
                 ownable.setBorder(player.getCar().getPrimaryColor());
                 ownable.setOwnableLabel("Ejet af "+player.getName());
-
+                int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
+                player.buyField(cost,ownable.getTitle());
             }
         }
         else if (player.getName() != ownable.getOwnerName())

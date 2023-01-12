@@ -138,17 +138,51 @@ public class Player {
        else {
            ArrayList<String> sameColorFields = new ArrayList<>();
 
-
            for(int i = 0;i<colorsYouOwn.size();i++)
            {
                ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
-               for(int k = 0; i<f.size();i++)
+               ArrayList<Integer> index = new ArrayList<>();
+               for(int k = 0; k<f.size();k++)
                {
-                   sameColorFields.add(f.get(k)[0]);
+                   String titel = f.get(k)[0];
+                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                  index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
                }
+
+
+               int min = index.get(0);
+               // loop to find minimum from ArrayList
+               for (int p = 1; p < index.size(); p++) {
+                   if (index.get(p) < min) {
+                       min = index.get(p);
+                   }
+               }
+
+               for(int r = 0;r<f.size();r++)
+               {
+                   String titel = f.get(r)[0];
+                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                   if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==min)
+                   {
+                       sameColorFields.add(f.get(r)[0]);
+                   }
+               }
+
            }
-           String[] choice = sameColorFields.toArray(new String[0]);
-            gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",choice);
+           String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
+           String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",choice);
+
+           GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
+           GUI_Street street = (GUI_Street) field;
+
+           int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
+
+           if (numberOfHouses<4)
+           {
+               street.setHouses(1+numberOfHouses);
+               Board_Creator.setHousesInData(1+numberOfHouses,Board_Creator.fieldIndexFromName(fieldToSetHouse));
+
+           }
        }
 
     }
