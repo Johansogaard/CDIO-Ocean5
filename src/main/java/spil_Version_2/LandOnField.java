@@ -15,6 +15,8 @@ import static spil_Version_2.Game_Controller.getGui;
 public class LandOnField {
 
 
+
+
     public void hitField(Player player, GUI_Field[] fields)
     {
         player.displayCard();
@@ -46,6 +48,9 @@ public class LandOnField {
                 ownable.setOwnerName(player.getName());
                 ownable.setBorder(player.getCar().getPrimaryColor());
                 ownable.setOwnableLabel("Ejet af "+player.getName());
+
+            }
+            else {
 
             }
         }
@@ -174,5 +179,7 @@ public class LandOnField {
             player.updatePlayerBalance(-2000);
         }
     }
+
+
 }
 

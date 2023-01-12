@@ -69,13 +69,18 @@ public class Aktion2 {
                     Bidders.remove(i);
 
                 }
-
+                checkBidders();
                 i++;
                 if (i >= Bidders.size()) i = 0;
+                if (i >= players.length) i = 0;
+                if(tjekVinder() == true) i = 7;
+                else if (antalBydere == 0) i = 7;
+
 
             }
 
         }
+        Vinder();
 
     }
 
@@ -134,4 +139,6 @@ public class Aktion2 {
         }
 
     }
+
+
 }
