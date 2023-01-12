@@ -13,7 +13,7 @@ public class Aktion {
 
     private boolean bud = false;
     private int aktionVinder;
-    private int[] actualBidders;
+    private int[] Bidders;
     private Player player;
     private Player[] players;
     private GUI gui;
@@ -24,7 +24,7 @@ public class Aktion {
         //tjekke description af feltet og fjerne alt, så prisen er tilbage
         this.max = Integer.parseInt(field.getDescription().replaceAll("[^0-9]", ""));
         this.field = field;
-        this.actualBidders = new int[players.length];
+        this.Bidders = new int[players.length];
         this.player = player;
         this.players = players;
         this.gui = gui;
@@ -44,8 +44,13 @@ public class Aktion {
             setVinder();
         }
         if(antalBydere == 1){
-            if(gui.getUserLeftButtonPressed(players[i].getName()+"Kunne du tænke dig at købe"+field.getTitle(), "ja", "nej");
+            while(i<players.length){
+                if(actualBidders[i]==1 && players[i].getKonto().getBalance() >= max){
+                    if(gui.getUserLeftButtonPressed(players[i].getName()+"Kunne du tænke dig at købe"+field.getTitle(), "ja", "nej");
 
+                }
+
+            }
         }
 
     }
@@ -59,7 +64,6 @@ public class Aktion {
                 // tjekker om hvor mange der byder på grunden
                 if (actualBidders[i] == 0) {
                     actualBidders[i] = 0;
-                    antalBydere = 0;
                 }
                 if (players[i].getKonto().getBalance() >= 0 && actualBidders[i] == 1) {
                     this.actualBidders[i] = 1;
@@ -89,6 +93,29 @@ public class Aktion {
         }
 
     }
+
+    private boolean tjekAktionVinder(){
+        if(antalBydere == 1) {
+            for (int i = 0; i < players.length; i++) {
+                if (actualBidders[i] == 2){
+                    aktionVinder = i;
+                    return true;
+                }
+
+            }
+        }
+        return false;
+    }
+
+
+    private void hojestBud(int h){
+        int hojestBud = (max+minBud);
+        switch(gethojestBud(hojestBud();))
+
+
+    }
+
+
 
     private void setVinder() {
         if (antalBydere == 1) {
