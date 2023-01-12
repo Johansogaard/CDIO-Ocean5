@@ -117,7 +117,7 @@ public class Aktion {
 
 
 
-    private void setVinder() {
+    private void Vinder() {
         if (antalBydere == 1) {
             gui.showMessage(players[aktionVinder].getName() + "Har budt højest og dermed vundet aktionen for" + field.getTitle());
             field.setOwnerName(players[aktionVinder].getName());
