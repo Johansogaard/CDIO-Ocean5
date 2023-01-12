@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="tax virker">
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Matador_Legat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/MovePlayerCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Parent_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykFelter_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykTilStart_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Straf_Eller_Gevinst.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/FieldText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/ReadFieldData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_GoToJail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Jail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ownable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parkering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/inGameFunktions/LandOnStreet.java" beforeDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +26,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Bigchance" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Konto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/GameText.txt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/fieldsdata.csv" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -94,13 +82,14 @@
       <recent name="spil" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="spil_Version_2" />
       <recent name="spil" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HelperTest.getElement2dArray">
+  <component name="RunManager" selected="JUnit.PlayerTest.checkOwnerOwnALL">
     <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil.GameController" />
       <module name="CDIO-Ocean5" />
@@ -127,25 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil.GameController" />
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="REMOVETHISCLASS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.REMOVETHISCLASS" />
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,6 +145,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HelperTest.getElement2dArray (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.HelperTest" />
+      <option name="METHOD_NAME" value="getElement2dArray" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelperTest.getElement2dArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
@@ -185,12 +177,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest.checkOwnerOwnALL" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
+      <option name="METHOD_NAME" value="checkOwnerOwnALL" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest.checkOwnerOwnALL" />
+        <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="JUnit.HelperTest.getElement2dArray (1)" />
         <item itemvalue="JUnit.HelperTest.getElement2dArray" />
         <item itemvalue="JUnit.BoardCreatorTest.getColorArray" />
-        <item itemvalue="Application.REMOVETHISCLASS" />
-        <item itemvalue="Application.GameController" />
       </list>
     </recent_temporary>
   </component>
@@ -456,6 +465,26 @@
           <line>138</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil/Helper.java</url>
           <line>5</line>
@@ -465,12 +494,32 @@
           </properties>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java</url>
+          <line>38</line>
+          <properties class="spil_Version_2.LandOnField" method="hitOwnable">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java</url>
+          <line>25</line>
+          <properties class="spil_Version_2.PlayerTest" method="checkOwnerOwnALL">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="grunde" />
         <PinnedItemInfo parentTag="gui_GameFields.GUI_Street" memberName="owner" />
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>
   </component>

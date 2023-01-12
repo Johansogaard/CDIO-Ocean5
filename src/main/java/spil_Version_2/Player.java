@@ -46,7 +46,7 @@ public class Player {
     private String name;
     GUI_Field gamefields[];
 
-    ArrayList<String> grunde = new ArrayList<String>();
+     ArrayList<String> grunde = new ArrayList<String>();
     public void addGrunde(String grund) {
         this.grunde.add(grund);
     }
@@ -368,7 +368,7 @@ public class Player {
             return false;
         }
     }
-
+// brug den
     public int checkDoubleCost()
     {
         if (checkOwnerOwnAll())
