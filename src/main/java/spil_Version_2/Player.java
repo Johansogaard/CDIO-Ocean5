@@ -239,7 +239,7 @@ public class Player {
     public void hitField()
     {
         displayCard();
-       // gamefields[pos].hit(this);
+       //gamefields[pos].hit(this);
 
     }
 
@@ -254,9 +254,11 @@ public class Player {
 
     public void turn()
     {
-        t1 = terninger.slaEnTerning();
-        t2 = terninger.slaEnTerning();
+       // t1 = terninger.slaEnTerning();
+       // t2 = terninger.slaEnTerning();
 
+        t1 = 3;
+        t2 = 4;
 
     }
     public int getTerningeSum()
