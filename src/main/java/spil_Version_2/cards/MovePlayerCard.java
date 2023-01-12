@@ -4,10 +4,6 @@ import spil_Version_2.Game_Controller;
 import spil_Version_2.LandOnField;
 import spil_Version_2.Player;
 
-
-import spil_Version_2.Game_Controller;
-import spil_Version_2.LandOnField;
-import spil_Version_2.Player;
 public class MovePlayerCard extends Parent_Card {
     private int steps;
     private String message;

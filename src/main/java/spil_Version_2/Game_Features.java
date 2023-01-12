@@ -33,18 +33,11 @@ public class Game_Features {
           cardArray.add(new RykTilStart_Card(0));
            cardArray.add(new RykTilStart_Card(0));
 
-
-
            //ryk frem eller tilbage
             int[] spacesToMove = {3,-3,-3};
             for (int space : spacesToMove) {
                 cardArray.add(new RykFelter_Card(space));
             }
-
-
-
-
-
 
             //modtag eller betal: false=betal, true=modtag
             cardArray.add(new Straf_Eller_Gevinst(200, false, "Betal kr 200 for levering af 2 kasser øl"));
@@ -64,18 +57,21 @@ public class Game_Features {
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "De have en række med elleve rigtige i tipning, modtag kr 1000"));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Grundet dyrtiden har De fået gageforhøjelse, modtag kr 1000."));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Deres præmieobligation er udtrykket. De modtager 1000 kr af banken."));
-
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Deres præmieobligation er udtrykket. De modtager 1000 kr af banken."));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "De har solg nogle gamle møbler på auktion. Modtag 1000 kr af banken."));
             cardArray.add(new Straf_Eller_Gevinst(200,true , "Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken"));
             cardArray.add(new Straf_Eller_Gevinst(300,false , "Betal for vognvask og smøring kr 300"));
             cardArray.add(new Straf_Eller_Gevinst(1000,false , "De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde"));
 
+            //Ryk til ny position
             cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
             cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n"));
             cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
+
 
 
 
