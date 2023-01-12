@@ -25,7 +25,7 @@ public class Game_Features {
 //tilføjer kort til array, og gør rækkefølgen ranom
             ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
             ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
-
+/*
             cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
             //chancekort
@@ -76,6 +76,12 @@ public class Game_Features {
             cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
+
+
+ */
+            cardArray.add(new GiftCard(200, "Det er deres fødselsdag. Modtag af hver medspiller 200 kr."));
+            cardArray.add(new GiftCard(500, "De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.\n"));
+            cardArray.add(new GiftCard(500, "De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr."));
 
 
 

@@ -82,4 +82,8 @@ public class Game_Controller {
     public static Color[] getCarColors() {
         return carColors;
     }
+    public static Player[] getPlayers() {
+        return players;
+    }
+
 }

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Matador_Legat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Matador_Legat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/GiftCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +120,8 @@
         <item itemvalue="Application.Game_Controller" />
         <item itemvalue="Application.REMOVETHISCLASS" />
         <item itemvalue="Application.GameController" />
-        <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="Application.REMOVETHISCLASS" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673522564599</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="tax virker">
+      <created>1673523700841</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1673523700841</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +373,8 @@
     <MESSAGE value="&#10;k" />
     <MESSAGE value="nu virker moveplayer når man rykker tilbage &lt;3" />
     <MESSAGE value="nu virker moveplayer når man rykker tilbage &lt;3&#10;gangshit" />
-    <option name="LAST_COMMIT_MESSAGE" value="nu virker moveplayer når man rykker tilbage &lt;3&#10;gangshit" />
+    <MESSAGE value="tax virker" />
+    <option name="LAST_COMMIT_MESSAGE" value="tax virker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
