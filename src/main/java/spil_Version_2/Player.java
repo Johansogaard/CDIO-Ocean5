@@ -120,7 +120,7 @@ public class Player {
         }
         return playerLost;
     }
-    private void buyHouse()
+    public void buyHouse()
     {
         String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();

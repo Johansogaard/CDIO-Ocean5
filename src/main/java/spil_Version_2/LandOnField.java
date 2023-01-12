@@ -82,6 +82,7 @@ public class LandOnField {
         GUI_Field field = fields[player.getPos()];
         GUI_Street street = (GUI_Street) field;
 
+
     }
     private void hitFerry(Player player,Player owner, GUI_Field[] fields){
         String titel=fields[player.getPos()].getTitle();

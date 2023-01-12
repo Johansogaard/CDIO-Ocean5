@@ -49,6 +49,7 @@ public class Devmode {
             case 3:
             {
                 setHouseOrHotel();
+
             }
             break;
         }
@@ -56,7 +57,8 @@ public class Devmode {
     }
     private void setHouseOrHotel()
     {
-
+        player.buyHouse();
+        playerOptions();
     }
     private void setPosDev()
     {
