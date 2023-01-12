@@ -157,36 +157,66 @@ public class Player {
                        min = index.get(p);
                    }
                }
-
+                //loop that makes an array of the streets with lowest number of houses and checks if the streets has max number of houses
                for(int r = 0;r<f.size();r++)
                {
                    String titel = f.get(r)[0];
                    int fieldIndex = Board_Creator.fieldIndexFromName(titel);
-                   if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==min)
+                   if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==min &&
+                           Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12])<5)
                    {
                        sameColorFields.add(f.get(r)[0]);
                    }
                }
 
            }
-           String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
-           String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?",choice);
-
-           GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
-           GUI_Street street = (GUI_Street) field;
-
-           int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
-
-           if (numberOfHouses<4)
+           if (sameColorFields.size()==0)
            {
-               street.setHouses(1+numberOfHouses);
-               Board_Creator.setHousesInData(1+numberOfHouses,Board_Creator.fieldIndexFromName(fieldToSetHouse));
-
+               gui.getUserButtonPressed("Du har ikke mulighed for at bygge mere på dine grunde lige nu","Okay");
            }
+           else {
+               String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
+               String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?", choice);
+
+               GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
+               GUI_Street street = (GUI_Street) field;
+
+               int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
+               int housePrice =  Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
+
+               if (numberOfHouses < 4) {
+                   if(payHouseHotel(housePrice))
+                   {
+                       street.setHouses(1 + numberOfHouses);
+                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                   }
+
+               } else if (numberOfHouses == 4) {
+                   if(payHouseHotel(housePrice)) {
+                       street.setHouses(0);
+                       street.setHotel(true);
+                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                   }
+               }
+           }
+
        }
 
     }
-
+    private boolean payHouseHotel(int housePrice)
+    {
+        boolean paidForHouse = false;
+        if (this.getKonto().getBalance()>housePrice) {
+            getKonto().update(-housePrice);
+            pl.setBalance(this.konto.getBalance());
+            paidForHouse = true;
+        }
+        else
+        {
+            gui.getUserButtonPressed("Du har ikke råd til at købe hus/hotel lige nu","okay");
+        }
+        return paidForHouse;
+    }
     private void sellHouse()
     {
 
