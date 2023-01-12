@@ -99,5 +99,8 @@ public class Game_Controller {
         return devMode;
     }
 
+    public static Player[] getPlayers() {
+        return players;
+    }
 }
 
