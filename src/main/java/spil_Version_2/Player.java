@@ -43,7 +43,7 @@ public class Player {
     private boolean jail= false;
 
 
-
+    private boolean hasLost = false;
     private int t1=0;
     private int t2=0;
     private int jailCounter=0;
@@ -370,12 +370,18 @@ public class Player {
 
 
         }
-        else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger")
+        else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger") {
             turn();
+            simpleTurn();
+        }
+        return hasLost;
+    }
+
+    public void simpleTurn()
+    {
         checkIfPassedStart(pos+t1+t2);
 
         pos=(pos+t1 +t2)%40;
-        gui.setDice(t1, t2);
         setCar(pos, gui);
         landOnField.hitField(this,gamefields);
 
@@ -395,10 +401,10 @@ public class Player {
 
 
         if (konto.getBalance() <=0) {
-            return true;
+            hasLost = true;
         }
         else {
-            return false;
+            hasLost = false;
         }
     }
 
@@ -410,27 +416,38 @@ public class Player {
     //tror virker
     public void inJail()
     {
-
-        if(jailCounter==3){
-            gui.getUserButtonPressed(name + " fik ikke tre ens 3 ture i træk og skal derfor betale", "gå videre");
-            payJail();
-        }
-        else if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
+        jailCounter++;
+        if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
         {
             payJail();
         }
+        else if(jailCounter==3) {
+            turn();
+            if (t1 == t2) {
+                gui.getUserButtonPressed(name + " Slog to ens og er derfor fri fra fængsel", "okay");
+                jail = false;
+                jailCounter = 0;
+                simpleTurn();
+            }
+            else {
+                gui.getUserButtonPressed(name + " fik ikke tre ens 3 ture i træk og skal derfor betale", "okay");
+                payJail();
+                jail = false;
+                jailCounter = 0;
+                simpleTurn();
+            }
+        }
+        else{
 
-        else
-        {
-            jailCounter++;
             turn();
             if (t1==t2){
-
+                gui.getUserButtonPressed(name + " Slog to ens og er derfor fri fra fængsel", "okay");
                 jail = false;
-                spil(this.gui,this.gamefields);
                 jailCounter=0;
+                simpleTurn();
+
             }
-            else {gui.getUserButtonPressed(name + " fik ikke to ens", "gå videre");}
+            else {gui.getUserButtonPressed(name + " fik ikke to ens og sidder derfor stadig i fængsel", "okay");}
         }
 
 
@@ -461,6 +478,7 @@ public class Player {
     {
      t1 = terninger.slaEnTerning();
      t2 = terninger.slaEnTerning();
+     gui.setDice(t1, t2);
 
 
     }
