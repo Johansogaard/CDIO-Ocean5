@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="chancekort kan nu testes i devmode">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="NyAktionBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -143,7 +142,7 @@
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -572,43 +571,9 @@
           <option name="timeStamp" value="14" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil/Player.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>403</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>353</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>483</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>485</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/spil/Helper.java</url>
-          <line>5</line>
-          <properties class="spil.Helper">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

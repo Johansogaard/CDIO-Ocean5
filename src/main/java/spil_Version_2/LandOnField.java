@@ -8,6 +8,7 @@ import spil_Version_2.cards.Parent_Card;
 
 import java.util.ArrayList;
 import java.util.List;
+import spil_Version_2.Aktion;
 
 import static spil_Version_2.Game_Controller.getGui;
 
@@ -40,13 +41,15 @@ public class LandOnField {
     {
         GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
+        Aktion aktion = new Aktion();
         int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
         if (ownable.getOwnerName() == null )
         {
                 if (Game_Features.makeYesNoButton(player.getName() + " Vil du købe denne grund")) {
                     if (player.getKonto().getBalance() < cost)
                     {
-                        getGui().showMessage("Du har ikke råde til grunden");
+                        getGui().showMessage("Du har ikke råd til grunden");
+                        aktion.korAktion(player,ownable);
                     }
                     else {
                         ownable.setOwnerName(player.getName());
@@ -56,6 +59,7 @@ public class LandOnField {
                         player.buyField(cost, ownable.getTitle());
                     }
                 }
+                aktion.korAktion(player,ownable);
 
 
         }
