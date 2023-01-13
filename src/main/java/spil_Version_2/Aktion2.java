@@ -61,8 +61,8 @@ public class Aktion2 {
             while (i < Bidders.size()) {
 
                 if (Bidders.get(i).getKonto().getBalance() >= currentMax && antalBydere >= 1 && !players[i].equals(player)) {
-                    if (gui.getUserLeftButtonPressed(Bidders.get(i).getName() + "Vil du stadig byde på" + field.getTitle() + "Nuværende pris er" + max, "ja", "nej")) {
-                        int bid = gui.getUserInteger("Hvor meget vil du smide efter grunden? (minimum: " + (currentMax) + "):", (currentMax), Bidders.get(i).getKonto().getBalance());
+                    if (gui.getUserLeftButtonPressed(Bidders.get(i).getName() + "Vil du stadig byde på" + field.getTitle() + "Nuværende pris er" + currentMax, "ja", "nej")) {
+                        int bid = gui.getUserInteger("Hvor meget vil du smide efter grunden? (minimum: " + (currentMax) + "):", (currentMax+300), Bidders.get(i).getKonto().getBalance());
                         if(bid > currentMax) currentMax = bid;
                         //update the currentMax with the new bid if it is higher than the current max
 
@@ -106,14 +106,14 @@ public class Aktion2 {
         for (int i = 0; i < players.length; i++) {
             Bidders.add(players[i]);
 
-                if (Bidders.get(i).equals(player)) {
+                if (players[i].equals(player)) {
                     Bidders.remove(i);
                 }
 
                 if (!players[i].equals(player)) {
 
                     if (gui.getUserLeftButtonPressed(Bidders.get(i).getName() + "Hvil du være med i aktionen om" + field.getTitle(), "ja", "nej")) {
-                        if (Bidders.get(i).getKonto().getBalance() >= max) {
+                        if (Bidders.get(i).getKonto().getBalance() >= currentMax) {
 
                             antalBydere++;
                         }
@@ -157,7 +157,7 @@ public class Aktion2 {
             if (antalBydere == 1) {
                 gui.showMessage(players[aktionVinder].getName() + "Har budt højest og dermed vundet aktionen for" + field.getTitle());
                 field.setOwnerName(players[aktionVinder].getName());
-                players[aktionVinder].getKonto().update(-max);
+                players[aktionVinder].getKonto().update(-currentMax);
             } else if (antalBydere <= 0) {
                 gui.showMessage("Der var ingen der gad at byde på" + field.getTitle());
             }
