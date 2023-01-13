@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Board_Creator {
 
 
+
     static ArrayList<String[]> fieldData = new ArrayList<>();
         public GUI_Field[] istantiererFelter() throws FileNotFoundException {
             ArrayList<GUI_Field> fieldlist = new ArrayList<>();
@@ -308,6 +309,24 @@ public class Board_Creator {
     public static ArrayList<String[]> getFieldData() {
        return fieldData;
     }
+
+    public static int fieldIndexFromName(String name)
+    {
+        int index =0;
+        for(int i = 0; i <fieldData.size();i++)
+        {
+
+            if(fieldData.get(i)[0].equals(name))
+            {
+               index = i;
+            }
+        }
+        return index;
     }
+    public static void setHousesInData(int houses,int index) {
+        Board_Creator.fieldData.get(index)[12] = Integer.toString(houses);
+    }
+    }
+
 
 

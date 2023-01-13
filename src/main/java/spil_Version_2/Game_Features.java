@@ -25,23 +25,19 @@ public class Game_Features {
 //tilføjer kort til array, og gør rækkefølgen ranom
             ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
             ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
+
             cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
             //chancekort
             // ryk til start, uden gevinst
-            cardArray.add(new RykTilStart_Card(0));
-            cardArray.add(new RykTilStart_Card(0));
-
-
+          cardArray.add(new RykTilStart_Card(0));
+           cardArray.add(new RykTilStart_Card(0));
 
            //ryk frem eller tilbage
             int[] spacesToMove = {3,-3,-3};
             for (int space : spacesToMove) {
                 cardArray.add(new RykFelter_Card(space));
             }
-
-
-
 
             //modtag eller betal: false=betal, true=modtag
             cardArray.add(new Straf_Eller_Gevinst(200, false, "Betal kr 200 for levering af 2 kasser øl"));
@@ -61,27 +57,27 @@ public class Game_Features {
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "De have en række med elleve rigtige i tipning, modtag kr 1000"));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Grundet dyrtiden har De fået gageforhøjelse, modtag kr 1000."));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Deres præmieobligation er udtrykket. De modtager 1000 kr af banken."));
-
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "Deres præmieobligation er udtrykket. De modtager 1000 kr af banken."));
             cardArray.add(new Straf_Eller_Gevinst(1000,true , "De har solg nogle gamle møbler på auktion. Modtag 1000 kr af banken."));
             cardArray.add(new Straf_Eller_Gevinst(200,true , "Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken"));
             cardArray.add(new Straf_Eller_Gevinst(300,false , "Betal for vognvask og smøring kr 300"));
             cardArray.add(new Straf_Eller_Gevinst(1000,false , "De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde"));
 
-
+            //Ryk til ny position
             cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
             cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n"));
-            cardArray.add(new MovePlayerCard( 25,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
+            cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
             cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
 
 
 
 
-
-
-
-
+            cardArray.add(new GiftCard(200, "Det er deres fødselsdag. Modtag af hver medspiller 200 kr."));
+            cardArray.add(new GiftCard(500, "De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.\n"));
+            cardArray.add(new GiftCard(500, "De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr."));
 
 
 
@@ -160,9 +156,14 @@ public class Game_Features {
             L1.setBounds(75, 35, 200, 30);
             jb.setBounds(75, 170, 200, 30);
             L2.setBounds(75,5,200,30);
+
+            //dev mode button
+            JButton devJb= new JButton("Dev Mode");
+            devJb.setBounds(400, 0, 100, 30);
+
             L1.setFont(new Font("default-normal", Font.PLAIN,12));
             L2.setFont(new Font("defaut-bold-normal", Font.PLAIN,25));
-            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);
+            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);f.add(devJb);
             f.setBounds(100, 150, 400, 300);
             f.setTitle("Matador");
 
@@ -171,6 +172,12 @@ public class Game_Features {
             ButtonGroup bg=new ButtonGroup();
             bg.add(p3);bg.add(p4);bg.add(p5);bg.add(p6);
 
+            devJb.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Game_Controller.setDevMode(true);
+                }
+            });
             jb.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {

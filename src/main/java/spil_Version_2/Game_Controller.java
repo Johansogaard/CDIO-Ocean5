@@ -3,6 +3,7 @@ package spil_Version_2;
 import gui_fields.GUI_Field;
 import gui_main.GUI;
 import java.util.ArrayList;
+import spil_Version_2.Devmode;
 
 
 
@@ -12,6 +13,8 @@ import java.io.FileNotFoundException;
 public class Game_Controller {
 
 
+
+    public static boolean devMode = false;
     public static Color[] carColors = {Color.blue,Color.green,Color.red,Color.yellow,Color.MAGENTA,Color.BLACK};
     public static int max=-100;
     public static Player vinder;
@@ -27,11 +30,18 @@ public class Game_Controller {
         fields = b.istantiererFelter();
         gui = new GUI(fields, Color.cyan);
 
-       for (int i = 0; i < players.length; i++) {
+            for (int i = 0; i < players.length; i++) {
 
-            players[i].tilføjspillerGui(gui,getCarColors()[i]);
+                players[i].tilføjspillerGui(gui, getCarColors()[i]);
+            }
+        if (devMode == true)
+        {
+            Devmode devmode = new Devmode();
+            devmode.playDevmode(players, fields, gui);
         }
-        playGame(players,fields,gui);
+        else {
+            playGame(players, fields, gui);
+        }
 
     }
 
@@ -82,4 +92,15 @@ public class Game_Controller {
     public static Color[] getCarColors() {
         return carColors;
     }
+    public static void setDevMode(boolean devMode) {
+        Game_Controller.devMode = devMode;
+    }
+    public static boolean isDevMode() {
+        return devMode;
+    }
+
+    public static Player[] getPlayers() {
+        return players;
+    }
 }
+
