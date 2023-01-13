@@ -25,7 +25,7 @@ public class Game_Features {
 //tilføjer kort til array, og gør rækkefølgen ranom
             ArrayList<Parent_Card> cardArray = new ArrayList<Parent_Card>();
             ArrayList<Parent_Card> randomCardArray = new ArrayList<Parent_Card>();
-            cardArray.add("ferry","Ryk til den nærmeste færge");
+           // cardArray.add("ferry","Ryk til den nærmeste færge");
 /*
             cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
