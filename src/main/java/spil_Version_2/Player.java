@@ -126,6 +126,25 @@ public class Player {
     }
     public void sellField()
     {
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+        ArrayList<String> availableFieldsToSell = new ArrayList<>();
+
+            for (int i = 0; i < this.grunde.size(); i++) {
+                int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+                if (Integer.parseInt(data.get(crrIndex)[12]) == 0) {
+                    availableFieldsToSell.add(this.grunde.get(i));
+                }
+                String[] choice = availableFieldsToSell.toArray(new String[availableFieldsToSell.size()]);
+                if(choice.length ==0)
+                {
+                    gui.showMessage("Du har ikke nogle grunde der kan sælges husk at sælge dine huse på grunden før du sælger grund");
+                }
+                else {
+                    String fieldToPawn = gui.getUserSelection("Hvilken grund vil de sælge", choice);
+
+                }
+
+            }
 
     }
     public void hotelHouseMenu()
@@ -419,12 +438,17 @@ public class Player {
         else{fartbølle=0;}
 
 
-        if (konto.getBalance() <=0) {
+        if (konto.getBalance() <0) {
+            bankruptcy();
             hasLost = true;
         }
         else {
             hasLost = false;
         }
+    }
+    private void bankruptcy()
+    {
+
     }
 
     public int getChoice(String choice)
