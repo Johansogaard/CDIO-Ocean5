@@ -326,6 +326,20 @@ public class Board_Creator {
     public static void setHousesInData(int houses,int index) {
         Board_Creator.fieldData.get(index)[12] = Integer.toString(houses);
     }
+    public static void setPawnStatusInData(boolean b,int index) {
+        int pawnStatus=0;
+        if (b)
+        {
+            Game_Controller.getFields()[index].setTitle("PANSAT");
+            pawnStatus=1;
+        }
+        else
+        {
+            String titel = fieldData.get(index)[0];
+            Game_Controller.getFields()[index].setTitle(titel);
+        }
+        Board_Creator.fieldData.get(index)[13] = Integer.toString(pawnStatus);
+    }
     }
 
 

@@ -92,7 +92,7 @@ public class Player {
     {
         gamefields = fields;
         boolean playerLost = false;
-        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Byg hus/hotel", "3. Sælg hus/hotel", "4. Pansæt grund");
+        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Byg hus/hotel", "3. Sælg hus/hotel", "4. Pantsætning af grunde menu");
         switch (getChoice(choice)){
             case 1:
             {
@@ -309,7 +309,43 @@ public class Player {
         }
     }
     private void pawnField()
-    {}
+    {
+       String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+        ArrayList<String> availableFieldsToParwn = new ArrayList<>();
+       if (buttonPressed.equals("Pantsæt Grunde")) {
+           for (int i = 0; i < this.grunde.size(); i++) {
+               int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+               if (Integer.parseInt(data.get(i)[12]) == 0 && Integer.parseInt(data.get(i)[13]) == 0) {
+                   availableFieldsToParwn.add(this.grunde.get(i));
+               }
+               String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
+               String fieldToPawn = gui.getUserSelection("Hvilken grund vil de pantsætte", choice);
+               int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+               Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
+               this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3]))/2);
+
+           }
+       }
+       else
+       {
+           for (int i = 0; i < this.grunde.size(); i++) {
+               int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+               if (Integer.parseInt(data.get(i)[13]) == 1) {
+                   availableFieldsToParwn.add(this.grunde.get(i));
+               }
+               String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
+               String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
+               int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+               Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
+               int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3])/2)/10)+(Integer.parseInt(data.get(fieldToPawnIndex)[3])/2);
+               int rounded =((costToBuyBack+99)/100)*100;
+               this.getKonto().update((-rounded));
+
+           }
+
+       }
+    }
     private boolean runATurn()
     {
         if (jail)
