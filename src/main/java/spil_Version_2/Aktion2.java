@@ -14,7 +14,7 @@ public class Aktion2 {
     private boolean bud = false;
     private int aktionVinder;
 
-    private ArrayList<Player> Bidders;
+    private ArrayList<Player> Bidders = new ArrayList<>();
 
     private Player player;
     private Player[] players;
@@ -22,19 +22,14 @@ public class Aktion2 {
     private GUI_Ownable field;
 
 
-    public Aktion2(GUI gui, Player player, Player[] players, GUI_Ownable field) {
-        //tjekke description af feltet og fjerne alt, så prisen er tilbage
-        this.max = Integer.parseInt(field.getDescription().replaceAll("[^0-9]", ""));
-        this.field = field;
+    public void korAktion(Player player, GUI_Ownable field) {
+        int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
         this.player = player;
-        this.players = players;
-        this.gui = gui;
-        this.Bidders = new ArrayList<Player>();
+        this.gui = Game_Controller.getGui();
+        this.players = Game_Controller.getPlayers();
+        this.field = field;
+        this.max = cost;
 
-    }
-
-
-    public void korAktion() {
 
         gui.showMessage("Aktion holdes for grunden" + field.getTitle());
 
@@ -45,8 +40,15 @@ public class Aktion2 {
         if (antalBydere == 1) {
 
             if (Bidders.get(i).getKonto().getBalance() >= max) {
-                gui.getUserButtonPressed(Bidders.get(i).getName() + "har vundet aktionen og skal betale" + max, "Betal");
-                Bidders.get(i).getKonto().update(-max);
+                if(gui.getUserLeftButtonPressed(Bidders.get(i).getName() + "har vundet aktionen. Vil du betale" + max +"for grunden?", "betal", "betal ikke")){
+                    Vinder();
+                }
+                else{
+                    gui.showMessage("Du have valgt ikke at købe grunden, spillet kører videre Dr Anders");
+                    antalBydere = 0;
+                    Vinder();
+                }
+
 
             } else {
                 gui.showMessage(Bidders.get(i).getName() + "har ikke nok penge og kan derfor ikke købe grunden");
@@ -56,49 +58,59 @@ public class Aktion2 {
         }
         if (antalBydere > 1) {
             while (i < Bidders.size()) {
-                if (Bidders.get(i).getKonto().getBalance() >= max && antalBydere >= 1) {
-                    if (gui.getUserLeftButtonPressed("Kunne du tænke dig at byde på" + field.getTitle() + "min:" + (max + minBud), "ja", "nej")) {
-                        max = gui.getUserInteger("Hvor meget vil du smide efter grunden? (minimum: " + (max + minBud) + "):", (max + minBud), Bidders.get(i).getKonto().getBalance());
-                        //skift denne spiller til den højeste bydene (lav funktion)
-                    } else {
+
+                    if (Bidders.get(i).getKonto().getBalance() >= max && antalBydere >= 1) {
+                        if (gui.getUserLeftButtonPressed(Bidders.get(i).getName() + "Vil du stadig byde på" + field.getTitle() + "Nuværende pris er" + max, "ja", "nej")) {
+                            max = gui.getUserInteger("Hvor meget vil du smide efter grunden? (minimum: " + (max) + "):", (max), Bidders.get(i).getKonto().getBalance());
+
+
+                            //skift denne spiller til den højeste bydene (lav funktion)
+                        } else {
+                            gui.showMessage(Bidders.get(i).getName() + "har valgt at udgå aktionen");
+                            Bidders.remove(i);
+                            antalBydere--;
+                        }
+
+                    } else if (Bidders.get(i).getKonto().getBalance() <= max) {
+                        gui.getUserButtonPressed(Bidders.get(i).getName() + "har desværre ikke nok på kontoen til at deltage, og ryger derfor ud af aktionen", "dang it");
                         Bidders.remove(i);
+                        antalBydere--;
+
                     }
 
-                } else if (Bidders.get(i).getKonto().getBalance() <= max) {
-                    gui.getUserButtonPressed(Bidders.get(i).getName() + "har desværre ikke nok på kontoen til at deltage, og ryger derfor ud af aktionen", "dang it");
-                    Bidders.remove(i);
-
-                }
-                checkBidders();
                 i++;
                 if (i >= Bidders.size()) i = 0;
                 if (i >= players.length) i = 0;
-                if(tjekVinder() == true) i = 7;
+                if (tjekVinder() == true) i = 7;
                 else if (antalBydere == 0) i = 7;
 
 
             }
 
         }
-        Vinder();
+        if(tjekVinder()==true){
+            Vinder();
+        }
+
 
     }
 
     // opretter et nyt arraylist med spillerne i, hvorefter der fjernes de spillere som ikke vil deltage i aktionen
     public void checkBidders() {
+        this.antalBydere = 0;
+        this.player = player;
 
-        antalBydere = 0;
-        for (int i = 0; i < Bidders.size(); i++) {
+        for (int i = 0; i < players.length; i++) {
             Bidders.add(players[i]);
+            Bidders.remove(players[i].equals(player));
             if (!players[i].equals(player)) {
-                if (gui.getUserLeftButtonPressed("Hvil du være med i aktionen om" + field.getTitle(), "ja", "nej")) {
+
+                if (gui.getUserLeftButtonPressed(Bidders.get(i).getName() +"Hvil du være med i aktionen om" + field.getTitle(), "ja", "nej")) {
                     if (Bidders.get(i).getKonto().getBalance() >= max) {
 
                         antalBydere++;
                     }
-                    if (players[i].equals(player)) {
-                        Bidders.remove(i);
-                    }
+
                 } else {
                     Bidders.remove(i);
                 }
@@ -127,8 +139,8 @@ public class Aktion2 {
         }
 
 
-
     }
+
     private void Vinder() {
         if (antalBydere == 1) {
             gui.showMessage(players[aktionVinder].getName() + "Har budt højest og dermed vundet aktionen for" + field.getTitle());
@@ -139,6 +151,5 @@ public class Aktion2 {
         }
 
     }
-
-
 }
+

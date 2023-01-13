@@ -3,6 +3,7 @@ package spil_Version_2;
 
 import gui_fields.*;
 
+import gui_main.GUI;
 import spil_Version_2.cards.Parent_Card;
 ;
 
@@ -13,6 +14,7 @@ import static spil_Version_2.Game_Controller.getGui;
 
 
 public class LandOnField {
+
 
 
 
@@ -51,8 +53,8 @@ public class LandOnField {
                 int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
                 player.buyField(cost,ownable.getTitle());
             }
-            else {
-
+            else { Aktion2 aktion = new Aktion2();
+                aktion.korAktion(player, ownable);
             }
         }
         else if (player.getName() != ownable.getOwnerName())
@@ -84,6 +86,8 @@ public class LandOnField {
 
     }
     }
+
+
     //DE her metoder skal indeholde hvad en spiller skal betale hvis de lander på et felt hvor spilleren ejer alle felter
     private void hitStreet(Player player,Player Owner, GUI_Field[] fields){
         GUI_Field field = fields[player.getPos()];

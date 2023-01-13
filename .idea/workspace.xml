@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Der skal lige fikses det sidste i aktion, så burde det virke">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Er snart færdig, nu skal jeg bare kunne implementere kor aktion i landonfield og fikset bugsne">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion 2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
     </list>
@@ -205,7 +204,7 @@
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1673357922103" duration="798000" />
       <workItem from="1673375842619" duration="656000" />
-      <workItem from="1673541348340" duration="8835000" />
+      <workItem from="1673541348340" duration="14267000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -396,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673552125364</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Er snart færdig, nu skal jeg bare kunne implementere kor aktion i landonfield og fikset bugsne">
+      <created>1673558733155</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1673558733155</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +468,8 @@
     <MESSAGE value="Er stadig igang med at aktion fikset" />
     <MESSAGE value="Er startet forfra med aktion, jeg er på rette spor nu" />
     <MESSAGE value="Der skal lige fikses det sidste i aktion, så burde det virke" />
-    <option name="LAST_COMMIT_MESSAGE" value="Der skal lige fikses det sidste i aktion, så burde det virke" />
+    <MESSAGE value="Er snart færdig, nu skal jeg bare kunne implementere kor aktion i landonfield og fikset bugsne" />
+    <option name="LAST_COMMIT_MESSAGE" value="Er snart færdig, nu skal jeg bare kunne implementere kor aktion i landonfield og fikset bugsne" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,6 +486,15 @@
           <url>file://$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java</url>
           <line>34</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion2.java</url>
+          <line>24</line>
+          <properties class="spil_Version_2.Aktion2" method="korAktion">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
