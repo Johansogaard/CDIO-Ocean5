@@ -184,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game_Controller" />
         <item itemvalue="JUnit.HelperTest.getElement2dArray" />
         <item itemvalue="JUnit.BoardCreatorTest.getColorArray" />
         <item itemvalue="Application.REMOVETHISCLASS" />
         <item itemvalue="Application.GameController" />
+        <item itemvalue="Application.Game_Controller" />
       </list>
     </recent_temporary>
   </component>
