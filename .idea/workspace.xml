@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="tax virker">
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Matador_Legat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/MovePlayerCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Parent_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykFelter_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/RykTilStart_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/card/Straf_Eller_Gevinst.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/FieldText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game_Txt/ReadFieldData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Brewery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Chance.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ferry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_GoToJail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Jail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Ownable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parentfield.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Parkering.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Start.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Street.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui_GameFields/GUI_Tax.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/inGameFunktions/LandOnStreet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2023_19_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_01_2023_19_36__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CDIO-Ocean5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CDIO-Ocean5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Bigchance" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,20 +50,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java\spil_Version_2" />
@@ -100,7 +87,7 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HelperTest.getElement2dArray">
+  <component name="RunManager" selected="Application.Game_Controller">
     <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil.GameController" />
       <module name="CDIO-Ocean5" />
@@ -133,6 +120,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="spil.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,6 +187,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game_Controller" />
         <item itemvalue="JUnit.HelperTest.getElement2dArray" />
         <item itemvalue="JUnit.BoardCreatorTest.getColorArray" />
         <item itemvalue="Application.REMOVETHISCLASS" />
@@ -206,6 +207,7 @@
       <workItem from="1672830437219" duration="12320000" />
       <workItem from="1673357922103" duration="798000" />
       <workItem from="1673375842619" duration="656000" />
+      <workItem from="1673521142503" duration="7102000" />
     </task>
     <task id="LOCAL-00001" summary="tilføjet maven">
       <created>1672744047317</created>
@@ -475,10 +477,10 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
     </SUITE>
   </component>
