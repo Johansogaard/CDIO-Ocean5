@@ -58,12 +58,13 @@ public class Game_Controller {
             {
                 gui.getUserButtonPressed(playerList.get(i).getName()+" har mistet sine penge eller er givet op og er derfor ude af spillet", "fair nok");
                 playerList.remove(i);
+                i=0;
 
             }
             if(playerList.size() == 1){
                 gui.getUserButtonPressed(playerList.get(i).getName()+"har vundet som den sidste spiller stående", "Tak for spillet");
 
-                break;
+                System.exit(1);
             }
 
 

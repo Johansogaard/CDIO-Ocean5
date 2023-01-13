@@ -31,7 +31,7 @@ public class Devmode {
     private  void playerOptions()
     {
 
-        String c = gui.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. hus/hotel Menu","4. Chancekort","5. Pantsæt menu","6. Spil en tur","7. Tilbage");
+        String c = gui.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. hus/hotel Menu","4. Chancekort","5. Pantsæt menu","6. Spil en tur","7. Tilbage","8. Skift Til normal mode");
         switch (player.getChoice(c)){
             case 1:
             {
@@ -70,6 +70,12 @@ public class Devmode {
                 player.spil(gui,fields);
                 playerOptions();
             }
+            break;
+            case 8:
+            {
+                Game_Controller.playGame(players,fields,gui);
+            }
+            break;
         }
 
     }

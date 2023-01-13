@@ -430,7 +430,8 @@ public class Player {
             }
             else{
                 gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
-                spil(gui,gamefields);
+                turn();
+                simpleTurn();
 
             }
 
