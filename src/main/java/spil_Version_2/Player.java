@@ -308,7 +308,7 @@ public class Player {
 
         }
     }
-    private void pawnField()
+    public void pawnField()
     {
        String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
         ArrayList<String[]> data = Board_Creator.getFieldData();
@@ -316,14 +316,20 @@ public class Player {
        if (buttonPressed.equals("Pantsæt Grunde")) {
            for (int i = 0; i < this.grunde.size(); i++) {
                int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
-               if (Integer.parseInt(data.get(i)[12]) == 0 && Integer.parseInt(data.get(i)[13]) == 0) {
+               if (Integer.parseInt(data.get(crrIndex)[12]) == 0 && Integer.parseInt(data.get(crrIndex)[13]) == 0) {
                    availableFieldsToParwn.add(this.grunde.get(i));
                }
                String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
-               String fieldToPawn = gui.getUserSelection("Hvilken grund vil de pantsætte", choice);
-               int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
-               Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
-               this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3]))/2);
+               if(choice.length ==0)
+               {
+                   gui.showMessage("Du har ikke nogle grunde der kan pantsættes husk at sælge dine huse på grunden før du pantsætter");
+               }
+               else {
+                   String fieldToPawn = gui.getUserSelection("Hvilken grund vil de pantsætte", choice);
+                   int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+                   Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
+                   this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
+               }
 
            }
        }
@@ -331,16 +337,22 @@ public class Player {
        {
            for (int i = 0; i < this.grunde.size(); i++) {
                int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
-               if (Integer.parseInt(data.get(i)[13]) == 1) {
+               if (Integer.parseInt(data.get(crrIndex)[13]) == 1) {
                    availableFieldsToParwn.add(this.grunde.get(i));
                }
                String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
-               String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
-               int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
-               Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
-               int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3])/2)/10)+(Integer.parseInt(data.get(fieldToPawnIndex)[3])/2);
-               int rounded =((costToBuyBack+99)/100)*100;
-               this.getKonto().update((-rounded));
+               if(choice.length ==0)
+               {
+                   gui.showMessage("Du har ingen pantsatte grunde");
+               }
+               else {
+                   String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
+                   int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+                   Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
+                   int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
+                   int rounded = ((costToBuyBack + 99) / 100) * 100;
+                   this.getKonto().update((-rounded));
+               }
 
            }
 
@@ -525,20 +537,22 @@ public class Player {
     public boolean checkOwnerOwnAll(){
         GUI_Field field = Game_Controller.getFields()[getPos()];;
         GUI_Ownable ownable = (GUI_Ownable) field;
-        ArrayList<String> ownerFields = Game_Controller.getPlayer(ownable.getOwnerName()).getGrunde();
-        ArrayList<String[]> typeFields = Board_Creator.getGroupArray((Board_Creator.getFieldData().get(pos)[11]));
         return checkPlayerOwnsTheColorFields(Game_Controller.getPlayer(ownable.getOwnerName()), Board_Creator.getFieldData().get(pos)[11]);
     }
     public boolean checkPlayerOwnsTheColorFields (Player player, String color)
     {
         ArrayList<String> ownerFields = player.getGrunde();
         ArrayList<String[]> typeFields = Board_Creator.getGroupArray(color);
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+
         boolean sandt = false;
         int f=0;
         for (int i = 0;i<typeFields.size();i++)
         {
+
             String l =typeFields.get(i)[0];
-            if(ownerFields.contains(l))
+            int index = Board_Creator.fieldIndexFromName(l);
+            if(ownerFields.contains(l) && Integer.parseInt(data.get(index)[13])==0)
             {
                 f++;
             }

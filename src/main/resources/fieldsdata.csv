@@ -3,18 +3,18 @@ Start,0,start,,,,,,,,,,,
 Rødovrevej,1, street,1200,1000,50,250,750,2250,4000,6000,blue,0,0
 Prøv lykken,2, chance,,,,,,,,,,,
 Hvidovrevej,3, street,1200,1000,50,250,400,750,2250,6000,blue,0,0
-Indkomstskat,4, tax,4000,,,,,,,,,,
-Helsingør - Helsingborg,5, ferry,4000,,500,1000,2000,4000,,,ferry,,0
+Indkomstskat,4, tax,4000,,,,,,,,,,0
+Helsingør - Helsingborg,5, ferry,4000,,500,1000,2000,4000,,,ferry,0,0
 Roskildevej,6, street,2000,1000,100,600,1800,5400,8000,11000,orange,0,0
 Prøv lykken,7, chance,,,,,,,,,,,0
 Valby Langgade,8, street,2000,1000,100,600,1800,5400,8000,11000,orange,0,0
 Allégade,9, street,2400,1000,150,800,2000,6000,9000,12000,orange,0,0
 I fængsel/På besøg,10, jail,,,,,,,,,,,0
 Frederiksberg Allé,11, street,2800,2000,200,1000,3000,9000,12500,15000,green,0,0
-Tuborg Squash,12, brewery,3000,,100,200,,,,,brewery,,0
+Tuborg,12, brewery,3000,,100,200,,,,,brewery,0,0
 Bülowsvej,13, street,2800,2000,200,1000,3000,9000,12500,15000,green,0,0
 Gl. Kongevej,14, street,3200,2000,250,1250,3750,10000,14000,18000,green,0,0
-Mols-Linien,15, ferry,4000,,500,1000,2000,4000,,,ferry,,0
+Mols-Linien,15, ferry,4000,,500,1000,2000,4000,,,ferry,0,0
 Bernstorffsvej,16, street,3600,2000,300,1400,4000,11000,15000,19000,grey,0,0
 Prøv lykken,17, chance,,,,,,,,,,,0
 Hellerupvej,18, street,3600,2000,300,1400,4000,11000,15000,19000,grey,0,0
@@ -24,17 +24,17 @@ Trianglen,21, street,4400,3000,350,1800,5000,14000,17500,21000,red,0,0
 Prøv lykken,22, chance,,,,,,,,,,,0
 Øserbrogade,23, street,4400,3000,350,1800,5000,14000,17500,21000,red,0,0
 Grønningen,24, street,4800,3000,400,2000,6000,15000,18500,22000,red,0,0
-Gedser - Rostock,25, ferry,4000,,500,1000,2000,4000,,,ferry,,0
+Gedser - Rostock,25, ferry,4000,,500,1000,2000,4000,,,ferry,0,0
 Bredgade,26, street,5200,3000,450,2200,6600,16000,19500,23000,white,0,0
 Kgs. Nytorv,27, street,5200,3000,450,2200,6600,16000,19500,23000,white,0,0
-Coca Cola,28, brewery,3000,,100,200,,,,,brewery,,0
+Carlsberg ,28, brewery,3000,,100,200,,,,,brewery,0,0
 Østergade,29, street,5600,3000,500,2400,7200,17000,20500,24000,white,0,0
 Fængsel,30, jail,,,,,,,,,,,0
 Amagertorv,31, street,6000,4000,550,2600,7800,18000,22000,25000,yellow,0,0
 Vimmelskaftet,32, street,6000,4000,550,2600,7800,18000,22000,25000,yellow,0,0
 Prøv lykken,33, chance,,,,,,,,,,,0
 Nygade,34, street,6400,4000,600,3000,9000,20000,24000,28000,yellow,0,0
-Rødby - Puttgarden,35, ferry,4000,,500,1000,2000,4000,,,ferry,,0
+Rødby - Puttgarden,35, ferry,4000,,500,1000,2000,4000,,,ferry,0,0
 Prøv lykken,36, chance,,,,,,,,,,,
 Frederiksberggade,37, street,7000,4000,700,3500,10000,22000,26000,30000,purple,0,0
 Ekstraordinær statsskat,38, tax,2000,,,,,,,,,,

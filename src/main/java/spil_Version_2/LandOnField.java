@@ -50,12 +50,17 @@ public class LandOnField {
                 player.buyField(cost,ownable.getTitle());
             }
         }
-        else if (player.getName() != ownable.getOwnerName())
-    {
+        else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT"))
+            {
         Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
         if(ownable.getClass().equals(GUI_Brewery.class))
         {
             hitBrewery(player,owner, fields);
+        }
+        else if (ownable.getClass().equals(GUI_Shipping.class))
+        {
+            hitFerry(player,owner,fields);
+
         }
         else if (player.checkOwnerOwnAll())
         {
@@ -65,17 +70,14 @@ public class LandOnField {
             }
 
         }
-        else if (ownable.getClass().equals(GUI_Shipping.class))
-        {
-            hitFerry(player,owner,fields);
 
-        }
-        else {
+        else if(!ownable.getTitle().equals("PANTSAT")){
 
             int rent = Integer.parseInt(ownable.getRent());
             player.payRent(rent,owner,ownable.getTitle());
 
         }
+        else {}
 
     }
     }
@@ -115,10 +117,28 @@ public class LandOnField {
     }
     private int howManyFerry(Player owner){
 
-        List<String> common = new ArrayList<>(owner.getGrunde());
-        common.retainAll(Board_Creator.getGroupArray("ferry"));
+        ArrayList<String> common = owner.getGrunde();
+        ArrayList<String[]> data= Board_Creator.getFieldData();
+        int numberOfFerrys=0;
+        ArrayList<String[]> ferryFields = Board_Creator.getGroupArray("ferry");
+        for(int i = 0;i<common.size();i++)
+        {
+            for (int p =0;p<ferryFields.size();p++)
+            {
+                int index = Board_Creator.fieldIndexFromName(common.get(i));
+                if(Integer.parseInt(data.get(index)[13])==1)
+                {
+
+                }
+                else if (common.get(i).equals(ferryFields.get(p)[0]))
+                {
+                numberOfFerrys++;
+                }
+            }
+        }
+
         int multi=0;
-        switch (common.size()){
+        switch (numberOfFerrys){
             case 1: {
                 multi=500;
             }

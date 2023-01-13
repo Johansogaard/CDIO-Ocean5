@@ -28,7 +28,7 @@ public class Devmode {
     private  void playerOptions()
     {
 
-        String c = gui.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. Sæt hus/Hotel","4. sælg Hus/Hotel","5. Tilbage");
+        String c = gui.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. Sæt hus/Hotel","4. sælg Hus/Hotel","5. Pantsæt menu","6. Tilbage");
         switch (player.getChoice(c)){
             case 1:
             {
@@ -46,7 +46,7 @@ public class Devmode {
                sellHouseOrHotel();
             }
             break;
-            case 5:
+            case 6:
             {
                 playDevmode(players,fields,gui);
             }
@@ -57,8 +57,17 @@ public class Devmode {
 
             }
             break;
+            case 5:
+            {
+                pawnOwnable();
+            }
         }
 
+    }
+    private void pawnOwnable()
+    {
+        player.pawnField();
+        playerOptions();
     }
     private void setPlayersBalance()
     {

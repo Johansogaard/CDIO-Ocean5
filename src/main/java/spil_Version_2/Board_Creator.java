@@ -92,8 +92,11 @@ public class Board_Creator {
                 break;
                 case "tax":
                 {
-                    list.add(new GUI_Tax());
-                    //list.add(new GUI_Tax(data[0],"Kr "+ data[3],"Du skal betale " + data[3] + " Kr i skat"));
+                    GUI_Tax t = new GUI_Tax();
+                    t.setTitle(data[0]);
+                    t.setDescription("");
+                    list.add(t);
+
                 }
                 break;
                 case "ferry":
@@ -330,12 +333,14 @@ public class Board_Creator {
         int pawnStatus=0;
         if (b)
         {
-            Game_Controller.getFields()[index].setTitle("PANSAT");
+            Game_Controller.getFields()[index].setTitle("PANTSAT");
+            Game_Controller.getFields()[index].setForeGroundColor(new Color(244,83,32));
             pawnStatus=1;
         }
         else
         {
             String titel = fieldData.get(index)[0];
+            Game_Controller.getFields()[index].setForeGroundColor(Color.black);
             Game_Controller.getFields()[index].setTitle(titel);
         }
         Board_Creator.fieldData.get(index)[13] = Integer.toString(pawnStatus);
