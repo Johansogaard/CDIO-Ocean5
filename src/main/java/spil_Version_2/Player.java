@@ -192,7 +192,7 @@ public class Player {
                    }
 
                } else if (numberOfHouses == 4) {
-                   if(payHouseHotel(housePrice)) {
+                   if(payHouseHotel(housePrice*5)) {
                        street.setHouses(0);
                        street.setHotel(true);
                        Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
@@ -217,9 +217,96 @@ public class Player {
         }
         return paidForHouse;
     }
-    private void sellHouse()
+    private void sellHouseHotel(int housePrice)
     {
+        getKonto().update(housePrice/2);
+        pl.setBalance(this.konto.getBalance());
 
+    }
+
+
+
+    public void sellHouse()
+    {
+        String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
+        ArrayList<String> colorsYouOwn = new ArrayList<>();
+        for(int i=0;i<fieldcolors.length;i++)
+        {
+            if(checkPlayerOwnsTheColorFields(this,fieldcolors[i]))
+            {
+                colorsYouOwn.add(fieldcolors[i]);
+            }
+        }
+        if (colorsYouOwn.size()==0)
+        {
+            gui.getUserButtonPressed("Du har ikke alle felter i en farve og har derfor ingen huse","Okay");
+        }
+        else {
+            ArrayList<String> sameColorFields = new ArrayList<>();
+
+            for(int i = 0;i<colorsYouOwn.size();i++)
+            {
+                ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
+                ArrayList<Integer> index = new ArrayList<>();
+                for(int k = 0; k<f.size();k++)
+                {
+                    String titel = f.get(k)[0];
+                    int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                    index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
+                }
+
+
+                int max = index.get(0);
+                // loop to find minimum from ArrayList
+                for (int p = 1; p < index.size(); p++) {
+                    if (index.get(p) > max) {
+                        max = index.get(p);
+                    }
+                }
+                //loop that makes an array of the streets with lowest number of houses and checks if the streets has max number of houses
+                for(int r = 0;r<f.size();r++)
+                {
+                    String titel = f.get(r)[0];
+                    int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                    if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==max &&
+                            Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12])>0)
+                    {
+                        sameColorFields.add(f.get(r)[0]);
+                    }
+                }
+
+            }
+            if (sameColorFields.size()==0)
+            {
+                gui.getUserButtonPressed("Du har ingen huse/hoteller at sælge","Okay");
+            }
+            else {
+                String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
+                String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de sælge deres Hus/hotel?", choice);
+
+                GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
+                GUI_Street street = (GUI_Street) field;
+
+                int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
+                int housePrice =  Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
+
+                if (numberOfHouses < 5) {
+
+                    sellHouseHotel(housePrice);
+                        street.setHouses(numberOfHouses-1);
+                        Board_Creator.setHousesInData( numberOfHouses-1, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+
+
+                } else if (numberOfHouses == 5) {
+                    sellHouseHotel(housePrice*5);
+                        street.setHouses(0);
+                        street.setHotel(false);
+                        Board_Creator.setHousesInData(0, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+
+                }
+            }
+
+        }
     }
     private void pawnField()
     {}
