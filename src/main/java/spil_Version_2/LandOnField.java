@@ -52,7 +52,6 @@ public class LandOnField {
                         aktion.korAktion(player,ownable);
                     }
                     else {
-                        ownable.setOwnerName(player.getName());
                         ownable.setBorder(player.getCar().getPrimaryColor());
                         ownable.setOwnableLabel("Ejet af " + player.getName());
 

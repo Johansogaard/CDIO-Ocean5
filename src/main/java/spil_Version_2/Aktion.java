@@ -52,6 +52,8 @@ public class Aktion {
             if (bidders.size() == 1) {
                 gui.showMessage(bidders.get(0).getName() + " Vandt aktionen og ejer nu " + field.getTitle());
                 bidders.get(0).buyField(currentMax, field.getTitle());
+                field.setBorder(bidders.get(0).getCar().getPrimaryColor());
+                field.setOwnableLabel("Ejet af " + player.getName());
                 break;
 
             }
