@@ -4,7 +4,7 @@ import spil_Version_2.Game_Controller;
 import spil_Version_2.Player;
 
 public class GiftCard extends Parent_Card {
-    private final String message;
+
     private int amount;
 
     public GiftCard(int amount,String message) {

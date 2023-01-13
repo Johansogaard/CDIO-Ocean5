@@ -95,23 +95,23 @@ public class Player {
     public boolean spil(GUI gui, GUI_Field[] fields)
     {
         gamefields = fields;
-        boolean playerLost = false;
-        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Byg hus/hotel", "3. Sælg hus/hotel", "4. Pantsætning af grunde menu");
+
+        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Hus/Hotel Menu", "3. Sælg Grund", "4. Pantsætning af grunde menu");
         switch (getChoice(choice)){
             case 1:
             {
-                playerLost = runATurn();
+                runATurn();
             }
             break;
             case 2:
             {
-                buyHouse();
+                hotelHouseMenu();
                 spil(gui,fields);
             }
             break;
             case 3:
             {
-                sellHouse();
+                sellField();
                 spil(gui,fields);
             }
             break;
@@ -122,7 +122,26 @@ public class Player {
             }
             break;
         }
-        return playerLost;
+        return hasLost;
+    }
+    public void sellField()
+    {
+
+    }
+    public void hotelHouseMenu()
+    {
+        String choice = gui.getUserButtonPressed(this.getName(), "1. Køb hus/hotel", "2. sælg hus/hotel");
+        switch (getChoice(choice))
+        {
+            case 1:
+            {
+                buyHouse();
+            }
+            case 2:
+            {
+                sellHouse();
+            }
+        }
     }
     public void buyHouse()
     {
@@ -362,7 +381,7 @@ public class Player {
 
        }
     }
-    private boolean runATurn()
+    private void runATurn()
     {
         if (jail)
         {
@@ -374,7 +393,7 @@ public class Player {
             turn();
             simpleTurn();
         }
-        return hasLost;
+
     }
 
     public void simpleTurn()

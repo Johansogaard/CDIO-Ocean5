@@ -4,7 +4,7 @@ import spil_Version_2.Player;
 
 public class Matador_Legat extends Parent_Card {
     private int amount;
-    private String message;
+
 
     public Matador_Legat(int amount, boolean add, String message) {
         this.amount = amount;

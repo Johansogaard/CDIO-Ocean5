@@ -6,12 +6,13 @@ import spil_Version_2.Player;
 
 public class RykFelter_Card extends Parent_Card {
 
+
     private int spacesToMove;
 
     public RykFelter_Card(int spacesToMove) {
         this.spacesToMove = spacesToMove;
+        this.message = "Ryk felter";
     }
-
     public void setSpacesToMove(int spacesToMove) {
         this.spacesToMove = spacesToMove;
     }
@@ -19,9 +20,11 @@ public class RykFelter_Card extends Parent_Card {
     @Override
     public void hit(Player player) {
         if (spacesToMove < 0) {
-            player.showchancecard("Ryk " + Math.abs(spacesToMove) + " felter tilbage");
+            message ="Ryk " + Math.abs(spacesToMove) + " felter tilbage";
+            player.showchancecard(message);
         } else {
-            player.showchancecard("Ryk " + spacesToMove + " felter frem");
+            message ="Ryk " + spacesToMove + " felter frem";
+            player.showchancecard(message);
         }
         player.checkIfPassedStart(player.getPos() + spacesToMove);
         player.movePlayer((player.getPos()+spacesToMove)%40);

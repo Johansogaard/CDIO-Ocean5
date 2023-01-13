@@ -54,9 +54,9 @@ public class Game_Controller {
 
         for (int i = 0; i < playerList.size(); i=(i+1)%playerList.size()) {
 
-            if(playerList.get(i).spil(gui,fields) == true)
+            if(playerList.get(i).spil(gui,fields))
             {
-                gui.getUserButtonPressed(playerList.get(i).getName()+"har mistet sine penge og taber derfor spillet", "fair nok");
+                gui.getUserButtonPressed(playerList.get(i).getName()+" har mistet sine penge eller er givet op og er derfor ude af spillet", "fair nok");
                 playerList.remove(i);
 
             }

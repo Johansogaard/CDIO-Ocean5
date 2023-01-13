@@ -5,7 +5,7 @@ import spil_Version_2.Player;
 public class Straf_Eller_Gevinst extends Parent_Card {
     private int amount;
     private boolean add;
-    private String message;
+
 
     public Straf_Eller_Gevinst(int amount, boolean add, String message) {
         this.amount = amount;

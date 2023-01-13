@@ -40,15 +40,24 @@ public class LandOnField {
     {
         GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
-        if (ownable.getOwnerName() == null && player.getKonto().getBalance() >=0)
+        int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
+        if (ownable.getOwnerName() == null )
         {
-            if(Game_Features.makeYesNoButton(player.getName()+" Vil du købe denne grund")) {
-                ownable.setOwnerName(player.getName());
-                ownable.setBorder(player.getCar().getPrimaryColor());
-                ownable.setOwnableLabel("Ejet af "+player.getName());
-                int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
-                player.buyField(cost,ownable.getTitle());
-            }
+                if (Game_Features.makeYesNoButton(player.getName() + " Vil du købe denne grund")) {
+                    if (player.getKonto().getBalance() < cost)
+                    {
+                        getGui().showMessage("Du har ikke råde til grunden");
+                    }
+                    else {
+                        ownable.setOwnerName(player.getName());
+                        ownable.setBorder(player.getCar().getPrimaryColor());
+                        ownable.setOwnableLabel("Ejet af " + player.getName());
+
+                        player.buyField(cost, ownable.getTitle());
+                    }
+                }
+
+
         }
         else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT") && Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false)
             {

@@ -6,7 +6,7 @@ import spil_Version_2.Player;
 
 public class MovePlayerCard extends Parent_Card {
     private int steps;
-    private String message;
+
 
     public MovePlayerCard(int steps, String message) {
         this.steps = steps;
