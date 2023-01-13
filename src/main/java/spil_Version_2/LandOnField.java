@@ -50,7 +50,7 @@ public class LandOnField {
                 player.buyField(cost,ownable.getTitle());
             }
         }
-        else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT"))
+        else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT") && Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false)
             {
         Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
         if(ownable.getClass().equals(GUI_Brewery.class))
@@ -71,7 +71,7 @@ public class LandOnField {
 
         }
 
-        else if(!ownable.getTitle().equals("PANTSAT")){
+        else if(!ownable.getTitle().equals("PANTSAT")&& Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false){
 
             int rent = Integer.parseInt(ownable.getRent());
             player.payRent(rent,owner,ownable.getTitle());

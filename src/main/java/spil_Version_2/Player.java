@@ -36,6 +36,10 @@ public class Player {
     GUI_Car car;
 
 
+    public boolean isJail() {
+        return jail;
+    }
+
     private boolean jail= false;
 
 
