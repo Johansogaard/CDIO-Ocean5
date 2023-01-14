@@ -16,6 +16,7 @@ public class Game_Features {
         private static Integer players=-1;
         private static final Object monitor = new Object();
         private static boolean b =false;
+        public static int[] balance ={30000,30000,30000,30000,30000,30000};
         public Game_Features()
         {
 
@@ -105,34 +106,34 @@ public class Game_Features {
             int pl = playercountadd();
             if (pl == 3) {
                 Player[] plA3 = new Player[3];
-                plA3[0] = new Player("Spiller 1", 30000, 0);
-                plA3[1] = new Player("Spiller 2", 30000, 0);
-                plA3[2] = new Player("Spiller 3", 30000, 0);
+                plA3[0] = new Player("Spiller 1", balance[0], 0);
+                plA3[1] = new Player("Spiller 2", balance[1], 0);
+                plA3[2] = new Player("Spiller 3", balance[2], 0);
 
                 return plA3;
             } else if (pl == 4) {
                 Player[] plA4 = new Player[4];
-                plA4[0] = new Player("Spiller 1", 30000, 0);
-                plA4[1] = new Player("Spiller 2", 30000, 0);
-                plA4[2] = new Player("Spiller 3", 30000, 0);
-                plA4[3] = new Player("Spiller 4", 30000, 0);
+                plA4[0] = new Player("Spiller 1", balance[0], 0);
+                plA4[1] = new Player("Spiller 2", balance[1], 0);
+                plA4[2] = new Player("Spiller 3", balance[2], 0);
+                plA4[3] = new Player("Spiller 4", balance[3], 0);
                 return plA4;
             } else if (pl == 5) {
                 Player[] plA5 = new Player[5];
-                plA5[0] = new Player("Spiller 1", 30000, 0);
-                plA5[1] = new Player("Spiller 2", 30000, 0);
-                plA5[2] = new Player("Spiller 3", 30000, 0);
-                plA5[3] = new Player("Spiller 4", 30000, 0);
-                plA5[4] = new Player("Spiller 5", 30000, 0);
+                plA5[0] = new Player("Spiller 1", balance[0], 0);
+                plA5[1] = new Player("Spiller 2", balance[1], 0);
+                plA5[2] = new Player("Spiller 3", balance[2], 0);
+                plA5[3] = new Player("Spiller 4", balance[3], 0);
+                plA5[4] = new Player("Spiller 5", balance[4], 0);
                 return plA5;
             } else {
                 Player[] plA6 = new Player[6];
-                plA6[0] = new Player("Spiller 1", 30000, 0);
-                plA6[1] = new Player("Spiller 2", 30000, 0);
-                plA6[2] = new Player("Spiller 3", 30000, 0);
-                plA6[3] = new Player("Spiller 4", 30000, 0);
-                plA6[4] = new Player("Spiller 5", 30000, 0);
-                plA6[5] = new Player("Spiller 6", 30000, 0);
+                plA6[0] = new Player("Spiller 1", balance[0], 0);
+                plA6[1] = new Player("Spiller 2", balance[1], 0);
+                plA6[2] = new Player("Spiller 3", balance[2], 0);
+                plA6[3] = new Player("Spiller 4", balance[3], 0);
+                plA6[4] = new Player("Spiller 5", balance[4], 0);
+                plA6[5] = new Player("Spiller 6", balance[5], 0);
                 return plA6;
             }
         }
@@ -157,13 +158,17 @@ public class Game_Features {
             jb.setBounds(75, 170, 200, 30);
             L2.setBounds(75,5,200,30);
 
+            //make childrenmode button
+            JButton customMode= new JButton("Brugerdefineret spil");
+            customMode.setBounds(75, 205, 200, 30);
+
             //dev mode button
             JButton devJb= new JButton("Dev Mode");
             devJb.setBounds(400, 0, 100, 30);
 
             L1.setFont(new Font("default-normal", Font.PLAIN,12));
             L2.setFont(new Font("defaut-bold-normal", Font.PLAIN,25));
-            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);f.add(devJb);
+            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);f.add(devJb);f.add(customMode);
             f.setBounds(100, 150, 400, 300);
             f.setTitle("Matador");
 
@@ -177,6 +182,59 @@ public class Game_Features {
                 public void actionPerformed(ActionEvent e) {
                     Game_Controller.setDevMode(true);
                 }
+            });
+            customMode.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+                }
+            });
+
+            customMode.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Declaration of String class Objects.
+                    String qual = " ";
+
+
+                    // If condition to check if jRadioButton2 is selected.
+                    if (p3.isSelected()) {
+                        qual = "Gamemode: 3 spillere";
+                        players = 3;
+                    } else if (p4.isSelected()) {
+
+                        qual = "Gamemode: 4 spillere";
+                        players = 4;
+
+
+                    } else if (p5.isSelected()) {
+
+                        qual = "Gamemode: 5 spillere";
+                        players = 5;
+
+                    }else if (p6.isSelected()) {
+
+                        qual = "Gamemode: 6 spillere";
+                        players = 6;
+
+                    } else {
+
+                        qual = "NO Button selected";
+
+                    }
+                    // MessageDialog to show information selected radio buttons.
+                    JOptionPane.showMessageDialog(f, qual);
+
+                    if (players == -1)
+                        return;
+                    f.setVisible(false);
+                    synchronized (monitor) {
+                        monitor.notify();
+
+                    }
+                    customMode();
+                }
+
             });
             jb.addActionListener(new ActionListener() {
                 @Override
@@ -232,10 +290,120 @@ public class Game_Features {
             return players;
 
         }
+
+        private static void customMode()
+        {
+            ArrayList<JTextField> txtfield = new ArrayList<>();
+            JFrame f = new JFrame();
+            f.setLayout(null);
+            JLabel L2 = new JLabel("Vælg det beløb spillerne starter med");
+            L2.setBounds(75,5,200,30);
+            JLabel p1 = new JLabel("Spiller 1 beløb:");
+            p1.setBounds(75,15,200,30);
+            JTextField t1 = new JTextField();
+            t1.setBounds(75,25,200,30);
+
+            JLabel p2 = new JLabel("Spiller 2 beløb:");
+            JTextField t2 = new JTextField();
+            JLabel p3 = new JLabel("Spiller 3 beløb:");
+            JTextField t3 = new JTextField();
+            txtfield.add(t1);txtfield.add(t2);txtfield.add(t3);
+            if (players >=4)
+            {
+                JLabel p4 = new JLabel("Spiller 4 beløb:");
+                JTextField t4 = new JTextField();
+                txtfield.add(t4);
+            }
+            if (players>=5)
+            {
+                JLabel p5 = new JLabel("Spiller 5 beløb:");
+                JTextField t5 = new JTextField();
+                txtfield.add(t5);
+            }
+            if (players==6)
+            {
+                JLabel p6 = new JLabel("Spiller 6 beløb:");
+
+                JTextField t6 = new JTextField();
+                txtfield.add(t6);
+
+            }
+            //Confirmbutton
+            JButton confirm = new JButton("Confirm");
+            confirm.setBounds(75,200,200,30);
+
+
+            f.add(L2);f.add(p1);f.add(t1);f.add(confirm);
+            f.setBounds(100, 150, 400, 300);
+            f.setTitle("CustomMode");
+            f.setVisible(true);
+
+            confirm.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    boolean fail = false;
+                    for (int i = 0;i<txtfield.size();i++)
+                    {
+                        if (txtfield.get(i).getText() != null)
+                        {
+
+                            for (int h = 0;h<txtfield.get(i).getText().length();h++)
+                            {
+                                if(!Character.isDigit(txtfield.get(i).getText().charAt(h)))
+                                {
+                                    fail = true;
+                                }
+                            }
+                        }
+                        else fail = true;
+                    }
+                    if (fail = true)
+                    {
+                        JOptionPane.showMessageDialog(f, "Der mangler at blive skrevet en balance !Husk kun tal");
+                        return;
+                    }
+                    else
+                    {
+                        for (int i = 0;i<txtfield.size();i++)
+                        {
+                            balance[i]=Integer.parseInt(txtfield.get(i).getText());
+                        }
+                    }
+                }
+            });
+            f.setVisible(false);
+            synchronized (monitor) {
+                monitor.notify();
+            }
+
+
+/*
+            p3.setBounds(75,60,100,30);
+            p4.setBounds(75,85,100,30);
+            p5.setBounds(75,110,100,30);
+            p6.setBounds(75,135,100,30);
+            L1.setBounds(75, 35, 200, 30);
+            jb.setBounds(75, 170, 200, 30);
+
+            L1.setFont(new Font("default-normal", Font.PLAIN,12));
+            L2.setFont(new Font("defaut-bold-normal", Font.PLAIN,25));
+            f.add(p3);f.add(p4);f.add(p5);f.add(p6);f.add(L1);f.add(jb);f.add(L2);f.add(devJb);f.add(customMode);
+            f.setBounds(100, 150, 400, 300);
+            f.setTitle("Matador");
+
+            f.setVisible(true);
+
+            ButtonGroup bg=new ButtonGroup();
+            bg.add(p3);bg.add(p4);bg.add(p5);bg.add(p6);
+
+ */
+        }
+
         public static boolean makeYesNoButton(String msg)
         {
             boolean selection = Game_Controller.getGui().getUserLeftButtonPressed(msg,"Ja","Nej");
             return selection;
+
         }
         public void addRemoveButton()
 
