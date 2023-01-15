@@ -156,10 +156,12 @@ public class Player {
             {
                 buyHouse();
             }
+            break;
             case 2:
             {
                 sellHouse();
             }
+            break;
         }
     }
     public void buyHouse()
