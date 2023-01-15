@@ -13,9 +13,12 @@ import java.util.Random;
 
 public class Game_Features {
 
+        private static String customGame = "Brugerdefineret spil: OFF";
         private static Integer players=-1;
+        private static boolean fail = false;
         private static final Object monitor = new Object();
         private static boolean b =false;
+        private static boolean cM = false;
         public static int[] balance ={30000,30000,30000,30000,30000,30000};
         public Game_Features()
         {
@@ -104,6 +107,10 @@ public class Game_Features {
 
         public static Player[] playerstoadd(){
             int pl = playercountadd();
+            if (cM)
+            {
+                customMode();
+            }
             if (pl == 3) {
                 Player[] plA3 = new Player[3];
                 plA3[0] = new Player("Spiller 1", balance[0], 0);
@@ -159,7 +166,7 @@ public class Game_Features {
             L2.setBounds(75,5,200,30);
 
             //make childrenmode button
-            JButton customMode= new JButton("Brugerdefineret spil");
+            JButton customMode= new JButton(customGame);
             customMode.setBounds(75, 205, 200, 30);
 
             //dev mode button
@@ -183,56 +190,25 @@ public class Game_Features {
                     Game_Controller.setDevMode(true);
                 }
             });
-            customMode.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-
-                }
-            });
 
             customMode.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    cM=!cM;
                     // Declaration of String class Objects.
-                    String qual = " ";
-
-
-                    // If condition to check if jRadioButton2 is selected.
-                    if (p3.isSelected()) {
-                        qual = "Gamemode: 3 spillere";
-                        players = 3;
-                    } else if (p4.isSelected()) {
-
-                        qual = "Gamemode: 4 spillere";
-                        players = 4;
-
-
-                    } else if (p5.isSelected()) {
-
-                        qual = "Gamemode: 5 spillere";
-                        players = 5;
-
-                    }else if (p6.isSelected()) {
-
-                        qual = "Gamemode: 6 spillere";
-                        players = 6;
-
-                    } else {
-
-                        qual = "NO Button selected";
+                    if (cM)
+                    {
+                        customGame = "Brugerdefineret spil: ON";
+                        customMode.setText(customGame);
 
                     }
-                    // MessageDialog to show information selected radio buttons.
-                    JOptionPane.showMessageDialog(f, qual);
-
-                    if (players == -1)
-                        return;
-                    f.setVisible(false);
-                    synchronized (monitor) {
-                        monitor.notify();
-
+                    else
+                    {
+                        customGame = "Brugerdefineret spil: OFF";
+                        customMode.setText(customGame);
                     }
-                    customMode();
+
+
                 }
 
             });
@@ -286,95 +262,122 @@ public class Game_Features {
                 }
             } catch (InterruptedException i){};
 
-
             return players;
 
         }
 
-        private static void customMode()
-        {
+        private static void customMode() {
             ArrayList<JTextField> txtfield = new ArrayList<>();
             JFrame f = new JFrame();
             f.setLayout(null);
             JLabel L2 = new JLabel("Vælg det beløb spillerne starter med");
-            L2.setBounds(75,5,200,30);
+            L2.setBounds(75, 5, 250, 30);
+
             JLabel p1 = new JLabel("Spiller 1 beløb:");
-            p1.setBounds(75,15,200,30);
+            p1.setBounds(75, 25, 200, 30);
             JTextField t1 = new JTextField();
-            t1.setBounds(75,25,200,30);
+            t1.setBounds(75, 50, 200, 30);
 
             JLabel p2 = new JLabel("Spiller 2 beløb:");
+            p2.setBounds(75, 70, 200, 30);
             JTextField t2 = new JTextField();
+            t2.setBounds(75, 95, 200, 30);
+
             JLabel p3 = new JLabel("Spiller 3 beløb:");
+            p3.setBounds(75, 115, 200, 30);
             JTextField t3 = new JTextField();
-            txtfield.add(t1);txtfield.add(t2);txtfield.add(t3);
-            if (players >=4)
-            {
-                JLabel p4 = new JLabel("Spiller 4 beløb:");
-                JTextField t4 = new JTextField();
-                txtfield.add(t4);
-            }
-            if (players>=5)
-            {
-                JLabel p5 = new JLabel("Spiller 5 beløb:");
-                JTextField t5 = new JTextField();
-                txtfield.add(t5);
-            }
-            if (players==6)
-            {
-                JLabel p6 = new JLabel("Spiller 6 beløb:");
+            t3.setBounds(75, 140, 200, 30);
 
-                JTextField t6 = new JTextField();
-                txtfield.add(t6);
+            JLabel p4 = new JLabel("Spiller 4 beløb:");
+            p4.setBounds(75,160, 200, 30);
+            JTextField t4 = new JTextField();
+            t4.setBounds(75, 185, 200, 30);
 
+
+            JLabel p5 = new JLabel("Spiller 5 beløb:");
+            p5.setBounds(75,205, 200, 30);
+            JTextField t5 = new JTextField();
+            t5.setBounds(75, 230, 200, 30);
+
+
+
+            JLabel p6 = new JLabel("Spiller 6 beløb:");
+            p6.setBounds(75,250, 200, 30);
+            JTextField t6 = new JTextField();
+            t6.setBounds(75, 275, 200, 30);
+
+
+
+            f.add(L2);f.add(p1);f.add(t1);f.add(p2);f.add(t2);f.add(p3);f.add(t3);
+
+            if (players >= 4) {
+
+
+                f.add(p4);f.add(t4);
+            }
+            if (players >= 5) {
+
+                f.add(p5);f.add(t5);
+            }
+            if (players == 6) {
+
+                f.add(p6);f.add(t6);
             }
             //Confirmbutton
             JButton confirm = new JButton("Confirm");
-            confirm.setBounds(75,200,200,30);
+            confirm.setBounds(75, 320, 200, 30);
 
 
-            f.add(L2);f.add(p1);f.add(t1);f.add(confirm);
-            f.setBounds(100, 150, 400, 300);
+
+            f.add(confirm);
+            f.setBounds(100, 150, 400, 500);
             f.setTitle("CustomMode");
             f.setVisible(true);
 
             confirm.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    boolean fail = false;
-                    for (int i = 0;i<txtfield.size();i++)
+                    fail = false;
+                    JTextField[] txtF = {t1,t2,t3,t4,t5,t6};
+                    for (int i = 0; i<players;i++)
                     {
-                        if (txtfield.get(i).getText() != null)
-                        {
+                        txtfield.add(txtF[i]);
+                    }
 
-                            for (int h = 0;h<txtfield.get(i).getText().length();h++)
-                            {
-                                if(!Character.isDigit(txtfield.get(i).getText().charAt(h)))
-                                {
+                    for (int i = 0; i < txtfield.size(); i++) {
+                        if (txtfield.get(i).getText() != null) {
+
+                            for (int h = 0; h < txtfield.get(i).getText().length(); h++) {
+
+                                if (!Character.isDigit(txtfield.get(i).getText().charAt(h))) {
                                     fail = true;
                                 }
                             }
-                        }
-                        else fail = true;
+                        } else fail = true;
                     }
-                    if (fail = true)
-                    {
+                    if (fail == false) {
+                        for (int i = 0; i < txtfield.size(); i++) {
+                            balance[i] = Integer.parseInt(txtfield.get(i).getText());
+                        }
+                        synchronized (monitor) {
+                            monitor.notify();
+                        }
+                        f.setVisible(false);
+                    } else {
                         JOptionPane.showMessageDialog(f, "Der mangler at blive skrevet en balance !Husk kun tal");
-                        return;
-                    }
-                    else
-                    {
-                        for (int i = 0;i<txtfield.size();i++)
-                        {
-                            balance[i]=Integer.parseInt(txtfield.get(i).getText());
-                        }
                     }
                 }
             });
-            f.setVisible(false);
-            synchronized (monitor) {
-                monitor.notify();
+            try {
+                synchronized (monitor) {
+                    monitor.wait();
+                }
+            } catch (InterruptedException i) {
             }
+
+        }
+
+
 
 
 /*
@@ -397,7 +400,7 @@ public class Game_Features {
             bg.add(p3);bg.add(p4);bg.add(p5);bg.add(p6);
 
  */
-        }
+
 
         public static boolean makeYesNoButton(String msg)
         {
