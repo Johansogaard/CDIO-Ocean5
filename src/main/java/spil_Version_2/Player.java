@@ -452,6 +452,18 @@ public class Player {
             break;
             case 3: {
                 hasLost = true;
+                for (int i = 0;i<grunde.size();i++)
+                {
+                  String resetGrund =  grunde.get(i);
+                  int index = Board_Creator.fieldIndexFromName(resetGrund);
+                  GUI_Field field = Game_Controller.getFields()[i];
+                  GUI_Ownable ownable = (GUI_Ownable) field;
+                  ownable.setOwnableLabel("");
+                  ownable.setOwnerName("");
+                  ownable.setBorder(Color.black);
+
+
+                }
             }
         }
 
@@ -503,11 +515,7 @@ public class Player {
         jailCounter = 0;
     }
 
-    public void hitField() {
-        displayCard();
-        //gamefields[pos].hit(this);
 
-    }
 
     public void checkIfPassedStart(int sumPos) {
         if (sumPos >= 40) {

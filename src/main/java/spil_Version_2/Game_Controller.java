@@ -41,10 +41,7 @@ public class Game_Controller {
 
         players = Game_Features.playerstoadd(adapter);
 
-      /*  for (int i = 0;i<players.length;i++) {
-            new Fieldsbox(players[i],i+1);
 
-        }*/
             for (int i = 0; i < players.length; i++) {
 
                 players[i].tilføjspillerGui(getCarColors()[i]);

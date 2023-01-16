@@ -11,6 +11,7 @@ public class Straf_Eller_Gevinst extends Parent_Card {
     public Straf_Eller_Gevinst(int amount, boolean add, String message) {
         this.amount = amount;
         this.add = add;
+        this.message = message;
     }
 
     @Override

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="SKiftet til så nu kan vi lave test" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="SKiftet til så nu kan vi lave test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Fieldsbox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/PrisonCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/PrisonCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Straf_Eller_Gevinst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Straf_Eller_Gevinst.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -515,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673696836895</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="SKiftet til så nu kan vi lave test">
+      <created>1673885024450</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1673885024450</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +604,8 @@
     <MESSAGE value="Nu virker aktion" />
     <MESSAGE value="Små fixes" />
     <MESSAGE value="er igang med custommode" />
-    <option name="LAST_COMMIT_MESSAGE" value="er igang med custommode" />
+    <MESSAGE value="SKiftet til så nu kan vi lave test" />
+    <option name="LAST_COMMIT_MESSAGE" value="SKiftet til så nu kan vi lave test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,6 +662,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java</url>
           <line>22</line>
           <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/diplomitdtu/matadorgui/3.1.7/matadorgui-3.1.7.jar!/gui_main/GUI.class</url>
+          <line>95</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
