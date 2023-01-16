@@ -68,13 +68,13 @@ public class Game_Features {
             cardArray.add(new Straf_Eller_Gevinst(1000,false , "De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde"));
 
             //Ryk til ny position
-            cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n"));
-            cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n"));
-            cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n"));
-            cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n"));
-            cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
-            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
-            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
+            cardArray.add(new MovePlayerCard( 11,"Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.\n",false));
+            cardArray.add(new MovePlayerCard(15 ,"Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.\n",false));
+            cardArray.add(new MovePlayerCard( 24,"Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000\n",false));
+            cardArray.add(new MovePlayerCard( 32,"Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000\n",false));
+            cardArray.add(new MovePlayerCard( 19,"Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n",false));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n",false));
+            cardArray.add(new MovePlayerCard( 30," Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n",false));
 
 
 

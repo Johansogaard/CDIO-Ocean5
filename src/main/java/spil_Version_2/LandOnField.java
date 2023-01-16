@@ -15,7 +15,6 @@ import static spil_Version_2.Game_Controller.getGui;
 
 public class LandOnField {
 
-
     public void hitField(Player player, GUI_Field[] fields)
     {
         player.displayCard();

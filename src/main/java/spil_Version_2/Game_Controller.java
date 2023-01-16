@@ -18,6 +18,11 @@ public class Game_Controller {
     public static Color[] carColors = {Color.blue,Color.green,Color.red,Color.yellow,Color.MAGENTA,Color.BLACK};
     public static int max=-100;
     public static Player vinder;
+
+    public static void setGui(GUI gui) {
+        Game_Controller.gui = gui;
+    }
+
     private static GUI gui;
     private static Player[] players;
 
@@ -26,6 +31,10 @@ public class Game_Controller {
     }
 
     private static ArrayList<Player> playerList = new ArrayList<>();
+    public static void setFields(GUI_Field[] fields) {
+        Game_Controller.fields = fields;
+    }
+
     private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
         players = Game_Features.playerstoadd();

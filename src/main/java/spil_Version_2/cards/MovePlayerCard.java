@@ -6,14 +6,13 @@ import spil_Version_2.Player;
 
 public class MovePlayerCard extends Parent_Card {
     private int steps;
+    private boolean test;
 
 
-    public MovePlayerCard(int steps, String message) {
+    public MovePlayerCard(int steps, String message, boolean test) {
         this.steps = steps;
         this.message = message;
-
-
-
+        this.test = test;
     }
 
     @Override
@@ -23,8 +22,10 @@ public class MovePlayerCard extends Parent_Card {
         int oldPos = player.getPos();
         player.movePlayer(steps);
         checkIfPassedStart(oldPos, player);
-        LandOnField landOnField = new LandOnField();
-        landOnField.hitField(player, Game_Controller.getFields());
+        if (!test) {
+            LandOnField landOnField = new LandOnField();
+            landOnField.hitField(player, Game_Controller.getFields());
+        }
     }
 
     public void checkIfPassedStart(int oldPos, Player player) {
@@ -34,3 +35,4 @@ public class MovePlayerCard extends Parent_Card {
         }
     }
 }
+
