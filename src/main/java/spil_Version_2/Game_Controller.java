@@ -3,8 +3,6 @@ package spil_Version_2;
 import gui_fields.GUI_Field;
 import gui_main.GUI;
 import java.util.ArrayList;
-import spil_Version_2.Devmode;
-
 
 
 import java.awt.*;
@@ -28,29 +26,32 @@ public class Game_Controller {
     private static ArrayList<Player> playerList = new ArrayList<>();
     private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
-        players = Game_Features.playerstoadd();
-
         Board_Creator b = new Board_Creator();
-        // System.out.println(readTextFromFile(file,"jailMessage"));
         fields = b.istantiererFelter();
-        gui = new GUI(fields, Color.cyan);
+        GUIUserIOAdapter adapter = new GUIUserIOAdapter(new GUI(fields, Color.cyan));
 
+        players = Game_Features.playerstoadd(adapter);
+
+      /*  for (int i = 0;i<players.length;i++) {
+            new Fieldsbox(players[i],i+1);
+
+        }*/
             for (int i = 0; i < players.length; i++) {
 
-                players[i].tilføjspillerGui(gui, getCarColors()[i]);
+                players[i].tilføjspillerGui(getCarColors()[i]);
             }
         if (devMode == true)
         {
             Devmode devmode = new Devmode();
-            devmode.playDevmode(players, fields, gui);
+            devmode.playDevmode(players, fields,adapter);
         }
         else {
-            playGame(players, fields, gui);
+            playGame(players, fields);
         }
 
     }
 
-    public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
+    public static void playGame (Player[] players,GUI_Field[] fields)
     {
 
         for(int i = 0; i< players.length;i++){
@@ -59,7 +60,7 @@ public class Game_Controller {
 
         for (int i = 0; i < playerList.size(); i=(i+1)%playerList.size()) {
 
-            if(playerList.get(i).spil(gui,fields))
+            if(playerList.get(i).spil(fields))
             {
                 gui.getUserButtonPressed(playerList.get(i).getName()+" har mistet sine penge eller er givet op og er derfor ude af spillet", "fair nok");
                 playerList.remove(i);
@@ -78,15 +79,13 @@ public class Game_Controller {
 
 
     }
-    public static GUI getGui() {
-        return gui;
-    }
+
     public static GUI_Field[] getFields() {
         return fields;
     }
-    public static Player getPlayer(String playerName)
+    public static Player getPlayer(String playerName,UserIO userIO)
     {
-        Player thePlayer = new Player("GetPlayerDosentWork",0,0);
+        Player thePlayer = new Player("GetPlayerDosentWork",0,userIO, 0);
         for(int i = 0;i<players.length;i++) {
             if (playerName == players[i].getName())
             {

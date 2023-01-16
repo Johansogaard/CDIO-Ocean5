@@ -11,28 +11,28 @@ import java.util.ArrayList;
 public class Devmode {
     private Player[] players;
     private GUI_Field[] fields;
-    private GUI gui;
+    private UserIO userIO;
     private Player player;
-    public void playDevmode(Player[] players, GUI_Field[] fields, GUI gui)
+    public void playDevmode(Player[] players, GUI_Field[] fields, UserIO gui)
     {
         this.players = players;
         this.fields = fields;
-        this.gui = gui;
+        this.userIO = gui;
         String[] playerNames = new String[players.length];
         for (int i = 0; i<players.length;i++)
         {
             playerNames[i] = players[i].getName();
         }
         String choice =gui.getUserSelection("vælg spiller",playerNames);
-        this.player = Game_Controller.getPlayer(choice);
+        this.player = Game_Controller.getPlayer(choice,userIO);
         playerOptions();
 
     }
     private  void playerOptions()
     {
 
-        String c = gui.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. hus/hotel Menu","4. Chancekort","5. Pantsæt menu","6. Spil en tur","7. Tilbage","8. Skift Til normal mode","9 sælg field");
-        switch (player.getChoice(c)){
+        int c = userIO.getUserButtonPressed("Muligheder for "+ player, "1. setpos", "2. setbalance","3. hus/hotel Menu","4. Chancekort","5. Pantsæt menu","6. Spil en tur","7. Tilbage","8. Skift Til normal mode","9 sælg field");
+        switch (c){
             case 1:
             {
 
@@ -51,7 +51,7 @@ public class Devmode {
             break;
             case 7:
             {
-                playDevmode(players,fields,gui);
+                playDevmode(players,fields,userIO);
             }
             break;
             case 3:
@@ -67,13 +67,13 @@ public class Devmode {
             break;
             case 6:
             {
-                player.spil(gui,fields);
+                player.spil(fields);
                 playerOptions();
             }
             break;
             case 8:
             {
-                Game_Controller.playGame(players,fields,gui);
+                Game_Controller.playGame(players,fields);
             }
             break;
             case 9:
@@ -93,7 +93,7 @@ public class Devmode {
             cardStrings.add(cardsarr.get(i).getMessage());
         }
         String[]  c = cardStrings.toArray(new String[cardStrings.size()]);
-        String chosenString = gui.getUserSelection("Hvilket kort vil du trække",c).replace("<BR>","");
+        String chosenString = userIO.getUserSelection("Hvilket kort vil du trække",c).replace("<BR>","");
         int chosen=0;
         for(int i = 0;i<cardsarr.size();i++)
         {
@@ -104,7 +104,7 @@ public class Devmode {
                 chosen = i;
             }
         }
-        cardsarr.get(chosen).hit(player);
+        cardsarr.get(chosen).hit(player,userIO);
         playerOptions();
     }
     private void pawnOwnable()
@@ -114,7 +114,7 @@ public class Devmode {
     }
     private void setPlayersBalance()
     {
-        int balance = gui.getUserInteger("Skriv "+player.getName()+" balance");
+        int balance = userIO.getUserInteger("Skriv "+player.getName()+" balance");
         player.getKonto().setB(balance);
         player.pl.setBalance(player.getKonto().getBalance());
         playerOptions();
@@ -132,10 +132,10 @@ public class Devmode {
     }
     private void setPosDev()
     {
-        int nypos = gui.getUserInteger("Skriv et felt mellem 1 og 40");
+        int nypos = userIO.getUserInteger("Skriv et felt mellem 1 og 40");
         player.setPos(nypos-1);
-        player.setCar(player.getPos(), gui);
-        player.landOnField.hitField(player,fields);
+        player.setFpos(userIO.setCar(player.getPos(),player.pl, player.fpos));
+        player.landOnField.hitField(player,fields,userIO);
 
         playerOptions();
 

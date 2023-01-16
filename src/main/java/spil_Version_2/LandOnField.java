@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 import spil_Version_2.Aktion;
 
-import static spil_Version_2.Game_Controller.getGui;
+
 
 
 public class LandOnField {
+    private UserIO userIO;
 
-
-    public void hitField(Player player, GUI_Field[] fields)
+    public void hitField(Player player, GUI_Field[] fields,UserIO gui)
     {
+        this.userIO=gui;
         player.displayCard();
         if (GUI_Street.class.equals(fields[player.getPos()].getClass()) ||
                 GUI_Brewery.class.equals(fields[player.getPos()].getClass()) ||
@@ -29,7 +30,7 @@ public class LandOnField {
         }
         else if (GUI_Chance.class.equals(fields[player.getPos()].getClass()))
         {
-            hitChance(player, fields);
+            hitChance(player);
         } else if (GUI_Tax.class.equals(fields[player.getPos()].getClass())) {
             hitTax(player);
         } else  {
@@ -39,34 +40,34 @@ public class LandOnField {
     }
     private  void hitOwnable(Player player, GUI_Field[] fields)
     {
-        GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
+        GUI_Field field = Game_Controller.getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
 
         Aktion aktion = new Aktion();
         int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
-        if (ownable.getOwnerName() == null )
+        if (ownable.getOwnerName() == null)
         {
-                if (Game_Features.makeYesNoButton(player.getName() + " Vil du købe denne grund")) {
+                if (userIO.getUserLeftButtonPressed(player.getName() + " Vil du købe denne grund","Ja","Nej")) {
                     if (player.getKonto().getBalance() < cost)
                     {
-                        getGui().showMessage("Du har ikke råd til grunden");
-                        aktion.korAktion(player,ownable,cost);
+                        userIO.showMessage("Du har ikke råd til grunden");
+                        aktion.korAktion(player,ownable,cost,userIO);
                     }
                     else {
                         ownable.setBorder(player.getCar().getPrimaryColor());
                         ownable.setOwnableLabel("Ejet af " + player.getName());
-
+                        ownable.setOwnerName(player.getName());
                         player.buyField(cost, ownable.getTitle());
                     }
                 }
                 else {
-                    aktion.korAktion(player, ownable,cost);
+                    aktion.korAktion(player, ownable,cost, userIO);
                 }
 
         }
-        else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT") && Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false)
+        else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT") && Game_Controller.getPlayer(ownable.getOwnerName(),userIO).isJail() == false)
             {
-        Player owner = Game_Controller.getPlayer(ownable.getOwnerName());
+        Player owner = Game_Controller.getPlayer(ownable.getOwnerName(),userIO);
         if(ownable.getClass().equals(GUI_Brewery.class))
         {
             hitBrewery(player,owner, fields);
@@ -85,7 +86,7 @@ public class LandOnField {
 
         }
 
-        else if(!ownable.getTitle().equals("PANTSAT")&& Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false){
+        else if(!ownable.getTitle().equals("PANTSAT")&& Game_Controller.getPlayer(ownable.getOwnerName(),userIO).isJail() == false){
 
             int rent = Integer.parseInt(ownable.getRent());
             player.payRent(rent,owner,ownable.getTitle());
@@ -180,21 +181,21 @@ public class LandOnField {
         if(player.getPos() == 30)
         {
             if (player.prisoncard==true){
-                Game_Controller.getGui().getUserButtonPressed(player.getName() + " du havde fængselskort, derfor kommer du ikke i fængsel", "okay");
+                userIO.showMessage(player.getName() + " du havde fængselskort, derfor kommer du ikke i fængsel");
                 player.prisoncard=false;
 
             }
             else{player.goToJail();}}
             else
             {
-                Game_Controller.getGui().getUserButtonPressed(player.getName() + " du er på besøg i fængsel", "Okay");
+               userIO.showMessage(player.getName() + " du er på besøg i fængsel");
             }
         }
 
-    private void hitChance(Player player, GUI_Field[] fields){
+    private void hitChance(Player player){
         int card =0;
         ArrayList<Parent_Card> cards = Game_Features.cards();
-        cards.get(card).hit(player);
+        cards.get(card).hit(player,userIO);
         card++;
         if (cards.size()<=card)
         {
@@ -204,7 +205,7 @@ public class LandOnField {
     private void hitTax(Player player){
         if(player.getPos() == 4)
         {
-            if(Game_Controller.getGui().getUserLeftButtonPressed(player.getName()+" Du skal betale indkomstskat på 4000 Kr. eller 10 % af alt hvad du ejer", "4000 kr","10 procent"))
+            if(userIO.getUserLeftButtonPressed(player.getName()+" Du skal betale indkomstskat på 4000 Kr. eller 10 % af alt hvad du ejer", "4000 kr","10 procent"))
             {
                 player.updatePlayerBalance(-4000);
             }
@@ -212,14 +213,14 @@ public class LandOnField {
             {
                 int num = (player.getKonto().getBalance()+player.getKonto().getFieldvalue())/10;
                 int rounded =((num+99)/100)*100;
-                Game_Controller.getGui().getUserButtonPressed(player.getName()+" du betaler "+rounded+" i skat");
+                userIO.showMessage(player.getName()+" du betaler "+rounded+" i skat");
                 player.updatePlayerBalance(-rounded);//her skal vi tage 10% af en spillers værdi i felter og penge og han skal betale det
             }
 
         }
         else
         {
-            Game_Controller.getGui().getUserButtonPressed(player.getName() + " Du skal betale ekstraordinær statsskat på 2000 kr.");
+            userIO.showMessage(player.getName() + " Du skal betale ekstraordinær statsskat på 2000 kr.");
             player.updatePlayerBalance(-2000);
         }
     }
