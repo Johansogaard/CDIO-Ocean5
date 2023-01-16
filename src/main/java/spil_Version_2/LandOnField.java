@@ -179,13 +179,18 @@ public class LandOnField {
     private void hitJail(Player player, GUI_Field[] fields){
         if(player.getPos() == 30)
         {
-            player.goToJail();
+            if (player.prisoncard==true){
+                Game_Controller.getGui().getUserButtonPressed(player.getName() + " du havde fængselskort, derfor kommer du ikke i fængsel", "okay");
+                player.prisoncard=false;
+
+            }
+            else{player.goToJail();}}
+            else
+            {
+                Game_Controller.getGui().getUserButtonPressed(player.getName() + " du er på besøg i fængsel", "Okay");
+            }
         }
-        else
-        {
-            Game_Controller.getGui().getUserButtonPressed(player.getName() + " du er på besøg i fængsel", "Okay");
-        }
-    }
+
     private void hitChance(Player player, GUI_Field[] fields){
         int card =0;
         ArrayList<Parent_Card> cards = Game_Features.cards();

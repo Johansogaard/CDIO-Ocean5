@@ -83,7 +83,9 @@ public class Game_Features {
             cardArray.add(new GiftCard(500, "De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.\n"));
             cardArray.add(new GiftCard(500, "De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr."));
 
-
+            //fængselkort
+            cardArray.add(new PrisonCard());
+            cardArray.add(new PrisonCard());
 
             Random rand = new Random();
             while (true) {

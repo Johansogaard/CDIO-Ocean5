@@ -23,6 +23,8 @@ public class Player {
     private int pos=0;
     private int fartbølle=0;
 
+    public boolean prisoncard=false;
+
     Konto konto = new Konto(0);
     Terninger terninger = new Terninger();
     GUI_Player pl;
