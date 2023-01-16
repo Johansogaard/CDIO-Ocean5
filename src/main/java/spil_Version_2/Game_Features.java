@@ -3,23 +3,23 @@ package spil_Version_2;
 
 import spil_Version_2.cards.*;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Game_Features {
 
+    private static final Object monitor = new Object();
+    public static int[] balance = {30000, 30000, 30000, 30000, 30000, 30000};
     private static String customGame = "Brugerdefineret spil: OFF";
     private static Integer players = -1;
     private static boolean fail = false;
-    private static final Object monitor = new Object();
-    private static boolean b = false;
+    private static final boolean b = false;
     private static boolean cM = false;
-    public static int[] balance = {30000, 30000, 30000, 30000, 30000, 30000};
 
     public Game_Features() {
 
@@ -266,7 +266,6 @@ public class Game_Features {
             }
         } catch (InterruptedException i) {
         }
-        ;
 
         return players;
 
@@ -351,9 +350,7 @@ public class Game_Features {
             public void actionPerformed(ActionEvent e) {
                 fail = false;
                 JTextField[] txtF = {t1, t2, t3, t4, t5, t6};
-                for (int i = 0; i < players; i++) {
-                    txtfield.add(txtF[i]);
-                }
+                txtfield.addAll(Arrays.asList(txtF).subList(0, players));
 
                 for (int i = 0; i < txtfield.size(); i++) {
                     if (txtfield.get(i).getText() != null) {
@@ -366,7 +363,7 @@ public class Game_Features {
                         }
                     } else fail = true;
                 }
-                if (fail == false) {
+                if (!fail) {
                     for (int i = 0; i < txtfield.size(); i++) {
                         balance[i] = Integer.parseInt(txtfield.get(i).getText());
                     }

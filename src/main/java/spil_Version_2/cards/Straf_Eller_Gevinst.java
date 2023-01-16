@@ -4,8 +4,8 @@ import spil_Version_2.Player;
 import spil_Version_2.UserIO;
 
 public class Straf_Eller_Gevinst extends Parent_Card {
-    private int amount;
-    private boolean add;
+    private final int amount;
+    private final boolean add;
 
 
     public Straf_Eller_Gevinst(int amount, boolean add, String message) {
@@ -14,7 +14,7 @@ public class Straf_Eller_Gevinst extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player, UserIO userIO)  {
+    public void hit(Player player, UserIO userIO) {
         player.showchancecard(message);
         if (add) {
             player.updatePlayerBalance(amount);
