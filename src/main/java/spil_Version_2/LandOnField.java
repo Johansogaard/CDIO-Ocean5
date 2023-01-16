@@ -41,6 +41,7 @@ public class LandOnField {
     {
         GUI_Field field = Game_Controller.getGui().getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
+
         Aktion aktion = new Aktion();
         int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
         if (ownable.getOwnerName() == null )
@@ -49,7 +50,7 @@ public class LandOnField {
                     if (player.getKonto().getBalance() < cost)
                     {
                         getGui().showMessage("Du har ikke råd til grunden");
-                        aktion.korAktion(player,ownable);
+                        aktion.korAktion(player,ownable,cost);
                     }
                     else {
                         ownable.setBorder(player.getCar().getPrimaryColor());
@@ -58,8 +59,9 @@ public class LandOnField {
                         player.buyField(cost, ownable.getTitle());
                     }
                 }
-                aktion.korAktion(player,ownable);
-
+                else {
+                    aktion.korAktion(player, ownable,cost);
+                }
 
         }
         else if (player.getName() != ownable.getOwnerName()&& !ownable.getTitle().equals("PANTSAT") && Game_Controller.getPlayer(ownable.getOwnerName()).isJail() == false)

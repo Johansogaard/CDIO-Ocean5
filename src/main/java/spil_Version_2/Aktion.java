@@ -24,14 +24,15 @@ public class Aktion {
     private GUI_Ownable field;
 
 
-    public void korAktion(Player player, GUI_Ownable field) {
-        int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
-        this.players = Game_Controller.getPlayers();
+    public boolean korAktion(Player player, GUI_Ownable field,int cost) {
+
+        int size = Game_Controller.getPlayerList().size();
+        this.players = Game_Controller.getPlayerList().toArray(new Player[size]);
         this.gui = Game_Controller.getGui();
 
         this.field = field;
         this.currentMax = cost;
-
+        int runde =0;
         //checking who wants to be a part of the aktion
         gui.showMessage("Aktion holdes for grunden" + field.getTitle());
         for (int i = 0; i < players.length; i++) {
@@ -48,16 +49,43 @@ public class Aktion {
                 gui.showMessage(bidders.get(i).getName() + " Er smidt ud af aktionen da han ikke har penge til grunden lige nu");
             } else if (!gui.getUserLeftButtonPressed(bidders.get(i).getName() + " Vil du købe denne grund til pris: " + currentMax, "Ja", "Nej")) {
                 bidders.remove(i);
+                currentMax = currentMax + 100;
             }
-            if (bidders.size() == 1) {
+            if (bidders.size()==0)
+            {
+                return false;
+            }
+            runde++;
+            if (bidders.size() == 1 && runde>bidders.size()) {
                 gui.showMessage(bidders.get(0).getName() + " Vandt aktionen og ejer nu " + field.getTitle());
                 bidders.get(0).buyField(currentMax, field.getTitle());
                 field.setBorder(bidders.get(0).getCar().getPrimaryColor());
                 field.setOwnableLabel("Ejet af " + player.getName());
-                break;
+                return true;
+
 
             }
-            currentMax = currentMax + 100;
+
+
+        }
+        return false;
+    }
+    public void runSellFieldAktion(Player player, GUI_Ownable field,int cost)
+    {
+        if(korAktion(player, field,cost))
+        {
+            int index=0;
+           ArrayList<String> plfields = player.getGrunde();
+           for (int i = 0; i<plfields.size();i++)
+           {
+              if (field.getTitle().equals(plfields.get(i)))
+              {
+                  index = i;
+              }
+           }
+           plfields.remove(index);
+           player.setGrunde(plfields);
+
 
         }
     }

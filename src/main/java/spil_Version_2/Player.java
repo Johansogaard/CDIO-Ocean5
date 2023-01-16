@@ -50,6 +50,10 @@ public class Player {
     private String name;
     GUI_Field gamefields[];
 
+    public void setGrunde(ArrayList<String> grunde) {
+        this.grunde = grunde;
+    }
+
     ArrayList<String> grunde = new ArrayList<String>();
     public void addGrunde(String grund) {
         this.grunde.add(grund);
@@ -140,7 +144,13 @@ public class Player {
                     gui.showMessage("Du har ikke nogle grunde der kan sælges husk at sælge dine huse på grunden før du sælger grund");
                 }
                 else {
-                    String fieldToPawn = gui.getUserSelection("Hvilken grund vil de sælge", choice);
+                    String fieldToSell = gui.getUserSelection("Hvilken grund vil de sælge", choice);
+                    int fieldIndex = Board_Creator.fieldIndexFromName(fieldToSell);
+                    GUI_Field f = Game_Controller.getFields()[fieldIndex];
+                    GUI_Ownable o = (GUI_Ownable) f;
+                    Aktion aktion = new Aktion();
+                    int sellPrice = gui.getUserInteger("Hvad vil du sælge din grund for");
+                    aktion.runSellFieldAktion(this,o,sellPrice);
 
                 }
 
@@ -355,23 +365,25 @@ public class Player {
     public void pawnMenu()
     {
         String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
-        ArrayList<String[]> data = Board_Creator.getFieldData();
-        ArrayList<String> availableFieldsToParwn = new ArrayList<>();
+
         if (buttonPressed.equals("Pantsæt Grunde")) {
-            pawnField(data,availableFieldsToParwn);
+            pawnField();
         }
         else {
-            unPawnField(data,availableFieldsToParwn);
+            unPawnField();
         }
 
     }
-    public void pawnField(ArrayList<String[]> data,ArrayList<String> availableFieldsToParwn)
+    public void pawnField()
     {
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+        ArrayList<String> availableFieldsToParwn = new ArrayList<>();
         for (int i = 0; i < this.grunde.size(); i++) {
-               int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
-               if (Integer.parseInt(data.get(crrIndex)[12]) == 0 && Integer.parseInt(data.get(crrIndex)[13]) == 0) {
-                   availableFieldsToParwn.add(this.grunde.get(i));
-               }
+            int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+            if (Integer.parseInt(data.get(crrIndex)[12]) == 0 && Integer.parseInt(data.get(crrIndex)[13]) == 0) {
+                availableFieldsToParwn.add(this.grunde.get(i));
+            }
+        }
                String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
                if(choice.length ==0)
                {
@@ -384,11 +396,13 @@ public class Player {
                    this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
                }
 
-           }
+
        }
 
-    public void unPawnField(ArrayList<String[]> data,ArrayList<String> availableFieldsToParwn)
+    public void unPawnField()
     {
+        ArrayList<String[]> data = Board_Creator.getFieldData();
+        ArrayList<String> availableFieldsToParwn = new ArrayList<>();
         for (int i = 0; i < this.grunde.size(); i++) {
             int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
             if (Integer.parseInt(data.get(crrIndex)[13]) == 1) {
@@ -465,7 +479,7 @@ public class Player {
         {
             case 1:
             {
-                pawnMenu();
+                pawnField();
                 if (konto.getBalance()<0)
                 {
                     bankruptcy();

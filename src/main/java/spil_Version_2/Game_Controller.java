@@ -21,6 +21,11 @@ public class Game_Controller {
     private static GUI gui;
     private static Player[] players;
 
+    public static ArrayList<Player> getPlayerList() {
+        return playerList;
+    }
+
+    private static ArrayList<Player> playerList = new ArrayList<>();
     private static GUI_Field[] fields;
     public static void main(String[] args) throws FileNotFoundException {
         players = Game_Features.playerstoadd();
@@ -47,7 +52,7 @@ public class Game_Controller {
 
     public static void playGame (Player[] players,GUI_Field[] fields,GUI gui)
     {
-        ArrayList<Player> playerList = new ArrayList<>();
+
         for(int i = 0; i< players.length;i++){
             playerList.add(players[i]);
         }
