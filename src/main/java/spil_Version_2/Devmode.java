@@ -104,7 +104,7 @@ public class Devmode {
     }
     private void pawnOwnable()
     {
-        player.pawnField();
+        player.pawnMenu();
         playerOptions();
     }
     private void setPlayersBalance()
