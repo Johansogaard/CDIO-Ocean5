@@ -2,6 +2,7 @@ package spil_Version_2.cards;
 
 import spil_Version_2.Game_Controller;
 import spil_Version_2.Player;
+import spil_Version_2.UserIO;
 
 public class GiftCard extends Parent_Card {
 
@@ -13,7 +14,7 @@ public class GiftCard extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player) {
+    public void hit(Player player, UserIO userIO)  {
         player.showchancecard(message);
 
         for (Player otherPlayer : Game_Controller.getPlayers()) {

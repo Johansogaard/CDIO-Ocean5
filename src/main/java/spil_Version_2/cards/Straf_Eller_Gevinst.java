@@ -1,6 +1,7 @@
 package spil_Version_2.cards;
 
 import spil_Version_2.Player;
+import spil_Version_2.UserIO;
 
 public class Straf_Eller_Gevinst extends Parent_Card {
     private int amount;
@@ -13,7 +14,7 @@ public class Straf_Eller_Gevinst extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player) {
+    public void hit(Player player, UserIO userIO)  {
         player.showchancecard(message);
         if (add) {
             player.updatePlayerBalance(amount);
