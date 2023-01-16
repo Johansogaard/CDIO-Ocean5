@@ -12,13 +12,13 @@ public class Player {
     private final UserIO userIO;
     private final String name;
     public boolean prisoncard = false;
-    Terninger terninger = new Terninger();
-    GUI_Player pl;
-    GUI_Field fpos;
-    LandOnField landOnField = new LandOnField();
-    GUI_Car car;
-    GUI_Field[] gamefields;
-    ArrayList<String> grunde = new ArrayList<String>();
+    private Terninger terninger = new Terninger();
+    public GUI_Player pl;
+    public GUI_Field fpos;
+    public LandOnField landOnField = new LandOnField();
+    private GUI_Car car;
+    private GUI_Field[] gamefields;
+    private ArrayList<String> grunde = new ArrayList<String>();
     private int pos = 0;
     private int fartbølle = 0;
     private boolean jail = false;
@@ -27,7 +27,7 @@ public class Player {
     private int t2 = 0;
     private int jailCounter = 0;
 
-    public Player(String name, int bal, UserIO gui, int postiotion) {
+    public Player(String name, int bal, int postiotion,UserIO gui) {
         this.userIO = gui;
         konto.update(bal);
         pos = postiotion;
@@ -118,7 +118,7 @@ public class Player {
         }
         return hasLost;
     }
-
+    //sells the field that is chosen on a aktion if any other players want to buy it
     public void sellField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToSell = new ArrayList<>();
@@ -159,7 +159,7 @@ public class Player {
             break;
         }
     }
-
+    //gives you the fields you can build houses on
     public void buyHouse() {
         String[] fieldcolors = {"blue", "red", "green", "orange", "grey", "white", "yellow", "purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();
@@ -231,7 +231,7 @@ public class Player {
         }
 
     }
-
+    //checks if you need to pay for a house or a hotel
     private boolean payHouseHotel(int housePrice) {
         boolean paidForHouse = false;
         if (this.getKonto().getBalance() > housePrice) {
@@ -243,14 +243,14 @@ public class Player {
         }
         return paidForHouse;
     }
-
+    //sells the house or hotel
     private void sellHouseHotel(int housePrice) {
         getKonto().update(housePrice / 2);
         pl.setBalance(this.konto.getBalance());
 
     }
 
-
+    //gives you the houses and hotels you can sell if you have any
     public void sellHouse() {
         String[] fieldcolors = {"blue", "red", "green", "orange", "grey", "white", "yellow", "purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();
@@ -339,7 +339,7 @@ public class Player {
 
     }
 
-
+    //shows you the fields you can pawn and lets you chose one to pawn
     public void pawnField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToParwn = new ArrayList<>();
@@ -361,7 +361,7 @@ public class Player {
 
 
     }
-
+        //works lige pawnfield just makes you buy back a pawnfield
     public void unPawnField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToParwn = new ArrayList<>();
@@ -384,7 +384,7 @@ public class Player {
 
         }
     }
-
+    //runs a full player turn
     private void runATurn() {
         if (jail) {
             inJail();
@@ -396,7 +396,7 @@ public class Player {
         }
 
     }
-
+    //a smaller part of the turn that you can use if you dont want to role dices
     public void simpleTurn() {
         checkIfPassedStart(pos + t1 + t2);
 
@@ -427,7 +427,7 @@ public class Player {
             hasLost = false;
         }
     }
-
+    //makes you sell houses/hotels and pawnfields if you go broke or gives you the posibility to give up and all the fields will be back on the market
     private void bankruptcy() {
         int choice = userIO.getUserButtonPressed(name + " Du er gået bankerot og skylder mere til banken end du har", "1. Pantsæt grund", "2. Sælg hus/hoteller", "3. Giv op");
 
@@ -466,7 +466,7 @@ public class Player {
     }
 
 
-    //tror virker
+    //the method makes alle the things in jail happen
     public void inJail() {
         jailCounter++;
         if (userIO.getUserLeftButtonPressed(name + " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger")) {
@@ -501,7 +501,7 @@ public class Player {
 
 
     }
-
+    //this will get you out of jail
     private void payJail() {
         updatePlayerBalance(-1000);
         jail = false;
@@ -594,7 +594,7 @@ public class Player {
         GUI_Ownable ownable = (GUI_Ownable) field;
         return checkPlayerOwnsTheColorFields(Game_Controller.getPlayer(ownable.getOwnerName(), userIO), Board_Creator.getFieldData().get(pos)[11]);
     }
-
+    //method checks if the player owns alle the fields in a specific group/color
     public boolean checkPlayerOwnsTheColorFields(Player player, String color) {
         ArrayList<String> ownerFields = player.getGrunde();
         ArrayList<String[]> typeFields = Board_Creator.getGroupArray(color);

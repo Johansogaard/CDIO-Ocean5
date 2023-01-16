@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class LandOnField {
     private UserIO userIO;
-
+    //hitfield checks wich type of field you land on
     public void hitField(Player player, GUI_Field[] fields, UserIO gui) {
         this.userIO = gui;
         player.displayCard();
@@ -28,7 +28,7 @@ public class LandOnField {
         }
 
     }
-
+    //hitOwnable is used when landing on a ownable field that you either can buy or needs to pay rent if a player owns it
     private void hitOwnable(Player player, GUI_Field[] fields) {
         GUI_Field field = Game_Controller.getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
@@ -73,7 +73,8 @@ public class LandOnField {
         }
     }
 
-    //DE her metoder skal indeholde hvad en spiller skal betale hvis de lander på et felt hvor spilleren ejer alle felter
+    //hitStreet is activated when all of the fields in a group is owned by the owner
+    //it checks if there is any houses on the field
     private void hitStreet(Player player, Player Owner, GUI_Field[] fields) {
         GUI_Field field = fields[player.getPos()];
         GUI_Street street = (GUI_Street) field;
@@ -85,13 +86,13 @@ public class LandOnField {
 
 
     }
-
+    //if all ferrys is owned this method decides how much rent you need to pay
     private void hitFerry(Player player, Player owner, GUI_Field[] fields) {
         String titel = fields[player.getPos()].getTitle();
         // sammenligneren ferry array og owneren hvor man får et array med fælles som man så tager længden af og putter ind i switch med priser
         player.payRent(howManyFerry(owner), owner, titel);
     }
-
+    //checks if you own all brewery and how much you need to pay in rent
     private void hitBrewery(Player player, Player owner, GUI_Field[] fields) {
 
         if (player.checkOwnerOwnAll()) {
@@ -106,7 +107,7 @@ public class LandOnField {
 
         }
     }
-
+    //checks how many ferrys is owned
     private int howManyFerry(Player owner) {
 
         ArrayList<String> common = owner.getGrunde();
@@ -147,7 +148,7 @@ public class LandOnField {
 
         return multi;
     }
-
+    //takes the player to jail if a prinsoncard is not owned
     private void hitJail(Player player, GUI_Field[] fields) {
         if (player.getPos() == 30) {
             if (player.prisoncard) {
@@ -161,7 +162,7 @@ public class LandOnField {
             userIO.showMessage(player.getName() + " du er på besøg i fængsel");
         }
     }
-
+    //gets a card from the cards and activates ont he player
     private void hitChance(Player player) {
         int card = 0;
         ArrayList<Parent_Card> cards = Game_Features.cards();

@@ -4,7 +4,7 @@ package spil_Version_2;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-
+//the class helps us speperate ui from logic so it is possible to test
 public class GUIUserIOAdapter extends UserIO {
     private final GUI gui;
 

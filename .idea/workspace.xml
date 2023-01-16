@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="nu virke chancekort igen" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="nu virke chancekort igen">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Board_Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/GUIUserIOAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/GUIUserIOAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykTilStart_CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykTilStart_CardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,19 +117,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil.GameController" />
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
@@ -128,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GiftCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GiftCardTest.testHit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -138,7 +140,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.GiftCardTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testHit" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,6 +161,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest.runATurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
+      <option name="METHOD_NAME" value="runATurn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RykTilStart_CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
@@ -173,28 +192,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Straf_Eller_GevinstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.Straf_Eller_GevinstTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="JUnit.PlayerTest.runATurn" />
+        <item itemvalue="JUnit.GiftCardTest.testHit" />
         <item itemvalue="JUnit.MovePlayerCardTest" />
         <item itemvalue="JUnit.RykTilStart_CardTest" />
-        <item itemvalue="JUnit.GiftCardTest" />
-        <item itemvalue="JUnit.Straf_Eller_GevinstTest" />
       </list>
     </recent_temporary>
   </component>
@@ -529,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673897191905</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="nu virke chancekort igen">
+      <created>1673897415031</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1673897415031</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

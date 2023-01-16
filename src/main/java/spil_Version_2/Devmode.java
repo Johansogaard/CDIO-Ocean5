@@ -10,7 +10,7 @@ public class Devmode {
     private GUI_Field[] fields;
     private UserIO userIO;
     private Player player;
-
+    //a mode where you can control what happens in the game
     public void playDevmode(Player[] players, GUI_Field[] fields, UserIO gui) {
         this.players = players;
         this.fields = fields;
@@ -24,7 +24,7 @@ public class Devmode {
         playerOptions();
 
     }
-
+    //a menu where you can chose what you want to do
     private void playerOptions() {
 
         int c = userIO.getUserButtonPressed("Muligheder for " + player, "1. setpos", "2. setbalance", "3. hus/hotel Menu", "4. Chancekort", "5. Pantsæt menu", "6. Spil en tur", "7. Tilbage", "8. Skift Til normal mode", "9 sælg field");
@@ -71,7 +71,7 @@ public class Devmode {
         }
 
     }
-
+    //The method makes it posible to chose a card to activate on a player
     private void chancekort() {
         ArrayList<String> cardStrings = new ArrayList<>();
         ArrayList<Parent_Card> cardsarr = Game_Features.cards();

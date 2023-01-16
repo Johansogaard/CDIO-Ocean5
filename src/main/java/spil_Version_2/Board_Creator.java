@@ -12,27 +12,10 @@ import java.util.ArrayList;
 
 public class Board_Creator {
 
-
+    //these arraylist with string arrays in them contain the differnt field in the different color and fieldata is a list of alle the fields and there data
     static ArrayList<String[]> fieldData = new ArrayList<>();
     static ArrayList<String[]> blue = new ArrayList<>();
     static ArrayList<String[]> red = new ArrayList<>();
-        /*
-    public static ArrayList<String> getTypeArray(String type) {
-        ArrayList<String> TypeArray = null;
-        switch (type) {
-            case "ferry": {
-                TypeArray = ferry;
-            }
-            break;
-            case "brewery": {
-                TypeArray = brewery;
-            }
-            break;
-
-        }
-        return TypeArray;
-    }
-    */
     static ArrayList<String[]> green = new ArrayList<>();
     static ArrayList<String[]> orange = new ArrayList<>();
     static ArrayList<String[]> grey = new ArrayList<>();
@@ -42,6 +25,7 @@ public class Board_Creator {
     static ArrayList<String[]> ferry = new ArrayList<>();
     static ArrayList<String[]> brewery = new ArrayList<>();
 
+    //this method returns the wanted arraylist with the field in the specific color
     public static ArrayList<String[]> getGroupArray(String color) {
 
 
@@ -100,7 +84,7 @@ public class Board_Creator {
     public static ArrayList<String[]> getFieldData() {
         return fieldData;
     }
-
+    //gives you the index in the fieldata and gamefields array where the field with the given name is at
     public static int fieldIndexFromName(String name) {
         int index = 0;
         for (int i = 0; i < fieldData.size(); i++) {
@@ -111,11 +95,11 @@ public class Board_Creator {
         }
         return index;
     }
-
+    //sets the house number in fielddata
     public static void setHousesInData(int houses, int index) {
         Board_Creator.fieldData.get(index)[12] = Integer.toString(houses);
     }
-
+    //sets the pawn status where 1 = pawned and 0 = not pawned
     public static void setPawnStatusInData(boolean b, int index) {
         int pawnStatus = 0;
         if (b) {
@@ -129,7 +113,7 @@ public class Board_Creator {
         }
         Board_Creator.fieldData.get(index)[13] = Integer.toString(pawnStatus);
     }
-
+    //making the board by using the given fieldsdata.cvs to create the board and arrays with data
     public GUI_Field[] istantiererFelter() throws FileNotFoundException {
         ArrayList<GUI_Field> fieldlist = new ArrayList<>();
 
@@ -165,7 +149,7 @@ public class Board_Creator {
             throw new RuntimeException(e);
         }
     }
-
+    //checking wich type of field should be added by thier type in the csv file
     private ArrayList<GUI_Field> addfield(String[] data, ArrayList<GUI_Field> list) {
 
 
@@ -251,7 +235,7 @@ public class Board_Creator {
         }
         return fields;
     }
-
+    //returnes the color needed for creating a specific field and adding the field to ther group array
     private Color fieldColor(String color, String[] data) {
         Color c = Color.black;
         switch (color) {
