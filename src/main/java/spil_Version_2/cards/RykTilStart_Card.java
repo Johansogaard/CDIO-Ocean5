@@ -1,6 +1,7 @@
 package spil_Version_2.cards;
 
 import spil_Version_2.Player;
+import spil_Version_2.UserIO;
 
 public class RykTilStart_Card extends Parent_Card {
     private int reward;
@@ -12,7 +13,7 @@ public class RykTilStart_Card extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player) {
+    public void hit(Player player, UserIO userIO)  {
         // hvis ikke kortet giver en belønning, skrives der kun ryk til start
         if (reward == 0) {
             message ="Ryk til start";

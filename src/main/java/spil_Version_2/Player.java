@@ -1,17 +1,46 @@
 package spil_Version_2;
 
 
-
-
 import gui_fields.*;
 import gui_main.GUI;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
 public class Player {
+    public boolean prisoncard = false;
+    private  final Konto konto = new Konto(0);
+    Terninger terninger = new Terninger();
+    GUI_Player pl;
+
+    public void setFpos(GUI_Field fpos) {
+        this.fpos = fpos;
+    }
+
+    GUI_Field fpos;
+    private final UserIO userIO;
+    LandOnField landOnField = new LandOnField();
+    GUI_Car car;
+    GUI_Field[] gamefields;
+    ArrayList<String> grunde = new ArrayList<String>();
+    private int pos = 0;
+    private int fartbølle = 0;
+    private boolean jail = false;
+    private boolean hasLost = false;
+    private int t1 = 0;
+    private int t2 = 0;
+    private int jailCounter = 0;
+    private final String name;
+    public Player(String name, int bal, UserIO gui, int postiotion) {
+        this.userIO = gui;
+        konto.update(bal);
+        pos = postiotion;
+
+        this.name = name;
+
+    }
+
     public int getPos() {
         return pos;
     }
@@ -20,43 +49,10 @@ public class Player {
         this.pos = pos;
     }
 
-    private int pos=0;
-    private int fartbølle=0;
-
-    public boolean prisoncard=false;
-
-    Konto konto = new Konto(0);
-    Terninger terninger = new Terninger();
-    GUI_Player pl;
-    GUI_Field fpos;
-    GUI gui;
-    LandOnField landOnField =new LandOnField();
-
-
-
-
-    GUI_Car car;
-
-
     public boolean isJail() {
         return jail;
     }
 
-    private boolean jail= false;
-
-
-    private boolean hasLost = false;
-    private int t1=0;
-    private int t2=0;
-    private int jailCounter=0;
-    private String name;
-    GUI_Field gamefields[];
-
-    public void setGrunde(ArrayList<String> grunde) {
-        this.grunde = grunde;
-    }
-
-    ArrayList<String> grunde = new ArrayList<String>();
     public void addGrunde(String grund) {
         this.grunde.add(grund);
     }
@@ -65,247 +61,214 @@ public class Player {
         return grunde;
 
     }
-    public Player(String name, int bal, int postiotion)
-    {
-        konto.update(bal);
-        pos = postiotion;
 
-        this.name = name;
-
+    public void setGrunde(ArrayList<String> grunde) {
+        this.grunde = grunde;
     }
+
     //Getter
-    public void tilføjspillerGui(GUI gui,Color carCorlor)
-    {
+    public void tilføjspillerGui(Color carCorlor) {
         car = new GUI_Car();
         car.setPrimaryColor(carCorlor);
 
-        GUI_Player player = new GUI_Player(name,konto.getBalance(),car);
+        GUI_Player player = new GUI_Player(name, konto.getBalance(), car);
 
-        gui.addPlayer(player);
-        GUI_Field field = gui.getFields()[pos];
-        field.setCar(player,true);
+        userIO.addPlayer(player);
+        GUI_Field field = Game_Controller.getFields()[pos];
+        field.setCar(player, true);
 
         fpos = field;
-        pl=player;
-        this.gui = gui;
+        pl = player;
+
     }
-    public Konto getKonto(){
+
+    public Konto getKonto() {
 
         return konto;
     }
-    public String getName()
-    {
+
+    public String getName() {
         return name;
     }
+
     //spiller en runde for den spiller der er kaldt
-    public boolean spil(GUI gui, GUI_Field[] fields)
-    {
+    public boolean spil(GUI_Field[] fields) {
         gamefields = fields;
 
-        String choice = gui.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Hus/Hotel Menu", "3. Sælg Grund", "4. Pantsætning af grunde menu");
-        switch (getChoice(choice)){
-            case 1:
-            {
+        int choice = userIO.getUserButtonPressed(name + " det er din tur hvad vil du gøre", "1. Spil min tur", "2. Hus/Hotel Menu", "3. Sælg Grund", "4. Pantsætning af grunde menu");
+        switch (choice) {
+            case 1: {
                 runATurn();
             }
             break;
-            case 2:
-            {
+            case 2: {
                 hotelHouseMenu();
-                spil(gui,fields);
+                spil(fields);
             }
             break;
-            case 3:
-            {
+            case 3: {
                 sellField();
-                spil(gui,fields);
+                spil(fields);
             }
             break;
-            case 4:
-            {
+            case 4: {
                 pawnMenu();
-                spil(gui,fields);
+                spil(fields);
             }
             break;
         }
         return hasLost;
     }
-    public void sellField()
-    {
+
+    public void sellField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToSell = new ArrayList<>();
 
-            for (int i = 0; i < this.grunde.size(); i++) {
-                int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
-                if (Integer.parseInt(data.get(crrIndex)[12]) == 0) {
-                    availableFieldsToSell.add(this.grunde.get(i));
-                }
-                String[] choice = availableFieldsToSell.toArray(new String[availableFieldsToSell.size()]);
-                if(choice.length ==0)
-                {
-                    gui.showMessage("Du har ikke nogle grunde der kan sælges husk at sælge dine huse på grunden før du sælger grund");
-                }
-                else {
-                    String fieldToSell = gui.getUserSelection("Hvilken grund vil de sælge", choice);
-                    int fieldIndex = Board_Creator.fieldIndexFromName(fieldToSell);
-                    GUI_Field f = Game_Controller.getFields()[fieldIndex];
-                    GUI_Ownable o = (GUI_Ownable) f;
-                    Aktion aktion = new Aktion();
-                    int sellPrice = gui.getUserInteger("Hvad vil du sælge din grund for");
-                    aktion.runSellFieldAktion(this,o,sellPrice);
-
-                }
+        for (int i = 0; i < this.grunde.size(); i++) {
+            int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+            if (Integer.parseInt(data.get(crrIndex)[12]) == 0) {
+                availableFieldsToSell.add(this.grunde.get(i));
+            }
+            String[] choice = availableFieldsToSell.toArray(new String[availableFieldsToSell.size()]);
+            if (choice.length == 0) {
+                userIO.showMessage("Du har ikke nogle grunde der kan sælges husk at sælge dine huse på grunden før du sælger grund");
+            } else {
+                String fieldToSell = userIO.getUserSelection("Hvilken grund vil de sælge", choice);
+                int fieldIndex = Board_Creator.fieldIndexFromName(fieldToSell);
+                GUI_Field f = Game_Controller.getFields()[fieldIndex];
+                GUI_Ownable o = (GUI_Ownable) f;
+                Aktion aktion = new Aktion();
+                int sellPrice = userIO.getUserInteger("Hvad vil du sælge din grund for");
+                aktion.runSellFieldAktion(this, o, sellPrice,userIO);
 
             }
 
+        }
+
     }
-    public void hotelHouseMenu()
-    {
-        String choice = gui.getUserButtonPressed(this.getName(), "1. Køb hus/hotel", "2. sælg hus/hotel");
-        switch (getChoice(choice))
-        {
-            case 1:
-            {
+
+    public void hotelHouseMenu() {
+        int choice = userIO.getUserButtonPressed(this.getName(), "1. Køb hus/hotel", "2. sælg hus/hotel");
+        switch (choice) {
+            case 1: {
                 buyHouse();
             }
             break;
-            case 2:
-            {
+            case 2: {
                 sellHouse();
             }
             break;
         }
     }
-    public void buyHouse()
-    {
-        String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
+
+    public void buyHouse() {
+        String[] fieldcolors = {"blue", "red", "green", "orange", "grey", "white", "yellow", "purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();
-       for(int i=0;i<fieldcolors.length;i++)
-       {
-           if(checkPlayerOwnsTheColorFields(this,fieldcolors[i]))
-           {
-               colorsYouOwn.add(fieldcolors[i]);
-           }
-       }
-       if (colorsYouOwn.size()==0)
-       {
-           gui.getUserButtonPressed("Du har ikke alle felter i en farve og kan derfor ikke købe hus","Okay");
-       }
-       else {
-           ArrayList<String> sameColorFields = new ArrayList<>();
+        for (int i = 0; i < fieldcolors.length; i++) {
+            if (checkPlayerOwnsTheColorFields(this, fieldcolors[i])) {
+                colorsYouOwn.add(fieldcolors[i]);
+            }
+        }
+        if (colorsYouOwn.size() == 0) {
+            userIO.showMessage("Du har ikke alle felter i en farve og kan derfor ikke købe hus");
+        } else {
+            ArrayList<String> sameColorFields = new ArrayList<>();
 
-           for(int i = 0;i<colorsYouOwn.size();i++)
-           {
-               ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
-               ArrayList<Integer> index = new ArrayList<>();
-               for(int k = 0; k<f.size();k++)
-               {
-                   String titel = f.get(k)[0];
-                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
-                  index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
-               }
+            for (int i = 0; i < colorsYouOwn.size(); i++) {
+                ArrayList<String[]> f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
+                ArrayList<Integer> index = new ArrayList<>();
+                for (int k = 0; k < f.size(); k++) {
+                    String titel = f.get(k)[0];
+                    int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                    index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
+                }
 
 
-               int min = index.get(0);
-               // loop to find minimum from ArrayList
-               for (int p = 1; p < index.size(); p++) {
-                   if (index.get(p) < min) {
-                       min = index.get(p);
-                   }
-               }
+                int min = index.get(0);
+                // loop to find minimum from ArrayList
+                for (int p = 1; p < index.size(); p++) {
+                    if (index.get(p) < min) {
+                        min = index.get(p);
+                    }
+                }
                 //loop that makes an array of the streets with lowest number of houses and checks if the streets has max number of houses
-               for(int r = 0;r<f.size();r++)
-               {
-                   String titel = f.get(r)[0];
-                   int fieldIndex = Board_Creator.fieldIndexFromName(titel);
-                   if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==min &&
-                           Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12])<5)
-                   {
-                       sameColorFields.add(f.get(r)[0]);
-                   }
-               }
+                for (int r = 0; r < f.size(); r++) {
+                    String titel = f.get(r)[0];
+                    int fieldIndex = Board_Creator.fieldIndexFromName(titel);
+                    if (Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]) == min &&
+                            Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12]) < 5) {
+                        sameColorFields.add(f.get(r)[0]);
+                    }
+                }
 
-           }
-           if (sameColorFields.size()==0)
-           {
-               gui.getUserButtonPressed("Du har ikke mulighed for at bygge mere på dine grunde lige nu","Okay");
-           }
-           else {
-               String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
-               String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de købe Hus/hotel til?", choice);
+            }
+            if (sameColorFields.size() == 0) {
+                userIO.showMessage("Du har ikke mulighed for at bygge mere på dine grunde lige nu");
+            } else {
+                String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
+                String fieldToSetHouse = userIO.getUserSelection("Hvilken grund vil de købe Hus/hotel til?", choice);
 
-               GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
-               GUI_Street street = (GUI_Street) field;
+                GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
+                GUI_Street street = (GUI_Street) field;
 
-               int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
-               int housePrice =  Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
+                int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
+                int housePrice = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
 
-               if (numberOfHouses < 4) {
-                   if(payHouseHotel(housePrice))
-                   {
-                       street.setHouses(1 + numberOfHouses);
-                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
-                   }
+                if (numberOfHouses < 4) {
+                    if (payHouseHotel(housePrice)) {
+                        street.setHouses(1 + numberOfHouses);
+                        Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                    }
 
-               } else if (numberOfHouses == 4) {
-                   if(payHouseHotel(housePrice*5)) {
-                       street.setHouses(0);
-                       street.setHotel(true);
-                       Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
-                   }
-               }
-           }
+                } else if (numberOfHouses == 4) {
+                    if (payHouseHotel(housePrice * 5)) {
+                        street.setHouses(0);
+                        street.setHotel(true);
+                        Board_Creator.setHousesInData(1 + numberOfHouses, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                    }
+                }
+            }
 
-       }
+        }
 
     }
-    private boolean payHouseHotel(int housePrice)
-    {
+
+    private boolean payHouseHotel(int housePrice) {
         boolean paidForHouse = false;
-        if (this.getKonto().getBalance()>housePrice) {
+        if (this.getKonto().getBalance() > housePrice) {
             getKonto().update(-housePrice);
             pl.setBalance(this.konto.getBalance());
             paidForHouse = true;
-        }
-        else
-        {
-            gui.getUserButtonPressed("Du har ikke råd til at købe hus/hotel lige nu","okay");
+        } else {
+            userIO.showMessage("Du har ikke råd til at købe hus/hotel lige nu");
         }
         return paidForHouse;
     }
-    private void sellHouseHotel(int housePrice)
-    {
-        getKonto().update(housePrice/2);
+
+    private void sellHouseHotel(int housePrice) {
+        getKonto().update(housePrice / 2);
         pl.setBalance(this.konto.getBalance());
 
     }
 
 
-
-    public void sellHouse()
-    {
-        String[] fieldcolors = {"blue","red","green","orange","grey","white","yellow","purple"};
+    public void sellHouse() {
+        String[] fieldcolors = {"blue", "red", "green", "orange", "grey", "white", "yellow", "purple"};
         ArrayList<String> colorsYouOwn = new ArrayList<>();
-        for(int i=0;i<fieldcolors.length;i++)
-        {
-            if(checkPlayerOwnsTheColorFields(this,fieldcolors[i]))
-            {
+        for (int i = 0; i < fieldcolors.length; i++) {
+            if (checkPlayerOwnsTheColorFields(this, fieldcolors[i])) {
                 colorsYouOwn.add(fieldcolors[i]);
             }
         }
-        if (colorsYouOwn.size()==0)
-        {
-            gui.getUserButtonPressed("Du har ikke alle felter i en farve og har derfor ingen huse","Okay");
-        }
-        else {
+        if (colorsYouOwn.size() == 0) {
+            userIO.showMessage("Du har ikke alle felter i en farve og har derfor ingen huse");
+        } else {
             ArrayList<String> sameColorFields = new ArrayList<>();
 
-            for(int i = 0;i<colorsYouOwn.size();i++)
-            {
-                ArrayList<String[]>  f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
+            for (int i = 0; i < colorsYouOwn.size(); i++) {
+                ArrayList<String[]> f = Board_Creator.getGroupArray(colorsYouOwn.get(i));
                 ArrayList<Integer> index = new ArrayList<>();
-                for(int k = 0; k<f.size();k++)
-                {
+                for (int k = 0; k < f.size(); k++) {
                     String titel = f.get(k)[0];
                     int fieldIndex = Board_Creator.fieldIndexFromName(titel);
                     index.add(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]));
@@ -320,64 +283,68 @@ public class Player {
                     }
                 }
                 //loop that makes an array of the streets with lowest number of houses and checks if the streets has max number of houses
-                for(int r = 0;r<f.size();r++)
-                {
+                for (int r = 0; r < f.size(); r++) {
                     String titel = f.get(r)[0];
                     int fieldIndex = Board_Creator.fieldIndexFromName(titel);
-                    if(Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12])==max &&
-                            Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12])>0)
-                    {
+                    if (Integer.parseInt(Board_Creator.getFieldData().get(fieldIndex)[12]) == max &&
+                            Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(titel))[12]) > 0) {
                         sameColorFields.add(f.get(r)[0]);
                     }
                 }
 
             }
-            if (sameColorFields.size()==0)
-            {
-                gui.getUserButtonPressed("Du har ingen huse/hoteller at sælge","Okay");
-            }
-            else {
+            if (sameColorFields.size() == 0) {
+               userIO.showMessage("Du har ingen huse/hoteller at sælge");
+            } else {
                 String[] choice = sameColorFields.toArray(new String[sameColorFields.size()]);
-                String fieldToSetHouse = gui.getUserSelection("Hvilken grund vil de sælge deres Hus/hotel?", choice);
+                String fieldToSetHouse = userIO.getUserSelection("Hvilken grund vil de sælge deres Hus/hotel?", choice);
 
                 GUI_Field field = Game_Controller.getFields()[Board_Creator.fieldIndexFromName(fieldToSetHouse)];
                 GUI_Street street = (GUI_Street) field;
 
                 int numberOfHouses = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[12]);
-                int housePrice =  Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
+                int housePrice = Integer.parseInt(Board_Creator.getFieldData().get(Board_Creator.fieldIndexFromName(fieldToSetHouse))[4]);
 
                 if (numberOfHouses < 5) {
 
                     sellHouseHotel(housePrice);
-                        street.setHouses(numberOfHouses-1);
-                        Board_Creator.setHousesInData( numberOfHouses-1, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                    street.setHouses(numberOfHouses - 1);
+                    Board_Creator.setHousesInData(numberOfHouses - 1, Board_Creator.fieldIndexFromName(fieldToSetHouse));
 
 
                 } else if (numberOfHouses == 5) {
-                    sellHouseHotel(housePrice*5);
-                        street.setHouses(0);
-                        street.setHotel(false);
-                        Board_Creator.setHousesInData(0, Board_Creator.fieldIndexFromName(fieldToSetHouse));
+                    sellHouseHotel(housePrice * 5);
+                    street.setHouses(0);
+                    street.setHotel(false);
+                    Board_Creator.setHousesInData(0, Board_Creator.fieldIndexFromName(fieldToSetHouse));
 
                 }
             }
 
         }
     }
-    public void pawnMenu()
-    {
-        String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
 
-        if (buttonPressed.equals("Pantsæt Grunde")) {
-            pawnField();
-        }
-        else {
+    public void pawnMenu() {
+       int buttonPressed = userIO.getUserButtonPressed("Vil du", "1. Pantsæt Grunde", "2. Køb pantsatte grunde tilbage");
+        switch (buttonPressed)
+        {
+            case 1:
+            {
+
+                pawnField();
+            }
+            break;
+        case 2:
+        {
             unPawnField();
         }
-
+       break;
     }
-    public void pawnField()
-    {
+
+        }
+
+
+    public void pawnField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToParwn = new ArrayList<>();
         for (int i = 0; i < this.grunde.size(); i++) {
@@ -386,23 +353,20 @@ public class Player {
                 availableFieldsToParwn.add(this.grunde.get(i));
             }
         }
-               String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
-               if(choice.length ==0)
-               {
-                   gui.showMessage("Du har ikke nogle grunde der kan pantsættes husk at sælge dine huse på grunden før du pantsætter");
-               }
-               else {
-                   String fieldToPawn = gui.getUserSelection("Hvilken grund vil de pantsætte", choice);
-                   int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
-                   Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
-                   this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
-               }
+        String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
+        if (choice.length == 0) {
+            userIO.showMessage("Du har ikke nogle grunde der kan pantsættes husk at sælge dine huse på grunden før du pantsætter");
+        } else {
+            String fieldToPawn = userIO.getUserSelection("Hvilken grund vil de pantsætte", choice);
+            int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+            Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
+            this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
+        }
 
 
-       }
+    }
 
-    public void unPawnField()
-    {
+    public void unPawnField() {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToParwn = new ArrayList<>();
         for (int i = 0; i < this.grunde.size(); i++) {
@@ -411,12 +375,10 @@ public class Player {
                 availableFieldsToParwn.add(this.grunde.get(i));
             }
             String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
-            if(choice.length ==0)
-            {
-                gui.showMessage("Du har ingen pantsatte grunde");
-            }
-            else {
-                String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
+            if (choice.length == 0) {
+                userIO.showMessage("Du har ingen pantsatte grunde");
+            } else {
+                String fieldToPawn = userIO.getUserSelection("Hvilken grund vil de købe tilbage", choice);
                 int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
                 Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
                 int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
@@ -426,79 +388,69 @@ public class Player {
 
         }
     }
-    private void runATurn()
-    {
-        if (jail)
-        {
+
+    private void runATurn() {
+        if (jail) {
             inJail();
 
 
-        }
-        else if (gui.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "Rul terninger") == "Rul terninger") {
+        } else if (userIO.getUserButtonPressed(name + " Klik på knappen for at rulle med terningerne", "1. Rul terninger")==1) {
             turn();
             simpleTurn();
         }
 
     }
 
-    public void simpleTurn()
-    {
-        checkIfPassedStart(pos+t1+t2);
+    public void simpleTurn() {
+        checkIfPassedStart(pos + t1 + t2);
 
-        pos=(pos+t1 +t2)%40;
-        setCar(pos, gui);
-        landOnField.hitField(this,gamefields);
+        pos = (pos + t1 + t2) % 40;
+        fpos =userIO.setCar(pos,pl,fpos);
+        landOnField.hitField(this, gamefields,userIO);
 
-        if (t1==t2){
+        if (t1 == t2) {
             fartbølle++;
-            if (fartbølle==3){
+            if (fartbølle == 3) {
                 goToJail();
-            }
-            else{
-                gui.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "Rul terninger");
+            } else {
+                userIO.getUserButtonPressed(name + " fik to ens, du fik ekstra tur!", "1. Rul terninger");
                 turn();
                 simpleTurn();
 
             }
 
+        } else {
+            fartbølle = 0;
         }
-        else{fartbølle=0;}
 
 
-        if (konto.getBalance() <0) {
+        if (konto.getBalance() < 0) {
             bankruptcy();
 
-        }
-        else {
+        } else {
             hasLost = false;
         }
     }
-    private void bankruptcy()
-    {
-        String choice =gui.getUserSelection(name+" Du er gået bankerot og skylder mere til banken end du har", "1. Pantsæt grund","2. Sælg hus/hoteller","3. Giv op");
 
-        switch (getChoice(choice))
-        {
-            case 1:
-            {
+    private void bankruptcy() {
+        int choice = userIO.getUserButtonPressed(name + " Du er gået bankerot og skylder mere til banken end du har", "1. Pantsæt grund", "2. Sælg hus/hoteller", "3. Giv op");
+
+        switch (choice) {
+            case 1: {
                 pawnField();
-                if (konto.getBalance()<0)
-                {
+                if (konto.getBalance() < 0) {
                     bankruptcy();
                 }
             }
             break;
-            case 2:
-            {
+            case 2: {
                 sellHouse();
-                if (konto.getBalance()<0)
-                {
+                if (konto.getBalance() < 0) {
                     bankruptcy();
                 }
             }
             break;
-            case 3:
-            {
+            case 3: {
                 hasLost = true;
             }
         }
@@ -506,106 +458,88 @@ public class Player {
     }
 
 
-    public int getChoice(String choice)
-    {
-        return Integer.parseInt(choice.split("\\.")[0]);
-    }
+
 
     //tror virker
-    public void inJail()
-    {
+    public void inJail() {
         jailCounter++;
-        if(gui.getUserLeftButtonPressed(name+ " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger"))
-        {
+        if (userIO.getUserLeftButtonPressed(name + " Betal 1000 kr eller slå to ens terninger for at komme ud", "Betal 1000 kr", "Slå to ens terninger")) {
             payJail();
-        }
-        else if(jailCounter==3) {
+        } else if (jailCounter == 3) {
             turn();
             if (t1 == t2) {
-                gui.getUserButtonPressed(name + " Slog to ens og er derfor fri fra fængsel", "okay");
+                userIO.showMessage(name + " Slog to ens og er derfor fri fra fængsel");
                 jail = false;
                 jailCounter = 0;
                 simpleTurn();
-            }
-            else {
-                gui.getUserButtonPressed(name + " fik ikke tre ens 3 ture i træk og skal derfor betale", "okay");
+            } else {
+                userIO.showMessage(name + " fik ikke tre ens 3 ture i træk og skal derfor betale");
                 payJail();
                 jail = false;
                 jailCounter = 0;
                 simpleTurn();
             }
-        }
-        else{
+        } else {
 
             turn();
-            if (t1==t2){
-                gui.getUserButtonPressed(name + " Slog to ens og er derfor fri fra fængsel", "okay");
+            if (t1 == t2) {
+                userIO.showMessage(name + " Slog to ens og er derfor fri fra fængsel");
                 jail = false;
-                jailCounter=0;
+                jailCounter = 0;
                 simpleTurn();
 
+            } else {
+                userIO.showMessage(name + " fik ikke to ens og sidder derfor stadig i fængsel");
             }
-            else {gui.getUserButtonPressed(name + " fik ikke to ens og sidder derfor stadig i fængsel", "okay");}
         }
 
 
     }
-    private void payJail(){
+
+    private void payJail() {
         updatePlayerBalance(-1000);
         jail = false;
-        spil(this.gui,this.gamefields);
-        jailCounter=0;
+        spil( this.gamefields);
+        jailCounter = 0;
     }
-    public void hitField()
-    {
+
+    public void hitField() {
         displayCard();
-       //gamefields[pos].hit(this);
+        //gamefields[pos].hit(this);
 
     }
 
-    public void checkIfPassedStart(int sumPos)
-    {
-        if (sumPos >= 40)
-        {
+    public void checkIfPassedStart(int sumPos) {
+        if (sumPos >= 40) {
             updatePlayerBalance(4000);
         }
     }
 
 
-    public void turn()
-    {
-     t1 = terninger.slaEnTerning();
-     t2 = terninger.slaEnTerning();
-     gui.setDice(t1, t2);
+    public void turn() {
+        t1 = Terninger.slaEnTerning();
+        t2 = Terninger.slaEnTerning();
+        userIO.setDice(t1, t2);
 
 
     }
-    public int getTerningeSum()
-    {
-        return t1+t2;
-    }
-    public void setCar(int tsum, GUI gui) {
-        tsum = tsum%40;
-        fpos.setCar(pl, false);
-        GUI_Field felt = gui.getFields()[tsum];
-        felt.setCar(pl, true);
-        fpos = gui.getFields()[tsum];
+
+    public int getTerningeSum() {
+        return t1 + t2;
     }
 
 
-    public void displayCard()
-    {
-        GUI_Field f = gui.getFields()[pos];
-        gui.displayChanceCard(f.getTitle()+"\n"+ f.getDescription());
+    public void displayCard() {
+        GUI_Field f = Game_Controller.getFields()[pos];
+        userIO.displayChanceCard(f.getTitle(), f.getDescription());
     }
 
-    public void getRent(int rent)
-    {
-        pl.setBalance(konto.getBalance()+rent);
+    public void getRent(int rent) {
+        pl.setBalance(konto.getBalance() + rent);
     }
 
     public void payRent(int cost, Player owner, String title) {
-        gui.getUserButtonPressed(pl.getName() + " landede på " + title + " og skal betale leje til " + owner.getName(), "Okay");
+        userIO.showMessage(pl.getName() + " landede på " + title + " og skal betale leje til " + owner.getName());
         owner.getKonto().update(cost);
         getKonto().update(-cost);
         owner.setGUIBalance(owner.getKonto().getBalance());
@@ -613,92 +547,78 @@ public class Player {
     }
 
 
-
-    public void setGUIBalance(int balance)
-    {
+    public void setGUIBalance(int balance) {
         pl.setBalance(balance);
     }
 
 
-    public void buyField(int cost, String title)
-    {
-        gui.getUserButtonPressed(pl.getName() + " købte " + title+"", "Okay");
+    public void buyField(int cost, String title) {
+        userIO.showMessage(pl.getName() + " købte " + title);
         updatePlayerBalance(-cost);
         konto.updateFieldValue(cost);
         addGrunde(title);
 
     }
-    public void goToJail()
-    {
-       movePlayer(10);
-        jail=true;
-        gui.getUserButtonPressed(name + " du er røget i fængsel får dårlig opførelse", "Okay");
+
+    public void goToJail() {
+        movePlayer(10);
+        jail = true;
+        userIO.showMessage(name + " du er røget i fængsel får dårlig opførelse");
     }
+
     public void movePlayer(int number) {
-        if(number <0){
+        if (number < 0) {
             number = number + 40;
         }
-        this.pos = number%40;
+        this.pos = number % 40;
         checkIfPassedStart(pos);
-        setCar(pos, gui);
+        fpos = userIO.setCar(pos,pl,fpos);
     }
 
-    public void showchancecard(String txt){
-       gui.displayChanceCard(txt);
-       gui.getUserButtonPressed(name +" "+ txt, "Okay");
+    public void showchancecard(String txt) {
+        userIO.displayChanceCard(txt,"");
+        userIO.showMessage(name + " " + txt);
 
     }
-    public void updatePlayerBalance(int value)
-    {
+
+    public void updatePlayerBalance(int value) {
         konto.update(value);
         pl.setBalance(konto.getBalance());
     }
+
     //chekker om owneren har alle grunde i et sæt
-    public boolean checkOwnerOwnAll(){
-        GUI_Field field = Game_Controller.getFields()[getPos()];;
+    public boolean checkOwnerOwnAll() {
+        GUI_Field field = Game_Controller.getFields()[getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
-        return checkPlayerOwnsTheColorFields(Game_Controller.getPlayer(ownable.getOwnerName()), Board_Creator.getFieldData().get(pos)[11]);
+        return checkPlayerOwnsTheColorFields(Game_Controller.getPlayer(ownable.getOwnerName(),userIO), Board_Creator.getFieldData().get(pos)[11]);
     }
-    public boolean checkPlayerOwnsTheColorFields (Player player, String color)
-    {
+
+    public boolean checkPlayerOwnsTheColorFields(Player player, String color) {
         ArrayList<String> ownerFields = player.getGrunde();
         ArrayList<String[]> typeFields = Board_Creator.getGroupArray(color);
         ArrayList<String[]> data = Board_Creator.getFieldData();
 
         boolean sandt = false;
-        int f=0;
-        for (int i = 0;i<typeFields.size();i++)
-        {
+        int f = 0;
+        for (int i = 0; i < typeFields.size(); i++) {
 
-            String l =typeFields.get(i)[0];
+            String l = typeFields.get(i)[0];
             int index = Board_Creator.fieldIndexFromName(l);
-            if(ownerFields.contains(l) && Integer.parseInt(data.get(index)[13])==0)
-            {
+            if (ownerFields.contains(l) && Integer.parseInt(data.get(index)[13]) == 0) {
                 f++;
             }
-            if (f ==typeFields.size())
-            {
+            if (f == typeFields.size()) {
                 sandt = true;
             }
         }
 
-        if (sandt)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return sandt;
     }
 
-    public int checkDoubleCost()
-    {
-        if (checkOwnerOwnAll())
-        {
+    public int checkDoubleCost() {
+        if (checkOwnerOwnAll()) {
             return 2;
-        }
-        else return 1;
+        } else return 1;
 
     }
 

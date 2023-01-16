@@ -1,6 +1,7 @@
 package spil_Version_2.cards;
 
 import spil_Version_2.Player;
+import spil_Version_2.UserIO;
 
 public class Matador_Legat extends Parent_Card {
     private int amount;
@@ -12,7 +13,7 @@ public class Matador_Legat extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player) {
+    public void hit(Player player, UserIO userIO) {
 
         if (player.getKonto().getBalance() < 15000) {
             player.showchancecard("Tillykke, du har vundet Matador-Legatet; 40000kr!");
