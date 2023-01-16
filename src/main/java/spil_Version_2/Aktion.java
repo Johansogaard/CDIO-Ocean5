@@ -33,7 +33,7 @@ public class Aktion {
         this.currentMax = cost;
 
         //checking who wants to be a part of the aktion
-        gui.showMessage("Aktion holdes for grunden" + field.getTitle());
+        gui.showMessage("Aktion holdes for grunden " + field.getTitle());
         for (int i = 0; i < players.length; i++) {
             if (!players[i].getName().equals(player.getName())) {
                 if (gui.getUserLeftButtonPressed(players[i].getName() + " Vil du byde på denne grund", "Ja", "Nej")) {
