@@ -1,22 +1,19 @@
 package spil_Version_2;
 
 import gui_fields.GUI_Ownable;
-import gui_main.GUI;
 
 import java.util.ArrayList;
-
-import java.util.Iterator;
 
 public class Aktion {
     private int currentMax;
 
-    private int minBud = 300;
-    private int antalBydere = 0;
+    private final int minBud = 300;
+    private final int antalBydere = 0;
 
-    private boolean bud = false;
+    private final boolean bud = false;
     private int aktionVinder;
 
-    private ArrayList<Player> bidders = new ArrayList<>();
+    private final ArrayList<Player> bidders = new ArrayList<>();
 
     private Player player;
     private Player[] players;
@@ -24,15 +21,15 @@ public class Aktion {
     private GUI_Ownable field;
 
 
-    public boolean korAktion(Player player, GUI_Ownable field,int cost,UserIO userIO) {
+    public boolean korAktion(Player player, GUI_Ownable field, int cost, UserIO userIO) {
 
         int size = Game_Controller.getPlayerList().size();
         this.players = Game_Controller.getPlayerList().toArray(new Player[size]);
-        this.userIO =userIO;
+        this.userIO = userIO;
 
         this.field = field;
         this.currentMax = cost;
-        int runde =0;
+        int runde = 0;
         //checking who wants to be a part of the aktion
         userIO.showMessage("Aktion holdes for grunden " + field.getTitle());
         for (int i = 0; i < players.length; i++) {
@@ -50,17 +47,14 @@ public class Aktion {
             } else if (!userIO.getUserLeftButtonPressed(bidders.get(i).getName() + " Vil du købe denne grund til pris: " + currentMax, "Ja", "Nej")) {
                 bidders.remove(i);
 
-            }
-            else
-            {
+            } else {
                 currentMax = currentMax + 100;
             }
-            if (bidders.size()==0)
-            {
+            if (bidders.size() == 0) {
                 return false;
             }
             runde++;
-            if (bidders.size() == 1 && runde>bidders.size()) {
+            if (bidders.size() == 1 && runde > bidders.size()) {
                 userIO.showMessage(bidders.get(0).getName() + " Vandt aktionen og ejer nu " + field.getTitle());
                 bidders.get(0).buyField(currentMax, field.getTitle());
                 field.setBorder(bidders.get(0).getCar().getPrimaryColor());
@@ -74,21 +68,18 @@ public class Aktion {
         }
         return false;
     }
-    public void runSellFieldAktion(Player player, GUI_Ownable field,int cost,UserIO userIO)
-    {
-        if(korAktion(player, field,cost,userIO))
-        {
-            int index=0;
-           ArrayList<String> plfields = player.getGrunde();
-           for (int i = 0; i<plfields.size();i++)
-           {
-              if (field.getTitle().equals(plfields.get(i)))
-              {
-                  index = i;
-              }
-           }
-           plfields.remove(index);
-           player.setGrunde(plfields);
+
+    public void runSellFieldAktion(Player player, GUI_Ownable field, int cost, UserIO userIO) {
+        if (korAktion(player, field, cost, userIO)) {
+            int index = 0;
+            ArrayList<String> plfields = player.getGrunde();
+            for (int i = 0; i < plfields.size(); i++) {
+                if (field.getTitle().equals(plfields.get(i))) {
+                    index = i;
+                }
+            }
+            plfields.remove(index);
+            player.setGrunde(plfields);
 
 
         }
