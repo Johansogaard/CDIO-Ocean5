@@ -119,7 +119,7 @@ public class Player {
             break;
             case 4:
             {
-                pawnField();
+                pawnMenu();
                 spil(gui,fields);
             }
             break;
@@ -354,13 +354,22 @@ public class Player {
 
         }
     }
-    public void pawnField()
+    public void pawnMenu()
     {
-       String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
+        String buttonPressed = gui.getUserButtonPressed("Vil du","Pantsæt Grunde","Køb pantsatte grunde tilbage");
         ArrayList<String[]> data = Board_Creator.getFieldData();
         ArrayList<String> availableFieldsToParwn = new ArrayList<>();
-       if (buttonPressed.equals("Pantsæt Grunde")) {
-           for (int i = 0; i < this.grunde.size(); i++) {
+        if (buttonPressed.equals("Pantsæt Grunde")) {
+            pawnField(data,availableFieldsToParwn);
+        }
+        else {
+            unPawnField(data,availableFieldsToParwn);
+        }
+
+    }
+    public void pawnField(ArrayList<String[]> data,ArrayList<String> availableFieldsToParwn)
+    {
+        for (int i = 0; i < this.grunde.size(); i++) {
                int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
                if (Integer.parseInt(data.get(crrIndex)[12]) == 0 && Integer.parseInt(data.get(crrIndex)[13]) == 0) {
                    availableFieldsToParwn.add(this.grunde.get(i));
@@ -379,30 +388,29 @@ public class Player {
 
            }
        }
-       else
-       {
-           for (int i = 0; i < this.grunde.size(); i++) {
-               int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
-               if (Integer.parseInt(data.get(crrIndex)[13]) == 1) {
-                   availableFieldsToParwn.add(this.grunde.get(i));
-               }
-               String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
-               if(choice.length ==0)
-               {
-                   gui.showMessage("Du har ingen pantsatte grunde");
-               }
-               else {
-                   String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
-                   int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
-                   Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
-                   int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
-                   int rounded = ((costToBuyBack + 99) / 100) * 100;
-                   this.getKonto().update((-rounded));
-               }
 
-           }
+    public void unPawnField(ArrayList<String[]> data,ArrayList<String> availableFieldsToParwn)
+    {
+        for (int i = 0; i < this.grunde.size(); i++) {
+            int crrIndex = Board_Creator.fieldIndexFromName(grunde.get(i));
+            if (Integer.parseInt(data.get(crrIndex)[13]) == 1) {
+                availableFieldsToParwn.add(this.grunde.get(i));
+            }
+            String[] choice = availableFieldsToParwn.toArray(new String[availableFieldsToParwn.size()]);
+            if(choice.length ==0)
+            {
+                gui.showMessage("Du har ingen pantsatte grunde");
+            }
+            else {
+                String fieldToPawn = gui.getUserSelection("Hvilken grund vil de købe tilbage", choice);
+                int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
+                Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
+                int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
+                int rounded = ((costToBuyBack + 99) / 100) * 100;
+                this.getKonto().update((-rounded));
+            }
 
-       }
+        }
     }
     private void runATurn()
     {
@@ -445,7 +453,7 @@ public class Player {
 
         if (konto.getBalance() <0) {
             bankruptcy();
-            hasLost = true;
+
         }
         else {
             hasLost = false;
@@ -453,8 +461,36 @@ public class Player {
     }
     private void bankruptcy()
     {
+        String choice =gui.getUserSelection(name+" Du er gået bankerot og skylder mere til banken end du har", "1. Pantsæt grund","2. Sælg hus/hoteller","3. Giv op");
+
+        switch (getChoice(choice))
+        {
+            case 1:
+            {
+                pawnMenu();
+                if (konto.getBalance()<0)
+                {
+                    bankruptcy();
+                }
+            }
+            break;
+            case 2:
+            {
+                sellHouse();
+                if (konto.getBalance()<0)
+                {
+                    bankruptcy();
+                }
+            }
+            break;
+            case 3:
+            {
+                hasLost = true;
+            }
+        }
 
     }
+
 
     public int getChoice(String choice)
     {
