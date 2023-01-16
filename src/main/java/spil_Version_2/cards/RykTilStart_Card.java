@@ -4,7 +4,7 @@ import spil_Version_2.Player;
 import spil_Version_2.UserIO;
 
 public class RykTilStart_Card extends Parent_Card {
-    private int reward;
+    private final int reward;
 
     //nyt objekt som giver en reward
     public RykTilStart_Card(int reward) {
@@ -13,10 +13,10 @@ public class RykTilStart_Card extends Parent_Card {
     }
 
     @Override
-    public void hit(Player player, UserIO userIO)  {
+    public void hit(Player player, UserIO userIO) {
         // hvis ikke kortet giver en belønning, skrives der kun ryk til start
         if (reward == 0) {
-            message ="Ryk til start";
+            message = "Ryk til start";
             player.showchancecard(message);
         } else {
             message = "Ryk til start og modtag " + reward + "kr";

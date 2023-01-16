@@ -41,10 +41,7 @@ public class Game_Controller {
 
         players = Game_Features.playerstoadd(adapter);
 
-      /*  for (int i = 0;i<players.length;i++) {
-            new Fieldsbox(players[i],i+1);
 
-        }*/
             for (int i = 0; i < players.length; i++) {
 
                 players[i].tilføjspillerGui(getCarColors()[i]);
@@ -59,7 +56,7 @@ public class Game_Controller {
         }
 
     }
-
+    //the plagame method loops through a array of players who gets removed when they loose until the array is size 1 and the game has a winner
     public static void playGame (Player[] players,GUI_Field[] fields)
     {
 
@@ -94,7 +91,7 @@ public class Game_Controller {
     }
     public static Player getPlayer(String playerName,UserIO userIO)
     {
-        Player thePlayer = new Player("GetPlayerDosentWork",0,userIO, 0);
+        Player thePlayer = new Player("GetPlayerDosentWork",0, 0,userIO);
         for(int i = 0;i<players.length;i++) {
             if (playerName == players[i].getName())
             {

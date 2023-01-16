@@ -6,15 +6,15 @@ import spil_Version_2.UserIO;
 
 public class GiftCard extends Parent_Card {
 
-    private int amount;
+    private final int amount;
 
-    public GiftCard(int amount,String message) {
+    public GiftCard(int amount, String message) {
         this.amount = amount;
-        this.message=message;
+        this.message = message;
     }
 
     @Override
-    public void hit(Player player, UserIO userIO)  {
+    public void hit(Player player, UserIO userIO) {
         player.showchancecard(message);
 
         for (Player otherPlayer : Game_Controller.getPlayers()) {
@@ -23,7 +23,6 @@ public class GiftCard extends Parent_Card {
                 otherPlayer.updatePlayerBalance(-amount);
 
             }
-
 
 
         }

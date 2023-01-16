@@ -6,13 +6,12 @@ import spil_Version_2.Player;
 import spil_Version_2.UserIO;
 
 public class MovePlayerCard extends Parent_Card {
-    private int steps;
+    private final int steps;
 
 
     public MovePlayerCard(int steps, String message) {
         this.steps = steps;
         this.message = message;
-
 
 
     }
@@ -25,7 +24,7 @@ public class MovePlayerCard extends Parent_Card {
         player.movePlayer(steps);
         checkIfPassedStart(oldPos, player);
         LandOnField landOnField = new LandOnField();
-        landOnField.hitField(player, Game_Controller.getFields(),userIO);
+        landOnField.hitField(player, Game_Controller.getFields(), userIO);
     }
 
     public void checkIfPassedStart(int oldPos, Player player) {

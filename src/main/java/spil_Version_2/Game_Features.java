@@ -3,23 +3,23 @@ package spil_Version_2;
 
 import spil_Version_2.cards.*;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Game_Features {
 
+    private static final Object monitor = new Object();
+    public static int[] balance = {30000, 30000, 30000, 30000, 30000, 30000};
     private static String customGame = "Brugerdefineret spil: OFF";
     private static Integer players = -1;
     private static boolean fail = false;
-    private static final Object monitor = new Object();
-    private static boolean b = false;
+    private static final boolean b = false;
     private static boolean cM = false;
-    public static int[] balance = {30000, 30000, 30000, 30000, 30000, 30000};
 
     public Game_Features() {
 
@@ -82,8 +82,8 @@ public class Game_Features {
         cardArray.add(new GiftCard(500, "De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr."));
 
         //fængselkort
-        cardArray.add(new PrisonCard());
-        cardArray.add(new PrisonCard());
+        cardArray.add(new PrisonCard("FængselsKort"));
+        cardArray.add(new PrisonCard("Fængselskort"));
 
         Random rand = new Random();
         while (true) {
@@ -101,7 +101,7 @@ public class Game_Features {
         }
         return randomCardArray;
     }
-
+    //checking and adding how many players needs to be in the game
     public static Player[] playerstoadd(UserIO gui) {
         int pl = playercountadd();
         if (cM) {
@@ -109,38 +109,38 @@ public class Game_Features {
         }
         if (pl == 3) {
             Player[] plA3 = new Player[3];
-            plA3[0] = new Player("Spiller 1", balance[0], gui, 0);
-            plA3[1] = new Player("Spiller 2", balance[1], gui, 0);
-            plA3[2] = new Player("Spiller 3", balance[2], gui, 0);
+            plA3[0] = new Player("Spiller 1", balance[0],0, gui);
+            plA3[1] = new Player("Spiller 2", balance[1], 0, gui);
+            plA3[2] = new Player("Spiller 3", balance[2], 0, gui);
 
             return plA3;
         } else if (pl == 4) {
             Player[] plA4 = new Player[4];
-            plA4[0] = new Player("Spiller 1", balance[0], gui, 0);
-            plA4[1] = new Player("Spiller 2", balance[1], gui, 0);
-            plA4[2] = new Player("Spiller 3", balance[2], gui, 0);
-            plA4[3] = new Player("Spiller 4", balance[3], gui, 0);
+            plA4[0] = new Player("Spiller 1", balance[0], 0, gui);
+            plA4[1] = new Player("Spiller 2", balance[1],0, gui);
+            plA4[2] = new Player("Spiller 3", balance[2], 0, gui);
+            plA4[3] = new Player("Spiller 4", balance[3], 0, gui);
             return plA4;
         } else if (pl == 5) {
             Player[] plA5 = new Player[5];
-            plA5[0] = new Player("Spiller 1", balance[0], gui, 0);
-            plA5[1] = new Player("Spiller 2", balance[1], gui, 0);
-            plA5[2] = new Player("Spiller 3", balance[2], gui, 0);
-            plA5[3] = new Player("Spiller 4", balance[3], gui, 0);
-            plA5[4] = new Player("Spiller 5", balance[4], gui, 0);
+            plA5[0] = new Player("Spiller 1", balance[0],0, gui);
+            plA5[1] = new Player("Spiller 2", balance[1], 0, gui);
+            plA5[2] = new Player("Spiller 3", balance[2], 0, gui);
+            plA5[3] = new Player("Spiller 4", balance[3], 0, gui);
+            plA5[4] = new Player("Spiller 5", balance[4], 0, gui);
             return plA5;
         } else {
             Player[] plA6 = new Player[6];
-            plA6[0] = new Player("Spiller 1", balance[0], gui, 0);
-            plA6[1] = new Player("Spiller 2", balance[1], gui, 0);
-            plA6[2] = new Player("Spiller 3", balance[2], gui, 0);
-            plA6[3] = new Player("Spiller 4", balance[3], gui, 0);
-            plA6[4] = new Player("Spiller 5", balance[4], gui, 0);
-            plA6[5] = new Player("Spiller 6", balance[5], gui, 0);
+            plA6[0] = new Player("Spiller 1", balance[0], 0, gui);
+            plA6[1] = new Player("Spiller 2", balance[1], 0, gui);
+            plA6[2] = new Player("Spiller 3", balance[2], 0, gui);
+            plA6[3] = new Player("Spiller 4", balance[3], 0, gui);
+            plA6[4] = new Player("Spiller 5", balance[4],0, gui);
+            plA6[5] = new Player("Spiller 6", balance[5], 0, gui);
             return plA6;
         }
     }
-
+    //checks wich button is pressed and if the custommode is activated
     public static int playercountadd() {
 
 
@@ -266,12 +266,11 @@ public class Game_Features {
             }
         } catch (InterruptedException i) {
         }
-        ;
 
         return players;
 
     }
-
+    //custommode makes it posible for the play to decide what amount of money they want to start with
     private static void customMode() {
         ArrayList<JTextField> txtfield = new ArrayList<>();
         JFrame f = new JFrame();
@@ -351,9 +350,7 @@ public class Game_Features {
             public void actionPerformed(ActionEvent e) {
                 fail = false;
                 JTextField[] txtF = {t1, t2, t3, t4, t5, t6};
-                for (int i = 0; i < players; i++) {
-                    txtfield.add(txtF[i]);
-                }
+                txtfield.addAll(Arrays.asList(txtF).subList(0, players));
 
                 for (int i = 0; i < txtfield.size(); i++) {
                     if (txtfield.get(i).getText() != null) {
@@ -366,7 +363,7 @@ public class Game_Features {
                         }
                     } else fail = true;
                 }
-                if (fail == false) {
+                if (!fail) {
                     for (int i = 0; i < txtfield.size(); i++) {
                         balance[i] = Integer.parseInt(txtfield.get(i).getText());
                     }
