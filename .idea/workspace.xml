@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="er igang med custommode" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu fungere køb og sælg huse igen broblemet var jeg havde glemt at skrive break i hotelhouse menu så den kørte begge funktioner">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -504,7 +507,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673696836895</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Nu virker børnemode">
+      <created>1673817563117</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1673817563117</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Nu fungere køb og sælg huse igen broblemet var jeg havde glemt at skrive break i hotelhouse menu så den kørte begge funktioner">
+      <created>1673817892804</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1673817892804</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tilføjet maven" />
     <MESSAGE value="tilføjet gui bibliotek" />
     <MESSAGE value="igang med at lave spillepladen det virker ikke enu" />
     <MESSAGE value="Har næsten lavet spillepladen manlger bare at tilføje de sidste felter men der er nu lavet en metode der laver felterne for os så vi ikke behøver en klasse til hver felt letss gooo" />
@@ -578,7 +594,9 @@
     <MESSAGE value="Nu virker aktion" />
     <MESSAGE value="Små fixes" />
     <MESSAGE value="er igang med custommode" />
-    <option name="LAST_COMMIT_MESSAGE" value="er igang med custommode" />
+    <MESSAGE value="Nu virker børnemode" />
+    <MESSAGE value="Nu fungere køb og sælg huse igen broblemet var jeg havde glemt at skrive break i hotelhouse menu så den kørte begge funktioner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu fungere køb og sælg huse igen broblemet var jeg havde glemt at skrive break i hotelhouse menu så den kørte begge funktioner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -598,17 +616,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>362</line>
+          <line>364</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>360</line>
+          <line>362</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>357</line>
+          <line>359</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -621,6 +639,16 @@
           <line>370</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
           <line>338</line>
@@ -629,6 +657,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
+          <line>149</line>
+          <properties class="spil_Version_2.Player" method="hotelHouseMenu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

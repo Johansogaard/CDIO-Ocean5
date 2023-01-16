@@ -443,7 +443,7 @@ public class Player {
 
         if (konto.getBalance() <0) {
             bankruptcy();
-            hasLost = true;
+
         }
         else {
             hasLost = false;
@@ -451,8 +451,36 @@ public class Player {
     }
     private void bankruptcy()
     {
+        String choice =gui.getUserSelection(name+" Du er gået bankerot og skylder mere til banken end du har", "1. Pantsæt grund","2. Sælg hus/hoteller","3. Giv op");
+
+        switch (getChoice(choice))
+        {
+            case 1:
+            {
+                pawnField();
+                if (konto.getBalance()<0)
+                {
+                    bankruptcy();
+                }
+            }
+            break;
+            case 2:
+            {
+                sellHouse();
+                if (konto.getBalance()<0)
+                {
+                    bankruptcy();
+                }
+            }
+            break;
+            case 3:
+            {
+                hasLost = true;
+            }
+        }
 
     }
+
 
     public int getChoice(String choice)
     {
