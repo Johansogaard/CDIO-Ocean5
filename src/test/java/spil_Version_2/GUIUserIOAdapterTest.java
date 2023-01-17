@@ -5,8 +5,11 @@ import gui_fields.GUI_Player;
 
 public class GUIUserIOAdapterTest extends UserIO{
     int choice;
-    public GUIUserIOAdapterTest(int choice)
+    boolean b;
+
+    public GUIUserIOAdapterTest(int choice, boolean b)
     {
+        this.b = b;
         this.choice = choice;
     }
     @Override
@@ -27,7 +30,7 @@ public class GUIUserIOAdapterTest extends UserIO{
 
     @Override
     public int getUserInteger(String msg) {
-        return 0;
+        return choice;
     }
 
     @Override
@@ -37,7 +40,7 @@ public class GUIUserIOAdapterTest extends UserIO{
 
     @Override
     public boolean getUserLeftButtonPressed(String msg, String bt1, String bt2) {
-        return false;
+        return b;
     }
 
     @Override

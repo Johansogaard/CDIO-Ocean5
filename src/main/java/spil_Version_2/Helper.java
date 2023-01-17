@@ -1,5 +1,7 @@
 package spil_Version_2;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 public class Helper {
@@ -11,4 +13,13 @@ public class Helper {
         return Element;
 
     }
+    static int currentIndex;
+    public static int getNext(int[] list) {
+        if (currentIndex == list.length) {
+            currentIndex = 0;
+        }
+        return list[currentIndex++];
+    }
 }
+
+

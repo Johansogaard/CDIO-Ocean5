@@ -4,6 +4,7 @@ import gui_fields.GUI_Field;
 import spil_Version_2.cards.Parent_Card;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Devmode {
     private Player[] players;
@@ -13,6 +14,7 @@ public class Devmode {
     //a mode where you can control what happens in the game
     public void playDevmode(Player[] players, GUI_Field[] fields, UserIO gui) {
         this.players = players;
+        Game_Controller.setPlayerList(new ArrayList<>(Arrays.asList(players)));
         this.fields = fields;
         this.userIO = gui;
         String[] playerNames = new String[players.length];
@@ -115,7 +117,7 @@ public class Devmode {
 
     }
 
-    private void setPosDev() {
+   public void setPosDev() {
         int nypos = userIO.getUserInteger("Skriv et felt mellem 1 og 40");
         player.setPos(nypos - 1);
         player.setFpos(userIO.setCar(player.getPos(), player.pl, player.fpos));

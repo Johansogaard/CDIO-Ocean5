@@ -38,9 +38,12 @@ public class Aktion1 {
         //Tjekker om dem der gerne vil byder har nok penge, hvis ikke bliver de fjernet
         for (int i = 0; i < bidders.size(); i = (i + 1) % bidders.size()) {
             if (bidders.get(i).getKonto().getBalance() < currentMax) {
-                bidders.remove(i);
+
+
                 userIO.showMessage(bidders.get(i).getName() + " Er smidt ud af aktionen da han ikke har penge til grunden lige nu");
+                bidders.remove(i);
                 //Asking players if they want to buy the field for the currentprice wich goes up by 100 for each person who says yes
+                i=0;
             } else if (!userIO.getUserLeftButtonPressed(bidders.get(i).getName() + " Vil du købe denne grund til pris: " + currentMax, "Ja", "Nej")) {
                 bidders.remove(i);
 

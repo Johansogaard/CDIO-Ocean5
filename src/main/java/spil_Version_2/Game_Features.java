@@ -268,6 +268,7 @@ public class Game_Features {
     //custommode makes it posible for the play to decide what amount of money they want to start with
     private static void customMode() {
         ArrayList<JTextField> txtfield = new ArrayList<>();
+        //creates the new frame for CostumMode
         JFrame f = new JFrame();
         f.setLayout(null);
         JLabel L2 = new JLabel("Vælg det beløb spillerne starter med");
@@ -305,7 +306,7 @@ public class Game_Features {
         JTextField t6 = new JTextField();
         t6.setBounds(75, 275, 200, 30);
 
-
+        //adds a editable textfield for each player selected
         f.add(L2);
         f.add(p1);
         f.add(t1);
@@ -314,6 +315,7 @@ public class Game_Features {
         f.add(p3);
         f.add(t3);
 
+        //following if statements adds that amount of textfields for each player added
         if (players >= 4) {
 
 

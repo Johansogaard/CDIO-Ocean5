@@ -16,15 +16,20 @@ public class Player {
     public GUI_Player pl;
     public GUI_Field fpos;
     public LandOnField landOnField = new LandOnField();
+
+    public void setCar(GUI_Car car) {
+        this.car = car;
+    }
+
     private GUI_Car car;
     private GUI_Field[] gamefields;
     private ArrayList<String> grunde = new ArrayList<String>();
     private int pos = 0;
     private int fartbølle = 0;
-    private boolean jail = false;
+    public boolean jail = false;
     private boolean hasLost = false;
-    private int t1 = 0;
-    private int t2 = 0;
+    int t1 = 0;
+    int t2 = 0;
     private int jailCounter = 0;
 
     public Player(String name, int bal, int postiotion,UserIO gui) {
@@ -356,7 +361,9 @@ public class Player {
             String fieldToPawn = userIO.getUserSelection("Hvilken grund vil de pantsætte", choice);
             int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
             Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
-            this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
+            int value = Integer.parseInt(data.get(fieldToPawnIndex)[3])/2;
+            this.getKonto().update(value);
+            pl.setBalance(getKonto().getBalance());
         }
 
 
@@ -378,8 +385,9 @@ public class Player {
                 int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
                 Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
                 int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
-                int rounded = ((costToBuyBack + 99) / 100) * 100;
+                int rounded  = ((costToBuyBack + 99) / 100) * 100;
                 this.getKonto().update((-rounded));
+                pl.setBalance(getKonto().getBalance());
             }
 
         }
