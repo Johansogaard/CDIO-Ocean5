@@ -157,4 +157,12 @@ class PlayerTest {
     @Test
     void updatePlayerBalance() {
     }
+    @Test
+    void bankruptcyTest() throws FileNotFoundException {
+        int[] choice = {3};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest userIOTest = new GUIUserIOAdapterTest(choice,bool);
+        Player player = userIOTest.istancierTest(userIOTest);
+
+    }
 }
