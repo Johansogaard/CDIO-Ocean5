@@ -15,7 +15,12 @@ public class GUIUserIOAdapterTest extends UserIO{
     }
     @Override
     public int getUserButtonPressed(String s, String... keys) {
+
         choiceCounter++;
+        if (choiceCounter == choice.length)
+        {
+            choiceCounter = 0;
+        }
         return choice[choiceCounter];
 
     }
@@ -42,7 +47,12 @@ public class GUIUserIOAdapterTest extends UserIO{
 
     @Override
     public boolean getUserLeftButtonPressed(String msg, String bt1, String bt2) {
+
         bCounter++;
+        if(bCounter == b.length)
+        {
+            bCounter = 0;
+        }
         return b[bCounter];
     }
 

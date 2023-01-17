@@ -15,8 +15,9 @@ class LandOnFieldTest {
 
     @Test
     void landOnGåIFængsel() throws Exception {
-
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(0,true);
+        int[] choice = {0};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -33,8 +34,9 @@ class LandOnFieldTest {
     @Test
     void Getoutofjailbypaying() throws FileNotFoundException {
 
-
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1,true);
+        int[] choice = {1};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -57,8 +59,9 @@ class LandOnFieldTest {
     @Test
     void Getoutofjailbythrowing() throws FileNotFoundException {
 
-
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1,false);
+        int[] choice = {1};
+        boolean[] bool = {false};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -79,8 +82,9 @@ class LandOnFieldTest {
     @Test
     void Getoutofjailbycard() throws FileNotFoundException {
 
-
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1,true);
+        int[] choice = {1};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
