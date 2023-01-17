@@ -15,7 +15,7 @@ public abstract class UserIO {
     public abstract int getUserInteger(String msg);
 
 
-    public abstract GUI_Field setCar(int tsum, GUI_Player pl, GUI_Field fpos);
+    public abstract void setCar(int tsum, GUI_Player pl, GUI_Field fpos);
 
     public abstract boolean getUserLeftButtonPressed(String msg, String bt1, String bt2);
 

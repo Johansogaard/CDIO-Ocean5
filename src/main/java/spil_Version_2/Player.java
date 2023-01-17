@@ -25,6 +25,11 @@ public class Player {
     private GUI_Field[] gamefields;
     private ArrayList<String> grunde = new ArrayList<String>();
     private int pos = 0;
+
+    public int getFartbølle() {
+        return fartbølle;
+    }
+
     private int fartbølle = 0;
     public boolean jail = false;
     private boolean hasLost = false;
@@ -409,7 +414,10 @@ public class Player {
         checkIfPassedStart(pos + t1 + t2);
 
         pos = (pos + t1 + t2) % 40;
-        fpos = userIO.setCar(pos, pl, fpos);
+
+
+        userIO.setCar(pos, pl, fpos);
+        fpos = Game_Controller.getFields()[pos];
         landOnField.hitField(this, gamefields, userIO);
 
         if (t1 == t2) {
@@ -582,7 +590,8 @@ public class Player {
         }
         this.pos = number % 40;
         checkIfPassedStart(pos);
-        fpos = userIO.setCar(pos, pl, fpos);
+        userIO.setCar(pos, pl, fpos);
+        fpos = Game_Controller.getFields()[pos];
     }
 
     public void showchancecard(String txt) {

@@ -22,6 +22,7 @@ public class Game_Controller {
     }
 
     private static GUI gui;
+
     private static Player[] players;
 
     public static ArrayList<Player> getPlayerList() {
@@ -42,7 +43,6 @@ public class Game_Controller {
         Board_Creator b = new Board_Creator();
         fields = b.istantiererFelter();
         GUIUserIOAdapter adapter = new GUIUserIOAdapter(new GUI(fields, Color.cyan));
-
         players = Game_Features.playerstoadd(adapter);
         for(int i = 0; i< players.length;i++){
             playerList.add(players[i]);

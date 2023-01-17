@@ -120,7 +120,8 @@ public class Devmode {
    public void setPosDev() {
         int nypos = userIO.getUserInteger("Skriv et felt mellem 1 og 40");
         player.setPos(nypos - 1);
-        player.setFpos(userIO.setCar(player.getPos(), player.pl, player.fpos));
+        userIO.setCar(player.getPos(),player.pl,player.fpos);
+        player.setFpos(Game_Controller.getFields()[player.getPos()]);
         player.landOnField.hitField(player, fields, userIO);
 
         playerOptions();

@@ -82,7 +82,13 @@ public class LandOnField {
         ArrayList<String[]> data = Board_Creator.getFieldData();
         int numberOfHouses = Integer.parseInt(data.get(index)[12]);
         String titel = fields[player.getPos()].getTitle();
-        player.payRent(Integer.parseInt(data.get(index)[5 + numberOfHouses]), Owner, titel);
+        if (numberOfHouses == 0)
+        {
+            player.payRent(Integer.parseInt(data.get(index)[5])*2, Owner, titel);
+        }
+        else {
+            player.payRent(Integer.parseInt(data.get(index)[5 + numberOfHouses]), Owner, titel);
+        }
 
 
     }

@@ -36,8 +36,6 @@ public class Straf_Eller_GevinstTest {
         // Create an instance of the GUIUserIOAdapterTest class
 
 
-        testUserIO = new GUIUserIOAdapterTest(choice,bool);
-
 
         // Call the hit method on the card object, passing in the player and userIO objects as arguments
         card.hit(player, testUserIO);

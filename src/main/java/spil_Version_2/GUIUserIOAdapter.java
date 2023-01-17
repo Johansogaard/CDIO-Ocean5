@@ -38,14 +38,14 @@ public class GUIUserIOAdapter extends UserIO {
     }
 
     @Override
-    public GUI_Field setCar(int tsum, GUI_Player pl, GUI_Field fpos) {
+    public void setCar(int tsum, GUI_Player pl, GUI_Field fpos) {
 
-        tsum = tsum % 40;
+        tsum = tsum%40;
         fpos.setCar(pl, false);
         GUI_Field felt = gui.getFields()[tsum];
         felt.setCar(pl, true);
-        fpos = gui.getFields()[tsum];
-        return fpos;
+
+
 
     }
 
