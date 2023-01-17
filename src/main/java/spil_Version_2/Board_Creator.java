@@ -235,7 +235,7 @@ public class Board_Creator {
         }
         return fields;
     }
-    //returnes the color needed for creating a specific field and adding the field to ther group array
+    //returnes the color needed for creating a specific field and adding the field to there group array
     private Color fieldColor(String color, String[] data) {
         Color c = Color.black;
         switch (color) {

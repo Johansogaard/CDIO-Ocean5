@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="har fikset dobbelt cost">
-      <change afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/FerryTest.java" afterDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Final comit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,20 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FerryTest">
+  <component name="RunManager" selected="Application.Game_Controller">
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FerryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
@@ -117,21 +128,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.FerryTest2" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LandOnFieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="JUnit.LandOnFieldTest.testHitOwnable" />
         <item itemvalue="JUnit.FerryTest" />
         <item itemvalue="JUnit.FerryTest2" />
         <item itemvalue="JUnit.LandOnFieldTest.checkFerry" />
-        <item itemvalue="JUnit.LandOnFieldTest.testHitOwnable" />
-        <item itemvalue="JUnit.LandOnFieldTest" />
       </list>
     </recent_temporary>
   </component>
@@ -194,14 +190,7 @@
       <workItem from="1673515465325" duration="25511000" />
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
-      <workItem from="1673945363871" duration="31588000" />
-    </task>
-    <task id="LOCAL-00008" summary="alle felter er indført">
-      <created>1672856343922</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672856343922</updated>
+      <workItem from="1673945363871" duration="32551000" />
     </task>
     <task id="LOCAL-00009" summary="alle felter er indført">
       <created>1672856739947</created>
@@ -539,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673987797825</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Final comit">
+      <created>1673990012240</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1673990012240</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
@@ -614,7 +609,8 @@
     <MESSAGE value="nu virker pantsætning" />
     <MESSAGE value="Lavet om på konstruktør" />
     <MESSAGE value="har fikset dobbelt cost" />
-    <option name="LAST_COMMIT_MESSAGE" value="har fikset dobbelt cost" />
+    <MESSAGE value="Final comit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final comit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
