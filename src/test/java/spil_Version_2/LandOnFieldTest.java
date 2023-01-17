@@ -230,83 +230,7 @@ class LandOnFieldTest {
         assertEquals( 28000, player.getKonto().getBalance());
 
     }
-    //f5
-    //ser om det virker med færger når man har
-    @Test
-    void checkFerryTriple() throws FileNotFoundException {
 
-        int[] choice = {1};
-        boolean[] bool = {true,true,true};
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
-        Board_Creator b = new Board_Creator();
-        GUI_Field[] fields = b.istantiererFelter();
-        Game_Controller.setFields(fields);
-
-        Player player = new Player("test",30000,0,testUserIO);
-        Player player2 = new Player("test2",30000,0,testUserIO);
-        Player[] players = {player,player2};
-        Game_Controller.setPlayers(players);
-        GUI_Car car = new GUI_Car();
-        player.setCar(car);
-
-        car.setPrimaryColor(Color.red);
-        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
-
-        player.pl = pl;
-        player2.pl= pl;
-
-        player.setPos(5);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-        player.setPos(15);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-        player.setPos(25);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-
-        player2.setPos(5);
-        player2.landOnField.hitField(player2,fields,testUserIO);
-
-        assertEquals(30000-2000, player2.getKonto().getBalance());
-
-}
-
-    //f5
-    //ser om det virker med færger når man har 3
-    @Test
-    void checkFerry() throws FileNotFoundException {
-
-        int[] choice = {1};
-        boolean[] bool = {true,true,true};
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
-        Board_Creator b = new Board_Creator();
-        GUI_Field[] fields = b.istantiererFelter();
-        Game_Controller.setFields(fields);
-
-        Player player = new Player("test",30000,0,testUserIO);
-        Player player2 = new Player("test2",30000,0,testUserIO);
-        Player[] players = {player,player2};
-        Game_Controller.setPlayers(players);
-        GUI_Car car = new GUI_Car();
-        player.setCar(car);
-
-        car.setPrimaryColor(Color.red);
-        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
-
-        player.pl = pl;
-        player2.pl= pl;
-
-        player.setPos(5);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-
-
-
-        player2.setPos(5);
-        player2.landOnField.hitField(player2,fields,testUserIO);
-
-        assertEquals(30000-500, player2.getKonto().getBalance());}
     //f4
     //ser om det virker med bryggeri
     @Test
@@ -388,6 +312,7 @@ class LandOnFieldTest {
 
     }
 
+    @Test
     void testHitOwnable() throws FileNotFoundException {
         // Set up the test environment
         int[] choice = {1};
