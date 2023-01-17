@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Game_FeaturesTest {
     //c1
+    //ser om den trækker det næste kort i bunken
     @Test
     void Nextcardtest() throws Exception {
         int[] choice = {0};

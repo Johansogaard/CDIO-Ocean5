@@ -201,7 +201,8 @@ class LandOnFieldTest {
 
 
     }
-    //tester om man betaler den rigtige skat 10% hvis man har grunde
+    //ser om den anden tax på 2000 virker
+    //f6
     @Test
     void landonandettax() throws FileNotFoundException {
 
@@ -229,6 +230,7 @@ class LandOnFieldTest {
 
     }
     //f5
+    //ser om det virker med færger
     @Test
     void checkferrytriple() throws FileNotFoundException {
 
@@ -270,6 +272,7 @@ class LandOnFieldTest {
 }
 
     //f5
+    //ser om det virker med færger når man har 3
     @Test
     void checkferry() throws FileNotFoundException {
 
@@ -303,7 +306,8 @@ class LandOnFieldTest {
         player2.landOnField.hitField(player2,fields,testUserIO);
 
         assertEquals(30000-500, player2.getKonto().getBalance());}
-//f4
+    //f4
+    //ser om det virker med bryggeri
     @Test
     void checkbrewery() throws FileNotFoundException {
 
@@ -341,7 +345,8 @@ class LandOnFieldTest {
 
 
 }
-
+    //f4
+    //ser om det virker med bryggeri når man har 2
     @Test
     void checkbrewerydouble() throws FileNotFoundException {
 

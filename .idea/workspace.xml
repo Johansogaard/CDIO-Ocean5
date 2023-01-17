@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="kort test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="rettelser">
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,13 +197,6 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00009" summary="alle felter er indført">
-      <created>1672856739947</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1672856739947</updated>
     </task>
     <task id="LOCAL-00010" summary="nu trækkes penge fra de fleste grunde">
       <created>1672905839867</created>
@@ -543,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673983198212</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="rettelser">
+      <created>1673984530888</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1673984530888</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Er igang med at lave brættet med den nye version" />
     <MESSAGE value="version 0.1" />
     <MESSAGE value="tror fængsel virker" />
     <MESSAGE value="virker men alle skal opdatere deres projekt" />
@@ -618,7 +615,8 @@
     <MESSAGE value="more tests" />
     <MESSAGE value="spiller dør og passerer start test" />
     <MESSAGE value="kort test" />
-    <option name="LAST_COMMIT_MESSAGE" value="kort test" />
+    <MESSAGE value="rettelser" />
+    <option name="LAST_COMMIT_MESSAGE" value="rettelser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
