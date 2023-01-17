@@ -361,7 +361,9 @@ public class Player {
             String fieldToPawn = userIO.getUserSelection("Hvilken grund vil de pantsætte", choice);
             int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
             Board_Creator.setPawnStatusInData(true, fieldToPawnIndex);
-            this.getKonto().update((Integer.parseInt(data.get(fieldToPawnIndex)[3])) / 2);
+            int value = Integer.parseInt(data.get(fieldToPawnIndex)[3])/2;
+            this.getKonto().update(value);
+            pl.setBalance(getKonto().getBalance());
         }
 
 
@@ -383,8 +385,9 @@ public class Player {
                 int fieldToPawnIndex = Board_Creator.fieldIndexFromName(fieldToPawn);
                 Board_Creator.setPawnStatusInData(false, fieldToPawnIndex);
                 int costToBuyBack = ((Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2) / 10) + (Integer.parseInt(data.get(fieldToPawnIndex)[3]) / 2);
-                int rounded = ((costToBuyBack + 99) / 100) * 100;
+                int rounded  = ((costToBuyBack + 99) / 100) * 100;
                 this.getKonto().update((-rounded));
+                pl.setBalance(getKonto().getBalance());
             }
 
         }
