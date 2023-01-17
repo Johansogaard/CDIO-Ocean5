@@ -70,7 +70,7 @@ class PlayerTest {
     @Test
     void runATurn() throws FileNotFoundException {
 
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1);
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1,true);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);

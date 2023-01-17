@@ -16,15 +16,20 @@ public class Player {
     public GUI_Player pl;
     public GUI_Field fpos;
     public LandOnField landOnField = new LandOnField();
+
+    public void setCar(GUI_Car car) {
+        this.car = car;
+    }
+
     private GUI_Car car;
     private GUI_Field[] gamefields;
     private ArrayList<String> grunde = new ArrayList<String>();
     private int pos = 0;
     private int fartbølle = 0;
-    private boolean jail = false;
+    public boolean jail = false;
     private boolean hasLost = false;
-    private int t1 = 0;
-    private int t2 = 0;
+    int t1 = 0;
+    int t2 = 0;
     private int jailCounter = 0;
 
     public Player(String name, int bal, int postiotion,UserIO gui) {
