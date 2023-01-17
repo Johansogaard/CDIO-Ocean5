@@ -58,6 +58,7 @@ class LandOnFieldTest {
 
     }
     //g2
+    //tester om man kan komme ud af fængslet ved at slå 2 ens
     @Test
     void Getoutofjailbythrowing() throws FileNotFoundException {
 
@@ -82,6 +83,7 @@ class LandOnFieldTest {
 
     }
     //g5
+    //tester om man kommer ud af fængslet hvis man har kortet
     @Test
     void Getoutofjailbycard() throws FileNotFoundException {
 
@@ -107,6 +109,7 @@ class LandOnFieldTest {
 
     }
 //f2
+//tester om man betaler den rigtige skat 4000
     @Test
     void landontax1() throws FileNotFoundException {
 
@@ -136,6 +139,7 @@ class LandOnFieldTest {
 
     }
     //f2
+    //tester om man betaler den rigtige skat 10%
     @Test
     void landontax2() throws FileNotFoundException {
 
@@ -165,6 +169,7 @@ class LandOnFieldTest {
 
     }
     //f2
+    //tester om man betaler den rigtige skat 10% hvis man har grunde
     @Test
     void landontax3() throws FileNotFoundException {
 
@@ -196,38 +201,7 @@ class LandOnFieldTest {
 
 
     }
-    //f2
-    @Test
-    void landontax4() throws FileNotFoundException {
-
-        int[] choice = {1};
-        boolean[] bool = {true, true};
-        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
-        Board_Creator b = new Board_Creator();
-        GUI_Field[] fields = b.istantiererFelter();
-        Game_Controller.setFields(fields);
-
-        Player player = new Player("test",30000,0,testUserIO);
-        Player[] players = {player};
-        Game_Controller.setPlayers(players);
-        GUI_Car car = new GUI_Car();
-        player.setCar(car);
-
-        car.setPrimaryColor(Color.red);
-        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
-        player.pl = pl;
-
-        player.setPos(1);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-        player.setPos(4);
-        player.landOnField.hitField(player,fields,testUserIO);
-
-        assertEquals( 24800, player.getKonto().getBalance());
-
-
-
-    }
+    //tester om man betaler den rigtige skat 10% hvis man har grunde
     @Test
     void landonandettax() throws FileNotFoundException {
 

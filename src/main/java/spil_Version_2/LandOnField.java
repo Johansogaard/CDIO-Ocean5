@@ -168,9 +168,11 @@ public class LandOnField {
             userIO.showMessage(player.getName() + " du er på besøg i fængsel");
         }
     }
+
     //gets a card from the cards and activates ont he player
+    public static int card = 0;
     private void hitChance(Player player) {
-        int card = 0;
+
         ArrayList<Parent_Card> cards = Game_Features.cards();
         cards.get(card).hit(player, userIO);
         card++;
