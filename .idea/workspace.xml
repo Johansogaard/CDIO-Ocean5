@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="test virker">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Nu virker aktion rigtigt igen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Devmode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,14 +205,7 @@
       <workItem from="1673515465325" duration="25511000" />
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
-      <workItem from="1673945363871" duration="8195000" />
-    </task>
-    <task id="LOCAL-00001" summary="tilføjet maven">
-      <created>1672744047317</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1672744047317</updated>
+      <workItem from="1673945363871" duration="8987000" />
     </task>
     <task id="LOCAL-00002" summary="tilføjet gui bibliotek">
       <created>1672749800009</created>
@@ -554,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673949152132</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Nu virker aktion rigtigt igen">
+      <created>1673955583316</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1673955583316</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Har næsten lavet spillepladen manlger bare at tilføje de sidste felter men der er nu lavet en metode der laver felterne for os så vi ikke behøver en klasse til hver felt letss gooo" />
     <MESSAGE value="s" />
     <MESSAGE value="stadig igang med felter" />
     <MESSAGE value="alle felter er indført" />
@@ -629,7 +624,8 @@
     <MESSAGE value="nu virke chancekort igen" />
     <MESSAGE value="har skrevet kommentaerer" />
     <MESSAGE value="test virker" />
-    <option name="LAST_COMMIT_MESSAGE" value="test virker" />
+    <MESSAGE value="Nu virker aktion rigtigt igen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nu virker aktion rigtigt igen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -694,12 +690,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>382</line>
+          <line>383</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>366</line>
+          <line>367</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -709,7 +705,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>380</line>
+          <line>381</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
