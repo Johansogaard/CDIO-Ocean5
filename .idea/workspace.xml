@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="more tests">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="spiller dør og passerer start test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,20 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.moneypassstart">
+  <component name="RunManager" selected="Application.Game_Controller">
+    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Game_ControllerTest.testspillerdør" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
@@ -112,7 +124,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LandOnFieldTest.checkbrewerydouble" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Game_FeaturesTest.cardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_FeaturesTest" />
+      <option name="METHOD_NAME" value="cardTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandOnFieldTest.landOnGåIFængsel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -122,39 +150,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
-      <option name="METHOD_NAME" value="checkbrewerydouble" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.checkcheckdoublecost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkcheckdoublecost" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.checkpayrent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkpayrent" />
+      <option name="METHOD_NAME" value="landOnGåIFængsel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Game_FeaturesTest.cardTest" />
+        <item itemvalue="JUnit.LandOnFieldTest.landOnGåIFængsel" />
+        <item itemvalue="Application.Game_Controller" />
         <item itemvalue="JUnit.PlayerTest.moneypassstart" />
         <item itemvalue="JUnit.Game_ControllerTest.testspillerdør" />
-        <item itemvalue="JUnit.PlayerTest.checkcheckdoublecost" />
-        <item itemvalue="JUnit.PlayerTest.checkpayrent" />
-        <item itemvalue="JUnit.LandOnFieldTest.checkbrewerydouble" />
       </list>
     </recent_temporary>
   </component>
@@ -202,13 +198,6 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00007" summary="stadig igang med felter">
-      <created>1672838303293</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1672838303294</updated>
     </task>
     <task id="LOCAL-00008" summary="alle felter er indført">
       <created>1672856343922</created>
@@ -546,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673980146550</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="spiller dør og passerer start test">
+      <created>1673981253688</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1673981253689</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
     <MESSAGE value="version 0.1" />
@@ -621,7 +616,8 @@
     <MESSAGE value="tax test and comments" />
     <MESSAGE value="færge og bryggeri" />
     <MESSAGE value="more tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="more tests" />
+    <MESSAGE value="spiller dør og passerer start test" />
+    <option name="LAST_COMMIT_MESSAGE" value="spiller dør og passerer start test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,7 +706,7 @@
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest.ic" NAME="BoardCreatorTest Coverage Results" MODIFIED="1673865192054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673975914931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673981300439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$LandOnFieldTest_landonandettax.ic" NAME="LandOnFieldTest.landonandettax Coverage Results" MODIFIED="1673975895762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
