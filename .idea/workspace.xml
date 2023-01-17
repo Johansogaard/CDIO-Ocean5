@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="nu virker pantsætning">
+      <change afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykFelter_CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykFelter_CardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -59,22 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "/Users/victor/IdeaProjects/CDIO-Ocean5/src/test/java/spil_Version_2",
+    "last_opened_file_path": "C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java\spil_Version_2" />
@@ -88,6 +87,7 @@
       <recent name="spil" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="spil_Version_2" />
       <recent name="spil_Version_2.cards" />
       <recent name="spil" />
     </key>
@@ -95,37 +95,8 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game_Controller">
-    <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GiftCardTest.testHit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.GiftCardTest" />
-      <option name="METHOD_NAME" value="testHit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.checkdoublecost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LandOnFieldTest.landonandettax">
+    <configuration name="LandOnFieldTest.landonandettax" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -134,14 +105,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkdoublecost" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landonandettax" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.checkpayrent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LandOnFieldTest.landontax1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -150,14 +121,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkpayrent" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landontax1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.runATurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LandOnFieldTest.landontax2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +137,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="runATurn" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landontax2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandOnFieldTest.landontax3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landontax3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandOnFieldTest.landontax4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landontax4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game_Controller" />
-        <item itemvalue="JUnit.PlayerTest.checkpayrent" />
-        <item itemvalue="JUnit.PlayerTest.checkdoublecost" />
-        <item itemvalue="JUnit.PlayerTest.runATurn" />
-        <item itemvalue="JUnit.GiftCardTest.testHit" />
+        <item itemvalue="JUnit.LandOnFieldTest.landonandettax" />
+        <item itemvalue="JUnit.LandOnFieldTest.landontax4" />
+        <item itemvalue="JUnit.LandOnFieldTest.landontax3" />
+        <item itemvalue="JUnit.LandOnFieldTest.landontax2" />
+        <item itemvalue="JUnit.LandOnFieldTest.landontax1" />
       </list>
     </recent_temporary>
   </component>
@@ -711,7 +714,7 @@
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest.ic" NAME="BoardCreatorTest Coverage Results" MODIFIED="1673865192054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673970434701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673972096431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
   </component>
