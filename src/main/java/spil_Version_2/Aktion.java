@@ -26,7 +26,7 @@ public class Aktion {
         this.field = field;
         this.currentMax = cost;
         int runde = 0;
-        //checking who wants to be a part of the aktion
+        //Tjekker om hvem der vil være med i aktionen
         userIO.showMessage("Aktion holdes for grunden " + field.getTitle());
         for (int i = 0; i < players.length; i++) {
             if (!players[i].getName().equals(player.getName())) {
@@ -35,7 +35,7 @@ public class Aktion {
                 }
             }
         }
-        //Checking if bidders got enough money else they get removed
+        //Tjekker om dem der gerne vil byder har nok penge, hvis ikke bliver de fjernet
         for (int i = 0; i < bidders.size(); i = (i + 1) % bidders.size()) {
             if (bidders.get(i).getKonto().getBalance() < currentMax) {
                 bidders.remove(i);
@@ -51,7 +51,7 @@ public class Aktion {
                 return false;
             }
             runde++;
-            //checking how many bidders are left to see if there is a winner who will then pay the currentmax and get the field
+            //Tjekker hvor mange spillere der er tilbage og om der er en vinder. Vinderen betaler currentMax og ejer grunden
             if (bidders.size() == 1 && runde > bidders.size()) {
                 userIO.showMessage(bidders.get(0).getName() + " Vandt aktionen og ejer nu " + field.getTitle());
                 bidders.get(0).buyField(currentMax, field.getTitle());
