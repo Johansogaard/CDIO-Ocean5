@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="fængselkort virker">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/GiftCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/GiftCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Matador_Legat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Matador_Legat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/MovePlayerCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/MovePlayerCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Parent_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Parent_Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/PrisonCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/PrisonCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykFelter_Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykFelter_Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/RykTilStart_Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Straf_Eller_Gevinst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/cards/Straf_Eller_Gevinst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykTilStart_CardTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -682,26 +671,28 @@
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="grunde" />
         <PinnedItemInfo parentTag="gui_GameFields.GUI_Street" memberName="owner" />
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$TerningerTest.ic" NAME="TerningerTest Coverage Results" MODIFIED="1673865236381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$RykTilStart_CardTest.ic" NAME="RykTilStart_CardTest Coverage Results" MODIFIED="1673865139815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.cards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest.ic" NAME="BoardCreatorTest Coverage Results" MODIFIED="1673865192054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil.*</FILTER>
     </SUITE>
   </component>
 </project>
