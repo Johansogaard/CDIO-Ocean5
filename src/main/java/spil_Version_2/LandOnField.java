@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 
 public class LandOnField {
+
+    public void setUserIO(UserIO userIO) {
+        this.userIO = userIO;
+    }
     private UserIO userIO;
     //hitfield checks wich type of field you land on
     public void hitField(Player player, GUI_Field[] fields, UserIO gui) {
@@ -71,6 +75,9 @@ public class LandOnField {
             }
 
         }
+    }
+    public void testHitOwnable(Player player, GUI_Field[] fields) {
+        hitOwnable(player, fields);
     }
 
     //hitStreet is activated when all of the fields in a group is owned by the owner
