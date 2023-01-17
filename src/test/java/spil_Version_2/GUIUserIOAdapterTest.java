@@ -4,10 +4,11 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 
 public class GUIUserIOAdapterTest extends UserIO{
-    int choice;
-    boolean b;
-
-    public GUIUserIOAdapterTest(int choice, boolean b)
+    boolean b[];
+    int bCounter =-1;
+    int choice[];
+    int choiceCounter = -1;
+    public GUIUserIOAdapterTest(int choice[], boolean b[])
     {
         this.b = b;
         this.choice = choice;
@@ -15,7 +16,13 @@ public class GUIUserIOAdapterTest extends UserIO{
     @Override
     public int getUserButtonPressed(String s, String... keys) {
 
-        return choice;
+        choiceCounter++;
+        if (choiceCounter == choice.length)
+        {
+            choiceCounter = 0;
+        }
+        return choice[choiceCounter];
+
     }
 
     @Override
@@ -30,7 +37,7 @@ public class GUIUserIOAdapterTest extends UserIO{
 
     @Override
     public int getUserInteger(String msg) {
-        return choice;
+        return 0;
     }
 
     @Override
@@ -40,7 +47,13 @@ public class GUIUserIOAdapterTest extends UserIO{
 
     @Override
     public boolean getUserLeftButtonPressed(String msg, String bt1, String bt2) {
-        return b;
+
+        bCounter++;
+        if(bCounter == b.length)
+        {
+            bCounter = 0;
+        }
+        return b[bCounter];
     }
 
     @Override
