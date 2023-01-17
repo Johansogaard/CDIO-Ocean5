@@ -73,6 +73,10 @@ public class LandOnField {
         }
     }
 
+    public void testHitOwnable(Player player, GUI_Field[] fields) {
+        hitOwnable(player, fields);
+    }
+
     //hitStreet is activated when all of the fields in a group is owned by the owner
     //it checks if there is any houses on the field
     private void hitStreet(Player player, Player Owner, GUI_Field[] fields) {

@@ -1,11 +1,15 @@
 package spil_Version_2;
 
+import com.sun.jdi.Method;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
+import gui_main.GUI;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import spil_Version_2.Player;
+import java.awt.*;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Method;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -64,22 +68,17 @@ class PlayerTest {
     }
 
     @Test
-    void runATurn()  throws Exception {
-        int i = 0;
-        while (i<100) {
-            GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1);
-            Board_Creator b = new Board_Creator();
-            GUI_Field[] fields = b.istantiererFelter();
-            Game_Controller.setFields(fields);
-            Player pl = new Player("test", 30000, 0, testUserIO);
+    void runATurn() throws FileNotFoundException {
 
-            pl.spil(fields);
-
-            assertTrue(pl.getTerningeSum() == pl.getPos());
-            System.out.println(pl.getPos());
-            assertTrue(pl.getPos() >= 2 && pl.getPos() <= 12);
-            assertFalse(pl.getPos() > 12 || pl.getPos() < 2);
-        }
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1);
+        Board_Creator b = new Board_Creator();
+        GUI_Field[] fields = b.istantiererFelter();
+        Game_Controller.setFields(fields);
+        Player pl = new Player("test",30000,0,testUserIO);
+        pl.spil(fields);
+        assertTrue(pl.getTerningeSum() == pl.getPos());
+        System.out.println(pl.getPos());
+        assertTrue(pl.getPos()>=2 && pl.getPos()<=12);
 
     }
 

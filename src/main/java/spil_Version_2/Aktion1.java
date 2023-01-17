@@ -4,6 +4,8 @@ import gui_fields.GUI_Ownable;
 
 import java.util.ArrayList;
 
+import java.util.Iterator;
+
 public class Aktion1 {
     private final int minBud = 300;
     private final int antalBydere = 0;
@@ -36,6 +38,7 @@ public class Aktion1 {
             }
         }
         //Tjekker om dem der gerne vil byder har nok penge, hvis ikke bliver de fjernet
+
         for (int i = 0; i < bidders.size(); i = (i + 1) % bidders.size()) {
             if (bidders.get(i).getKonto().getBalance() < currentMax) {
 
@@ -55,6 +58,8 @@ public class Aktion1 {
             }
             runde++;
             //Tjekker hvor mange spillere der er tilbage og om der er en vinder. Vinderen betaler currentMax og ejer grunden
+
+
             if (bidders.size() == 1 && runde > bidders.size()) {
                 userIO.showMessage(bidders.get(0).getName() + " Vandt aktionen og ejer nu " + field.getTitle());
                 bidders.get(0).buyField(currentMax, field.getTitle());
