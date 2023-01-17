@@ -314,7 +314,7 @@ class LandOnFieldTest {
 
     @Test
     void testHitOwnable() throws FileNotFoundException {
-        // Set up the test environment
+
         int[] choice = {1};
         boolean[] bool = {true};
         GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
