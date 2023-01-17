@@ -256,7 +256,7 @@ class LandOnFieldTest {
     }
     //f5
     @Test
-    void checkferry() throws FileNotFoundException {
+    void checkferrytriple() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -294,6 +294,41 @@ class LandOnFieldTest {
         assertEquals(30000-2000, player2.getKonto().getBalance());
 
 }
+
+    //f5
+    @Test
+    void checkferry() throws FileNotFoundException {
+
+        int[] choice = {1};
+        boolean[] bool = {true,true,true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
+        Board_Creator b = new Board_Creator();
+        GUI_Field[] fields = b.istantiererFelter();
+        Game_Controller.setFields(fields);
+
+        Player player = new Player("test",30000,0,testUserIO);
+        Player player2 = new Player("test2",30000,0,testUserIO);
+        Player[] players = {player,player2};
+        Game_Controller.setPlayers(players);
+        GUI_Car car = new GUI_Car();
+        player.setCar(car);
+
+        car.setPrimaryColor(Color.red);
+        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
+
+        player.pl = pl;
+        player2.pl= pl;
+
+        player.setPos(5);
+        player.landOnField.hitField(player,fields,testUserIO);
+
+
+
+
+        player2.setPos(5);
+        player2.landOnField.hitField(player2,fields,testUserIO);
+
+        assertEquals(30000-500, player2.getKonto().getBalance());}
 //f4
     @Test
     void checkbrewery() throws FileNotFoundException {
@@ -318,10 +353,6 @@ class LandOnFieldTest {
         player.pl = pl;
         player2.pl= pl;
 
-
-
-
-
         player.setPos(12);
         player.landOnField.hitField(player,fields,testUserIO);
 
@@ -336,6 +367,46 @@ class LandOnFieldTest {
 
 
 }
+
+    @Test
+    void checkbrewerydouble() throws FileNotFoundException {
+
+        int[] choice = {1};
+        boolean[] bool = {true,true,true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
+        Board_Creator b = new Board_Creator();
+        GUI_Field[] fields = b.istantiererFelter();
+        Game_Controller.setFields(fields);
+
+        Player player = new Player("test",30000,0,testUserIO);
+        Player player2 = new Player("test2",30000,0,testUserIO);
+        Player[] players = {player,player2};
+        Game_Controller.setPlayers(players);
+        GUI_Car car = new GUI_Car();
+        player.setCar(car);
+
+        car.setPrimaryColor(Color.red);
+        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
+
+        player.pl = pl;
+        player2.pl= pl;
+
+        player.setPos(12);
+        player.landOnField.hitField(player,fields,testUserIO);
+
+        player.setPos(28);
+        player.landOnField.hitField(player,fields,testUserIO);
+
+        player2.setPos(12);
+        player2.t1=1;
+        player2.t2=1;
+        player2.landOnField.hitField(player2,fields,testUserIO);
+
+
+        assertEquals(30000-400, player2.getKonto().getBalance());
+
+
+    }
 
 }
 

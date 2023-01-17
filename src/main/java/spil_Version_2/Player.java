@@ -558,8 +558,8 @@ public class Player {
 
     public void payRent(int cost, Player owner, String title) {
         userIO.showMessage(pl.getName() + " landede på " + title + " og skal betale leje til " + owner.getName());
-        owner.getKonto().update(cost*checkDoubleCost());
-        getKonto().update(-cost*checkDoubleCost());
+        owner.getKonto().update(cost);
+        getKonto().update(-cost);
         owner.setGUIBalance(owner.getKonto().getBalance());
         pl.setBalance(this.konto.getBalance());
     }

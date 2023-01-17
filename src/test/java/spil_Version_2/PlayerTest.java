@@ -82,7 +82,34 @@ class PlayerTest {
 
 
     }
+    @Test
+    void moneypassstart() throws FileNotFoundException {
 
+        int[] choice = {1};
+        boolean[] bool = {true, true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
+        Board_Creator b = new Board_Creator();
+        GUI_Field[] fields = b.istantiererFelter();
+        Game_Controller.setFields(fields);
+
+        Player player = new Player("test",30000,0,testUserIO);
+        Player[] players = {player};
+        Game_Controller.setPlayers(players);
+        GUI_Car car = new GUI_Car();
+        player.setCar(car);
+
+        car.setPrimaryColor(Color.red);
+        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
+        player.pl = pl;
+
+        player.setPos(39);
+        player.spil(fields);
+//får ikke penge
+        assertEquals( 34000, player.getKonto().getBalance());
+
+
+
+    }
 
 
     @Test
