@@ -14,11 +14,14 @@ import java.io.FileNotFoundException;
 public class RykFelter_CardTest {
     @Test
     public void testHitMethod() throws FileNotFoundException {
-        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(0);
+
+        int[] choice = {0};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
 
 
         // Create a player object with an initial position of 0
-        Player player = new Player("Player 1", 1000, 0, testuserIO);
+        Player player = new Player("Player 1", 1000, 0, testUserIO);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -27,7 +30,7 @@ public class RykFelter_CardTest {
         RykFelter_Card card = new RykFelter_Card(5);
 
         // Call the hit method on the card object, passing in the player object as an argument
-        card.hit(player, testuserIO);
+        card.hit(player, testUserIO);
 
         // Assert that the player's position has been updated correctly
         assertEquals(5, player.getPos());

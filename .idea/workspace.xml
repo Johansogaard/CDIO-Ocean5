@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="nu virker pantsætning">
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykFelter_CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/RykFelter_CardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/Straf_Eller_GevinstTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,19 +96,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Game_Controller">
-    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spil.GameController" />
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
@@ -135,17 +125,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MovePlayerCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.checkdoublecost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.MovePlayerCardTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
+      <option name="METHOD_NAME" value="checkdoublecost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.checkpayrent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
+      <option name="METHOD_NAME" value="checkpayrent" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,28 +173,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RykTilStart_CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.RykTilStart_CardTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Game_Controller" />
+        <item itemvalue="JUnit.PlayerTest.checkpayrent" />
+        <item itemvalue="JUnit.PlayerTest.checkdoublecost" />
         <item itemvalue="JUnit.PlayerTest.runATurn" />
         <item itemvalue="JUnit.GiftCardTest.testHit" />
-        <item itemvalue="JUnit.MovePlayerCardTest" />
-        <item itemvalue="JUnit.RykTilStart_CardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -645,21 +637,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>325</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>323</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>320</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
           <line>342</line>
           <option name="timeStamp" value="81" />
@@ -685,72 +662,56 @@
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>364</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>388</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>372</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>363</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
-          <line>386</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java</url>
           <line>38</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
           <line>344</line>
-          <properties>
+          <properties class="spil_Version_2.Game_Features">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
+          <line>550</line>
+          <properties class="spil_Version_2.Player" method="payRent">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="grunde" />
         <PinnedItemInfo parentTag="gui_GameFields.GUI_Street" memberName="owner" />
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$TerningerTest.ic" NAME="TerningerTest Coverage Results" MODIFIED="1673865236381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil_Version_2.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CDIO_Ocean5$RykTilStart_CardTest.ic" NAME="RykTilStart_CardTest Coverage Results" MODIFIED="1673865139815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>spil_Version_2.cards.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest_getColorArray.ic" NAME="BoardCreatorTest.getColorArray Coverage Results" MODIFIED="1673085182130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$TerningerTest.ic" NAME="TerningerTest Coverage Results" MODIFIED="1673865236381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$GameController.ic" NAME="GameController Coverage Results" MODIFIED="1673085353056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$RykTilStart_CardTest.ic" NAME="RykTilStart_CardTest Coverage Results" MODIFIED="1673865139815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil_Version_2.cards.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest.ic" NAME="BoardCreatorTest Coverage Results" MODIFIED="1673865192054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil_Version_2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673970434701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
   </component>

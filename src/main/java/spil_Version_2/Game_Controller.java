@@ -94,7 +94,12 @@ public class Game_Controller {
     public static GUI_Field[] getFields() {
         return fields;
     }
-    public static Player getPlayer(String playerName,UserIO userIO)
+
+    public static void setPlayers(Player[] players) {
+        Game_Controller.players = players;
+    }
+
+    public static Player getPlayer(String playerName, UserIO userIO)
     {
         Player thePlayer = new Player("GetPlayerDosentWork",0, 0,userIO);
         for(int i = 0;i<players.length;i++) {

@@ -19,8 +19,10 @@ public class Straf_Eller_GevinstTest {
     public void testHitMethod() throws FileNotFoundException {
 
         // Create a player object with an initial balance of 1000
-        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(0);
-        Player player = new Player("Player 1", 1000, 0, testuserIO);
+        int[] choice = {0};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
+        Player player = new Player("Player 1", 1000, 0, testUserIO);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -32,11 +34,13 @@ public class Straf_Eller_GevinstTest {
         // Create an instance of the Straf_Eller_Gevinst class with an amount of 500 and add set to true
         Straf_Eller_Gevinst card = new Straf_Eller_Gevinst(500, true, "You won 500");
         // Create an instance of the GUIUserIOAdapterTest class
-        testuserIO = new GUIUserIOAdapterTest(0);
+
+
+        testUserIO = new GUIUserIOAdapterTest(choice,bool);
 
 
         // Call the hit method on the card object, passing in the player and userIO objects as arguments
-        card.hit(player, testuserIO);
+        card.hit(player, testUserIO);
 
         // Assert that the player's balance has been updated correctly
         assertEquals(1500, player.getKonto().getBalance());
