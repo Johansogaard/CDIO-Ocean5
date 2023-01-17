@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="spiller dør og passerer start test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" afterDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="kort test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game_Controller">
+  <component name="RunManager" selected="JUnit.Game_ControllerTest.testspillermistergrundeefterdød">
     <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
@@ -108,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Game_ControllerTest.testspillerdør" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Game_ControllerTest.testspillermistergrundeefterdød" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +119,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_ControllerTest" />
-      <option name="METHOD_NAME" value="testspillerdør" />
+      <option name="METHOD_NAME" value="testspillermistergrundeefterdød" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,23 +141,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LandOnFieldTest.landOnGåIFængsel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
-      <option name="METHOD_NAME" value="landOnGåIFængsel" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.moneypassstart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayerTest.checkIfPassedStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -166,7 +151,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="moneypassstart" />
+      <option name="METHOD_NAME" value="checkIfPassedStart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest.checkpayrentegetfelt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
+      <option name="METHOD_NAME" value="checkpayrentegetfelt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Game_FeaturesTest.cardTest" />
-        <item itemvalue="JUnit.LandOnFieldTest.landOnGåIFængsel" />
+        <item itemvalue="JUnit.Game_ControllerTest.testspillermistergrundeefterdød" />
+        <item itemvalue="JUnit.PlayerTest.checkIfPassedStart" />
+        <item itemvalue="JUnit.PlayerTest.checkpayrentegetfelt" />
         <item itemvalue="Application.Game_Controller" />
-        <item itemvalue="JUnit.PlayerTest.moneypassstart" />
-        <item itemvalue="JUnit.Game_ControllerTest.testspillerdør" />
+        <item itemvalue="JUnit.Game_FeaturesTest.cardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -198,13 +199,6 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00008" summary="alle felter er indført">
-      <created>1672856343922</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672856343922</updated>
     </task>
     <task id="LOCAL-00009" summary="alle felter er indført">
       <created>1672856739947</created>
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673981253689</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="kort test">
+      <created>1673983198212</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1673983198212</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
     <MESSAGE value="version 0.1" />
     <MESSAGE value="tror fængsel virker" />
@@ -617,7 +617,8 @@
     <MESSAGE value="færge og bryggeri" />
     <MESSAGE value="more tests" />
     <MESSAGE value="spiller dør og passerer start test" />
-    <option name="LAST_COMMIT_MESSAGE" value="spiller dør og passerer start test" />
+    <MESSAGE value="kort test" />
+    <option name="LAST_COMMIT_MESSAGE" value="kort test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,11 +665,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java</url>
           <line>38</line>
           <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
