@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Rettede kommentarer og ændret i aktion">
-      <change afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Aktion1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Færdig med hitOwnable test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/LandOnField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Aktion1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Aktion1Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,19 +24,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Ombygning" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Controller.java" root0="FORCE_HIGHLIGHTING" />
@@ -70,7 +65,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/mikkel/Desktop/CDIO-Ocean5/src/test/java/spil_Version_2&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/victor/IdeaProjects/CDIO-Ocean5/src/test/java/spil_Version_2&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -100,7 +95,7 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LandOnFieldTest">
+  <component name="RunManager" selected="JUnit.LandOnFieldTest.testHitOwnable">
     <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
@@ -129,22 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Aktion1Test.testKorAktion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Aktion1Test" />
-      <option name="METHOD_NAME" value="testKorAktion" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LandOnFieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
@@ -160,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.runATurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LandOnFieldTest.landonandettax" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -169,8 +148,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="runATurn" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="landonandettax" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandOnFieldTest.testHitOwnable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="METHOD_NAME" value="testHitOwnable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LandOnFieldTest.testHitOwnable" />
+        <item itemvalue="Application.Game_Controller" />
         <item itemvalue="JUnit.LandOnFieldTest" />
         <item itemvalue="JUnit.Aktion1Test" />
-        <item itemvalue="JUnit.Aktion1Test.testKorAktion" />
-        <item itemvalue="Application.Game_Controller" />
-        <item itemvalue="JUnit.PlayerTest.runATurn" />
+        <item itemvalue="JUnit.LandOnFieldTest.landonandettax" />
       </list>
     </recent_temporary>
   </component>
@@ -201,28 +196,7 @@
       <workItem from="1673515465325" duration="25511000" />
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
-      <workItem from="1673945446747" duration="19814000" />
-    </task>
-    <task id="LOCAL-00001" summary="tilføjet maven">
-      <created>1672744047317</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1672744047317</updated>
-    </task>
-    <task id="LOCAL-00002" summary="tilføjet gui bibliotek">
-      <created>1672749800009</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1672749800009</updated>
-    </task>
-    <task id="LOCAL-00003" summary="tilføjet gui bibliotek">
-      <created>1672771345244</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1672771345245</updated>
+      <workItem from="1673945363871" duration="12330000" />
     </task>
     <task id="LOCAL-00004" summary="igang med at lave spillepladen det virker ikke enu">
       <created>1672776989747</created>
@@ -525,21 +499,49 @@
       <option name="project" value="LOCAL" />
       <updated>1673897415031</updated>
     </task>
-    <task id="LOCAL-00047" summary="Retter kommentarer">
-      <created>1673946378832</created>
+    <task id="LOCAL-00047" summary="har skrevet kommentaerer">
+      <created>1673904643179</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1673946378832</updated>
+      <updated>1673904643179</updated>
     </task>
-    <task id="LOCAL-00048" summary="Rettede kommentarer og ændret i aktion">
-      <created>1673948580482</created>
+    <task id="LOCAL-00048" summary="test virker">
+      <created>1673948204851</created>
       <option name="number" value="00048" />
       <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1673948580482</updated>
+      <updated>1673948204851</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="test virker">
+      <created>1673949152132</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1673949152132</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Nu virker aktion rigtigt igen">
+      <created>1673955583316</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1673955583316</updated>
+    </task>
+    <task id="LOCAL-00051" summary="nu virker pantsætning">
+      <created>1673956263010</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1673956263010</updated>
+    </task>
+    <task id="LOCAL-00052" summary="nu virker pantsætning">
+      <created>1673969375570</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1673969375570</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,9 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Har næsten lavet spillepladen manlger bare at tilføje de sidste felter men der er nu lavet en metode der laver felterne for os så vi ikke behøver en klasse til hver felt letss gooo" />
-    <MESSAGE value="s" />
-    <MESSAGE value="stadig igang med felter" />
     <MESSAGE value="alle felter er indført" />
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
@@ -612,9 +611,12 @@
     <MESSAGE value="er igang med custommode" />
     <MESSAGE value="SKiftet til så nu kan vi lave test" />
     <MESSAGE value="nu virke chancekort igen" />
-    <MESSAGE value="Retter kommentarer" />
-    <MESSAGE value="Rettede kommentarer og ændret i aktion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rettede kommentarer og ændret i aktion" />
+    <MESSAGE value="har skrevet kommentaerer" />
+    <MESSAGE value="test virker" />
+    <MESSAGE value="Nu virker aktion rigtigt igen" />
+    <MESSAGE value="nu virker pantsætning" />
+    <MESSAGE value="Færdig med hitOwnable test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Færdig med hitOwnable test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,16 +635,6 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
-          <line>342</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
-          <line>372</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java</url>
           <line>21</line>
           <option name="timeStamp" value="86" />
@@ -658,25 +650,27 @@
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/diplomitdtu/matadorgui/3.1.7/matadorgui-3.1.7.jar!/gui_main/GUI.class</url>
-          <line>95</line>
-          <option name="timeStamp" value="95" />
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Aktion.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>
-          <line>344</line>
-          <properties class="spil_Version_2.Game_Features">
+          <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java</url>
+          <line>550</line>
+          <properties class="spil_Version_2.Player">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="84" />
+          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="grunde" />
         <PinnedItemInfo parentTag="gui_GameFields.GUI_Street" memberName="owner" />
         <PinnedItemInfo parentTag="spil.Player" memberName="pos" />
+        <PinnedItemInfo parentTag="spil_Version_2.Player" memberName="name" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
@@ -685,6 +679,9 @@
       <FILTER>spil_Version_2.cards.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$BoardCreatorTest.ic" NAME="BoardCreatorTest Coverage Results" MODIFIED="1673865192054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>spil_Version_2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CDIO_Ocean5$Game_Controller.ic" NAME="Game_Controller Coverage Results" MODIFIED="1673970434701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>spil_Version_2.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CDIO_Ocean5$TerningerTest.ic" NAME="TerningerTest Coverage Results" MODIFIED="1673865236381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

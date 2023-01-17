@@ -8,6 +8,12 @@ import java.util.ArrayList;
 
 
 public class LandOnField {
+
+    //bruges til at teste hitOwnable
+    public void setUserIO(UserIO userIO) {
+        this.userIO = userIO;
+    }
+
     private UserIO userIO;
     //hitfield checks wich type of field you land on
     public void hitField(Player player, GUI_Field[] fields, UserIO gui) {

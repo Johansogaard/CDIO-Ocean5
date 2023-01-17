@@ -22,12 +22,13 @@ class Aktion1Test {
 
     private GUIUserIOAdapterTest testUserIO0;
 
-    private GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1);
 
 
     @BeforeEach
     public void setUp() throws FileNotFoundException {
-
+        int[] choice = {1};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
@@ -53,7 +54,7 @@ class Aktion1Test {
 
         //Tester at spiller 1 vinder auktion
 
-        testUserIO.getUserLeftButtonPressed("", "yes", "no");
+
         assertTrue(aktion1.korAktion(player1, field, 100, testUserIO0));
         assertEquals(field.getOwnableLabel(), "Ejet af player2");
         assertEquals(player2.getKonto().getBalance(), 500);
