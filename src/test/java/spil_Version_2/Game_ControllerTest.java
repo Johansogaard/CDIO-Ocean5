@@ -13,11 +13,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Game_ControllerTest {
 
-
+//p1
         @Test
         void testspillerdør() throws FileNotFoundException {
 
-            int[] choice = {1};
+            int[] choice = {1,1,3};
             boolean[] bool = {true,true,true};
             GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
             Board_Creator b = new Board_Creator();
@@ -49,8 +49,9 @@ class Game_ControllerTest {
             player2.setPos(1);
             player2.landOnField.hitField(player2,fields,testUserIO);
             player2.spil(fields);
-            //spilleren dør ikke
-            assertEquals(1, Game_Controller.getPlayerList());
+
+
+            assertEquals(true,  player2.hasLost);;
 
     }
 }

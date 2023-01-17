@@ -32,7 +32,7 @@ public class Player {
 
     private int fartbølle = 0;
     public boolean jail = false;
-    private boolean hasLost = false;
+    boolean hasLost = false;
     int t1 = 0;
     int t2 = 0;
     private int jailCounter = 0;

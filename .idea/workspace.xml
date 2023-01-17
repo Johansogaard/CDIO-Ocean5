@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="færge og bryggeri">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="more tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spil_Version_2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,23 +57,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "/Users/victor/IdeaProjects/CDIO-Ocean5/src/test/java/spil_Version_2",
-    "last_opened_file_path": "C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/victor/IdeaProjects/CDIO-Ocean5/src/test/java/spil_Version_2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Desktop/Uddannelse/DTU/indledende programering/CDIO-Ocean5/src/main/java/spil_Version_2&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\johan\OneDrive\Desktop\Uddannelse\DTU\indledende programering\CDIO-Ocean5\src\main\java\spil_Version_2" />
@@ -96,7 +96,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.PlayerTest.moneypassstart">
-    <configuration name="LandOnFieldTest.checkbrewery2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Game_ControllerTest.testspillerdør" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -105,8 +105,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
-      <option name="METHOD_NAME" value="checkbrewery2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_ControllerTest" />
+      <option name="METHOD_NAME" value="testspillerdør" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,10 +179,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PlayerTest.moneypassstart" />
+        <item itemvalue="JUnit.Game_ControllerTest.testspillerdør" />
         <item itemvalue="JUnit.PlayerTest.checkcheckdoublecost" />
         <item itemvalue="JUnit.PlayerTest.checkpayrent" />
         <item itemvalue="JUnit.LandOnFieldTest.checkbrewerydouble" />
-        <item itemvalue="JUnit.LandOnFieldTest.checkbrewery2" />
       </list>
     </recent_temporary>
   </component>
@@ -202,13 +202,6 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00006" summary="s">
-      <created>1672834483729</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1672834483729</updated>
     </task>
     <task id="LOCAL-00007" summary="stadig igang med felter">
       <created>1672838303293</created>
@@ -546,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673978505450</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="more tests">
+      <created>1673980146550</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1673980146550</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +596,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
     <MESSAGE value="Er igang med at lave brættet med den nye version" />
@@ -621,7 +620,8 @@
     <MESSAGE value="nu virker pantsætning" />
     <MESSAGE value="tax test and comments" />
     <MESSAGE value="færge og bryggeri" />
-    <option name="LAST_COMMIT_MESSAGE" value="færge og bryggeri" />
+    <MESSAGE value="more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="more tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

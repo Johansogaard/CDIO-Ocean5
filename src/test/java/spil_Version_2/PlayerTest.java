@@ -82,11 +82,12 @@ class PlayerTest {
 
 
     }
+    //s2
     @Test
     void moneypassstart() throws FileNotFoundException {
 
         int[] choice = {1};
-        boolean[] bool = {true, true};
+        boolean[] bool = {false};
         GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
@@ -104,7 +105,7 @@ class PlayerTest {
 
         player.setPos(39);
         player.spil(fields);
-//får ikke penge
+        //Giver fejl
         assertEquals( 34000, player.getKonto().getBalance());
 
 
