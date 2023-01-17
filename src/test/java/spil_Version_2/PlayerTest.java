@@ -153,39 +153,6 @@ class PlayerTest {
     }
 
 
-    @Test
-    @DisplayName("Testing spil method")
-    void spil()  throws Exception {
-        /*
-        int i = 0;
-        while (i<100) {
-            int[] choice = {1};
-            boolean[] bool = {true};
-            GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
-            Player player = testUserIO.istancierTest(testUserIO);
-            player.spil(Game_Controller.getFields());
-            System.out.println(player.getPos());
-            assertTrue(player.getPos() >= 2 && player.getPos() <= 36);
-            assertFalse(player.getPos() < 2 || player.getPos() > 36);
-
-*/
 
 
-
-        }
-
-
-
-
-    @Test
-    void updatePlayerBalance() {
-    }
-    @Test
-    void bankruptcyTest() throws FileNotFoundException {
-        int[] choice = {3};
-        boolean[] bool = {true};
-        GUIUserIOAdapterTest userIOTest = new GUIUserIOAdapterTest(choice,bool);
-        Player player = userIOTest.istancierTest(userIOTest);
-
-    }
 }

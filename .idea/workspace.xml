@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="har fikset dobbelt cost">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/GameText.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spil_Version_2/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/BoardCreatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/GUIUserIOAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/HelperTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GameText.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,39 +97,53 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.moneypassstart">
-    <configuration name="GiftCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LandOnFieldTest">
+    <configuration name="Game_ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.GiftCardTest" />
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_ControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GiftCardTest.testHitMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Game_FeaturesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.GiftCardTest" />
-      <option name="METHOD_NAME" value="testHitMethod" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_FeaturesTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.moneypassstart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LandOnFieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.LandOnFieldTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -133,38 +153,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="moneypassstart" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RykFelter_CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.RykFelter_CardTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Straf_Eller_GevinstTest.testHitMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TerningerTest.terningMellem0og7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="spil_Version_2.cards.*" />
+          <option name="PATTERN" value="spil_Version_2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2.cards" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.cards.Straf_Eller_GevinstTest" />
-      <option name="METHOD_NAME" value="testHitMethod" />
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.TerningerTest" />
+      <option name="METHOD_NAME" value="terningMellem0og7" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerTest.moneypassstart" />
-        <item itemvalue="JUnit.Straf_Eller_GevinstTest.testHitMethod" />
-        <item itemvalue="JUnit.RykFelter_CardTest" />
-        <item itemvalue="JUnit.GiftCardTest.testHitMethod" />
-        <item itemvalue="JUnit.GiftCardTest" />
+        <item itemvalue="JUnit.LandOnFieldTest" />
+        <item itemvalue="JUnit.Game_ControllerTest" />
+        <item itemvalue="JUnit.Game_FeaturesTest" />
+        <item itemvalue="JUnit.TerningerTest.terningMellem0og7" />
+        <item itemvalue="JUnit.PlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -195,14 +199,7 @@
       <workItem from="1673515465325" duration="25511000" />
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
-      <workItem from="1673945363871" duration="26239000" />
-    </task>
-    <task id="LOCAL-00006" summary="s">
-      <created>1672834483729</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1672834483729</updated>
+      <workItem from="1673945363871" duration="29445000" />
     </task>
     <task id="LOCAL-00007" summary="stadig igang med felter">
       <created>1672838303293</created>
@@ -540,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673979894332</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="har fikset dobbelt cost">
+      <created>1673984743127</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1673984743127</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,12 +669,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java</url>
-          <line>25</line>
+          <line>27</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/cards/MovePlayerCardTest.java</url>
-          <line>22</line>
+          <line>24</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -712,6 +716,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/cards/GiftCard.java</url>
           <line>20</line>
           <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/spil_Version_2/cards/GiftCardTest.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/spil_Version_2/Game_Features.java</url>

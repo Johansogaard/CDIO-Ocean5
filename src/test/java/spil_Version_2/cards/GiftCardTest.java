@@ -19,25 +19,15 @@ public class GiftCardTest {
     public void testHitMethod() throws FileNotFoundException {
         int[] choice = {0};
         boolean[] bool = {true};
-        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(choice,bool);
+       GUIUserIOAdapterTest userIOTest = new GUIUserIOAdapterTest(choice,bool);
+       Player[] players = userIOTest.istancierTest(userIOTest);
+        Player player1 = players[0];
+        Player player2 = players[1];
+        Player player3 = players[2];
+        player1.getKonto().setB(1000);
+        player2.getKonto().setB(1000);
+        player3.getKonto().setB(1000);
 
-
-        // Create a player object with an initial balance of 1000
-        Player player1 = new Player("Player 1", 1000,0, testuserIO);
-        Player player2 = new Player("Player 2", 1000,0, testuserIO);
-        Player player3 = new Player("Player 3", 1000,0, testuserIO);
-
-        Board_Creator b = new Board_Creator();
-        GUI_Field[] fields = b.istantiererFelter();
-        Game_Controller.setFields(fields);
-        GUI_Car car = new GUI_Car();
-        car.setPrimaryColor(Color.red);
-        GUI_Player pl1 = new GUI_Player(player1.getName(), player1.getKonto().getBalance(), car);
-        player1.pl = pl1;
-        GUI_Player pl2 = new GUI_Player(player2.getName(), player2.getKonto().getBalance(), car);
-        player2.pl = pl2;
-        GUI_Player pl3 = new GUI_Player(player2.getName(), player2.getKonto().getBalance(), car);
-        player3.pl = pl3;
 
 
 
@@ -45,14 +35,14 @@ public class GiftCardTest {
         GiftCard card = new GiftCard(500, "You won 500");
 
         // Create a mock UserIO object
-        testuserIO = new GUIUserIOAdapterTest(choice,bool);
+
 
 
         // Call the hit method on the card object, passing in the player and userIO objects as arguments
-        card.hit(player1, testuserIO);
+        card.hit(player1, userIOTest);
 
         // Assert that the player's balance has been updated correctly
-        assertEquals(1500, player1.getKonto().getBalance());
+        assertEquals(2000, player1.getKonto().getBalance());
         assertEquals(500, player2.getKonto().getBalance());
         assertEquals(500, player3.getKonto().getBalance());
     }
