@@ -16,6 +16,11 @@ public class Player {
     public GUI_Player pl;
     public GUI_Field fpos;
     public LandOnField landOnField = new LandOnField();
+
+    public void setCar(GUI_Car car) {
+        this.car = car;
+    }
+
     private GUI_Car car;
     private GUI_Field[] gamefields;
     private ArrayList<String> grunde = new ArrayList<String>();

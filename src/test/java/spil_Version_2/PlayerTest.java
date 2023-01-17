@@ -1,9 +1,12 @@
 package spil_Version_2;
 
+import gui_fields.GUI_Car;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Method;
 
@@ -67,7 +70,9 @@ class PlayerTest {
     void runATurn()  throws Exception {
         int i = 0;
         while (i<100) {
-            GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(1);
+            int[] choice = {1};
+            boolean[] bool = {true};
+            GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
             Board_Creator b = new Board_Creator();
             GUI_Field[] fields = b.istantiererFelter();
             Game_Controller.setFields(fields);
@@ -100,7 +105,21 @@ class PlayerTest {
     }
 
     @Test
-    void checkIfPassedStart() {
+    void checkIfPassedStart() throws FileNotFoundException {
+        int[] choice = {1};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);
+        Board_Creator b = new Board_Creator();
+        GUI_Field[] fields = b.istantiererFelter();
+        Game_Controller.setFields(fields);
+
+        Player player = new Player("test",30000,0,testUserIO);
+        GUI_Car car = new GUI_Car();
+        player.setCar(car);
+
+        car.setPrimaryColor(Color.red);
+        GUI_Player pl = new GUI_Player(player.getName(), player.getKonto().getBalance(), car);
+        player.pl = pl;
     }
 
     @Test
