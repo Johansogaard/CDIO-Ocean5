@@ -409,7 +409,8 @@ class LandOnFieldTest {
         LandOnField landOnField = new LandOnField();
 
 
-        // simulate player1 clicking "Yes" to buy the field
+        //Tjekker om spiller1 der har sagt ja til at købe grunden er = spilleren der ejer grunden
+        //Tjekker om spiller1's balance stemmer overens med hvad han/hende har betalt for grundn på 5. felt.
         landOnField.setUserIO(testUserIO);
         landOnField.testHitOwnable(player1, fields);
         assertEquals(player1.getName(), field.getOwnerName());
