@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="rettelser">
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment=" test rettelser">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_ControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/Game_FeaturesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/LandOnFieldTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spil_Version_2/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +96,7 @@
       <recent name="spil_Version_2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Game_ControllerTest.testspillermistergrundeefterdød">
+  <component name="RunManager" selected="JUnit.TerningerTest.terningMellem0og7">
     <configuration name="Game_Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_Controller" />
       <module name="CDIO-Ocean5" />
@@ -103,6 +106,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardCreatorTest.getColorArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CDIO-Ocean5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spil_Version_2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spil_Version_2" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.BoardCreatorTest" />
+      <option name="METHOD_NAME" value="getColorArray" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Game_FeaturesTest.cardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TerningerTest.RigtigMængdeTerning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -132,14 +151,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.Game_FeaturesTest" />
-      <option name="METHOD_NAME" value="cardTest" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.TerningerTest" />
+      <option name="METHOD_NAME" value="RigtigMængdeTerning" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.checkIfPassedStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TerningerTest.terningMellem0og7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CDIO-Ocean5" />
       <extension name="coverage">
         <pattern>
@@ -148,24 +167,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkIfPassedStart" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.checkpayrentegetfelt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CDIO-Ocean5" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spil_Version_2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spil_Version_2" />
-      <option name="MAIN_CLASS_NAME" value="spil_Version_2.PlayerTest" />
-      <option name="METHOD_NAME" value="checkpayrentegetfelt" />
+      <option name="MAIN_CLASS_NAME" value="spil_Version_2.TerningerTest" />
+      <option name="METHOD_NAME" value="terningMellem0og7" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TerningerTest.terningMellem0og7" />
+        <item itemvalue="JUnit.TerningerTest.RigtigMængdeTerning" />
+        <item itemvalue="JUnit.BoardCreatorTest.getColorArray" />
         <item itemvalue="JUnit.Game_ControllerTest.testspillermistergrundeefterdød" />
-        <item itemvalue="JUnit.PlayerTest.checkIfPassedStart" />
-        <item itemvalue="JUnit.PlayerTest.checkpayrentegetfelt" />
         <item itemvalue="Application.Game_Controller" />
-        <item itemvalue="JUnit.Game_FeaturesTest.cardTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,13 +200,6 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00010" summary="nu trækkes penge fra de fleste grunde">
-      <created>1672905839867</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1672905839867</updated>
     </task>
     <task id="LOCAL-00011" summary="Nu kan man vælge om man vil købe en grund eller ej">
       <created>1672909516760</created>
@@ -541,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673984530888</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary=" test rettelser">
+      <created>1673985015056</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1673985015056</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version 0.1" />
     <MESSAGE value="tror fængsel virker" />
     <MESSAGE value="virker men alle skal opdatere deres projekt" />
     <MESSAGE value="går i gang med at kunne tilføje huse" />
@@ -616,7 +618,8 @@
     <MESSAGE value="spiller dør og passerer start test" />
     <MESSAGE value="kort test" />
     <MESSAGE value="rettelser" />
-    <option name="LAST_COMMIT_MESSAGE" value="rettelser" />
+    <MESSAGE value=" test rettelser" />
+    <option name="LAST_COMMIT_MESSAGE" value=" test rettelser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,7 +16,7 @@ class PlayerTest {
 //h6
     //ser om man betaler dobbelt leje på ubebyggede grunde når man har et sæt
     @Test
-    void checkcheckdoublecost() throws FileNotFoundException {
+    void checkCheckDoubleCost() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -52,7 +52,7 @@ class PlayerTest {
         //b2
     //cheker at man betaler leje
     @Test
-    void checkpayrent() throws FileNotFoundException {
+    void checkPayRent() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -88,7 +88,7 @@ class PlayerTest {
     //b2
     //chekker at man ikke betaler leje til sig selv
     @Test
-    void checkpayrentegetfelt() throws FileNotFoundException {
+    void checkPayRentDitfelt() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -124,7 +124,7 @@ class PlayerTest {
     //s2
     //tjekker om man for penge over start
     @Test
-    void moneypassstart() throws FileNotFoundException {
+    void moneyPassStart() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {false};

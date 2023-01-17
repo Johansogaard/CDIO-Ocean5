@@ -204,7 +204,7 @@ class LandOnFieldTest {
     //ser om den anden tax på 2000 virker
     //f6
     @Test
-    void landonandettax() throws FileNotFoundException {
+    void landOnAndettax() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true, true};
@@ -230,9 +230,9 @@ class LandOnFieldTest {
 
     }
     //f5
-    //ser om det virker med færger
+    //ser om det virker med færger når man har
     @Test
-    void checkferrytriple() throws FileNotFoundException {
+    void checkFerryTriple() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -274,7 +274,7 @@ class LandOnFieldTest {
     //f5
     //ser om det virker med færger når man har 3
     @Test
-    void checkferry() throws FileNotFoundException {
+    void checkFerry() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -309,7 +309,7 @@ class LandOnFieldTest {
     //f4
     //ser om det virker med bryggeri
     @Test
-    void checkbrewery() throws FileNotFoundException {
+    void checkBrewery() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
@@ -348,7 +348,7 @@ class LandOnFieldTest {
     //f4
     //ser om det virker med bryggeri når man har 2
     @Test
-    void checkbrewerydouble() throws FileNotFoundException {
+    void checkBreweryDouble() throws FileNotFoundException {
 
         int[] choice = {1};
         boolean[] bool = {true,true,true};
