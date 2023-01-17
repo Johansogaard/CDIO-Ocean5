@@ -37,11 +37,13 @@
 ## Pantsæt
 ### En spiller kan til hver en tid vælge at pantsætte sine grunde, dette gøres i pantsæt menuen
 ![](https://cdn.discordapp.com/attachments/526422274320891915/1064877019030093874/setpant.JPG)
+###
 ![](https://cdn.discordapp.com/attachments/526422274320891915/1064877021773189120/pantset1.JPG)
 ### Her bliver du mødt med en dropdown menu hvor du kan vælge hvilken grund du vil pantsætte
 ## Huse/Hoteller
 ### Hvis du ejer alle grunde af samme farvegruppe har du muligheden for at købe huse/hotel på dem
 ![billede](https://cdn.discordapp.com/attachments/526422274320891915/1064877019688620143/2.JPG)
+###
 ![billede](https://cdn.discordapp.com/attachments/526422274320891915/1064877056015478875/buysell.JPG)
 ### Ved både køb og sælg bliver du mødt med en dropdown menu hvor du kan vælge hvilken af dine grunde du vil bygge på
 ![billede](https://cdn.discordapp.com/attachments/526422274320891915/1064877021391491123/drpdwn.JPG)
