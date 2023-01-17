@@ -32,11 +32,6 @@ public class Game_Features {
 
         cardArray.add(new Matador_Legat(40000, true, "Tillykke, du har vundet Matador-Legatet; 40000kr!"));
 
-        //chancekort
-        // ryk til start, uden gevinst
-        cardArray.add(new RykTilStart_Card(0));
-        cardArray.add(new RykTilStart_Card(0));
-
         //ryk frem eller tilbage
         int[] spacesToMove = {3, -3, -3};
         for (int space : spacesToMove) {
@@ -75,11 +70,11 @@ public class Game_Features {
         cardArray.add(new MovePlayerCard(19, "Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.\n"));
         cardArray.add(new MovePlayerCard(30, " Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
         cardArray.add(new MovePlayerCard(30, " Gå i fængsel, De indkasserer ikke 4000 kr for at passere start.\n"));
-
-
         cardArray.add(new GiftCard(200, "Det er deres fødselsdag. Modtag af hver medspiller 200 kr."));
         cardArray.add(new GiftCard(500, "De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.\n"));
         cardArray.add(new GiftCard(500, "De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr."));
+        cardArray.add(new MovePlayerCard(0, "Ryk frem til START\n"));
+        cardArray.add(new MovePlayerCard(0, "Ryk frem til START\n"));
 
         //fængselkort
         cardArray.add(new PrisonCard("FængselsKort"));
