@@ -4,7 +4,7 @@ import gui_fields.GUI_Ownable;
 
 import java.util.ArrayList;
 
-public class Aktion {
+public class Aktion1 {
     private final int minBud = 300;
     private final int antalBydere = 0;
     private final boolean bud = false;
@@ -84,5 +84,3 @@ public class Aktion {
     }
 
 }
-
-

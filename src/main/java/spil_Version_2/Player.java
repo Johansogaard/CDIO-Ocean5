@@ -136,7 +136,7 @@ public class Player {
                 int fieldIndex = Board_Creator.fieldIndexFromName(fieldToSell);
                 GUI_Field f = Game_Controller.getFields()[fieldIndex];
                 GUI_Ownable o = (GUI_Ownable) f;
-                Aktion aktion = new Aktion();
+                Aktion1 aktion = new Aktion1();
                 int sellPrice = userIO.getUserInteger("Hvad vil du sælge din grund for");
                 aktion.runSellFieldAktion(this, o, sellPrice, userIO);
 

@@ -33,7 +33,7 @@ public class LandOnField {
         GUI_Field field = Game_Controller.getFields()[player.getPos()];
         GUI_Ownable ownable = (GUI_Ownable) field;
 
-        Aktion aktion = new Aktion();
+        Aktion1 aktion = new Aktion1();
         int cost = Integer.parseInt(Board_Creator.getFieldData().get(player.getPos())[3]);
         if (ownable.getOwnerName() == null) {
             if (userIO.getUserLeftButtonPressed(player.getName() + " Vil du købe denne grund", "Ja", "Nej")) {
