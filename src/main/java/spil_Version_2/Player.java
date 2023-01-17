@@ -26,10 +26,10 @@ public class Player {
     private ArrayList<String> grunde = new ArrayList<String>();
     private int pos = 0;
     private int fartbølle = 0;
-    private boolean jail = false;
+    public boolean jail = false;
     private boolean hasLost = false;
-    private int t1 = 0;
-    private int t2 = 0;
+    int t1 = 0;
+    int t2 = 0;
     private int jailCounter = 0;
 
     public Player(String name, int bal, int postiotion,UserIO gui) {
