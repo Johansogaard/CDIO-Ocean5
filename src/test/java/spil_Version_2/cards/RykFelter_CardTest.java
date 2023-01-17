@@ -14,7 +14,9 @@ import java.io.FileNotFoundException;
 public class RykFelter_CardTest {
     @Test
     public void testHitMethod() throws FileNotFoundException {
-        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(0);
+        int[] choice = {0};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(choice, bool);
 
 
         // Create a player object with an initial position of 0

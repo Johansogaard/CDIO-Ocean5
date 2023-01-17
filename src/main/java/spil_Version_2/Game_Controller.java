@@ -22,6 +22,7 @@ public class Game_Controller {
     }
 
     private static GUI gui;
+
     private static Player[] players;
 
     public static ArrayList<Player> getPlayerList() {
@@ -42,7 +43,6 @@ public class Game_Controller {
         Board_Creator b = new Board_Creator();
         fields = b.istantiererFelter();
         GUIUserIOAdapter adapter = new GUIUserIOAdapter(new GUI(fields, Color.cyan));
-
         players = Game_Features.playerstoadd(adapter);
         for(int i = 0; i< players.length;i++){
             playerList.add(players[i]);
@@ -63,6 +63,8 @@ public class Game_Controller {
 
 
     }
+
+
     //the plagame method loops through a array of players who gets removed when they loose until the array is size 1 and the game has a winner
     public static void playGame (Player[] players,GUI_Field[] fields)
     {
@@ -94,7 +96,12 @@ public class Game_Controller {
     public static GUI_Field[] getFields() {
         return fields;
     }
-    public static Player getPlayer(String playerName,UserIO userIO)
+
+    public static void setPlayers(Player[] players) {
+        Game_Controller.players = players;
+    }
+
+    public static Player getPlayer(String playerName, UserIO userIO)
     {
         Player thePlayer = new Player("GetPlayerDosentWork",0, 0,userIO);
         for(int i = 0;i<players.length;i++) {

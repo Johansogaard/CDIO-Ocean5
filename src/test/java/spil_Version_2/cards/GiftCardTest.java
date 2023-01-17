@@ -17,8 +17,9 @@ import static org.junit.Assert.assertEquals;
 public class GiftCardTest {
     @Test
     public void testHitMethod() throws FileNotFoundException {
-
-        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(0);
+        int[] choice = {0};
+        boolean[] bool = {true};
+        GUIUserIOAdapterTest testuserIO = new GUIUserIOAdapterTest(choice,bool);
 
 
         // Create a player object with an initial balance of 1000
@@ -44,7 +45,7 @@ public class GiftCardTest {
         GiftCard card = new GiftCard(500, "You won 500");
 
         // Create a mock UserIO object
-        testuserIO = new GUIUserIOAdapterTest(0);
+        testuserIO = new GUIUserIOAdapterTest(choice,bool);
 
 
         // Call the hit method on the card object, passing in the player and userIO objects as arguments
