@@ -13,7 +13,7 @@ class Game_FeaturesTest {
     //c1
     //ser om den trækker det næste kort i bunken
     @Test
-    void Nextcardtest() throws Exception {
+    void nextCardTest() throws Exception {
         int[] choice = {0};
         boolean[] bool = {true};
         GUIUserIOAdapterTest testUserIO = new GUIUserIOAdapterTest(choice,bool);

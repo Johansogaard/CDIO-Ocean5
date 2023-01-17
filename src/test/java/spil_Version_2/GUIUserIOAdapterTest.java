@@ -76,22 +76,40 @@ public class GUIUserIOAdapterTest extends UserIO{
     public void addPlayer(GUI_Player player) {
 
     }
-    public Player istancierTest(UserIO testUserIO) throws FileNotFoundException {
+    public Player[] istancierTest(UserIO testUserIO) throws FileNotFoundException {
         Board_Creator b = new Board_Creator();
         GUI_Field[] fields = b.istantiererFelter();
         Game_Controller.setFields(fields);
         Player player1 = new Player("test1", 30000, 0, testUserIO);
+        GUI_Car car1 = new GUI_Car();
+        car1.setPrimaryColor(Color.red);
+        player1.setCar(car1);
         Player player2 = new Player("test2", 30000, 0, testUserIO);
+        GUI_Car car2 = new GUI_Car();
+        car2.setPrimaryColor(Color.blue);
+        player2.setCar(car2);
         Player player3 = new Player("test3", 30000, 0, testUserIO);
+        GUI_Car car3 = new GUI_Car();
+        car3.setPrimaryColor(Color.green);
+        player3.setCar(car3);
         ArrayList<Player> plList = new ArrayList<>();
+
+
+
+
+
+        GUI_Player pl1 = new GUI_Player(player1.getName(), player1.getKonto().getBalance(), car1);
+        GUI_Player pl2 = new GUI_Player(player1.getName(), player1.getKonto().getBalance(), car2);
+        GUI_Player pl3 = new GUI_Player(player1.getName(), player1.getKonto().getBalance(), car3);
+        player1.pl = pl1;
+        player2.pl = pl2;
+        player3.pl = pl3;
+
         plList.add(player1); plList.add(player2);plList.add(player3);
         Game_Controller.setPlayerList(plList);
         Game_Controller.setPlayers(plList.toArray(new Player[plList.size()]));
-        GUI_Car car = new GUI_Car();
-        player1.setCar(car);
-        car.setPrimaryColor(Color.red);
-        GUI_Player pl = new GUI_Player(player1.getName(), player1.getKonto().getBalance(), car);
-        player1.pl = pl;
-        return plList.get(0);
+
+
+        return (plList.toArray(new Player[plList.size()]));
     }
 }
