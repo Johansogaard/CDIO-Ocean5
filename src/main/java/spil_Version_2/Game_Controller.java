@@ -28,6 +28,10 @@ public class Game_Controller {
         return playerList;
     }
 
+    public static void setPlayerList(ArrayList<Player> playerList) {
+        Game_Controller.playerList = playerList;
+    }
+
     private static ArrayList<Player> playerList = new ArrayList<>();
     public static void setFields(GUI_Field[] fields) {
         Game_Controller.fields = fields;
@@ -40,7 +44,9 @@ public class Game_Controller {
         GUIUserIOAdapter adapter = new GUIUserIOAdapter(new GUI(fields, Color.cyan));
 
         players = Game_Features.playerstoadd(adapter);
-
+        for(int i = 0; i< players.length;i++){
+            playerList.add(players[i]);
+        }
 
             for (int i = 0; i < players.length; i++) {
 
@@ -55,14 +61,13 @@ public class Game_Controller {
             playGame(players, fields);
         }
 
+
     }
     //the plagame method loops through a array of players who gets removed when they loose until the array is size 1 and the game has a winner
     public static void playGame (Player[] players,GUI_Field[] fields)
     {
 
-        for(int i = 0; i< players.length;i++){
-            playerList.add(players[i]);
-        }
+
 
         for (int i = 0; i < playerList.size(); i=(i+1)%playerList.size()) {
 
