@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Game_Controller -> Board_Creator: instantierfelter()
+Board_Creator -> Board_Creator: addfield()
+
+Game_Controller -> Game_Features: playerstoadd()
+Game_Features -> Game_Features: playercountadd()
+Game_Features --> Game_Features: actionPerformed(), 3 players chosen
+
+Game_Features -> Player: Player(String name, int bal, int position, gui)
+Player --> Game_Controller: return those 3 players
+Game_Controller -> Game_Features: tilføjspillergui()
+
+loop for(int i=0; i<playerList.size(); i=(i+1)%playerList.size())
+
+
+alt if(playerList.get(i).spil(field))
+
+else case 1
+Player -> Player: runATurn()
+
+else case 2
+Player -> Player: hotelHouseMenu()
+
+else case 3
+Player -> Player: sellField()
+
+else case 4
+Player -> Player: pawnMenu()
+
+else if(%playerList.size()==1)
+
+
+
+Game_Controller -> Game_Controller: system Exit(1)
+
+end
+
+
+end
+@enduml
