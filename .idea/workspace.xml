@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment="Færdig med hitOwnable test">
-      <change afterPath="$PROJECT_DIR$/src/Diagrammer/DesignSekvensDiagram.puml" afterDir="false" />
+    <list default="true" id="7ca559da-360f-49a4-abbe-b8845ada386d" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/src/Diagrammer/Aktivitetsdiagram.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,7 @@
         <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="UML Sequence" />
+        <option value="UML Activity" />
       </list>
     </option>
   </component>
@@ -57,7 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Sequence",
+    "DefaultPlantUmlFileTemplate": "UML Activity",
     "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -188,13 +189,7 @@
       <workItem from="1673690502640" duration="15079000" />
       <workItem from="1673860142194" duration="8157000" />
       <workItem from="1673945363871" duration="12330000" />
-    </task>
-    <task id="LOCAL-00005" summary="Har næsten lavet spillepladen manlger bare at tilføje de sidste felter men der er nu lavet en metode der laver felterne for os så vi ikke behøver en klasse til hver felt letss gooo">
-      <created>1672784996695</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1672784996695</updated>
+      <workItem from="1674131819993" duration="2772000" />
     </task>
     <task id="LOCAL-00006" summary="s">
       <created>1672834483729</created>
@@ -532,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673987948090</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary=".">
+      <created>1674119299617</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1674119299618</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="alle felter er indført" />
     <MESSAGE value="nu trækkes penge fra de fleste grunde" />
     <MESSAGE value="Nu kan man vælge om man vil købe en grund eller ej" />
     <MESSAGE value="laver en ny version af spillet denne version virker ikke" />
@@ -607,7 +608,8 @@
     <MESSAGE value="Nu virker aktion rigtigt igen" />
     <MESSAGE value="nu virker pantsætning" />
     <MESSAGE value="Færdig med hitOwnable test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Færdig med hitOwnable test" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

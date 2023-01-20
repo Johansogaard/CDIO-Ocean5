@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+-Spiller
+repeat
+-kast terninger;
+-Land på felt
+
+if (Ejes af nogen) then (false)
+-Køb Grund
+
+
+else (true)
+if(Ejes huse/hoteller) then (true)
+-betal meget leje
+else (false)
+  -Betal lidt leje;
+
+
+
+
+
+endif
+endif
+if(flere penge haves) then (false)
+-Spiller taber hvis ikke flere penge haves
+stop
+else (true)
+
+
+
+
+
+@enduml
